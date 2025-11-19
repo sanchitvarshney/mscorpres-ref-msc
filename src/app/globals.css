@@ -25,6 +25,78 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/MsCamz/Dv1WQ5DdeMS5qP7.woff2") format("woff2"),
+    url("/fonts/MsCamz/e0LnMbFWJC-TMQz.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/MsCamz/ozb5-CLHQWI6Soc.woff2") format("woff2"),
+    url("/fonts/MsCamz/twzZHebXjCHBb6v.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/MsCamz/pDxWAF1pBB0dzGB.woff2") format("woff2"),
+    url("/fonts/MsCamz/kfKKBuoqcD$AUKL.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/MsCamz/WOnTLzkiaEccV7F.woff2") format("woff2"),
+    url("/fonts/MsCamz/JJsp0ZvgpfwzJM6.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/MsCamz/VjTR4RqBzY0mUYx.woff2") format("woff2"),
+    url("/fonts/MsCamz/XIvhNCZAsrT80Wz.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/MsCamz/KwhNPG8Jz-Vz2X7.woff2") format("woff2"),
+    url("/fonts/MsCamz/YAEPfuhs1l-argd.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/MsCamz/KFPk-9IF4FqAqY-.woff2") format("woff2"),
+    url("/fonts/MsCamz/mzVbGSgvdBfRLX9.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MsCorpres EmberFont";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/MsCamz/2SazJx$EeTHfhMN.woff2") format("woff2"),
+    url("/fonts/MsCamz/CjbL$jCCegyfqZ7.woff") format("woff");
+}
+
 @keyframes scroll-companies {
   0% {
     transform: translateX(0);
@@ -33,3 +105,26 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #6b6b6b;
+  border-radius: 2px;
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #868686;
+}
+
+/* Scrollbar track background (optional) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+

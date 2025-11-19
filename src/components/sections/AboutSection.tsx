@@ -35,9 +35,9 @@ const defaultStats: StatItem[] = [
 ];
 
 const AboutSection: React.FC<AboutSectionProps> = ({
-  title = "Leading Excellence in Cargo & Logistics",
+  title = "Leading Excellence in Electronics & Technology",
   subtitle = "ABOUT US",
-  description = "With years of industry experience, we have established ourselves as a trusted partner in msc manufacturing and logistics solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do.",
+  description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do.",
   secondParagraph = "We combine cutting-edge technology with expert craftsmanship to deliver solutions that exceed expectations and drive your business forward.",
   stats = defaultStats,
   imageUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop",
@@ -47,7 +47,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
     <Box
       sx={{
         background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
         px: { xs: 2, md: 4 },
       }}
     >

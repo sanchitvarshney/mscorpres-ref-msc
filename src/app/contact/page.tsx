@@ -17,7 +17,7 @@ export default function ContactPage() {
           alt="Contact Us Hero"
           subtitle="CONTACT US"
           title="Get In Touch With Us"
-          description="Have questions or need assistance? We're here to help you with all your MSC and logistics needs. Reach out to us and let's start a conversation."
+          description="Have questions or need assistance? We're here to help you with all your electronics and technology needs. Reach out to us and let's start a conversation."
           height={{
             xs: "60vh",
             md: "calc(100vh - 168px)",
@@ -31,7 +31,7 @@ export default function ContactPage() {
         {/* Contact Section */}
         <ContactSection
           title="Get In Touch"
-          subtitle="Have questions or need assistance? We're here to help you with all your MSC and logistics needs. Reach out to us and let's start a conversation."
+          subtitle="Have questions or need assistance? We're here to help you with all your electronics and technology needs. Reach out to us and let's start a conversation."
         />
       </div>
     </MainLayout>

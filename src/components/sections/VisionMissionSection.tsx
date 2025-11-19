@@ -18,9 +18,9 @@ interface VisionMissionSectionProps {
 
 const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
   visionTitle = "Our Vision",
-  visionDescription = "To be the global leader in MSC manufacturing and logistics, setting new standards for excellence, innovation, and customer satisfaction in the industry. We envision a future where our solutions empower businesses worldwide to achieve their goals with confidence and efficiency.",
+  visionDescription = "To be the global leader in electronics and technology solutions, setting new standards for excellence, innovation, and customer satisfaction in the industry. We envision a future where our IoT, PCB design, device refurbishment, ERP/MES, and software solutions empower businesses worldwide to achieve their goals with confidence and efficiency.",
   missionTitle = "Our Mission",
-  missionDescription = "To deliver exceptional MSC solutions through cutting-edge technology, expert craftsmanship, and unwavering commitment to quality, ensuring our clients achieve their business goals with confidence. We strive to build lasting partnerships based on trust, reliability, and mutual success.",
+  missionDescription = "To deliver exceptional electronics and technology solutions through cutting-edge technology, expert craftsmanship, and unwavering commitment to quality, ensuring our clients achieve their business goals with confidence. We strive to build lasting partnerships based on trust, reliability, and mutual success.",
 }) => {
   return (
     <Box

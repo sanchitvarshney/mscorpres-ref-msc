@@ -87,7 +87,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
         px: { xs: 2, md: 4 },
         position: "relative",
         background: "#c9d4e5",

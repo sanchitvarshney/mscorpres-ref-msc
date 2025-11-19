@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography, Grid, Link, IconButton } from "@mui/material";
+import { Box, Typography, Grid, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import {
   Facebook,
@@ -12,20 +12,22 @@ import {
   Phone,
   LocationOn,
 } from "@mui/icons-material";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   const footerLinks = {
     company: [
+      { label: "Home", href: "/" },
       { label: "About Us", href: "/about" },
       { label: "Our Services", href: "/services" },
       { label: "Contact", href: "/contact" },
-      { label: "Careers", href: "/careers" },
     ],
     services: [
-      { label: "MsC Manufacturing", href: "/services/manufacturing" },
-      { label: "Refurbishing", href: "/services/refurbishing" },
-      { label: "Custom Engineering", href: "/services/engineering" },
-      { label: "Quality Inspection", href: "/services/inspection" },
+      { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
+      { label: "PCB Design", href: "/services#pcb-design" },
+      { label: "Device Refurbishment", href: "/services#device-refurbishment" },
+      { label: "ERP and MES", href: "/services#erp-and-mes" },
+      { label: "Software Solution for Electronics", href: "/services#software-solution-for-electronics" },
     ],
     support: [
       { label: "Help Center", href: "/help" },
@@ -72,7 +74,7 @@ const Footer: React.FC = () => {
           {/* @ts-ignore */}
           <Grid item xs={12} md={4}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
@@ -89,7 +91,7 @@ const Footer: React.FC = () => {
                   backgroundClip: "text",
                 }}
               >
-                MsCorpres Manufacturer and Refurbishe
+                MsCorpres Manufacturer and Refurbisher Pvt. Ltd.
               </Typography>
               <Typography
                 variant="body2"
@@ -166,7 +168,7 @@ const Footer: React.FC = () => {
           {/* @ts-ignore */}
           <Grid item xs={12} sm={6} md={2}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -186,16 +188,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={link.href}
-                    sx={{
-                      color: "rgba(255, 255, 255, 0.7)",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        color: "white",
-                        transform: "translateX(5px)",
-                      },
-                    }}
+                    className="text-[rgba(255,255,255,0.7)] no-underline text-[14px] transition-all duration-300 ease-in-out hover:text-white hover:translate-x-[5px]"
                   >
                     {link.label}
                   </Link>
@@ -207,7 +200,7 @@ const Footer: React.FC = () => {
           {/* @ts-ignore */}
           <Grid item xs={12} sm={6} md={3}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -227,16 +220,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={link.href}
-                    sx={{
-                      color: "rgba(255, 255, 255, 0.7)",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        color: "white",
-                        transform: "translateX(5px)",
-                      },
-                    }}
+                    className="text-[rgba(255,255,255,0.7)] no-underline text-[14px] transition-all duration-300 ease-in-out hover:text-white hover:translate-x-[5px]"
                   >
                     {link.label}
                   </Link>
@@ -248,7 +232,7 @@ const Footer: React.FC = () => {
           {/* @ts-ignore */}
           <Grid item xs={12} sm={6} md={3}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -268,16 +252,7 @@ const Footer: React.FC = () => {
                   <Link
                     key={index}
                     href={link.href}
-                    sx={{
-                      color: "rgba(255, 255, 255, 0.7)",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        color: "white",
-                        transform: "translateX(5px)",
-                      },
-                    }}
+                    className="text-[rgba(255,255,255,0.7)] no-underline text-[14px] transition-all duration-300 ease-in-out hover:text-white hover:translate-x-[5px]"
                   >
                     {link.label}
                   </Link>
@@ -297,7 +272,7 @@ const Footer: React.FC = () => {
           }}
         >
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}

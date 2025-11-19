@@ -36,44 +36,44 @@ const defaultFeatures: FeatureItem[] = [
     icon: <PrecisionManufacturingOutlined sx={{ fontSize: 40 }} />,
     title: "Precision Manufacturing",
     description:
-      "State-of-the-art facilities with advanced machinery for precise cargo manufacturing.",
+      "State-of-the-art facilities with advanced machinery for precise IoT device manufacturing.",
   },
   {
     icon: <EngineeringOutlined sx={{ fontSize: 40 }} />,
     title: "Custom Engineering",
     description:
-      "Tailored solutions designed to meet your specific requirements and specifications.",
+      "Tailored IoT solutions designed to meet your specific connectivity and automation requirements.",
   },
   {
     icon: <HighQualityOutlined sx={{ fontSize: 40 }} />,
     title: "Quality Assurance",
     description:
-      "Rigorous testing and quality control processes ensuring top-tier products.",
+      "Rigorous testing and quality control processes ensuring top-tier IoT products.",
   },
   {
     icon: <SpeedOutlined sx={{ fontSize: 40 }} />,
     title: "Fast Turnaround",
     description:
-      "Efficient production processes delivering results within agreed timelines.",
+      "Efficient production processes delivering IoT solutions within agreed timelines.",
   },
   {
     icon: <VerifiedUserOutlined sx={{ fontSize: 40 }} />,
     title: "Certified Standards",
     description:
-      "ISO certified manufacturing following international quality standards.",
+      "ISO certified manufacturing following international quality standards for IoT devices.",
   },
   {
     icon: <BuildOutlined sx={{ fontSize: 40 }} />,
     title: "Expert Team",
     description:
-      "Skilled professionals with years of experience in cargo manufacturing.",
+      "Skilled professionals with years of experience in IoT device manufacturing.",
   },
 ];
 
 const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
-  title = "Premium Cargo Manufacturing",
+  title = "IoT Manufacturing Excellence",
   subtitle = "MANUFACTURING EXCELLENCE",
-  description = "We specialize in high-quality cargo manufacturing with state-of-the-art facilities and expert craftsmanship. Our manufacturing services deliver durable, precision-engineered solutions tailored to your specific needs.",
+  description = "We specialize in high-quality IoT device manufacturing with state-of-the-art facilities and expert craftsmanship. Our manufacturing services deliver durable, precision-engineered IoT solutions tailored to your specific connectivity and automation needs.",
   imageUrl = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
   features = defaultFeatures,
 }) => {
@@ -224,10 +224,10 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                   }}
                 >
                   Our manufacturing facility combines cutting-edge technology
-                  with expert craftsmanship to deliver cargo solutions that
+                  with expert craftsmanship to deliver IoT solutions that
                   exceed industry standards. We work closely with clients to
-                  understand their unique requirements and deliver customized
-                  products that meet their exact specifications.
+                  understand their unique connectivity and automation requirements and deliver customized
+                  IoT devices that meet their exact specifications.
                 </Typography>
                 <Typography
                   variant="body1"
@@ -239,8 +239,8 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                   }}
                 >
                   With years of experience and a commitment to quality, we
-                  ensure every product that leaves our facility is built to last
-                  and perform under the most demanding conditions.
+                  ensure every IoT device that leaves our facility is built to last
+                  and perform under the most demanding conditions, enabling seamless connectivity and smart automation.
                 </Typography>
               </motion.div>
             </Box>

@@ -18,8 +18,8 @@ export default function AboutPage() {
           imageUrl={heroImage}
           alt="About Us Hero"
           subtitle="ABOUT US"
-          title="Leading Excellence in MSC & Logistics"
-          description="With years of industry experience, we have established ourselves as a trusted partner in MSC manufacturing and logistics solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do."
+          title="Leading Excellence in Electronics & Technology"
+          description="With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do."
           height={{
             xs: "60vh",
             md: "calc(100vh - 168px)",

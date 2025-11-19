@@ -7,6 +7,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Link from "next/link";
+
+// Helper function to convert service title to URL-friendly ID
+const titleToId = (title: string): string => {
+  return title.toLowerCase().replace(/\s+/g, "-");
+};
 
 interface CardProps {
   item: any
@@ -94,6 +100,8 @@ const CustomCard: React.FC<CardProps> = ({
       {action && (
         <CardActions sx={{ pt: 0, pb: 2, px: 2 }}>
           <Button 
+            component={Link}
+            href={item?.title ? `/services#${titleToId(item.title)}` : "/services"}
             size="small" 
             variant="contained"
             sx={{

@@ -25,7 +25,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
       
         position: "relative",
         background: "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",

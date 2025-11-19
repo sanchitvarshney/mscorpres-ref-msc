@@ -100,8 +100,8 @@ const defaultValues: ValueItem[] = [
 const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   title = "Our Journey of Excellence",
   subtitle = "ABOUT OUR COMPANY",
-  mainDescription = "Founded with a vision to revolutionize the MSC and logistics industry, we have grown from a small startup to a trusted leader in cargo manufacturing and logistics solutions. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
-  secondParagraph = "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including manufacturing, refurbishing, custom engineering, quality inspection, and maintenance support. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
+  mainDescription = "Founded with a vision to revolutionize the electronics and technology industry, we have grown from a small startup to a trusted leader in IoT manufacturing, PCB design, device refurbishment, ERP/MES solutions, and software development for electronics. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
+  secondParagraph = "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including IoT Manufacturing, PCB Design, Device Refurbishment, ERP and MES solutions, and Software Solutions for Electronics. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
   thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
   stats = defaultStats,
   values = defaultValues,
@@ -393,7 +393,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             </Typography>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {values.map((value, index) => (
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} key={index}>
                   <Box
                     sx={{
                       background:

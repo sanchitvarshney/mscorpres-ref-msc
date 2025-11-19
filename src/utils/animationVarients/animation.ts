@@ -1,7 +1,7 @@
 
 
 export  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -47,7 +47,7 @@ export  const servicesContainerVariants = {
 
 
  export   const cardVariants:any = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,

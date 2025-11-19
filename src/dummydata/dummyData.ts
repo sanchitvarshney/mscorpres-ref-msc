@@ -36,41 +36,41 @@ export const cardsData = [
   {
     image:
       "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
-    title: "Premium Cargo Manufacturing",
+    title: "IoT Manufacturing",
     description:
-      "High-quality manufacturing solutions built for durability, precision, and performance.",
+      "Advanced IoT device manufacturing solutions with cutting-edge technology, ensuring smart connectivity and seamless integration for modern industrial applications.",
     action: true,
   },
   {
     image:
       "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
-    title: "Refurbishing Services",
+    title: "PCB Design",
     description:
-      "Expert refurbishing that restores equipment to like-new condition with full quality assurance.",
+      "Professional PCB design services delivering high-quality printed circuit boards with precision engineering, optimized layouts, and comprehensive testing for reliable electronic solutions.",
     action: true,
   },
   {
     image:
       "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
-    title: "Custom Engineering",
+    title: "Device Refurbishment",
     description:
-      "Tailored engineering solutions designed to meet unique msc and industrial needs.",
-    action: false,
-  },
-  {
-    image:
-      "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
-    title: "Quality Inspection",
-    description:
-      "Comprehensive inspection services ensuring reliability, safety, and long-term performance.",
+      "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage.",
     action: true,
   },
   {
     image:
       "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
-    title: "Maintenance & Support",
+    title: "ERP and MES",
     description:
-      "Ongoing maintenance programs supporting maximum uptime and operational efficiency.",
+      "Comprehensive ERP and MES solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
+    action: true,
+  },
+  {
+    image:
+      "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
+    title: "Software Solution for Electronics",
+    description:
+      "Custom software solutions tailored for electronics manufacturing, including embedded systems, firmware development, and automation software to enhance productivity and efficiency.",
     action: true,
   },
 ];

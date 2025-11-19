@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, Link, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { Menu, Close } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 
 const NavigationBar: React.FC = () => {
   const pathname = usePathname();
@@ -70,16 +71,15 @@ const NavigationBar: React.FC = () => {
           <Box key={link.path}>
             <Link
               href={link.path}
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "0.9375rem",
-                borderBottom: isActive(link.path)
-                  ? "2px solid #d32f2f"
-                  : "2px solid transparent",
-                pb: 0.5,
-                "&:hover": { color: "#ffcdd2" },
-              }}
+              className={`
+    text-white no-underline text-[0.9375rem] pb-0.5 
+    hover:text-[#ffcdd2]
+    ${
+      isActive(link.path)
+        ? "border-b-2 border-[#d32f2f]"
+        : "border-b-2 border-transparent"
+    }
+  `}
             >
               {link.label}
             </Link>
@@ -195,28 +195,17 @@ const NavigationBar: React.FC = () => {
                           <Link
                             href={link.path}
                             onClick={handleMenuClose}
-                            sx={{
-                              color: "white",
-                              textDecoration: "none",
-                              fontSize: "1.1rem",
-                              fontWeight: isActive(link.path) ? 600 : 400,
-                              display: "block",
-                              py: 1.5,
-                              px: 2,
-                              borderRadius: 2,
-                              borderLeft: isActive(link.path)
-                                ? "4px solid #d32f2f"
-                                : "4px solid transparent",
-                              bgcolor: isActive(link.path)
-                                ? "rgba(211, 47, 47, 0.1)"
-                                : "transparent",
-                              transition: "all 0.3s ease",
-                              "&:hover": {
-                                bgcolor: "rgba(255, 255, 255, 0.1)",
-                                color: "#ffcdd2",
-                                transform: "translateX(5px)",
-                              },
-                            }}
+                            className={`
+    text-white no-underline text-[1.1rem]
+    block py-1.5 px-2 rounded-md
+    transition-all duration-300 ease-in-out
+    hover:bg-[rgba(255,255,255,0.1)] hover:text-[#ffcdd2] hover:translate-x-[5px]
+    ${
+      isActive(link.path)
+        ? "font-semibold border-l-4 border-[#d32f2f] bg-[rgba(211,47,47,0.1)]"
+        : "font-normal border-l-4 border-transparent"
+    }
+  `}
                           >
                             {link.label}
                           </Link>

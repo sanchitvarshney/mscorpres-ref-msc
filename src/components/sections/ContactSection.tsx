@@ -53,12 +53,12 @@ interface ContactSectionProps {
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   title = "Get In Touch",
-  subtitle = "Have questions or need assistance? We're here to help you with all your msc and logistics needs.",
+  subtitle = "Have questions or need assistance? We're here to help you with all your electronics and technology needs.",
 }) => {
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
         px: { xs: 2, md: 4 },
         position: "relative",
         background:

@@ -70,9 +70,9 @@ const defaultFeatures: FeatureItem[] = [
 ];
 
 const RefurbisherSection: React.FC<RefurbisherSectionProps> = ({
-  title = "Professional Refurbishing Services",
+  title = "Professional Device Refurbishment Services",
   subtitle = "REFURBISHING EXCELLENCE",
-  description = "Transform your used cargo equipment into like-new condition with our expert refurbishing services. We restore functionality, enhance performance, and extend the lifespan of your equipment while maintaining the highest quality standards.",
+  description = "Transform your used electronic devices into like-new condition with our expert refurbishment services. We restore functionality, enhance performance, and extend the lifespan of your devices while maintaining the highest quality standards.",
   imageUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
   features = defaultFeatures,
 }) => {
@@ -184,10 +184,10 @@ const RefurbisherSection: React.FC<RefurbisherSectionProps> = ({
                     fontSize: "16px",
                   }}
                 >
-                  Our refurbishing process involves comprehensive inspection,
-                  cleaning, repair, and restoration of cargo equipment. We use
+                  Our refurbishment process involves comprehensive inspection,
+                  cleaning, repair, and restoration of electronic devices. We use
                   only genuine parts and follow strict quality protocols to
-                  ensure every refurbished item meets or exceeds original
+                  ensure every refurbished device meets or exceeds original
                   specifications.
                 </Typography>
                 <Typography
@@ -199,10 +199,10 @@ const RefurbisherSection: React.FC<RefurbisherSectionProps> = ({
                     fontSize: "16px",
                   }}
                 >
-                  By choosing our refurbishing services, you not only save costs
+                  By choosing our device refurbishment services, you not only save costs
                   but also contribute to environmental sustainability by
-                  extending the life of existing equipment rather than replacing
-                  it.
+                  extending the life of existing electronic devices rather than replacing
+                  them.
                 </Typography>
               </motion.div>
             </Box>

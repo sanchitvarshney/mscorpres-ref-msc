@@ -215,7 +215,7 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
         px: { xs: 2, md: 4 },
         position: "relative",
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
@@ -252,7 +252,7 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
       >
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}

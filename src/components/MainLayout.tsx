@@ -12,7 +12,7 @@ const MainLayout: React.FC<MasterProps> = ({ children }) => {
       <Header />
 
       <main>{children}</main>
-          <Footer />
+      <Footer />
     </div>
   );
 };
