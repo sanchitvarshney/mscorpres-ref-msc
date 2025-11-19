@@ -6,16 +6,33 @@ interface ContactItemProps {
   icon: React.ReactNode;
   label: string;
   value: string;
+  iconColor?: string;
 }
 
-const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value }) => {
+const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value, iconColor }) => {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1.5,
+        px: 2,
+        py: 1,
+        borderRadius: 1,
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          backgroundColor: 'rgba(25, 118, 210, 0.05)',
+          transform: 'translateY(-2px)',
+        },
+      }}
+    >
       <Box
         sx={{
-          color: '#d32f2f',
+          color: iconColor || 'primary.main',
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
+          minWidth: 32,
         }}
       >
         {icon}
@@ -24,9 +41,12 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value }) => {
         <Typography
           variant="caption"
           sx={{
-            color: '#9e9e9e',
-            fontSize: '0.75rem',
+            color: 'text.secondary',
+            fontSize: '0.7rem',
             display: 'block',
+            fontWeight: 500,
+            textTransform: 'uppercase',
+            letterSpacing: 0.5,
           }}
         >
           {label}
@@ -34,9 +54,10 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value }) => {
         <Typography
           variant="body2"
           sx={{
-            color: '#424242',
+            color: 'text.primary',
             fontSize: '0.875rem',
-            fontWeight: 500,
+            fontWeight: 600,
+            mt: 0.25,
           }}
         >
           {value}
@@ -51,24 +72,27 @@ const ContactInfo: React.FC = () => {
     <Box
       sx={{
         display: { xs: 'none', md: 'flex' },
-        gap: { md: 2, lg: 4 },
+        gap: { md: 1, lg: 2 },
         alignItems: 'center',
       }}
     >
       <ContactItem
         icon={<Phone sx={{ fontSize: 20 }} />}
-        label="Call Us Anytime"
+        label="Call Us"
         value="1-888-123-4567"
+        iconColor="primary.main"
       />
       <ContactItem
         icon={<AccessTime sx={{ fontSize: 20 }} />}
-        label="Opening Time"
+        label="Opening"
         value="08:00 - 18:00"
+        iconColor="success.main"
       />
       <ContactItem
         icon={<Email sx={{ fontSize: 20 }} />}
-        label="Email Us"
-        value="info@cargopress.io"
+        label="Email"
+        value="info@msc.io"
+        iconColor="warning.main"
       />
     </Box>
   );

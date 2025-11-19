@@ -7,7 +7,7 @@ import NavigationBar from "./NavigationBar";
 
 const Header: React.FC = () => {
   return (
-    <Box sx={{ position: "sticky", top: "-50px", zIndex: 999 }}>
+    <Box sx={{ position: "sticky", top: { xs: "-75px", md: "-50px" }, zIndex: 999 }}>
       <TopBar />
       <Box
         sx={{

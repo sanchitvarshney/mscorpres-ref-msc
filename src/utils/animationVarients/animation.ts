@@ -1,13 +1,4 @@
- // Animation variants for certification items
-export  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+
 
 export  const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -50,6 +41,30 @@ export  const servicesContainerVariants = {
       y: 0,
       transition: {
         duration: 0.6,
+      },
+    },
+  };
+
+
+ export   const cardVariants:any = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+ export const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };

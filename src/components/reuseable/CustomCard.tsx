@@ -17,7 +17,7 @@ const CustomCard: React.FC<CardProps> = ({
   action = true,
 }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: { xs: 300, md: 345} }}>
       {item?.image && (
         <CardMedia
           component="img"

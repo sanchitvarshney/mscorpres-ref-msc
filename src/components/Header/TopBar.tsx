@@ -23,7 +23,7 @@ const TopBar: React.FC = () => {
           fontSize: { xs: "0.75rem", md: "0.875rem" },
         }}
       >
-        Reliable Manufacturing & Expert Refurbishing for the Cargo Industry
+        Reliable Manufacturing & Expert Refurbishing for the MsC Industry
       </Typography>
       <Box sx={{ display: "flex", gap: 1 }}>
         <IconButton
@@ -50,26 +50,7 @@ const TopBar: React.FC = () => {
         >
           <Twitter sx={{ fontSize: 16 }} />
         </IconButton>
-        <IconButton
-          size="small"
-          sx={{
-            color: "#424242",
-            bgcolor: "#e0e0e0",
-            width: 32,
-            height: 32,
-            "&:hover": { bgcolor: "#bdbdbd" },
-          }}
-        >
-          <Box
-            component="span"
-            sx={{
-              fontSize: "0.75rem",
-              fontWeight: 700,
-            }}
-          >
-            W
-          </Box>
-        </IconButton>
+      
         <IconButton
           size="small"
           sx={{

@@ -6,6 +6,11 @@ export interface CarouselItem {
   backgroundColor?: string;
 }
 
+export interface Company {
+  id: number;
+  name: string;
+}
+
 export const defaultItems: CarouselItem[] = [
   {
     id: 1,
@@ -49,7 +54,7 @@ export const cardsData = [
       "https://media.istockphoto.com/id/1209265562/photo/construction-workers-discuss-the-building-plans.jpg?s=2048x2048&w=is&k=20&c=OaRULrXxjLsyKZGo8XQwBanu8nzWMQoWVDXNGSxjPnk=",
     title: "Custom Engineering",
     description:
-      "Tailored engineering solutions designed to meet unique cargo and industrial needs.",
+      "Tailored engineering solutions designed to meet unique msc and industrial needs.",
     action: false,
   },
   {
@@ -68,4 +73,17 @@ export const cardsData = [
       "Ongoing maintenance programs supporting maximum uptime and operational efficiency.",
     action: true,
   },
+];
+
+
+
+export const defaultCompanies: Company[] = [
+  { id: 1, name: "Honda" },
+  { id: 2, name: "Oakter" },
+  { id: 3, name: "Paytm" },
+  { id: 4, name: "Samsung" },
+  { id: 5, name: "Maruti Suzuki" },
+  { id: 6, name: "Mahindra" },
+  { id: 7, name: "Tata" },
+  { id: 8, name: "Reliance" },
 ];

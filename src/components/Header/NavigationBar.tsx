@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Link} from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 import { usePathname } from "next/navigation";
 
@@ -37,8 +37,9 @@ const NavigationBar: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-       
-       clipPath:"polygon(0% 45%, 32% 45%, 35% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);"
+
+        clipPath:
+          "polygon(0% 45%, 32% 45%, 35% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%);",
       }}
     >
       <Box
@@ -68,7 +69,6 @@ const NavigationBar: React.FC = () => {
           </Box>
         ))}
       </Box>
- 
     </Box>
   );
 };
