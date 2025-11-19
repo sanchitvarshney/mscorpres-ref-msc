@@ -4,7 +4,10 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { VisibilityOutlined, FlagOutlined } from "@mui/icons-material";
-import { cardVariants, containerVariants } from "@/utils/animationVarients/animation";
+import {
+  cardVariants,
+  containerVariants,
+} from "@/utils/animationVarients/animation";
 
 interface VisionMissionSectionProps {
   visionTitle?: string;
@@ -15,16 +18,14 @@ interface VisionMissionSectionProps {
 
 const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
   visionTitle = "Our Vision",
-  visionDescription = "To be the global leader in msc manufacturing and logistics, setting new standards for excellence, innovation, and customer satisfaction in the industry.",
+  visionDescription = "To be the global leader in MSC manufacturing and logistics, setting new standards for excellence, innovation, and customer satisfaction in the industry. We envision a future where our solutions empower businesses worldwide to achieve their goals with confidence and efficiency.",
   missionTitle = "Our Mission",
-  missionDescription = "To deliver exceptional msc solutions through cutting-edge technology, expert craftsmanship, and unwavering commitment to quality, ensuring our clients achieve their business goals with confidence.",
+  missionDescription = "To deliver exceptional MSC solutions through cutting-edge technology, expert craftsmanship, and unwavering commitment to quality, ensuring our clients achieve their business goals with confidence. We strive to build lasting partnerships based on trust, reliability, and mutual success.",
 }) => {
-
-
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 2, md: 6 },
         px: { xs: 2, md: 4 },
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
       }}

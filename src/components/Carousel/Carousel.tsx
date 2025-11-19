@@ -51,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <Box
             key={item.id}
             sx={{
-              height: { xs: "300px", md: "500px" },
+              height: { xs: "300px", md: "calc(100vh - 168px)" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -79,6 +79,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
                 color: "#fff",
                 zIndex: 1,
                 px: 3,
+                mt: 3,
                 maxWidth: "800px",
               }}
             >

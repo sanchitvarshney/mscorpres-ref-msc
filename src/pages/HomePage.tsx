@@ -1,7 +1,6 @@
 "use client";
 
 import Carousel from "@/components/Carousel";
-import Footer from "@/components/Footer";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import VisionMissionSection from "@/components/sections/VisionMissionSection";
@@ -179,7 +178,7 @@ const HomePage = () => {
       
       <TrustedCompaniesSection />
       
-      <Footer />
+  
     </div>
   );
 };

@@ -1,0 +1,470 @@
+"use client";
+
+import React from "react";
+import { Box, Typography, Container, Grid } from "@mui/material";
+import { motion } from "framer-motion";
+import {
+  BusinessOutlined,
+  GroupsOutlined,
+  EmojiEventsOutlined,
+  ShieldOutlined,
+  EngineeringOutlined,
+  LocalShippingOutlined,
+  VerifiedUserOutlined,
+  TrendingUpOutlined,
+} from "@mui/icons-material";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/utils/animationVarients/animation";
+
+interface StatItem {
+  icon: React.ReactNode;
+  number: string;
+  label: string;
+  description?: string;
+}
+
+interface ValueItem {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+interface DetailedAboutSectionProps {
+  title?: string;
+  subtitle?: string;
+  mainDescription?: string;
+  secondParagraph?: string;
+  thirdParagraph?: string;
+  stats?: StatItem[];
+  values?: ValueItem[];
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+const defaultStats: StatItem[] = [
+  {
+    icon: <BusinessOutlined sx={{ fontSize: 40 }} />,
+    number: "15+",
+    label: "Years Experience",
+    description: "Serving clients with excellence",
+  },
+  {
+    icon: <GroupsOutlined sx={{ fontSize: 40 }} />,
+    number: "500+",
+    label: "Happy Clients",
+    description: "Trusted by businesses worldwide",
+  },
+  {
+    icon: <EmojiEventsOutlined sx={{ fontSize: 40 }} />,
+    number: "1000+",
+    label: "Projects Completed",
+    description: "Successfully delivered solutions",
+  },
+  {
+    icon: <ShieldOutlined sx={{ fontSize: 40 }} />,
+    number: "100%",
+    label: "Satisfaction Rate",
+    description: "Client satisfaction guaranteed",
+  },
+];
+
+const defaultValues: ValueItem[] = [
+  {
+    icon: <EngineeringOutlined sx={{ fontSize: 36 }} />,
+    title: "Innovation",
+    description:
+      "We continuously invest in cutting-edge technology and innovative solutions to stay ahead of industry trends and deliver superior results.",
+  },
+  {
+    icon: <VerifiedUserOutlined sx={{ fontSize: 36 }} />,
+    title: "Quality",
+    description:
+      "Quality is at the heart of everything we do. We maintain rigorous standards and comprehensive quality control processes.",
+  },
+  {
+    icon: <LocalShippingOutlined sx={{ fontSize: 36 }} />,
+    title: "Reliability",
+    description:
+      "Our clients trust us because we deliver on our promises. We ensure timely delivery and consistent performance.",
+  },
+  {
+    icon: <TrendingUpOutlined sx={{ fontSize: 36 }} />,
+    title: "Excellence",
+    description:
+      "We strive for excellence in every project, going above and beyond to exceed expectations and drive success.",
+  },
+];
+
+const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
+  title = "Our Journey of Excellence",
+  subtitle = "ABOUT OUR COMPANY",
+  mainDescription = "Founded with a vision to revolutionize the MSC and logistics industry, we have grown from a small startup to a trusted leader in cargo manufacturing and logistics solutions. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
+  secondParagraph = "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including manufacturing, refurbishing, custom engineering, quality inspection, and maintenance support. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
+  thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
+  stats = defaultStats,
+  values = defaultValues,
+  imageUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  imageAlt = "Our Company",
+}) => {
+  return (
+    <Box
+      sx={{
+        py: { xs: 2, md: 6 },
+        px: { xs: 2, md: 4 },
+        background:
+          "linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%)",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <Container maxWidth="lg">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          {/* Header Section */}
+          <motion.div
+            variants={itemVariants}
+            style={{ textAlign: "center", marginBottom: "4rem" }}
+          >
+            <Typography
+              variant="overline"
+              sx={{
+                color: "primary.main",
+                fontWeight: 600,
+                letterSpacing: 3,
+                mb: 2,
+                display: "block",
+                fontSize: "12px",
+              }}
+            >
+              {subtitle}
+            </Typography>
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                color: "text.primary",
+                fontSize: { xs: "28px", md: "40px" },
+                position: "relative",
+                display: "inline-block",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: -10,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: 80,
+                  height: 4,
+                  background: (theme) =>
+                    `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                  borderRadius: 2,
+                },
+              }}
+            >
+              {title}
+            </Typography>
+          </motion.div>
+
+          {/* Main Content with Image */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: 6,
+              alignItems: "flex-start",
+              mb: 4,
+            }}
+          >
+            {/* Left Side - Image */}
+            <Box sx={{ flex: 1, width: { xs: "100%", md: "45%" } }}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    borderRadius: 4,
+                    overflow: "hidden",
+                    boxShadow: "0 15px 50px rgba(0,0,0,0.15)",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "linear-gradient(135deg, rgba(25,118,210,0.15) 0%, rgba(13,71,161,0.15) 100%)",
+                      zIndex: 1,
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={imageUrl}
+                    alt={imageAlt}
+                    sx={{
+                      width: "100%",
+                      height: { xs: 350, md: 600 },
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </Box>
+              </motion.div>
+            </Box>
+
+            {/* Right Side - Content */}
+            <Box sx={{ flex: 1, width: { xs: "100%", md: "55%" } }}>
+              <motion.div variants={itemVariants}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 3,
+                    color: "text.primary",
+                    fontSize: { xs: "22px", md: "28px" },
+                  }}
+                >
+                  Our Story
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "text.secondary",
+                    mb: 3,
+                    lineHeight: 1.9,
+                    fontSize: "17px",
+                  }}
+                >
+                  {mainDescription}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "text.secondary",
+                    mb: 3,
+                    lineHeight: 1.9,
+                    fontSize: "17px",
+                  }}
+                >
+                  {secondParagraph}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: "text.secondary",
+                    mb: 4,
+                    lineHeight: 1.9,
+                    fontSize: "17px",
+                  }}
+                >
+                  {thirdParagraph}
+                </Typography>
+              </motion.div>
+            </Box>
+          </Box>
+
+          {/* Stats Section */}
+          <motion.div
+            variants={containerVariants}
+            style={{ marginBottom: "4rem" }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 600,
+                mb: 4,
+                textAlign: "center",
+                color: "text.primary",
+                fontSize: { xs: "22px", md: "28px" },
+              }}
+            >
+              Our Achievements
+            </Typography>
+            <Grid container spacing={4}>
+              {stats.map((stat, index) => (
+                //@ts-ignore
+                <Grid item xs={12} sm={6} md={3} key={index}>
+                  <motion.div variants={itemVariants}>
+                    <Box
+                      sx={{
+                        background: "white",
+                        borderRadius: 3,
+                        p: 4,
+                        height: "100%",
+                        textAlign: "center",
+                        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                        transition: "all 0.3s ease",
+                        border: "1px solid rgba(25, 118, 210, 0.1)",
+                        "&:hover": {
+                          transform: "translateY(-8px)",
+                          boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+                          borderColor: "primary.main",
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          color: "primary.main",
+                          mb: 2,
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        {stat.icon}
+                      </Box>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          fontWeight: "bold",
+                          color: "primary.main",
+                          mb: 1,
+                          fontSize: { xs: "32px", md: "40px" },
+                        }}
+                      >
+                        {stat.number}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 600,
+                          mb: 1,
+                          color: "text.primary",
+                          fontSize: { xs: "16px", md: "18px" },
+                        }}
+                      >
+                        {stat.label}
+                      </Typography>
+                      {stat.description && (
+                        <Typography
+                          variant="caption"
+                          sx={{
+                            color: "text.secondary",
+                            fontSize: "12px",
+                            display: "block",
+                          }}
+                        >
+                          {stat.description}
+                        </Typography>
+                      )}
+                    </Box>
+                  </motion.div>
+                </Grid>
+              ))}
+            </Grid>
+          </motion.div>
+
+          {/* Core Values Section */}
+          <motion.div variants={containerVariants}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 600,
+                mb: 1,
+                textAlign: "center",
+                color: "text.primary",
+                fontSize: { xs: "22px", md: "28px" },
+              }}
+            >
+              Our Core Values
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+                textAlign: "center",
+                mb: 5,
+                fontSize: "16px",
+                maxWidth: "600px",
+                mx: "auto",
+              }}
+            >
+              The principles that guide everything we do
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {values.map((value, index) => (
+                <motion.div variants={itemVariants}>
+                  <Box
+                    sx={{
+                      background:
+                        "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
+                      borderRadius: 3,
+                      p: 4,
+                      height: "100%",
+                      border: "2px solid transparent",
+                      transition: "all 0.3s ease",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+                        borderColor: "primary.main",
+                        background: "white",
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+
+                        mb: 2,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          color: "primary.main",
+                          mr: 2,
+                          p: 1.5,
+                          borderRadius: 2,
+                          background: "rgba(25, 118, 210, 0.1)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        {value.icon}
+                      </Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 600,
+                          color: "text.primary",
+                          fontSize: { xs: "18px", md: "20px" },
+                          flex: 1,
+                        }}
+                      >
+                        {value.title}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "text.secondary",
+                        lineHeight: 1.7,
+                        fontSize: "15px",
+                      }}
+                    >
+                      {value.description}
+                    </Typography>
+                  </Box>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      </Container>
+    </Box>
+  );
+};
+
+export default DetailedAboutSection;
