@@ -71,8 +71,7 @@ const Footer: React.FC = () => {
     >
       <Box className="max-w-7xl mx-auto">
         <Grid container spacing={4}>
-          {/* @ts-ignore */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
@@ -165,8 +164,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </Grid>
 
-          {/* @ts-ignore */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
@@ -197,8 +195,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </Grid>
 
-          {/* @ts-ignore */}
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
@@ -229,8 +226,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </Grid>
 
-          {/* @ts-ignore */}
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}

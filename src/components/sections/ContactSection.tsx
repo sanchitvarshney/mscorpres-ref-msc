@@ -159,7 +159,73 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             {subtitle}
           </Typography>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 lg:gap-8">
+          <motion.div variants={cardVariants}>
+            <Box
+              sx={{
+                background: "white",
+                borderRadius: 3,
+                p: { xs: 3, md: 4 },
+                boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  color: "text.primary",
+                  fontWeight: 600,
+                  mb: 3,
+                }}
+              >
+                Send us a Message
+              </Typography>
+              <Box
+                component="form"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 3,
+                }}
+              >
+                <TextField fullWidth label="Your Name" variant="outlined" />
+
+                <TextField
+                  fullWidth
+                  label="Your Email"
+                  type="email"
+                  variant="outlined"
+                />
+
+                <TextField fullWidth label="Subject" variant="outlined" />
+                <TextField
+                  fullWidth
+                  label="Message"
+                  multiline
+                  rows={5}
+                  variant="outlined"
+                />
+                <div className="flex justify-end">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    endIcon={<Send />}
+                    sx={{
+                      fontWeight: 600,
+                      py: 1.5,
+                      "&:hover": {
+                        transform: "translateY(-2px)",
+                        boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+                      },
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </div>
+              </Box>
+            </Box>
+          </motion.div>
           <Box
             sx={{
               display: "flex",
@@ -171,7 +237,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               <motion.div key={index} variants={cardVariants}>
                 <Box
                   sx={{
-                    
                     background: "white",
                     borderRadius: 2,
                     p: 3,
@@ -192,23 +257,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   >
                     <Box
                       sx={{
-                        background: (theme) => {
-                          const colorKey = info.iconColor.split(".")[0] as
-                            | "primary"
-                            | "success"
-                            | "warning"
-                            | "error";
-                          const color =
-                            theme.palette[colorKey]?.main ||
-                            theme.palette.primary.main;
-                          return `linear-gradient(135deg, ${color}15, ${color}25)`;
-                        },
+                        backgroundColor:"primary.main",
                         borderRadius: "50%",
                         p: 1.5,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: info.iconColor,
+                        color: "#fff",
                         minWidth: 48,
                         height: 48,
                       }}
@@ -252,74 +307,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               </motion.div>
             ))}
           </Box>
-
-          <motion.div variants={cardVariants}>
-            <Box
-              sx={{
-                background: "white",
-                borderRadius: 3,
-                p: { xs: 3, md: 4 },
-                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-                },
-              }}
-            >
-              <Typography
-                variant="h5"
-                sx={{
-                  color: "text.primary",
-                  fontWeight: 600,
-                  mb: 3,
-                }}
-              >
-                Send us a Message
-              </Typography>
-              <Box
-                component="form"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 3,
-                }}
-              >
-                <TextField fullWidth label="Your Name" variant="outlined" />
-
-                <TextField
-                  fullWidth
-                  label="Your Email"
-                  type="email"
-                  variant="outlined"
-                />
-
-                <TextField fullWidth label="Subject" variant="outlined" />
-                <TextField
-                  fullWidth
-                  label="Message"
-                  multiline
-                  rows={5}
-                  variant="outlined"
-                />
-                <Button
-                  variant="contained"
-                  size="large"
-                  endIcon={<Send />}
-                  sx={{
-                    fontWeight: 600,
-                    py: 1.5,
-                    "&:hover": {
-                      transform: "translateY(-2px)",
-                      boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-                    },
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  Send Message
-                </Button>
-              </Box>
-            </Box>
-          </motion.div>
         </div>
       </motion.div>
     </Box>

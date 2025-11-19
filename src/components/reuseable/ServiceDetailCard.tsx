@@ -187,13 +187,12 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
     </Box>
   );
 
-  // If skipAnimation is true, render without motion wrapper
+  
   if (skipAnimation) {
     return <CardContent />;
   }
 
-  // Otherwise, wrap with motion animation
-  // Use initial={false} to prevent hydration mismatch
+
   return (
     <motion.div
       initial={false}
