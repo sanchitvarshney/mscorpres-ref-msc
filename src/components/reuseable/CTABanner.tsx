@@ -28,8 +28,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
       component="section"
       sx={{
         background: "#263238",
-        py: { xs: 6, md: 8 },
-        px: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
         position: "relative",
         overflow: "hidden",
         "&::before": {
@@ -64,7 +63,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
             sx={{
               fontWeight: "bold",
               fontSize: { xs: "32px", sm: "40px", md: "48px" },
-              mb: 2,
+             
               background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -81,7 +80,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               fontSize: { xs: "16px", md: "20px" },
               fontWeight: 400,
               maxWidth: "800px",
-              mb: 4,
+              mb: 1,
               lineHeight: 1.8,
             }}
           >

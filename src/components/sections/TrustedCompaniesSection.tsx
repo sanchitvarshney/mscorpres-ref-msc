@@ -25,7 +25,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
+        p: { xs: 2, md: 4 },
       
         position: "relative",
         background: "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
@@ -78,7 +78,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               color: "primary.main",
               fontWeight: 600,
               letterSpacing: 3,
-              mb: 2,
+              mb: 1,
               display: "block",
               fontSize: "12px",
             }}
@@ -90,7 +90,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              mb: 2,
+              mb: 1,
               color: "text.primary",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",
@@ -131,7 +131,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
             position: "relative",
             width: "100%",
             overflow: "hidden",
-            py: 2,
+            py: 1,
             "&::before": {
               content: '""',
               position: "absolute",
@@ -188,18 +188,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                   flexShrink: 0,
                   position: "relative",
                   overflow: "hidden",
-                  // "&::before": {
-                  //   content: '""',
-                  //   position: "absolute",
-                  //   top: 0,
-                  //   left: 0,
-                  //   right: 0,
-                  //   height: "3px",
-                  //   background: (theme) =>
-                  //     `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
-                  //   opacity: 0,
-                  //   transition: "opacity 0.3s ease",
-                  // },
+                  
                   "&:hover": {
                     transform: "translateY(-6px) scale(1.03)",
                     boxShadow: "0 12px 30px rgba(25,118,210,0.15)",

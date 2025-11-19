@@ -25,8 +25,8 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+        
+        p: { xs: 2, md: 4 },
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
       }}
     >
@@ -40,7 +40,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
         {/* Section Title */}
         <motion.div
           variants={cardVariants}
-          style={{ textAlign: "center", marginBottom: "3rem" }}
+          style={{ textAlign: "center", marginBottom: "2rem" }}
         >
           <Typography
             variant="overline"

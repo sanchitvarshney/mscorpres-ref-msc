@@ -87,8 +87,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+              p: { xs: 2, md: 4 },
         position: "relative",
         background: "#c9d4e5",
         overflow: "hidden",
@@ -139,7 +138,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                  color: "text.primary",
               fontWeight: 600,
               letterSpacing: 3,
-              mb: 2,
+              mb: 1,
               display: "block",
               fontSize: "12px",
             }}
@@ -151,7 +150,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              mb: 3,
               color: "white",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",

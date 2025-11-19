@@ -69,8 +69,7 @@ const HomePage = () => {
       <Carousel />
       <Box
         sx={{
-          py: { xs: 4, md: 6 },
-          px: { xs: 2, md: 4 },
+          p: { xs: 2, md: 4 },
           background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
         }}
       >
@@ -91,7 +90,7 @@ const HomePage = () => {
                 color: "primary.main",
                 fontWeight: 600,
                 letterSpacing: 3,
-                mb: 2,
+                mb: 1,
                 display: "block",
                 fontSize: "12px",
               }}
@@ -103,7 +102,7 @@ const HomePage = () => {
               component="h2"
               sx={{
                 fontWeight: "bold",
-                mb: 3,
+                mb: 1,
                 color: "text.primary",
                 fontSize: { xs: "28px", md: "36px" },
                 position: "relative",

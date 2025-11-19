@@ -279,7 +279,7 @@ const Footer: React.FC = () => {
                 color: "rgba(255, 255, 255, 0.6)",
               }}
             >
-              © {currentYear} CargoPress. All rights reserved. | Designed with
+              © {currentYear} MsCorpres. All rights reserved. | Designed with
               excellence for msc and logistics solutions.
             </Typography>
           </motion.div>

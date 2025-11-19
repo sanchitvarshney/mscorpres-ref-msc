@@ -33,8 +33,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+       
+        p: { xs: 2, md: 4 },
         position: "relative",
         background: "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
         overflow: "hidden",
@@ -73,7 +73,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
           style={{
             textAlign: "center",
-            marginBottom: "4rem",
+            marginBottom: "2rem",
             width: "100%",
           }}
         >
@@ -83,7 +83,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               color: "primary.main",
               fontWeight: 600,
               letterSpacing: 3,
-              mb: 2,
+              mb: 1,
               display: "block",
               fontSize: "12px",
             }}
@@ -95,7 +95,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              mb: 3,
+              mb: 2,
               color: "text.primary",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",
@@ -124,7 +124,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               maxWidth: "700px",
               mx: "auto",
               lineHeight: 1.8,
-              mt: 4,
+            
             }}
           >
             {subtitle}
@@ -133,7 +133,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"
           variants={servicesContainerVariants}
           style={{ width: "100%" }}
         >

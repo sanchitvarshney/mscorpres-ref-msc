@@ -47,8 +47,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
     <Box
       sx={{
         background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
       }}
     >
       <motion.div
@@ -83,7 +82,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                   color: "primary.main",
                   fontWeight: 600,
                   letterSpacing: 2,
-                  mb: 2,
+                  mb: 1,
                   display: "block",
                 }}
               >
@@ -94,7 +93,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 component="h2"
                 sx={{
                   fontWeight: "bold",
-                  mb: 3,
+                  mb: 1,
                   color: "text.primary",
                 }}
               >
@@ -115,7 +114,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 variant="body1"
                 sx={{
                   color: "text.secondary",
-                  mb: 4,
+                  mb: 2,
                   lineHeight: 1.8,
                   fontSize: "16px",
                 }}

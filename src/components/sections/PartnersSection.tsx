@@ -215,8 +215,7 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
         position: "relative",
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
         overflow: "hidden",
@@ -268,7 +267,7 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
               color: "primary.main",
               fontWeight: 600,
               letterSpacing: 3,
-              mb: 2,
+              mb: 1,
               display: "block",
               fontSize: "12px",
             }}
@@ -280,7 +279,6 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              mb: 3,
               color: "text.primary",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",
