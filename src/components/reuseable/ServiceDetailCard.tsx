@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { customColor } from "@/utils/theme/customColor";
 
 interface ServiceDetailCardProps {
   service: {
@@ -175,8 +176,8 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
                 <Box
                   key={idx}
                   sx={{
-                    background: "rgba(25, 118, 210, 0.1)",
-                    color: "primary.main",
+                    background: customColor.light,
+                    color: customColor.primary,
                     px: 2,
                     py: 0.5,
                     borderRadius: 2,

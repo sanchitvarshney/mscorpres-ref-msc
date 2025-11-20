@@ -9,8 +9,7 @@ const Logo: React.FC = () => {
     <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
       <Box
         sx={{
-          width: 50,
-          height: 50,
+        
 
           display: "flex",
           alignItems: "center",
@@ -20,45 +19,16 @@ const Logo: React.FC = () => {
         }}
       >
         <Image
-          src="/favicon.ico"
+          src="/logo/hrms_mscorpres_logo.png"
           alt="logo"
-          width={50}
-          height={50}
-          style={{ objectFit: "contain" }}
+          width={300}
+          height={300}
+          style={{ objectFit: "cover" }}
           loading="eager"
           priority
         />
       </Box>
-      <Box>
-        <Typography
-          variant="h5"
-          component="div"
-          sx={{
-            fontWeight: 700,
-            lineHeight: 1.2,
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-          }}
-        >
-          <Box component="span" sx={{ color: customColor.primary }}>
-            MsCorpres
-          </Box>
-          
-        </Typography>
-        <Typography
-          variant="caption"
-          sx={{
-            color: "#000000",
-            fontSize: "0.75rem",
-            display: "block",
-            fontWeight: 600,
-            mt: 0.5,
-          }}
-        >
-          Manufacturer and Refurbisher
-        </Typography>
-      </Box>
+  
     </Box>
   );
 };

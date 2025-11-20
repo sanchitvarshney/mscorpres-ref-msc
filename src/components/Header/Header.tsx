@@ -1,14 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
-import TopBar from "./TopBar";
 import Logo from "./Logo";
 import ContactInfo from "./ContactInfo";
 import NavigationBar from "./NavigationBar";
 
 const Header: React.FC = () => {
   return (
-    <Box sx={{ position: "sticky", top: { xs: "-75px", md: "-50px" }, zIndex: 999 }}>
-      <TopBar />
+    <Box sx={{ position: "sticky", top: "0px", zIndex: 999 }}>
+
       <Box
         sx={{
           bgcolor: "white",

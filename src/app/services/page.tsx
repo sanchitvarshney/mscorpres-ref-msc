@@ -12,6 +12,7 @@ import { cardsData } from "@/dummydata/dummyData";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { customColor } from "@/utils/theme/customColor";
 
 // Helper function to convert service title to URL-friendly ID
 const titleToId = (title: string): string => {
@@ -165,15 +166,15 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              style={{ textAlign: "center", marginBottom: "4rem" }}
+              style={{ textAlign: "center", marginBottom: "2rem" }}
             >
               <Typography
                 variant="overline"
                 sx={{
-                  color: "primary.main",
+                  color: customColor.primary,
                   fontWeight: 600,
                   letterSpacing: 3,
-                  mb: 2,
+                  mb: 1,
                   display: "block",
                   fontSize: "12px",
                 }}
@@ -185,7 +186,6 @@ export default function ServicesPage() {
                 component="h2"
                 sx={{
                   fontWeight: "bold",
-                  mb: 3,
                   color: "text.primary",
                   fontSize: { xs: "28px", md: "36px" },
                   position: "relative",
@@ -199,7 +199,7 @@ export default function ServicesPage() {
                     width: 60,
                     height: 3,
                     background: (theme) =>
-                      `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                      `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                     borderRadius: 2,
                   },
                 }}
@@ -214,7 +214,7 @@ export default function ServicesPage() {
                   maxWidth: "700px",
                   mx: "auto",
                   lineHeight: 1.8,
-                  mt: 4,
+                  mt: 3,
                 }}
               >
                 Explore our comprehensive range of services designed to meet all

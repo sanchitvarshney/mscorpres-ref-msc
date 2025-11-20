@@ -1,13 +1,44 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import { Menu, Close } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { customColor } from "@/utils/theme/customColor";
+import {
+  Facebook,
+  LinkedIn,
+  QuestionAnswer,
+  Twitter,
+  X,
+  YouTube,
+} from "@mui/icons-material";
+
+const socialData = [
+  {
+    name: "Facebook",
+    icon: <Facebook  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    link: "https://www.facebook.com/MsCorpres/",
+  },
+  {
+    name: "LinkedIn",
+    icon: <LinkedIn  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    link: "https://www.linkedin.com/company/mscorpres/",
+  },
+  {
+    name: "Youtube",
+    icon: <YouTube  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    link: "https://www.youtube.com/@mscorpres",
+  },
+  {
+    name: "X",
+    icon: <X  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    link: "https://x.com/mscorpres",
+  },
+];
 
 const NavigationBar: React.FC = () => {
   const pathname = usePathname();
@@ -65,26 +96,65 @@ const NavigationBar: React.FC = () => {
         sx={{
           display: { xs: "none", md: "flex" },
           alignItems: "center",
-          gap: { md: 2, lg: 3 },
+          gap: { md: 4, lg: 3 },
         }}
       >
         {navLinks.map((link) => (
-          <Box key={link.path}>
+          <motion.div
+            key={link.path}
+            style={{ position: "relative", display: "inline-block" }}
+            initial={false}
+            whileHover={{ "--underline-scale": 1 }}
+            animate={{ "--underline-scale": isActive(link.path) ? 1 : 0 }}
+            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+          >
             <Link
               href={link.path}
-              className={`
-    text-white no-underline text-[0.9375rem] pb-0.5 
-    hover:text-[#02524e]
-    ${
-      isActive(link.path)
-        ? `border-b-2 border-[#02524e]`
-        : "border-b-2 border-transparent"
-    }
-  `}
+              className="relative inline-block text-[#fff] no-underline text-[0.9375rem] pb-0.5"
             >
-              {link.label}
+              <span className="inline-block transition-transform duration-200 hover:scale-110">
+                {link.label}
+              </span>
+
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "1px",
+                  backgroundColor: "#fff",
+                  transformOrigin: "center",
+                  scaleX: "var(--underline-scale)",
+                }}
+              />
             </Link>
-          </Box>
+          </motion.div>
+        ))}
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          position: "absolute",
+          right: { xs: 50, md: 16 },
+          color: "white",
+          gap: 1,
+          
+        }}
+      >
+        {socialData.map((item, index) => (
+          <IconButton
+            key={index}
+            size="small"
+            sx={{
+              color: "#ffffff",
+              "&:hover": { bgcolor: "transparent", transform: "scale(1.1)" },
+            }}
+            onClick={() => window.open(item.link, "_blank")}
+          >
+            {item.icon}
+          </IconButton>
         ))}
       </Box>
 
@@ -95,6 +165,7 @@ const NavigationBar: React.FC = () => {
           display: { xs: "flex", md: "none" },
           position: "absolute",
           right: 16,
+      
           color: "white",
           "&:hover": {
             bgcolor: "rgba(255, 255, 255, 0.1)",
