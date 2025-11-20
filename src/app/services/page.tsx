@@ -20,9 +20,7 @@ export default function ServicesPage() {
   // Initialize as null to ensure server and client match on first render
   const [targetId, setTargetId] = useState<string | null>(null);
   const [isMounted, setIsMounted] = useState(false);
-  const heroImage =
-    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
-
+  
   const serviceExplanations = [
     "Our IoT Manufacturing service delivers cutting-edge Internet of Things devices designed for seamless connectivity and smart functionality. We leverage advanced manufacturing techniques, quality components, and rigorous testing protocols to ensure every IoT device meets the highest industry standards. Our expert engineering team works closely with clients to understand their specific connectivity requirements and deliver customized IoT solutions that enable real-time data collection, remote monitoring, and intelligent automation for modern industrial applications.",
     "Our PCB Design service provides professional printed circuit board design solutions with precision engineering and optimized layouts. We utilize state-of-the-art design software and follow industry best practices to create high-quality PCBs that meet your exact specifications. Our experienced design engineers ensure optimal signal integrity, thermal management, and manufacturability. From schematic design to layout optimization and comprehensive testing, we deliver reliable PCBs that form the foundation of robust electronic systems.",
@@ -131,7 +129,7 @@ export default function ServicesPage() {
       <div className="w-full min-h-screen">
         {/* Hero Section */}
         <HeroSection
-          imageUrl={heroImage}
+          imageUrl={"/images/services.avif"}
           alt="Services Hero"
           subtitle="OUR SERVICES"
           title="Comprehensive Electronics & Technology Solutions"

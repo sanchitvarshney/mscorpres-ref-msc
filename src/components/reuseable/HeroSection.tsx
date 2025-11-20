@@ -32,8 +32,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   description,
   gradientOverlay = {
-    startColor: "rgba(25, 118, 210, 0.85)",
-    endColor: "rgba(13, 71, 161, 0.75)",
+    startColor: "rgba(0, 0, 0, 0.15)",
+    endColor: "rgba(0, 0, 0, 0.20)",
     opacity: 1,
   },
   height = {

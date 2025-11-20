@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { customColor } from "@/utils/theme/customColor";
 
 const NavigationBar: React.FC = () => {
   const pathname = usePathname();
@@ -19,8 +20,8 @@ const NavigationBar: React.FC = () => {
 
   const navLinks = [
     { label: "Home", path: "/" },
-    { label: "Services", path: "/services" },
     { label: "About Us", path: "/about" },
+    { label: "Services", path: "/services" },
     { label: "Contact Us", path: "/contact" },
   ];
 
@@ -49,7 +50,7 @@ const NavigationBar: React.FC = () => {
   return (
     <Box
       sx={{
-        bgcolor: "#263238",
+        bgcolor: customColor.primary,
         px: 3,
         py: { xs: 2, md: 3 },
         display: "flex",
@@ -73,10 +74,10 @@ const NavigationBar: React.FC = () => {
               href={link.path}
               className={`
     text-white no-underline text-[0.9375rem] pb-0.5 
-    hover:text-[#ffcdd2]
+    hover:text-[#02524e]
     ${
       isActive(link.path)
-        ? "border-b-2 border-[#d32f2f]"
+        ? `border-b-2 border-[#02524e]`
         : "border-b-2 border-transparent"
     }
   `}
@@ -138,7 +139,7 @@ const NavigationBar: React.FC = () => {
                     right: 0,
                     width: "280px",
                     height: "calc(100vh - 0px)",
-                    backgroundColor: "#263238",
+                    backgroundColor: customColor.secondary,
                     zIndex: 10000,
                     boxShadow: "-4px 0 20px rgba(0, 0, 0, 0.3)",
                     overflowY: "auto",
@@ -199,10 +200,10 @@ const NavigationBar: React.FC = () => {
     text-white no-underline text-[1.1rem]
     block py-1.5 px-2 rounded-md
     transition-all duration-300 ease-in-out
-    hover:bg-[rgba(255,255,255,0.1)] hover:text-[#ffcdd2] hover:translate-x-[5px]
+    hover:bg-[rgba(255,255,255,0.1)] hover:text-[#fff] hover:translate-x-[5px]
     ${
       isActive(link.path)
-        ? "font-semibold border-l-4 border-[#d32f2f] bg-[rgba(211,47,47,0.1)]"
+        ? "font-semibold border-l-4 border-[#04b0a8] "
         : "font-normal border-l-4 border-transparent"
     }
   `}

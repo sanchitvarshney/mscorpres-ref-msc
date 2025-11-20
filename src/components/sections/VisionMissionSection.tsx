@@ -8,6 +8,7 @@ import {
   cardVariants,
   containerVariants,
 } from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
 
 interface VisionMissionSectionProps {
   visionTitle?: string;
@@ -18,14 +19,13 @@ interface VisionMissionSectionProps {
 
 const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
   visionTitle = "Our Vision",
-  visionDescription = "To be the global leader in electronics and technology solutions, setting new standards for excellence, innovation, and customer satisfaction in the industry. We envision a future where our IoT, PCB design, device refurbishment, ERP/MES, and software solutions empower businesses worldwide to achieve their goals with confidence and efficiency.",
+  visionDescription = "To become a global leader in electronics and technology solutions by setting new benchmarks in excellence, innovation, and customer satisfaction. We envision a future where our IoT products, PCB design expertise, device refurbishment services, ERP/MES platforms, and software solutions empower businesses worldwide to operate with greater efficiency, reliability, and confidence.",
   missionTitle = "Our Mission",
-  missionDescription = "To deliver exceptional electronics and technology solutions through cutting-edge technology, expert craftsmanship, and unwavering commitment to quality, ensuring our clients achieve their business goals with confidence. We strive to build lasting partnerships based on trust, reliability, and mutual success.",
+  missionDescription = "To deliver world-class electronics and technology solutions through advanced innovation, expert engineering, and an unwavering commitment to quality. Our mission is to help businesses achieve their goals by providing reliable IoT systems, precision PCB design, professional refurbishment services, and intelligent ERP/MES and software solutions—building long-term partnerships founded on trust, performance, and mutual success.",
 }) => {
   return (
     <Box
       sx={{
-        
         p: { xs: 2, md: 4 },
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
       }}
@@ -45,7 +45,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
           <Typography
             variant="overline"
             sx={{
-              color: "primary.main",
+              color: customColor.primary,
               fontWeight: 600,
               letterSpacing: 2,
               mb: 1,
@@ -73,7 +73,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
                 width: 60,
                 height: 3,
                 background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                 borderRadius: 2,
               },
             }}
@@ -88,11 +88,10 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
               mx: "auto",
             }}
           >
-            Our commitment to excellence drives everything we do
+            Excellence drives our mission and vision forward.
           </Typography>
         </motion.div>
 
-        {/* Vision and Mission Cards */}
         <Box
           sx={{
             display: "flex",
@@ -101,25 +100,23 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
             justifyContent: "center",
           }}
         >
-          {/* Vision Card */}
           <motion.div
             variants={cardVariants}
             style={{ flex: 1, maxWidth: "500px" }}
           >
             <Box
               sx={{
-                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                background: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
                 borderRadius: 3,
                 p: { xs: 3, md: 4 },
                 height: "100%",
                 color: "white",
                 position: "relative",
                 overflow: "hidden",
-                boxShadow: "0 10px 40px rgba(102, 126, 234, 0.3)",
+
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
                   transform: "translateY(-8px)",
-                  boxShadow: "0 15px 50px rgba(102, 126, 234, 0.4)",
                 },
                 "&::before": {
                   content: '""',
@@ -197,18 +194,17 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
           >
             <Box
               sx={{
-                background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                background: `linear-gradient(135deg, ${customColor?.secondary} 0%, ${customColor?.primary} 100%)`,
                 borderRadius: 3,
                 p: { xs: 3, md: 4 },
                 height: "100%",
                 color: "white",
                 position: "relative",
                 overflow: "hidden",
-                boxShadow: "0 10px 40px rgba(245, 87, 108, 0.3)",
+
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
                   transform: "translateY(-8px)",
-                  boxShadow: "0 15px 50px rgba(245, 87, 108, 0.4)",
                 },
                 "&::before": {
                   content: '""',

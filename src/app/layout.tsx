@@ -15,8 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CargoPress - Logistic WordPress Theme",
-  description: "The perfect WordPress theme for msc companies",
+  title: "Manufacturing And Refurbishment Services - MsC",
 };
 
 export default function RootLayout({

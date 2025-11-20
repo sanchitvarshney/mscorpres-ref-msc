@@ -26,14 +26,14 @@ const contactInfo = [
   {
     icon: <Email />,
     title: "Email",
-    value: "info@cargopress.io",
+    value: "info@msc.io",
     description: "Send us an email",
     iconColor: "warning.main",
   },
   {
     icon: <LocationOn />,
     title: "Address",
-    value: "123 Cargo Street",
+    value: "123 msc Street",
     description: "New York, NY 10001",
     iconColor: "error.main",
   },

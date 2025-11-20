@@ -9,6 +9,7 @@ import {
   servicesContainerVariants,
   titleVariants,
 } from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
 
 interface ServiceItem {
   id?: number;
@@ -29,33 +30,13 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   subtitle = "We provide high-quality, reliable services designed to support your business with efficiency and excellence.",
   services = [],
 }) => {
-
   return (
     <Box
       sx={{
-       
         p: { xs: 2, md: 4 },
         position: "relative",
-        background: "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
+
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background: "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
-        "&::after": {
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background: "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
       }}
     >
       <motion.div
@@ -80,7 +61,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           <Typography
             variant="overline"
             sx={{
-              color: "primary.main",
+              color: customColor.primary,
               fontWeight: 600,
               letterSpacing: 3,
               mb: 1,
@@ -109,7 +90,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                 width: 60,
                 height: 3,
                 background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                 borderRadius: 2,
               },
             }}
@@ -124,7 +105,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               maxWidth: "700px",
               mx: "auto",
               lineHeight: 1.8,
-            
             }}
           >
             {subtitle}
@@ -166,4 +146,3 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 };
 
 export default ServicesSection;
-

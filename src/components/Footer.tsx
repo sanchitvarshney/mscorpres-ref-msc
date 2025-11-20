@@ -11,8 +11,11 @@ import {
   Email,
   Phone,
   LocationOn,
+  YouTube,
+  X,
 } from "@mui/icons-material";
 import Link from "next/link";
+import { customColor } from "@/utils/theme/customColor";
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -38,10 +41,26 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { icon: <Facebook />, href: "#", label: "Facebook" },
-    { icon: <Twitter />, href: "#", label: "Twitter" },
-    { icon: <LinkedIn />, href: "#", label: "LinkedIn" },
-    { icon: <Instagram />, href: "#", label: "Instagram" },
+  {
+      name: "Facebook",
+      icon: <Facebook />,
+      link: "https://www.facebook.com/MsCorpres/",
+    },
+    {
+      name: "LinkedIn",
+      icon: <LinkedIn />,
+      link: "https://www.linkedin.com/company/mscorpres/",
+    },
+    {
+      name: "Youtube",
+      icon: <YouTube  />,
+      link: "https://www.youtube.com/@mscorpres",
+    },
+    {
+      name: "X",
+      icon: <X />,
+      link: "https://x.com/mscorpres",
+    },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -50,7 +69,7 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        background: "linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)",
+      backgroundColor: customColor.dark,
         color: "white",
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 6 },
@@ -83,8 +102,7 @@ const Footer: React.FC = () => {
                 sx={{
                   fontWeight: "bold",
                   mb: 2,
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                 backgroundColor: "#ffffff",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -100,16 +118,14 @@ const Footer: React.FC = () => {
                   mb: 3,
                 }}
               >
-                Leading excellence in msc manufacturing and logistics solutions.
-                We deliver quality, innovation, and customer satisfaction.
+                Excellence-driven solutions for electronics, automation, and logistics needs
               </Typography>
               <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
                 {socialLinks.map((social, index) => (
                   <IconButton
                     key={index}
-                    component="a"
-                    href={social.href}
-                    aria-label={social.label}
+                    
+                      onClick={() => window.open(social.link, "_blank")}
                     sx={{
                       color: "rgba(255, 255, 255, 0.7)",
                       border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -279,8 +295,7 @@ const Footer: React.FC = () => {
                 color: "rgba(255, 255, 255, 0.6)",
               }}
             >
-              © {currentYear} MsCorpres. All rights reserved. | Designed with
-              excellence for msc and logistics solutions.
+              © {currentYear} MsCorpres. All rights reserved. | Engineered with excellence for MsC and advanced logistics solutions.
             </Typography>
           </motion.div>
         </Box>

@@ -19,11 +19,8 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value, iconColor
         px: 2,
         py: 1,
         borderRadius: 1,
-        transition: 'all 0.3s ease',
-        '&:hover': {
-          backgroundColor: 'rgba(25, 118, 210, 0.05)',
-          transform: 'translateY(-2px)',
-        },
+   
+     
       }}
     >
       <Box
@@ -47,6 +44,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value, iconColor
             fontWeight: 500,
             textTransform: 'uppercase',
             letterSpacing: 0.5,
+            userSelect: 'none',
           }}
         >
           {label}
@@ -58,6 +56,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value, iconColor
             fontSize: '0.875rem',
             fontWeight: 600,
             mt: 0.25,
+                 userSelect: 'none',
           }}
         >
           {value}
@@ -79,19 +78,19 @@ const ContactInfo: React.FC = () => {
       <ContactItem
         icon={<Phone sx={{ fontSize: 20 }} />}
         label="Call Us"
-        value="1-888-123-4567"
+        value="+91 75 29 939393"
         iconColor="primary.main"
       />
       <ContactItem
         icon={<AccessTime sx={{ fontSize: 20 }} />}
         label="Opening"
-        value="08:00 - 18:00"
+        value="09:00 am - 18:00 pm"
         iconColor="success.main"
       />
       <ContactItem
         icon={<Email sx={{ fontSize: 20 }} />}
         label="Email"
-        value="info@msc.io"
+        value="marketing@mscorpres.in"
         iconColor="warning.main"
       />
     </Box>

@@ -4,17 +4,13 @@ import React from "react";
 import { Box, Typography, Avatar, Rating } from "@mui/material";
 import { motion } from "framer-motion";
 import { FormatQuote } from "@mui/icons-material";
-import { cardVariants, containerVariants } from "@/utils/animationVarients/animation";
+import {
+  cardVariants,
+  containerVariants,
+} from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
+import { defaultTestimonials, Testimonial } from "@/dummydata/dummyData";
 
-interface Testimonial {
-  id: number;
-  name: string;
-  position: string;
-  company: string;
-  image?: string;
-  rating: number;
-  comment: string;
-}
 
 interface TestimonialsSectionProps {
   title?: string;
@@ -22,62 +18,7 @@ interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
 }
 
-const defaultTestimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "John Smith",
-    position: "CEO",
-    company: "Tech Solutions Inc.",
-    rating: 5,
-    comment:
-      "Outstanding service and exceptional quality! The team delivered exactly what we needed on time and within budget. Highly recommended for anyone looking for reliable logistics solutions.",
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    position: "Operations Manager",
-    company: "Global Trade Co.",
-    rating: 5,
-    comment:
-      "Professional, efficient, and reliable. Their expertise in cargo handling and logistics has significantly improved our operations. The customer service is top-notch!",
-  },
-  {
-    id: 3,
-    name: "Michael Chen",
-    position: "Director",
-    company: "International Shipping Ltd.",
-    rating: 5,
-    comment:
-      "We've been working with them for over 3 years and they never disappoint. Their attention to detail and commitment to excellence is remarkable. Truly a trusted partner.",
-  },
-  {
-    id: 4,
-    name: "Emily Rodriguez",
-    position: "Supply Chain Manager",
-    company: "Manufacturing Corp.",
-    rating: 5,
-    comment:
-      "Excellent communication throughout the entire process. They understand our needs and always go the extra mile. The quality of service is consistently outstanding.",
-  },
-  {
-    id: 5,
-    name: "David Williams",
-    position: "VP Logistics",
-    company: "Distribution Network",
-    rating: 5,
-    comment:
-      "Best logistics partner we've ever worked with. Their innovative solutions and professional approach have helped us streamline our operations significantly.",
-  },
-  {
-    id: 6,
-    name: "Lisa Anderson",
-    position: "Project Manager",
-    company: "Enterprise Solutions",
-    rating: 5,
-    comment:
-      "Reliable, professional, and results-driven. They consistently exceed our expectations and deliver exceptional value. Highly satisfied with their services!",
-  },
-];
+
 
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   title = "What Our Clients Say",
@@ -87,32 +28,10 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   return (
     <Box
       sx={{
-              p: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
         position: "relative",
-        background: "#c9d4e5",
+        background: customColor.light,
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: -100,
-          right: -100,
-          width: 400,
-          height: 400,
-          borderRadius: "50%",
- 
-          zIndex: 0,
-        },
-        "&::after": {
-          content: '""',
-          position: "absolute",
-          bottom: -150,
-          left: -150,
-          width: 500,
-          height: 500,
-          borderRadius: "50%",
-   
-          zIndex: 0,
-        },
       }}
     >
       <motion.div
@@ -128,14 +47,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           variants={cardVariants}
           style={{
             textAlign: "center",
-            marginBottom: "4rem",
+            marginBottom: "2rem",
             width: "100%",
           }}
         >
           <Typography
             variant="overline"
             sx={{
-                 color: "text.primary",
+              color: customColor.primary,
               fontWeight: 600,
               letterSpacing: 3,
               mb: 1,
@@ -150,7 +69,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              color: "white",
+              mb: 2,
+              color: "text.primary",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",
               display: "inline-block",
@@ -162,7 +82,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                 transform: "translateX(-50%)",
                 width: 60,
                 height: 3,
-                background: "rgba(255, 255, 255, 0.8)",
+                background: (theme) =>
+                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                 borderRadius: 2,
               },
             }}
@@ -179,13 +100,13 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               xs: "1fr",
               sm: "1fr",
               md: "repeat(2, 1fr)",
-              lg: "repeat(3, 1fr)",
+              lg: "repeat(2, 1fr)",
             },
             gap: 4,
           }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div key={testimonial.id} variants={cardVariants}>
+            <motion.div key={testimonial.id || index} variants={cardVariants}>
               <Box
                 sx={{
                   background: "rgba(255, 255, 255, 0.95)",
@@ -209,7 +130,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     position: "absolute",
                     top: 20,
                     right: 20,
-                    color: "primary.main",
+                    color: customColor.primary,
                     opacity: 0.1,
                     "& svg": {
                       fontSize: 60,
@@ -224,6 +145,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   <Rating
                     value={testimonial.rating}
                     readOnly
+                    precision={0.5}
                     sx={{
                       "& .MuiRating-iconFilled": {
                         color: "#ffc107",
@@ -239,7 +161,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     color: "text.secondary",
                     lineHeight: 1.8,
                     fontSize: "15px",
-                    mb: 3,
+                    mb: 2,
                     flexGrow: 1,
                     fontStyle: "italic",
                   }}
@@ -258,12 +180,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   }}
                 >
                   <Avatar
+                  src={testimonial?.image}
                     sx={{
                       width: { xs: 50, md: 60 },
                       height: { xs: 50, md: 60 },
-                      bgcolor: "primary.main",
+                      bgcolor: customColor.primary,
                       fontSize: { xs: "20px", md: "24px" },
                       fontWeight: "bold",
+                    
                     }}
                   >
                     {testimonial.name
@@ -295,7 +219,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     <Typography
                       variant="caption"
                       sx={{
-                        color: "primary.main",
+                        color: "text.primary",
                         fontSize: { xs: "12px", md: "13px" },
                         fontWeight: 500,
                       }}
@@ -314,4 +238,3 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 };
 
 export default TestimonialsSection;
-

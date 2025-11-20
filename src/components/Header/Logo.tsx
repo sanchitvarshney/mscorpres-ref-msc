@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
+import { customColor } from "@/utils/theme/customColor";
 
 const Logo: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Logo: React.FC = () => {
         sx={{
           width: 50,
           height: 50,
-          bgcolor: "#d32f2f",
+
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -17,7 +18,11 @@ const Logo: React.FC = () => {
           position: "relative",
         }}
       >
-        <Typography>Logo</Typography>
+        <img
+          src="favicon.ico"
+          alt="logo"
+          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+        />
       </Box>
       <Box>
         <Typography
@@ -31,19 +36,18 @@ const Logo: React.FC = () => {
             gap: 1,
           }}
         >
-          <Box component="span" sx={{ color: "#424242" }}>
+          <Box component="span" sx={{ color: customColor.primary }}>
             MsCorpres
           </Box>
-          {/* <Box component="span" sx={{ color: '#9e9e9e', fontWeight: 400 }}>
-            Manufacturer
-          </Box> */}
+          
         </Typography>
         <Typography
           variant="caption"
           sx={{
-            color: "#9e9e9e",
+            color: "#000000",
             fontSize: "0.75rem",
             display: "block",
+            fontWeight: 600,
             mt: 0.5,
           }}
         >

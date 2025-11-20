@@ -17,13 +17,14 @@ import {
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import { Typography, Box } from "@mui/material";
 import { motion } from "framer-motion";
+import { customColor } from "@/utils/theme/customColor";
 
 export const certificationItems: any[] = [
   {
     id: 1,
     title: "ISO Certified",
     icon: (
-      <ShieldOutlined color="primary" sx={{ fontSize: { xs: 30, md: 60 } }} />
+      <ShieldOutlined  sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }} />
     ),
   },
   {
@@ -31,8 +32,8 @@ export const certificationItems: any[] = [
     title: "Quality Assured",
     icon: (
       <WorkspacePremiumOutlinedIcon
-        color="primary"
-        sx={{ fontSize: { xs: 30, md: 60 } }}
+        
+        sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
@@ -41,8 +42,8 @@ export const certificationItems: any[] = [
     title: "On-Time Delivery",
     icon: (
       <AccessTimeOutlined
-        color="primary"
-        sx={{ fontSize: { xs: 30, md: 60 } }}
+        
+        sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
@@ -51,8 +52,8 @@ export const certificationItems: any[] = [
     title: "100% Satisfaction",
     icon: (
       <TrackChangesOutlined
-        color="primary"
-        sx={{ fontSize: { xs: 30, md: 60 } }}
+        
+        sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
@@ -87,7 +88,7 @@ const HomePage = () => {
             <Typography
               variant="overline"
               sx={{
-                color: "primary.main",
+                color: customColor.primary,
                 fontWeight: 600,
                 letterSpacing: 3,
                 mb: 1,
@@ -116,7 +117,7 @@ const HomePage = () => {
                   width: 60,
                   height: 3,
                   background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                   borderRadius: 2,
                 },
               }}
@@ -129,14 +130,14 @@ const HomePage = () => {
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
+             
               >
                 <Box
                   sx={{
                     background: "white",
                     px: 4,
                     py: 6,
-                    borderRadius: 2,
+                    borderRadius: 2,  
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",

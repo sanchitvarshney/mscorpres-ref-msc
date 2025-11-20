@@ -3,17 +3,17 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/utils/animationVarients/animation";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/utils/animationVarients/animation";
 import { Company, defaultCompanies } from "@/dummydata/dummyData";
-
-
+import { customColor } from "@/utils/theme/customColor";
 
 interface TrustedCompaniesSectionProps {
   title?: string;
   companies?: Company[];
 }
-
-
 
 const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   title = "Trusted by Leading Companies",
@@ -25,31 +25,13 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   return (
     <Box
       sx={{
-        p: { xs: 2, md: 4 },
-      
+        py: { xs: 2, md: 4 },
+
+        px: { xs: 8, md: 40 },
         position: "relative",
-        background: "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
+        background:
+          "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
-        "&::after": {
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
       }}
     >
       <motion.div
@@ -57,7 +39,6 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
-    
         style={{ position: "relative", zIndex: 1 }}
       >
         {/* Header */}
@@ -65,17 +46,17 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           style={{
             textAlign: "center",
-            marginBottom: "4rem",
+            marginBottom: "1rem",
             width: "100%",
           }}
         >
           <Typography
             variant="overline"
             sx={{
-              color: "primary.main",
+              color: customColor.primary,
               fontWeight: 600,
               letterSpacing: 3,
               mb: 1,
@@ -104,7 +85,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                 width: 60,
                 height: 3,
                 background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                 borderRadius: 2,
               },
             }}
@@ -121,7 +102,8 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               mt: 2,
             }}
           >
-            We're proud to work with industry leaders and trusted partners worldwide
+            We're proud to work with industry leaders and trusted partners
+            worldwide
           </Typography>
         </motion.div>
 
@@ -131,31 +113,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
             position: "relative",
             width: "100%",
             overflow: "hidden",
-            py: 1,
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              left: 0,
-              top: 0,
-              bottom: 0,
-              width: "150px",
-              background:
-                "linear-gradient(to right, rgba(248,249,250,1), rgba(248,249,250,0))",
-              zIndex: 3,
-              pointerEvents: "none",
-            },
-            "&::after": {
-              content: '""',
-              position: "absolute",
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: "150px",
-              background:
-                "linear-gradient(to left, rgba(248,249,250,1), rgba(248,249,250,0))",
-              zIndex: 3,
-              pointerEvents: "none",
-            },
+            py: 2,
           }}
         >
           <Box
@@ -164,7 +122,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               display: "flex",
               gap: { xs: 3, md: 4 },
               width: "fit-content",
-              animation: "scroll-companies 40s linear infinite",
+              animation: "scroll-companies 10s linear infinite",
               "&:hover": {
                 animationPlayState: "paused",
               },
@@ -174,31 +132,24 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               <Box
                 key={`${company.id}-${index}`}
                 sx={{
-                  background: "white",
+                  // background: "white",
                   borderRadius: 3,
-                  p: { xs: 3, md: 4 },
+                  p: { xs: 1, md: 2 },
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  minWidth: { xs: 160, md: 200 },
-                  minHeight: { xs: 100, md: 120 },
-                  boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  border: "1px solid rgba(0,0,0,0.06)",
+                  maxWidth: { xs: 160, md: 200 },
                   flexShrink: 0,
                   position: "relative",
                   overflow: "hidden",
-                  
-                  "&:hover": {
-                    transform: "translateY(-6px) scale(1.03)",
-                    boxShadow: "0 12px 30px rgba(25,118,210,0.15)",
-                    "&::before": {
-                      opacity: 1,
-                    },
-                  },
                 }}
               >
-                <Typography
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  style={{ maxWidth: "100%", maxHeight: "100%" }}
+                />
+                {/* <Typography
                   variant="body1"
                   sx={{
                     color: "text.primary",
@@ -215,7 +166,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                   }}
                 >
                   {company.name}
-                </Typography>
+                </Typography> */}
               </Box>
             ))}
           </Box>
@@ -226,4 +177,3 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
 };
 
 export default TrustedCompaniesSection;
-

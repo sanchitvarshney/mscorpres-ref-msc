@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CarouselItem, defaultItems } from "@/dummydata/dummyData";
 import { settings } from "@/utils/carouselSetting";
+import { customColor } from "@/utils/theme/customColor";
 
 interface CarouselProps {
   items?: CarouselItem[];
@@ -28,7 +29,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             fontSize: "12px",
           },
           "& li.slick-active button:before": {
-            color: "#d32f2f",
+            color: customColor.primary,
           },
         },
         "& .slick-arrow": {
@@ -55,7 +56,6 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: item.backgroundColor || "#263238",
               backgroundImage: item.image ? `url(${item.image})` : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -68,7 +68,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    backgroundColor: "rgba(0, 0, 0, 0.12)",
                   }
                 : {},
             }}

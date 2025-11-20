@@ -5,6 +5,7 @@ import { Box, Typography, Button, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import { ArrowForward, Phone } from "@mui/icons-material";
 import Link from "next/link";
+import { customColor } from "@/utils/theme/customColor";
 
 interface CTABannerProps {
   title?: string;
@@ -27,7 +28,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
     <Box
       component="section"
       sx={{
-        background: "#263238",
+        background: customColor.light,
         p: { xs: 2, md: 4 },
         position: "relative",
         overflow: "hidden",
@@ -64,7 +65,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               fontWeight: "bold",
               fontSize: { xs: "32px", sm: "40px", md: "48px" },
              
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              background: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -76,7 +77,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
           <Typography
             variant="h6"
             sx={{
-              color: "rgba(255, 255, 255, 0.7)",
+              color: "#000000",
               fontSize: { xs: "16px", md: "20px" },
               fontWeight: 400,
               maxWidth: "800px",
@@ -104,7 +105,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               variant="contained"
               endIcon={<ArrowForward />}
               sx={{
-                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                background: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
                 color: "white",
                 px: { xs: 4, md: 6 },
                 py: 1.5,
@@ -114,7 +115,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
                 textTransform: "none",
                 boxShadow: "0 4px 20px rgba(102, 126, 234, 0.3)",
                 "&:hover": {
-                  background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)",
+                 background: `linear-gradient(135deg, ${customColor.secondary} 0%, ${customColor.primary} 100%)`,
                   transform: "translateY(-2px)",
                   boxShadow: "0 6px 25px rgba(102, 126, 234, 0.4)",
                 },
@@ -124,35 +125,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               {primaryButtonText}
             </Button>
 
-            <Button
-              component={Link}
-              href={secondaryButtonHref}
-              variant="outlined"
-              startIcon={<Phone />}
-              sx={{
-                borderColor: "rgba(255, 255, 255, 0.2)",
-                color: "rgba(255, 255, 255, 0.7)",
-                borderWidth: 2,
-                px: { xs: 4, md: 6 },
-                py: 1.5,
-                fontSize: { xs: "14px", md: "16px" },
-                fontWeight: 600,
-                borderRadius: 2,
-                textTransform: "none",
-                bgcolor: "rgba(255, 255, 255, 0.05)",
-                backdropFilter: "blur(10px)",
-                "&:hover": {
-                  borderColor: "rgba(255, 255, 255, 0.4)",
-                  color: "white",
-                  bgcolor: "rgba(255, 255, 255, 0.1)",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
-                },
-                transition: "all 0.3s ease",
-              }}
-            >
-              {secondaryButtonText}
-            </Button>
+            
           </Box>
         </motion.div>
       </Container>
