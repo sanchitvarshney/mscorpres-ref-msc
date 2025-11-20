@@ -3,6 +3,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CarouselItem, defaultItems } from "@/dummydata/dummyData";
@@ -56,10 +57,8 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundImage: item.image ? `url(${item.image})` : "none",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
               position: "relative",
+              overflow: "hidden",
               "&::before": item.image
                 ? {
                     content: '""',
@@ -69,15 +68,39 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
                     right: 0,
                     bottom: 0,
                     backgroundColor: "rgba(0, 0, 0, 0.12)",
+                    zIndex: 1,
                   }
                 : {},
             }}
           >
+            {item.image && (
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 0,
+                }}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title || "Carousel image"}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  loading={item.id === 1 ? "eager" : "lazy"}
+                  quality={85}
+                  priority={item.id === 1}
+                />
+              </Box>
+            )}
             <Box
               sx={{
                 textAlign: "center",
                 color: "#fff",
-                zIndex: 1,
+                zIndex: 2,
+                position: "relative",
                 px: 3,
                 mt: 3,
                 maxWidth: "800px",

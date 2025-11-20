@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "next/link";
+import Image from "next/image";
 import { customColor } from "@/utils/theme/customColor";
 
 // Helper function to convert service title to URL-friendly ID
@@ -44,21 +45,26 @@ const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
             overflow: "hidden",
           }}
         >
-          <CardMedia
-            component="img"
-            alt={item?.title || "Service image"}
-            height="200"
-            image={item?.image}
+          <Box
             sx={{
+              position: "relative",
               width: "100%",
               height: "100%",
-              objectFit: "cover",
               transition: "transform 0.3s ease",
               "&:hover": {
                 transform: "scale(1.05)",
               },
             }}
-          />
+          >
+            <Image
+              src={item?.image}
+              alt={item?.title || "Service image"}
+              fill
+              style={{ objectFit: "cover" }}
+              loading="lazy"
+              quality={85}
+            />
+          </Box>
           {/* Text Overlay on Image */}
           <Box
             sx={{

@@ -1,12 +1,15 @@
 "use client";
 
+import React, { Suspense, lazy } from "react";
 import Carousel from "@/components/Carousel";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import VisionMissionSection from "@/components/sections/VisionMissionSection";
 import PartnersSection from "@/components/sections/PartnersSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import TrustedCompaniesSection from "@/components/sections/TrustedCompaniesSection";
+
+// Lazy load heavy components
+const VisionMissionSection = lazy(() => import("@/components/sections/VisionMissionSection"));
+const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const TrustedCompaniesSection = lazy(() => import("@/components/sections/TrustedCompaniesSection"));
 import { cardsData } from "@/dummydata/dummyData";
 import { containerVariants, itemVariants } from "@/utils/animationVarients/animation";
 import {
@@ -166,7 +169,9 @@ const HomePage = () => {
         </motion.div>
       </Box>
       
-      <VisionMissionSection />
+      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+        <VisionMissionSection />
+      </Suspense>
       
       <ServicesSection services={cardsData} />
       
@@ -174,11 +179,15 @@ const HomePage = () => {
       
       <PartnersSection />
       
-      <TestimonialsSection />
+      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+        <TestimonialsSection />
+      </Suspense>
       
-      <TrustedCompaniesSection />
-      
+      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+        <TrustedCompaniesSection />
+      </Suspense>
   
+
     </div>
   );
 };

@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface ServiceDetailCardProps {
   service: {
@@ -67,19 +68,25 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
           }}
         >
           <Box
-            component="img"
-            src={service.image}
-            alt={service.title || "Service Image"}
             sx={{
+              position: "relative",
               width: "100%",
               height: "100%",
-              objectFit: "cover",
               transition: "transform 0.3s ease",
               "&:hover": {
                 transform: "scale(1.05)",
               },
             }}
-          />
+          >
+            <Image
+              src={service.image || ""}
+              alt={service.title || "Service Image"}
+              fill
+              style={{ objectFit: "cover" }}
+              loading="lazy"
+              quality={85}
+            />
+          </Box>
           <Box
             sx={{
               position: "absolute",

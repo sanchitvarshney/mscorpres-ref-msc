@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   BuildCircleOutlined,
   VerifiedOutlined,
@@ -73,7 +74,7 @@ const RefurbisherSection: React.FC<RefurbisherSectionProps> = ({
   title = "Professional Device Refurbishment Services",
   subtitle = "REFURBISHING EXCELLENCE",
   description = "Transform your used electronic devices into like-new condition with our expert refurbishment services. We restore functionality, enhance performance, and extend the lifespan of your devices while maintaining the highest quality standards.",
-  imageUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  imageUrl = "/images/rebus.avif",
   features = defaultFeatures,
 }) => {
   return (
@@ -234,16 +235,21 @@ const RefurbisherSection: React.FC<RefurbisherSectionProps> = ({
                   }}
                 >
                   <Box
-                    component="img"
-                    src={imageUrl}
-                    alt="Refurbishing"
                     sx={{
+                      position: "relative",
                       width: "100%",
                       height: { xs: 300, md: 400 },
-                      objectFit: "cover",
-                      display: "block",
                     }}
-                  />
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt="Refurbishing"
+                      fill
+                      style={{ objectFit: "cover" }}
+                      loading="lazy"
+                      quality={85}
+                    />
+                  </Box>
                 </Box>
               </motion.div>
             </Box>

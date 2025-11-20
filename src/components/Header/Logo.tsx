@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
+import Image from "next/image";
 import { customColor } from "@/utils/theme/customColor";
 
 const Logo: React.FC = () => {
@@ -18,10 +19,14 @@ const Logo: React.FC = () => {
           position: "relative",
         }}
       >
-        <img
-          src="favicon.ico"
+        <Image
+          src="/favicon.ico"
           alt="logo"
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          width={50}
+          height={50}
+          style={{ objectFit: "contain" }}
+          loading="eager"
+          priority
         />
       </Box>
       <Box>

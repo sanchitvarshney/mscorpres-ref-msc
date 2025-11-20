@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Typography, Avatar, Rating } from "@mui/material";
 import { motion } from "framer-motion";
 import { FormatQuote } from "@mui/icons-material";
+import Image from "next/image";
 import {
   cardVariants,
   containerVariants,
@@ -179,22 +180,42 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     borderTop: "1px solid rgba(0,0,0,0.1)",
                   }}
                 >
-                  <Avatar
-                  src={testimonial?.image}
-                    sx={{
-                      width: { xs: 50, md: 60 },
-                      height: { xs: 50, md: 60 },
-                      bgcolor: customColor.primary,
-                      fontSize: { xs: "20px", md: "24px" },
-                      fontWeight: "bold",
-                    
-                    }}
-                  >
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </Avatar>
+                  {testimonial?.image ? (
+                    <Box
+                      sx={{
+                        width: { xs: 50, md: 60 },
+                        height: { xs: 50, md: 60 },
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        position: "relative",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        loading="lazy"
+                        quality={75}
+                      />
+                    </Box>
+                  ) : (
+                    <Avatar
+                      sx={{
+                        width: { xs: 50, md: 60 },
+                        height: { xs: 50, md: 60 },
+                        bgcolor: customColor.primary,
+                        fontSize: { xs: "20px", md: "24px" },
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {testimonial.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </Avatar>
+                  )}
                   <Box>
                     <Typography
                       variant="h6"

@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   PrecisionManufacturingOutlined,
   EngineeringOutlined,
@@ -74,7 +75,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
   title = "IoT Manufacturing Excellence",
   subtitle = "MANUFACTURING EXCELLENCE",
   description = "We specialize in high-quality IoT device manufacturing with state-of-the-art facilities and expert craftsmanship. Our manufacturing services deliver durable, precision-engineered IoT solutions tailored to your specific connectivity and automation needs.",
-  imageUrl = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  imageUrl = "/images/iot-details.avif",
   features = defaultFeatures,
 }) => {
   return (
@@ -187,16 +188,21 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                   }}
                 >
                   <Box
-                    component="img"
-                    src={imageUrl}
-                    alt="Manufacturing"
                     sx={{
+                      position: "relative",
                       width: "100%",
                       height: { xs: 300, md: 400 },
-                      objectFit: "cover",
-                      display: "block",
                     }}
-                  />
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt="Manufacturing"
+                      fill
+                      style={{ objectFit: "cover" }}
+                      loading="lazy"
+                      quality={85}
+                    />
+                  </Box>
                 </Box>
               </motion.div>
             </Box>

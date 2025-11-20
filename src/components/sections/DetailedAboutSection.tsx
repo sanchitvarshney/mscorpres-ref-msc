@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography, Container, Grid } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   BusinessOutlined,
   GroupsOutlined,
@@ -17,6 +18,8 @@ import {
   containerVariants,
   itemVariants,
 } from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
+import VisionMissionSection from "./VisionMissionSection";
 
 interface StatItem {
   icon: React.ReactNode;
@@ -105,7 +108,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
   stats = defaultStats,
   values = defaultValues,
-  imageUrl = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  imageUrl = "/images/services.avif",
   imageAlt = "Our Company",
 }) => {
   return (
@@ -134,7 +137,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             <Typography
               variant="overline"
               sx={{
-                color: "primary.main",
+                color: customColor.primary,
                 fontWeight: 600,
                 letterSpacing: 3,
                 mb: 2,
@@ -163,7 +166,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                   width: 80,
                   height: 4,
                   background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                   borderRadius: 2,
                 },
               }}
@@ -179,7 +182,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               flexDirection: { xs: "column", md: "row" },
               gap: 6,
               alignItems: "flex-start",
-              mb: 4,
+              mb: 3,
             }}
           >
             {/* Left Side - Image */}
@@ -209,16 +212,21 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                   }}
                 >
                   <Box
-                    component="img"
-                    src={imageUrl}
-                    alt={imageAlt}
                     sx={{
+                      position: "relative",
                       width: "100%",
                       height: { xs: 350, md: 600 },
-                      objectFit: "cover",
-                      display: "block",
                     }}
-                  />
+                  >
+                    <Image
+                      src={imageUrl}
+                      alt={imageAlt}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      loading="lazy"
+                      quality={85}
+                    />
+                  </Box>
                 </Box>
               </motion.div>
             </Box>
@@ -277,16 +285,30 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
           {/* Stats Section */}
           <motion.div
             variants={containerVariants}
-            style={{ marginBottom: "4rem" }}
+            style={{ marginBottom: "3rem" }}
           >
             <Typography
               variant="h5"
               sx={{
                 fontWeight: 600,
-                mb: 4,
+                mb: 6,
                 textAlign: "center",
                 color: "text.primary",
                 fontSize: { xs: "22px", md: "28px" },
+                position: "relative",
+
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: -10,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: 80,
+                  height: 4,
+                  background: (theme) =>
+                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
+                  borderRadius: 2,
+                },
               }}
             >
               Our Achievements
@@ -308,13 +330,13 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                         "&:hover": {
                           transform: "translateY(-8px)",
                           boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
-                          borderColor: "primary.main",
+                          borderColor: customColor.primary,
                         },
                       }}
                     >
                       <Box
                         sx={{
-                          color: "primary.main",
+                          color: customColor.primary,
                           mb: 2,
                           display: "flex",
                           justifyContent: "center",
@@ -326,7 +348,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                         variant="h3"
                         sx={{
                           fontWeight: "bold",
-                          color: "primary.main",
+                          color: customColor.primary,
                           mb: 1,
                           fontSize: { xs: "32px", md: "40px" },
                         }}
@@ -363,16 +385,30 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             </Grid>
           </motion.div>
 
-          {/* Core Values Section */}
+          {/* Vision & Mission Section */}
+          <VisionMissionSection />
           <motion.div variants={containerVariants}>
             <Typography
               variant="h5"
               sx={{
                 fontWeight: 600,
-                mb: 1,
+                my:3,
                 textAlign: "center",
                 color: "text.primary",
                 fontSize: { xs: "22px", md: "28px" },
+                position: "relative",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: -10,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: 80,
+                  height: 4,
+                  background: (theme) =>
+                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
+                  borderRadius: 2,
+                },
               }}
             >
               Our Core Values
@@ -406,7 +442,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                       "&:hover": {
                         transform: "translateY(-5px)",
                         boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-                        borderColor: "primary.main",
+                        borderColor: customColor.primary,
                         background: "white",
                       },
                     }}
@@ -421,11 +457,11 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                     >
                       <Box
                         sx={{
-                          color: "primary.main",
+                          color: customColor.primary,
                           mr: 2,
                           p: 1.5,
                           borderRadius: 2,
-                          background: "rgba(25, 118, 210, 0.1)",
+                          backgroundColor:customColor.light,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",

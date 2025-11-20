@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   BusinessOutlined,
   GroupsOutlined,
@@ -72,7 +73,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             alignItems: "center",
           }}
         >
-          {/* Left Side - Content */}
+         
           <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
             <motion.div
               variants={{
@@ -190,16 +191,21 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 }}
               >
                 <Box
-                  component="img"
-                  src={imageUrl}
-                  alt={imageAlt}
                   sx={{
+                    position: "relative",
                     width: "100%",
                     height: { xs: 300, md: 500 },
-                    objectFit: "cover",
-                    display: "block",
                   }}
-                />
+                >
+                  <Image
+                    src={imageUrl}
+                    alt={imageAlt}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    loading="lazy"
+                    quality={85}
+                  />
+                </Box>
               </Box>
             </motion.div>
           </Box>

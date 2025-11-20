@@ -1,10 +1,13 @@
 "use client";
 
+import React, { Suspense, lazy } from "react";
 import MainLayout from "@/components/MainLayout";
 import HeroSection from "@/components/reuseable/HeroSection";
 import ServiceDetailCard from "@/components/reuseable/ServiceDetailCard";
-import ManufacturerSection from "@/components/sections/ManufacturerSection";
-import RefurbisherSection from "@/components/sections/RefurbisherSection";
+
+// Lazy load heavy components
+const ManufacturerSection = lazy(() => import("@/components/sections/ManufacturerSection"));
+const RefurbisherSection = lazy(() => import("@/components/sections/RefurbisherSection"));
 import { cardsData } from "@/dummydata/dummyData";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
@@ -249,10 +252,14 @@ export default function ServicesPage() {
         </Box>
 
         {/* Manufacturer Section */}
-        <ManufacturerSection />
+        <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+          <ManufacturerSection />
+        </Suspense>
 
         {/* Refurbisher Section */}
-        <RefurbisherSection />
+        <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
+          <RefurbisherSection />
+        </Suspense>
       </div>
     </MainLayout>
   );

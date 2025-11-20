@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface HeroSectionProps {
   imageUrl: string;
@@ -72,19 +73,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     >
       {/* Background Image */}
       <Box
-        component="img"
-        src={imageUrl}
-        alt={alt}
         sx={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
-          objectFit: "cover",
           zIndex: 0,
         }}
-      />
+      >
+        <Image
+          src={imageUrl}
+          alt={alt}
+          fill
+          style={{ objectFit: "cover" }}
+          loading="lazy"
+          quality={85}
+        />
+      </Box>
 
       {/* Text Overlay */}
       <Container
