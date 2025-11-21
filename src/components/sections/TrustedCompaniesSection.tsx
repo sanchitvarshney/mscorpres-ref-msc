@@ -3,10 +3,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   containerVariants,
-  itemVariants,
 } from "@/utils/animationVarients/animation";
 import { Company, defaultCompanies } from "@/dummydata/dummyData";
 import { customColor } from "@/utils/theme/customColor";
@@ -150,24 +148,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                   alt={company.name}
                   style={{ maxWidth: "100%", maxHeight: "100%" }}
                 />
-                {/* <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.primary",
-                    fontWeight: 700,
-                    fontSize: { xs: "16px", md: "18px" },
-                    textAlign: "center",
-                    whiteSpace: "nowrap",
-                    letterSpacing: 0.5,
-                    background: (theme) =>
-                      `linear-gradient(135deg, ${theme.palette.text.primary}, ${theme.palette.text.secondary})`,
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  {company.name}
-                </Typography> */}
+             
               </Box>
             ))}
           </Box>

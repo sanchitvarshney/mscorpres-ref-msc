@@ -1,17 +1,22 @@
 "use client";
 
-import React, { Suspense, lazy } from "react";
+import  { Suspense, lazy } from "react";
 import Carousel from "@/components/Carousel";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import PartnersSection from "@/components/sections/PartnersSection";
 
-// Lazy load heavy components
-const VisionMissionSection = lazy(() => import("@/components/sections/VisionMissionSection"));
-const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
-const TrustedCompaniesSection = lazy(() => import("@/components/sections/TrustedCompaniesSection"));
+const TestimonialsSection = lazy(
+  () => import("@/components/sections/TestimonialsSection")
+);
+const TrustedCompaniesSection = lazy(
+  () => import("@/components/sections/TrustedCompaniesSection")
+);
 import { cardsData } from "@/dummydata/dummyData";
-import { containerVariants, itemVariants } from "@/utils/animationVarients/animation";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/utils/animationVarients/animation";
+
 import {
   AccessTimeOutlined,
   ShieldOutlined,
@@ -27,47 +32,50 @@ export const certificationItems: any[] = [
     id: 1,
     title: "ISO Certified",
     icon: (
-      <ShieldOutlined  sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }} />
+      <ShieldOutlined
+        sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
+      />
     ),
   },
   {
     id: 2,
-    title: "Quality Assured",
+    title: "RoHS Compliant",
     icon: (
-      <WorkspacePremiumOutlinedIcon
-        
+      <ShieldOutlined
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
   {
     id: 3,
-    title: "On-Time Delivery",
+    title: "Quality Assured",
     icon: (
-      <AccessTimeOutlined
-        
+      <WorkspacePremiumOutlinedIcon
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
   {
     id: 4,
+    title: "On-Time Delivery",
+    icon: (
+      <AccessTimeOutlined
+        sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
+      />
+    ),
+  },
+  {
+    id: 5,
     title: "100% Satisfaction",
     icon: (
       <TrackChangesOutlined
-        
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
   },
 ];
 
-
-
-
 const HomePage = () => {
- 
-
   return (
     <div className="w-full h-full">
       <Carousel />
@@ -128,19 +136,15 @@ const HomePage = () => {
               Our Certifications
             </Typography>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {certificationItems.map((item: any) => (
-              <motion.div
-                key={item.id}
-                variants={itemVariants}
-             
-              >
+              <motion.div key={item.id} variants={itemVariants}>
                 <Box
                   sx={{
                     background: "white",
                     px: 4,
                     py: 6,
-                    borderRadius: 2,  
+                    borderRadius: 2,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -168,26 +172,18 @@ const HomePage = () => {
           </div>
         </motion.div>
       </Box>
-      
-      <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
-        <VisionMissionSection />
-      </Suspense>
-      
+
       <ServicesSection services={cardsData} />
-      
+
       <AboutSection />
-      
-      <PartnersSection />
-      
+
       <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
         <TestimonialsSection />
       </Suspense>
-      
+
       <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
         <TrustedCompaniesSection />
       </Suspense>
-  
-
     </div>
   );
 };

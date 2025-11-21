@@ -1,41 +1,56 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, Tooltip } from "@mui/material";
-import { Menu, Close } from "@mui/icons-material";
+import { Box, IconButton, styled, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import { Menu, Close, KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { customColor } from "@/utils/theme/customColor";
-import {
-  Facebook,
-  LinkedIn,
-  QuestionAnswer,
-  Twitter,
-  X,
-  YouTube,
-} from "@mui/icons-material";
+import { Facebook, LinkedIn, X, YouTube } from "@mui/icons-material";
+import RenderListMenu from "../RenderListMenu";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[8],
+    fontSize: 11,
+    maxWidth: '100vw',
+    width: '100vw',
+    padding: 0,
+    margin: 0,
+    overflow: 'hidden',
+    borderRadius: 0,
+  },
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.white,
+  },
+}));
 
 const socialData = [
   {
     name: "Facebook",
-    icon: <Facebook  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    icon: <Facebook sx={{ fontSize: { xs: 16, md: 25 } }} />,
     link: "https://www.facebook.com/MsCorpres/",
   },
   {
     name: "LinkedIn",
-    icon: <LinkedIn  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    icon: <LinkedIn sx={{ fontSize: { xs: 16, md: 25 } }} />,
     link: "https://www.linkedin.com/company/mscorpres/",
   },
   {
     name: "Youtube",
-    icon: <YouTube  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    icon: <YouTube sx={{ fontSize: { xs: 16, md: 25 } }} />,
     link: "https://www.youtube.com/@mscorpres",
   },
   {
     name: "X",
-    icon: <X  sx={{fontSize: {xs: 16, md: 25}}}/>,
+    icon: <X sx={{ fontSize: { xs: 16, md: 25 } }} />,
     link: "https://x.com/mscorpres",
   },
 ];
@@ -44,6 +59,8 @@ const NavigationBar: React.FC = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -52,7 +69,7 @@ const NavigationBar: React.FC = () => {
   const navLinks = [
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
-    { label: "Services", path: "/services" },
+    { label: "Services", path: "/services", isDropdown: true },
     { label: "Contact Us", path: "/contact" },
   ];
 
@@ -64,6 +81,7 @@ const NavigationBar: React.FC = () => {
 
   const handleMenuClose = () => {
     setMenuOpen(false);
+    setMobileServicesOpen(false);
   };
 
   // Prevent body scroll when menu is open
@@ -77,6 +95,19 @@ const NavigationBar: React.FC = () => {
       document.body.style.overflow = "unset";
     };
   }, [menuOpen]);
+
+  // Prevent horizontal scroll when dropdown is open
+  useEffect(() => {
+    if (dropdownOpen) {
+      document.body.style.overflow = "hidden";
+     
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [dropdownOpen]);
 
   return (
     <Box
@@ -108,27 +139,60 @@ const NavigationBar: React.FC = () => {
             animate={{ "--underline-scale": isActive(link.path) ? 1 : 0 }}
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           >
-            <Link
-              href={link.path}
-              className="relative inline-block text-[#fff] no-underline text-[0.9375rem] pb-0.5"
-            >
-              <span className="inline-block transition-transform duration-200 hover:scale-110">
-                {link.label}
-              </span>
+            {link.isDropdown ? (
+              <>
+                <LightTooltip
+                  onOpen={() => setDropdownOpen(true)}
+                  onClose={() => setDropdownOpen(false)}
+                  title={<RenderListMenu />}
+                  enterDelay={200}
+                  leaveDelay={300}
+                  disableFocusListener
+            
+               
+               
+                >
+                  <div
+                    className={`relative inline-block  no-underline text-[0.9375rem] pb-0.5 cursor-pointer hover: ${
+                      dropdownOpen ? "text-[#000]" : "text-[#fff]"
+                    }`}
+                  >
+                    {link.label}
 
-              <motion.div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: "1px",
-                  backgroundColor: "#fff",
-                  transformOrigin: "center",
-                  scaleX: "var(--underline-scale)",
-                }}
-              />
-            </Link>
+                    <KeyboardArrowDown
+                      sx={{
+                        transform: dropdownOpen
+                          ? "rotate(0deg)"
+                          : "rotate(-180deg)",
+                        transition: "transform 0.3s ease-in-out",
+                      }}
+                    />
+                  </div>
+                </LightTooltip>
+              </>
+            ) : (
+              <Link
+                href={link.path}
+                className="relative inline-block text-[#fff] no-underline text-[0.9375rem] pb-0.5"
+              >
+                <span className="inline-block transition-transform duration-200 hover:scale-110">
+                  {link.label}
+                </span>
+
+                <motion.div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "1px",
+                    backgroundColor: "#fff",
+                    transformOrigin: "center",
+                    scaleX: "var(--underline-scale)",
+                  }}
+                />
+              </Link>
+            )}
           </motion.div>
         ))}
       </Box>
@@ -140,7 +204,6 @@ const NavigationBar: React.FC = () => {
           right: { xs: 50, md: 16 },
           color: "white",
           gap: 1,
-          
         }}
       >
         {socialData.map((item, index) => (
@@ -165,7 +228,7 @@ const NavigationBar: React.FC = () => {
           display: { xs: "flex", md: "none" },
           position: "absolute",
           right: 16,
-      
+
           color: "white",
           "&:hover": {
             bgcolor: "rgba(255, 255, 255, 0.1)",
@@ -264,23 +327,76 @@ const NavigationBar: React.FC = () => {
                             duration: 0.3,
                           }}
                         >
-                          <Link
-                            href={link.path}
-                            onClick={handleMenuClose}
-                            className={`
-    text-white no-underline text-[1.1rem]
-    block py-1.5 px-2 rounded-md
-    transition-all duration-300 ease-in-out
-    hover:bg-[rgba(255,255,255,0.1)] hover:text-[#fff] hover:translate-x-[5px]
-    ${
-      isActive(link.path)
-        ? "font-semibold border-l-4 border-[#04b0a8] "
-        : "font-normal border-l-4 border-transparent"
-    }
-  `}
-                          >
-                            {link.label}
-                          </Link>
+                          {link.isDropdown ? (
+                            <div>
+                              <div
+                                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                className={`
+                                  text-white no-underline text-[1.1rem]
+                                  block py-1.5 px-2 rounded-md
+                                  transition-all duration-300 ease-in-out
+                                  hover:bg-[rgba(255,255,255,0.1)] hover:text-[#fff] hover:translate-x-[5px]
+                                  cursor-pointer flex items-center justify-between
+                                  ${
+                                    isActive(link.path)
+                                      ? "font-semibold border-l-4 border-[#04b0a8] "
+                                      : "font-normal border-l-4 border-transparent"
+                                  }
+                                `}
+                              >
+                                <span>{link.label}</span>
+                                <KeyboardArrowDown
+                                  sx={{
+                                    transform: mobileServicesOpen
+                                      ? "rotate(180deg)"
+                                      : "rotate(0deg)",
+                                    transition: "transform 0.3s ease-in-out",
+                                  }}
+                                />
+                              </div>
+                              <AnimatePresence>
+                                {mobileServicesOpen && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    style={{ overflow: "hidden" }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        mt: 2,
+                                        mb: 2,
+                                        px: 2,
+                                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                        borderRadius: 1,
+                                      }}
+                                    >
+                                      <RenderListMenu />
+                                    </Box>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ) : (
+                            <Link
+                              href={link.path}
+                              onClick={handleMenuClose}
+                              className={`
+                                text-white no-underline text-[1.1rem]
+                                block py-1.5 px-2 rounded-md
+                                transition-all duration-300 ease-in-out
+                                hover:bg-[rgba(255,255,255,0.1)] hover:text-[#fff] hover:translate-x-[5px]
+                                ${
+                                  isActive(link.path)
+                                    ? "font-semibold border-l-4 border-[#04b0a8] "
+                                    : "font-normal border-l-4 border-transparent"
+                                }
+                              `}
+                            >
+                              {link.label}
+                            </Link>
+                          )}
                         </motion.div>
                       ))}
                     </Box>

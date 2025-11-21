@@ -16,29 +16,10 @@ import {
 } from "@mui/icons-material";
 import Link from "next/link";
 import { customColor } from "@/utils/theme/customColor";
+import { footerLinks } from "@/dummydata/dummyData";
 
 const Footer: React.FC = () => {
-  const footerLinks = {
-    company: [
-      { label: "Home", href: "/" },
-      { label: "About Us", href: "/about" },
-      { label: "Our Services", href: "/services" },
-      { label: "Contact", href: "/contact" },
-    ],
-    services: [
-      { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
-      { label: "PCB Design", href: "/services#pcb-design" },
-      { label: "Device Refurbishment", href: "/services#device-refurbishment" },
-      { label: "ERP and MES", href: "/services#erp-and-mes" },
-      { label: "Software Solution for Electronics", href: "/services#software-solution-for-electronics" },
-    ],
-    support: [
-      { label: "Help Center", href: "/help" },
-      { label: "FAQs", href: "/faqs" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
-  };
+ 
 
   const socialLinks = [
   {
@@ -110,16 +91,7 @@ const Footer: React.FC = () => {
               >
                 MsCorpres Manufacturer and Refurbisher Pvt. Ltd.
               </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  lineHeight: 1.8,
-                  mb: 3,
-                }}
-              >
-                Excellence-driven solutions for electronics, automation, and logistics needs
-              </Typography>
+           
               <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
                 {socialLinks.map((social, index) => (
                   <IconButton
@@ -151,7 +123,18 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    +1 (888) 123-4567
+                    +91 75 29 939393 (For Recruitment) 
+                  </Typography>
+                </Box>
+                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Phone
+                    sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}
+                  />
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                   +91 88 26 788880 (For Sales)
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -162,7 +145,7 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    info@msc.io
+                    marketing@mscorpres.in
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -173,7 +156,7 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    123 msc Street, New York, NY 10001
+                    B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305
                   </Typography>
                 </Box>
               </Box>
@@ -295,7 +278,7 @@ const Footer: React.FC = () => {
                 color: "rgba(255, 255, 255, 0.6)",
               }}
             >
-              © {currentYear} MsCorpres. All rights reserved. | Engineered with excellence for MsC and advanced logistics solutions.
+              © {currentYear} Copyright MsCorpres | All Rights Reserved
             </Typography>
           </motion.div>
         </Box>

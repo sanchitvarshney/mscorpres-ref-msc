@@ -131,42 +131,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 {secondParagraph}
               </Typography>
 
-              {/* Stats */}
-              <motion.div
-                className="grid grid-cols-2 gap-4"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <Box sx={{ color: customColor.primary, mb: 1 }}>
-                      {stat.icon}
-                    </Box>
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontWeight: "bold",
-                        color: customColor.primary,
-                        mb: 0.5,
-                      }}
-                    >
-                      {stat.number}
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      sx={{ color: "text.secondary", fontSize: "12px" }}
-                    >
-                      {stat.label}
-                    </Typography>
-                  </motion.div>
-                ))}
-              </motion.div>
+       
             </motion.div>
           </Box>
 

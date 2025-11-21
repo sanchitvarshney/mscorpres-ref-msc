@@ -85,9 +85,10 @@ export const cardsData = [
 export const defaultCompanies: Company[] = [
   { id: 1, name: "Oakter", logo: "/logo/oakter-logo.png" },
   { id: 2, name: "VanS", logo: "/logo/vans-logo.avif" },
-  { id: 3, name: "Spigen", logo: "/logo/SpigenImage.png" },
-  { id: 4, name: "Yours Freshly", logo: "/images/img-client.webp" },
-   { id: 4, name: "Bharartpr", logo: "/logo/bharatpe-logo.png" },
+  { id: 3, name: "Paytm", logo: "/images/logo_new-paytm.svg" },
+  { id: 4, name: "Spigen", logo: "/logo/SpigenImage.png" },
+  { id: 5, name: "Yours Freshly", logo: "/images/img-client.webp" },
+  { id: 6, name: "Bharartpr", logo: "/logo/bharatpe-logo.png" },
 ];
 
 export const defaultTestimonials: Testimonial[] = [
@@ -132,3 +133,29 @@ export const defaultTestimonials: Testimonial[] = [
       "It was not even a year since we launched our start up and we were in discussions to raise our seed round. As you can imagine juggling between building an year old start up and the massive documentation, compliances, proofing/modifying the SHA etc is not an easy feat. A friend connected us to MsCorpres Team. We were sceptical to work with a team who is based in another city than someone available in person.  It was a short but intense journey and they helped us through it till the end. Thanks Team MsCorpres for your guidance and assistance. Look forward to working with you again.",
   },
 ];
+
+
+
+
+
+export const footerLinks = {
+    company: [
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about" },
+      { label: "Our Services", href: "/services" },
+      { label: "Contact", href: "/contact" },
+    ],
+    services: [
+      { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
+      { label: "PCB Design", href: "/services#pcb-design" },
+      { label: "Device Refurbishment", href: "/services#device-refurbishment" },
+      { label: "ERP and MES", href: "/services#erp-and-mes" },
+      { label: "Software Solution for Electronics", href: "/services#software-solution-for-electronics" },
+    ],
+    support: [
+      { label: "Help Center", href: "/help" },
+      { label: "FAQs", href: "/faqs" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
+  };
