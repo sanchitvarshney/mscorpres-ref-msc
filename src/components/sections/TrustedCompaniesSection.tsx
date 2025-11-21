@@ -145,22 +145,11 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                   overflow: "hidden",
                 }}
               >
-                <Box
-                  sx={{
-                    position: "relative",
-                    width: "100%",
-                    height: { xs: 60, md: 80 },
-                  }}
-                >
-                  <Image
-                    src={company.logo || ""}
-                    alt={company.name}
-                    fill
-                    style={{ objectFit: "contain" }}
-                    loading="lazy"
-                    quality={75}
-                  />
-                </Box>
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  style={{ maxWidth: "100%", maxHeight: "100%" }}
+                />
                 {/* <Typography
                   variant="body1"
                   sx={{

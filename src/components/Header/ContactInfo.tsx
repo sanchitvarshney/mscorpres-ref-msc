@@ -17,7 +17,7 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, label, value, iconColor
         alignItems: 'center',
         gap: 1.5,
         px: 2,
-        py: 1,
+        py: 0.5,
         borderRadius: 1,
    
      

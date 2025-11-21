@@ -22,7 +22,7 @@ const Header: React.FC = () => {
             flexWrap: { xs: "wrap", md: "nowrap" },
             gap: { xs: 2, md: 0 },
             px: { xs: 2, md: 3 },
-            py: 1,
+            py: 0.5,
           }}
         >
           <Logo />
