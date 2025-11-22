@@ -20,12 +20,13 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
     color: 'rgba(0, 0, 0, 0.87)',
     boxShadow: theme.shadows[8],
     fontSize: 11,
-    maxWidth: '100vw',
+    maxWidth: 'calc(100vw - 0px)',
     width: '100vw',
     padding: 0,
-    margin: 0,
+   margin: 0,
     overflow: 'hidden',
-    borderRadius: 0,
+    borderRadius: 0,  
+    marginLeft: -10,
   },
   [`& .${tooltipClasses.arrow}`]: {
     color: theme.palette.common.white,
@@ -148,8 +149,7 @@ const NavigationBar: React.FC = () => {
                   enterDelay={200}
                   leaveDelay={300}
                   disableFocusListener
-            
-               
+
                
                 >
                   <div

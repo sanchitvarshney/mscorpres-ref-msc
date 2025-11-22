@@ -1,4 +1,5 @@
-import { Box, Typography, Grid, Divider } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
+import Link from "next/link";
 
 import { customColor } from "@/utils/theme/customColor";
 import {
@@ -14,8 +15,6 @@ const RenderListMenu = () => {
   return (
     <Box
       sx={{
-        width: { xs: "100%", md: "100vw" },
-        maxWidth: { xs: "100%", md: "calc(100vw - 36px)" },
         py: { xs: 1, md: 0 },
         backgroundColor: "#fff",
         margin: 0,
@@ -34,9 +33,10 @@ const RenderListMenu = () => {
           </Typography>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1  sm:gap-3 md:gap-4 my-4">
             {manufacAndRefruData.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="flex flex-col items-center p-2"
+                href={service?.path || "#"}
+                className="flex flex-col items-center p-2 no-underline"
                 onMouseEnter={() => setIsItemHovered(service?.id)}
                 onMouseLeave={() => setIsItemHovered(null)}
                 style={{
@@ -44,6 +44,9 @@ const RenderListMenu = () => {
                     isItemHovered && isItemHovered === service?.id
                       ? customColor?.primary
                       : "#666",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  textDecoration: "none",
                 }}
               >
                 <img
@@ -57,18 +60,18 @@ const RenderListMenu = () => {
                 >
                   {service?.label}
                 </Typography>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
-        <Divider 
-          orientation="vertical" 
+        <Divider
+          orientation="vertical"
           flexItem
-          sx={{ 
-            display: { xs: 'none', sm: 'block' },
-            height: 'auto',
-            alignSelf: 'stretch'
-          }} 
+          sx={{
+            display: { xs: "none", sm: "block" },
+            height: "auto",
+            alignSelf: "stretch",
+          }}
         />
         <div className="flex-1 p-2">
           <Typography
@@ -80,9 +83,10 @@ const RenderListMenu = () => {
           </Typography>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1  sm:gap-3 md:gap-4 my-4">
             {productData.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="flex flex-col items-center p-2"
+                href={service?.path || "#"}
+                className="flex flex-col items-center p-2 no-underline"
                 onMouseEnter={() => setIsItemHovered(service?.id)}
                 onMouseLeave={() => setIsItemHovered(null)}
                 style={{
@@ -90,6 +94,9 @@ const RenderListMenu = () => {
                     isItemHovered && isItemHovered === service?.id
                       ? customColor?.primary
                       : "#666",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  textDecoration: "none",
                 }}
               >
                 <img
@@ -103,18 +110,18 @@ const RenderListMenu = () => {
                 >
                   {service?.label}
                 </Typography>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
-        <Divider 
-          orientation="vertical" 
+        <Divider
+          orientation="vertical"
           flexItem
-          sx={{ 
-            display: { xs: 'none', sm: 'block' },
-            height: 'auto',
-            alignSelf: 'stretch'
-          }} 
+          sx={{
+            display: { xs: "none", sm: "block" },
+            height: "auto",
+            alignSelf: "stretch",
+          }}
         />
         <div className="flex-1 p-2">
           <Typography
@@ -126,9 +133,10 @@ const RenderListMenu = () => {
           </Typography>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1  sm:gap-3 md:gap-4 my-4">
             {softwareData.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="flex flex-col items-center p-2"
+                href={service?.path || "#"}
+                className="flex flex-col items-center p-2 no-underline"
                 onMouseEnter={() => setIsItemHovered(service?.id)}
                 onMouseLeave={() => setIsItemHovered(null)}
                 style={{
@@ -136,6 +144,9 @@ const RenderListMenu = () => {
                     isItemHovered && isItemHovered === service?.id
                       ? customColor?.primary
                       : "#666",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  textDecoration: "none",
                 }}
               >
                 <img
@@ -149,7 +160,7 @@ const RenderListMenu = () => {
                 >
                   {service?.label}
                 </Typography>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

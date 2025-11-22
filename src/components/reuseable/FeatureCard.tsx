@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { itemVariants } from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -39,7 +40,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
             mb: 2,
             p: 2,
             borderRadius: "50%",
-            background: "rgba(25, 118, 210, 0.1)",
+            background: customColor.light,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

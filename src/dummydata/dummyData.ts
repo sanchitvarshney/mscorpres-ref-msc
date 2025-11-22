@@ -23,7 +23,7 @@ export interface Company {
 export const defaultItems: CarouselItem[] = [
   {
     id: 1,
-    title: "Welcome to MsCorpres (MsC)",
+    title: "Welcome to MsCorpres",
     description:
       "Your trusted partner for electronics manufacturing and expert refurbishment",
     image: "/images/welcome.jpg",
@@ -33,7 +33,7 @@ export const defaultItems: CarouselItem[] = [
     title: "Quality Services",
     description:
       "Providing high-standard electronics manufacturing and refurbishing tailored to your business needs",
-    image: "/images/quality.jpg",
+    image: "/images/pcb-assembly.jpg",
   },
   {
     id: 3,

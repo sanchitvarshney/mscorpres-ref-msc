@@ -17,6 +17,7 @@ import {
   itemVariants,
 } from "@/utils/animationVarients/animation";
 import FeatureCard from "@/components/reuseable/FeatureCard";
+import { customColor } from "@/utils/theme/customColor";
 
 interface FeatureItem {
   icon: React.ReactNode;
@@ -30,6 +31,10 @@ interface ManufacturerSectionProps {
   description?: string;
   imageUrl?: string;
   features?: FeatureItem[];
+  isReverse?: boolean;
+  service: string;
+  description2?: string;
+  description1?: string;
 }
 
 const defaultFeatures: FeatureItem[] = [
@@ -77,12 +82,15 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
   description = "We specialize in high-quality IoT device manufacturing with state-of-the-art facilities and expert craftsmanship. Our manufacturing services deliver durable, precision-engineered IoT solutions tailored to your specific connectivity and automation needs.",
   imageUrl = "/images/iot-details.avif",
   features = defaultFeatures,
+  isReverse = false,
+  service,
+  description2,
+  description1,
 }) => {
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
         background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
         position: "relative",
         overflow: "hidden",
@@ -103,10 +111,10 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
             <Typography
               variant="overline"
               sx={{
-                color: "primary.main",
+                color: customColor.primary,
                 fontWeight: 600,
                 letterSpacing: 3,
-                mb: 2,
+                mb: 1,
                 display: "block",
                 fontSize: "12px",
               }}
@@ -118,7 +126,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
               component="h2"
               sx={{
                 fontWeight: "bold",
-                mb: 3,
+                mb: 2,
                 color: "text.primary",
                 fontSize: { xs: "28px", md: "36px" },
                 position: "relative",
@@ -132,7 +140,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                   width: 60,
                   height: 3,
                   background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                   borderRadius: 2,
                 },
               }}
@@ -147,6 +155,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                 maxWidth: "800px",
                 mx: "auto",
                 lineHeight: 1.8,
+                
               }}
             >
               {description}
@@ -156,10 +165,14 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
+              flexDirection: {
+                xs: "column",
+                md: isReverse ? "row-reverse" : "row",
+              },
               gap: 4,
               alignItems: "center",
-              mb: 6,
+
+              mb: 5,
             }}
           >
             <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
@@ -213,40 +226,36 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                   variant="h5"
                   sx={{
                     fontWeight: 600,
-                    mb: 3,
+                    mb: 1,
                     color: "text.primary",
                     fontSize: { xs: "22px", md: "28px" },
                   }}
                 >
-                  Why Choose Our Manufacturing Services?
+                  Why Choose Our {service} Services?
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{
                     color: "text.secondary",
-                    mb: 3,
+                    mb: 2,
                     lineHeight: 1.8,
-                    fontSize: "16px",
+                    fontSize: "15px",
+                    textAlign:"justify",
                   }}
                 >
-                  Our manufacturing facility combines cutting-edge technology
-                  with expert craftsmanship to deliver IoT solutions that
-                  exceed industry standards. We work closely with clients to
-                  understand their unique connectivity and automation requirements and deliver customized
-                  IoT devices that meet their exact specifications.
+                  {description1}
                 </Typography>
                 <Typography
                   variant="body1"
                   sx={{
                     color: "text.secondary",
-                    mb: 4,
+                    mb: 1,
                     lineHeight: 1.8,
-                    fontSize: "16px",
+                    fontSize: "15px",
+                       textAlign:"justify",
                   }}
                 >
-                  With years of experience and a commitment to quality, we
-                  ensure every IoT device that leaves our facility is built to last
-                  and perform under the most demanding conditions, enabling seamless connectivity and smart automation.
+                  {description2}{" "}
                 </Typography>
               </motion.div>
             </Box>
