@@ -132,7 +132,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
           {/* Header Section */}
           <motion.div
             variants={itemVariants}
-            style={{ textAlign: "center", marginBottom: "4rem" }}
+            style={{ textAlign: "center", marginBottom: "3rem" }}
           >
             <Typography
               variant="overline"
@@ -152,7 +152,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               component="h2"
               sx={{
                 fontWeight: "bold",
-                mb: 3,
+
                 color: "text.primary",
                 fontSize: { xs: "28px", md: "40px" },
                 position: "relative",
@@ -181,7 +181,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               gap: 6,
-              alignItems: "flex-start",
+              alignItems: "center",
               mb: 3,
             }}
           >
@@ -392,7 +392,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               variant="h5"
               sx={{
                 fontWeight: 600,
-                my:3,
+                my: 3,
                 textAlign: "center",
                 color: "text.primary",
                 fontSize: { xs: "22px", md: "28px" },
@@ -461,7 +461,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                           mr: 2,
                           p: 1.5,
                           borderRadius: 2,
-                          backgroundColor:customColor.light,
+                          backgroundColor: customColor.light,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",

@@ -1,21 +1,15 @@
 "use client";
 
-import React, { Suspense, lazy } from "react";
 import MainLayout from "@/components/MainLayout";
 import HeroSection from "@/components/reuseable/HeroSection";
 import DetailedAboutSection from "@/components/sections/DetailedAboutSection";
 
-// Lazy load heavy components
-const OurTeamSection = lazy(() => import("@/components/sections/OurTeamSection"));
-
 export default function AboutPage() {
-
   return (
     <MainLayout>
       <div className="w-full min-h-screen">
         {/* Hero Section */}
         <HeroSection
-          imageUrl={"/images/about.avif"}
           alt="About Us Hero"
           subtitle="ABOUT US"
           title="Leading Excellence in Electronics & Technology"
@@ -31,12 +25,6 @@ export default function AboutPage() {
         />
 
         <DetailedAboutSection />
-
-        <Suspense fallback={<div style={{ minHeight: "200px" }} />}>
-          <OurTeamSection />
-        </Suspense>
-
-
       </div>
     </MainLayout>
   );

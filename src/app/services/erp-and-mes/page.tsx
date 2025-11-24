@@ -1,11 +1,7 @@
 "use client";
 
-import React from "react";
 import MainLayout from "@/components/MainLayout";
 import HeroSection from "@/components/reuseable/HeroSection";
-import { Box, Typography, Container } from "@mui/material";
-import { motion } from "framer-motion";
-import { customColor } from "@/utils/theme/customColor";
 import ManufacturerSection from "@/components/sections/ManufacturerSection";
 import { erpAndMesFeatures } from "@/dummydata/servicesData";
 
@@ -14,7 +10,7 @@ export default function ERPAndMESPage() {
     <MainLayout>
       <div className="w-full min-h-screen">
         <HeroSection
-          imageUrl={"/images/erp.png"}
+       
           alt="ERP and MES Hero"
           subtitle="OUR SERVICES"
           title="ERP and MES"

@@ -14,35 +14,32 @@ import {
   cardVariants,
   containerVariants,
 } from "@/utils/animationVarients/animation";
+import { customColor } from "@/utils/theme/customColor";
 
 const contactInfo = [
   {
-    icon: <Phone />,
+    icon: <Phone sx={{ color: customColor.primary }} />,
     title: "Phone",
-    value: "+1 (888) 123-4567",
+    value: "+91 75 29 939393",
     description: "Call us anytime",
-    iconColor: "primary.main",
   },
   {
-    icon: <Email />,
+    icon: <Email sx={{ color: customColor.primary }} />,
     title: "Email",
-    value: "info@msc.io",
+    value: "marketing@mscorpres.in",
     description: "Send us an email",
-    iconColor: "warning.main",
   },
   {
-    icon: <LocationOn />,
+    icon: <LocationOn sx={{ color: customColor.primary }} />,
     title: "Address",
-    value: "123 msc Street",
-    description: "New York, NY 10001",
-    iconColor: "error.main",
+    value: "B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305",
+    description: "Noida, Uttar Pradesh - 201305",
   },
   {
-    icon: <AccessTime />,
+    icon: <AccessTime sx={{ color: customColor.primary }} />,
     title: "Working Hours",
-    value: "Mon - Fri: 8:00 - 18:00",
-    description: "Saturday: 9:00 - 15:00",
-    iconColor: "success.main",
+    value: "Mon - Sat: 9:00 am - 18:00 pm",
+    description: "Saturday is being worked day",
   },
 ];
 
@@ -58,32 +55,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   return (
     <Box
       sx={{
-        py: { xs: 2, md: 6 },
-        px: { xs: 2, md: 4 },
+        p: { xs: 2, md: 4 },
         position: "relative",
-        background:
-          "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
-        overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
-        "&::after": {
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(25,118,210,0.3), transparent)",
-        },
       }}
     >
       <motion.div
@@ -102,17 +75,17 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
           style={{
             textAlign: "center",
-            marginBottom: "4rem",
+            marginBottom: "2rem",
             width: "100%",
           }}
         >
           <Typography
             variant="overline"
             sx={{
-              color: "primary.main",
+              color: customColor.primary,
               fontWeight: 600,
               letterSpacing: 3,
-              mb: 2,
+              mb: 1,
               display: "block",
               fontSize: "12px",
             }}
@@ -124,7 +97,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             component="h2"
             sx={{
               fontWeight: "bold",
-              mb: 3,
+
               color: "text.primary",
               fontSize: { xs: "28px", md: "36px" },
               position: "relative",
@@ -138,7 +111,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 width: 60,
                 height: 3,
                 background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${theme.palette.primary.main}, transparent)`,
+                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
                 borderRadius: 2,
               },
             }}
@@ -153,7 +126,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               maxWidth: "700px",
               mx: "auto",
               lineHeight: 1.8,
-              mt: 4,
+              mt: 3,
             }}
           >
             {subtitle}
@@ -166,7 +139,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 background: "white",
                 borderRadius: 3,
                 p: { xs: 3, md: 4 },
-                boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+                // boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
                 transition: "all 0.3s ease",
               }}
             >
@@ -188,22 +161,70 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   gap: 3,
                 }}
               >
-                <TextField fullWidth label="Your Name" variant="outlined" />
+                <TextField
+                  fullWidth
+                  label="Your Name"
+                  variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: customColor.primary,
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: customColor.primary,
+                    },
+                  }}
+                />
 
                 <TextField
                   fullWidth
                   label="Your Email"
                   type="email"
                   variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: customColor.primary,
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: customColor.primary,
+                    },
+                  }}
                 />
 
-                <TextField fullWidth label="Subject" variant="outlined" />
+                <TextField
+                  fullWidth
+                  label="Subject"
+                  variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: customColor.primary,
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: customColor.primary,
+                    },
+                  }}
+                />
                 <TextField
                   fullWidth
                   label="Message"
                   multiline
                   rows={5}
                   variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: customColor.primary,
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: customColor.primary,
+                    },
+                  }}
                 />
                 <div className="flex justify-end">
                   <Button
@@ -213,6 +234,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                     sx={{
                       fontWeight: 600,
                       py: 1.5,
+                      backgroundColor: customColor.primary,
                       "&:hover": {
                         transform: "translateY(-2px)",
                         boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
@@ -257,7 +279,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   >
                     <Box
                       sx={{
-                        backgroundColor:"primary.main",
+                        backgroundColor: customColor.light,
                         borderRadius: "50%",
                         p: 1.5,
                         display: "flex",

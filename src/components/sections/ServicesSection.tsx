@@ -7,7 +7,6 @@ import CustomCard from "@/components/reuseable/CustomCard";
 import {
   serviceCardVariants,
   servicesContainerVariants,
-  titleVariants,
 } from "@/utils/animationVarients/animation";
 import { customColor } from "@/utils/theme/customColor";
 
@@ -135,7 +134,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                   },
                 }}
               >
-                <CustomCard item={item} />
+                <CustomCard item={item} action={false} />
               </Box>
             </motion.div>
           ))}

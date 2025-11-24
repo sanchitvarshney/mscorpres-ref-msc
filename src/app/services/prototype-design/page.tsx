@@ -1,11 +1,7 @@
 "use client";
 
-import React from "react";
 import MainLayout from "@/components/MainLayout";
 import HeroSection from "@/components/reuseable/HeroSection";
-import { Box, Typography, Container } from "@mui/material";
-import { motion } from "framer-motion";
-import { customColor } from "@/utils/theme/customColor";
 import ManufacturerSection from "@/components/sections/ManufacturerSection";
 import { prototypeDesignFeatures } from "@/dummydata/servicesData";
 
@@ -14,7 +10,7 @@ export default function PrototypeDesignPage() {
     <MainLayout>
       <div className="w-full min-h-screen">
         <HeroSection
-          imageUrl={"/images/services.avif"}
+     
           alt="Prototype Design Hero"
           subtitle="OUR SERVICES"
           title="Prototype Design"

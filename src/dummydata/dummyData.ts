@@ -60,7 +60,7 @@ export const cardsData = [
     action: true,
   },
   {
-    image: "/images/pcb.jpg",
+    image: "/images/device.png",
     title: "Device Refurbishment",
     description:
       "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage.",
@@ -134,28 +134,26 @@ export const defaultTestimonials: Testimonial[] = [
   },
 ];
 
-
-
-
-
 export const footerLinks = {
-    company: [
-      { label: "Home", href: "/" },
-      { label: "About Us", href: "/about" },
-      { label: "Our Services", href: "/services" },
-      { label: "Contact", href: "/contact" },
-    ],
-    services: [
-      { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
-      { label: "PCB Design", href: "/services#pcb-design" },
-      { label: "Device Refurbishment", href: "/services#device-refurbishment" },
-      { label: "ERP and MES", href: "/services#erp-and-mes" },
-      { label: "Software Solution for Electronics", href: "/services#software-solution-for-electronics" },
-    ],
-    support: [
-      { label: "Help Center", href: "/help" },
-      { label: "FAQs", href: "/faqs" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
-  };
+  company: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ],
+  services: [
+    { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
+    { label: "PCB Design", href: "/services#pcb-design" },
+    { label: "Device Refurbishment", href: "/services#device-refurbishment" },
+    { label: "ERP and MES", href: "/services#erp-and-mes" },
+    {
+      label: "Software Solution for Electronics",
+      href: "/services#software-solution-for-electronics",
+    },
+  ],
+  support: [
+    { label: "Help Center", href: "/help" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+  ],
+};

@@ -155,7 +155,6 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                 maxWidth: "800px",
                 mx: "auto",
                 lineHeight: 1.8,
-                
               }}
             >
               {description}
@@ -186,18 +185,8 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                     position: "relative",
                     borderRadius: 3,
                     overflow: "hidden",
-                    boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background:
-                        "linear-gradient(135deg, rgba(25,118,210,0.1) 0%, rgba(13,71,161,0.1) 100%)",
-                      zIndex: 1,
-                    },
+                    // boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
+                    backgroundColor: "transparent",
                   }}
                 >
                   <Box
@@ -240,7 +229,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                     mb: 2,
                     lineHeight: 1.8,
                     fontSize: "15px",
-                    textAlign:"justify",
+                    textAlign: "justify",
                   }}
                 >
                   {description1}
@@ -252,7 +241,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
                     mb: 1,
                     lineHeight: 1.8,
                     fontSize: "15px",
-                       textAlign:"justify",
+                    textAlign: "justify",
                   }}
                 >
                   {description2}{" "}
