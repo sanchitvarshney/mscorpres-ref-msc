@@ -32,8 +32,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   description,
   gradientOverlay = {
-    startColor: "rgba(4, 176, 168, 0)",
-    endColor:  "rgba(4, 176, 168, 0.3)",
+    startColor:  "rgba(255, 255, 255, 0.1)",
+    endColor:  "rgba(255, 255, 255, 1)",
    
   
     opacity: 1,
@@ -46,7 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     xs: "400px",
     md: "500px",
   },
-}) => {const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 120%)`;
+}) => {const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 140%)`;
 
   return (
     <Box
@@ -80,6 +80,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           width: "100%",
           height: "100%",
           zIndex: 0,
+        
         }}
       >
         <video

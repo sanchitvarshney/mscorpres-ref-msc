@@ -18,7 +18,7 @@ const RenderListMenu = () => {
         py: { xs: 1, md: 0 },
         backgroundColor: "#fff",
         margin: 0,
-        marginTop: { xs: 0, md: 3 },
+        marginTop: { xs: 0, md: 2 },
         overflow: "hidden",
       }}
     >

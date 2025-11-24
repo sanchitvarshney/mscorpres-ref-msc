@@ -1,7 +1,19 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, IconButton, styled, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import {
+  Box,
+  Fade,
+  Slide,
+  IconButton,
+  styled,
+  Tooltip,
+  tooltipClasses,
+  TooltipProps,
+  Typography,
+  Collapse,
+  Zoom,
+} from "@mui/material";
 import { Menu, Close, KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -14,18 +26,17 @@ import RenderListMenu from "../RenderListMenu";
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
-
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.white,
-    color: 'rgba(0, 0, 0, 0.87)',
+    color: "rgba(0, 0, 0, 0.87)",
     boxShadow: theme.shadows[8],
     fontSize: 11,
-    maxWidth: 'calc(100vw - 0px)',
-    width: '100vw',
+    maxWidth: "calc(100vw - 0px)",
+    width: "100vw",
     padding: 0,
-   margin: 0,
-    overflow: 'hidden',
-    borderRadius: 0,  
+    margin: 0,
+    overflow: "hidden",
+    borderRadius: 0,
     marginLeft: -10,
   },
   [`& .${tooltipClasses.arrow}`]: {
@@ -101,7 +112,6 @@ const NavigationBar: React.FC = () => {
   useEffect(() => {
     if (dropdownOpen) {
       document.body.style.overflow = "hidden";
-     
     } else {
       document.body.style.overflow = "unset";
     }
@@ -149,8 +159,12 @@ const NavigationBar: React.FC = () => {
                   enterDelay={200}
                   leaveDelay={300}
                   disableFocusListener
-
-               
+                  slots={{
+                    transition: Zoom ,
+                  }}
+                  slotProps={{
+                    transition: { timeout: 500 },
+                  }}
                 >
                   <div
                     className={`relative inline-block  no-underline text-[0.9375rem] pb-0.5 cursor-pointer hover: ${
@@ -330,7 +344,9 @@ const NavigationBar: React.FC = () => {
                           {link.isDropdown ? (
                             <div>
                               <div
-                                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                onClick={() =>
+                                  setMobileServicesOpen(!mobileServicesOpen)
+                                }
                                 className={`
                                   text-white no-underline text-[1.1rem]
                                   block py-1.5 px-2 rounded-md
@@ -368,7 +384,8 @@ const NavigationBar: React.FC = () => {
                                         mt: 2,
                                         mb: 2,
                                         px: 2,
-                                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                        backgroundColor:
+                                          "rgba(255, 255, 255, 0.05)",
                                         borderRadius: 1,
                                       }}
                                     >

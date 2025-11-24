@@ -119,7 +119,7 @@ const ProductLifeCycle: React.FC<ManufacturerSectionProps> = ({
                 <Divider />
              
                   {features.map((item, index) => (
-                    <div className="flex gap-4 mt-4 ">
+                    <div className="flex gap-4 mt-4 " key={item.id || index}>
                       <Circle
                         sx={{
                           fontSize: 16,

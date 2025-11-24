@@ -9,7 +9,7 @@ export default function ContactPage() {
     <MainLayout>
       <div className="w-full min-h-screen">
         {/* Hero Section */}
-        <HeroSection
+        {/* <HeroSection
           subtitle="CONTACT US"
           description="Have questions or need assistance? We're here to help you with all your electronics and technology needs. Reach out to us and let's start a conversation."
           title="Get In Touch With Us"
@@ -22,7 +22,7 @@ export default function ContactPage() {
             xs: "400px",
             md: "500px",
           }}
-        />
+        /> */}
 
         {/* Contact Section */}
         <ContactSection
