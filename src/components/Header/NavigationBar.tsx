@@ -109,16 +109,16 @@ const NavigationBar: React.FC = () => {
   }, [menuOpen]);
 
   // Prevent horizontal scroll when dropdown is open
-  useEffect(() => {
-    if (dropdownOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [dropdownOpen]);
+  // useEffect(() => {
+  //   if (dropdownOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "unset";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "unset";
+  //   };
+  // }, [dropdownOpen]);
 
   return (
     <Box

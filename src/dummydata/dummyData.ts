@@ -141,13 +141,13 @@ export const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "IoT Manufacturing", href: "/services#iot-manufacturing" },
-    { label: "PCB Design", href: "/services#pcb-design" },
-    { label: "Device Refurbishment", href: "/services#device-refurbishment" },
-    { label: "ERP and MES", href: "/services#erp-and-mes" },
+    { label: "IoT Manufacturing", href: "/services/iot-manufacturing" },
+    { label: "PCB Design", href: "/services/pcb-design" },
+    { label: "Device Refurbishment", href: "/services/device-refurbishment" },
+    { label: "ERP and MES", href: "/services/erp-and-mes" },
     {
       label: "Software Solution for Electronics",
-      href: "/services#software-solution-for-electronics",
+      href: "/services/software-solution-for-electronics",
     },
   ],
   support: [
