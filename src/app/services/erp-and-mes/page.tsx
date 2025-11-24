@@ -17,7 +17,7 @@ export default function ERPAndMESPage() {
           description="Comprehensive enterprise resource planning and manufacturing execution systems that streamline your entire manufacturing operations."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

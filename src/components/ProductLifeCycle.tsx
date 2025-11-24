@@ -15,10 +15,9 @@ interface ManufacturerSectionProps {
   description?: string;
   imageUrl?: string;
   features?: any[];
-  isReverse?: boolean;
+
   service: string;
-  description2?: string;
-  description1?: string;
+ 
 }
 
 const ProductLifeCycle: React.FC<ManufacturerSectionProps> = ({

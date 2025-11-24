@@ -17,7 +17,7 @@ export default function DFMSolutionPage() {
           description="Design for Manufacturing solutions that optimize your products for efficient, cost-effective production processes."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

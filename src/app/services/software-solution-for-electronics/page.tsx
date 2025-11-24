@@ -16,7 +16,7 @@ export default function SoftwareSolutionForElectronicsPage() {
           description="Custom software development tailored specifically for electronics manufacturing and embedded systems."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

@@ -15,7 +15,7 @@ export default function TurnkeySolutionPage() {
           description="Complete end-to-end solutions from concept to delivery, handling every aspect of your project with expertise and precision."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

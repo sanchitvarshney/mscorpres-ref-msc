@@ -17,7 +17,7 @@ export default function DeviceRefurbishmentPage() {
           description="Transform used electronic devices into like-new condition through comprehensive inspection, cleaning, repair, and restoration processes."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

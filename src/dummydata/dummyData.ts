@@ -157,3 +157,25 @@ export const footerLinks = {
     { label: "Terms of Service", href: "/terms" },
   ],
 };
+
+export const productFeatures = [
+  {
+    id: 1,
+    title: "Lifecycle Planning",
+    description:
+      "We help you plan and optimize your product’s entire lifecycle—from initial concept to end-of-life—ensuring efficient management, cost control, and smooth operations at every stage.",
+  },
+  {
+    id: 2,
+    title: "Data & Documentation Management",
+    description:
+      "Our PLM services cover complete data handling, documentation, and revision control, maintaining accuracy, traceability, and the integrity of your product information throughout its lifecycle.",
+  },
+  {
+    id: 3,
+    title: "Change Management",
+    description:
+      "We enable seamless implementation of design updates, engineering changes, and product improvements while minimizing disruptions and ensuring consistent performance across all phases.",
+  },
+];
+

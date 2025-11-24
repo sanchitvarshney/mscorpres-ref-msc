@@ -17,7 +17,7 @@ export default function ElectronicsPage() {
           description="Comprehensive electronics solutions covering design, development, and manufacturing of electronic products and systems."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

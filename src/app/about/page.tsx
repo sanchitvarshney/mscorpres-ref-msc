@@ -16,7 +16,7 @@ export default function AboutPage() {
           description="With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 190px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

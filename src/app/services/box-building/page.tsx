@@ -16,7 +16,7 @@ export default function BoxBuildingPage() {
           description="Complete box building solutions for electronic assemblies with quality craftsmanship and attention to detail."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

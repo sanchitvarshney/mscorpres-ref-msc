@@ -16,7 +16,7 @@ export default function SKDAndCKDDesignPage() {
           description="Semi-Knocked Down (SKD) and Completely Knocked Down (CKD) design solutions for efficient manufacturing and assembly processes."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

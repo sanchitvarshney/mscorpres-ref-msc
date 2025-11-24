@@ -17,7 +17,7 @@ export default function IoTManufacturingPage() {
           description="Cutting-edge Internet of Things devices designed for seamless connectivity and smart functionality."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

@@ -33,7 +33,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   description,
   gradientOverlay = {
     startColor: "rgba(4, 176, 168, 0)",
-    endColor:  "rgba(4, 176, 168, 1)",
+    endColor:  "rgba(4, 176, 168, 0.3)",
+   
   
     opacity: 1,
   },
@@ -45,8 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     xs: "400px",
     md: "500px",
   },
-}) => {
-  const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 100%)`;
+}) => {const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 120%)`;
 
   return (
     <Box
@@ -120,7 +120,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 letterSpacing: 4,
                 fontWeight: 600,
                 mb: 2,
-                color: "rgba(255, 255, 255, 0.9)",
+                color: "rgba(0, 0, 0, 0.9)",
               }}
             >
               {subtitle}
@@ -135,7 +135,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               mb: description ? 3 : 0,
               textShadow: "0 2px 10px rgba(0,0,0,0.3)",
               lineHeight: 1.2,
-              color: "#fff"
+              color: "#000000"
             }}
           >
             {title}
@@ -148,7 +148,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 fontWeight: 400,
                 maxWidth: "800px",
                 mx: "auto",
-                color: "rgba(255, 255, 255, 0.95)",
+                color: "rgba(0, 0, 0, 0.95)",
                 textShadow: "0 1px 5px rgba(0,0,0,0.2)",
                 lineHeight: 1.6,
               }}

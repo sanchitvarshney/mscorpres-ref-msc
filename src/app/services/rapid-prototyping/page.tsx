@@ -17,7 +17,7 @@ export default function RapidPrototypingPage() {
           description="Fast-track your product development with our rapid prototyping services that bring your concepts to life quickly and efficiently."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",

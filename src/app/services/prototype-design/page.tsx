@@ -17,7 +17,7 @@ export default function PrototypeDesignPage() {
           description="Rapid prototyping services to transform your ideas into functional prototypes with speed and precision."
           height={{
             xs: "60vh",
-            md: "calc(100vh - 200px)",
+            md: "calc(100vh - 148px)",
           }}
           minHeight={{
             xs: "400px",
