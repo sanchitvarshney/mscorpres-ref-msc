@@ -115,6 +115,34 @@ const Footer: React.FC = () => {
                 ))}
               </Box>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                 <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)", fontWeight:600, fontSize:13 }}
+                  >
+                    GSTIN/UIN:
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                    09AATCM1744R1ZH
+                  </Typography>
+                </Box>
+                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                     <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)", fontWeight:600, fontSize:13 }}
+                  >
+                    CIN:
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                    U95210UP2025PTC220228
+                  </Typography>
+                </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                   <Phone
                     sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}

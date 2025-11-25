@@ -8,21 +8,7 @@ export default function ContactPage() {
   return (
     <MainLayout>
       <div className="w-full min-h-screen">
-        {/* Hero Section */}
-        {/* <HeroSection
-          subtitle="CONTACT US"
-          description="Have questions or need assistance? We're here to help you with all your electronics and technology needs. Reach out to us and let's start a conversation."
-          title="Get In Touch With Us"
-          alt="Contact Us Hero"
-          height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
-          }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
-        /> */}
+      
 
         {/* Contact Section */}
         <ContactSection

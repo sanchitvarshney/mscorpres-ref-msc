@@ -19,6 +19,8 @@ import {
 
 import {
   AccessTimeOutlined,
+  CheckCircleOutline,
+  CircleOutlined,
   ShieldOutlined,
   TrackChangesOutlined,
 } from "@mui/icons-material";
@@ -32,7 +34,7 @@ export const certificationItems: any[] = [
     id: 1,
     title: "ISO Certified",
     icon: (
-      <ShieldOutlined
+      <WorkspacePremiumOutlinedIcon
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
@@ -41,7 +43,7 @@ export const certificationItems: any[] = [
     id: 2,
     title: "RoHS Compliant",
     icon: (
-      <ShieldOutlined
+      <CheckCircleOutline 
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),

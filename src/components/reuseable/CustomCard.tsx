@@ -115,7 +115,7 @@ const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
           <Button
             component={Link}
             href={
-              item?.title ? `/services#${titleToId(item.title)}` : "/services"
+              item?.path
             }
             size="small"
             variant="contained"

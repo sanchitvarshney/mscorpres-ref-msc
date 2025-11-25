@@ -29,7 +29,7 @@ export default function DFMSolutionPage() {
           title="Advanced DFM Solution Services"
           subtitle="MANUFACTURING OPTIMIZATION"
           description="We provide professional Design for Manufacturing solutions engineered for efficiency, cost-effectiveness, and quality. From design analysis to manufacturability optimization, our team ensures every product is designed with precision, efficiency, and industry-best practices to support cost-effective production."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/dfm.avif"
           features={dfmSolutionFeatures}
           service={"DFM Solution"}
           description1="We provide reliable, comprehensive DFM solution services—covering design analysis, manufacturability optimization, and cost reduction—tailored for diverse manufacturing requirements. With advanced analysis tools and an experienced engineering team, we ensure every design is optimized for efficient production. Our capabilities support both new product development and existing product optimization, delivering cost-effective, manufacturable, and quality-enhanced designs for all your manufacturing needs."

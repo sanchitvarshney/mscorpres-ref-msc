@@ -29,7 +29,7 @@ export default function PrototypeDesignPage() {
           title="Professional Prototype Design Solutions"
           subtitle="RAPID INNOVATION"
           description="We provide professional prototype design services engineered for speed, functionality, and validation. From concept development to functional prototypes, our team ensures every prototype is designed with precision, efficiency, and industry-best practices to support rapid product development and innovation."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/prototyping.png"
           features={prototypeDesignFeatures}
           service={"Prototype Design"}
           description1="We provide reliable, rapid prototype design services—covering concept development, functional prototyping, and design validation—tailored for diverse electronic applications. With advanced prototyping tools and an experienced engineering team, we ensure every prototype is built to the highest quality standards. Our capabilities support both early-stage validation and pre-production testing, delivering efficient, accurate, and functional prototypes for all your product development needs."

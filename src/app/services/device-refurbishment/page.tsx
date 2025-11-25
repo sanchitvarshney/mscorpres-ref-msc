@@ -29,7 +29,7 @@ export default function DeviceRefurbishmentPage() {
           title="Professional Device Refurbishment Solutions"
           subtitle="RESTORATION EXCELLENCE"
           description="We provide professional device refurbishment services engineered for quality restoration, reliability, and sustainability. From comprehensive inspection to complete restoration, our team ensures every device is refurbished with precision, efficiency, and industry-best practices to restore devices to like-new condition."
-          imageUrl="/images/rebus-device.jpg"
+          imageUrl="/images/device.png"
           features={deviceRefurbishmentFeatures}
           service={"Device Refurbishment"}
           description1="We provide reliable, high-quality device refurbishment services—covering comprehensive inspection, cleaning, repair, and restoration—tailored for diverse electronic devices. With advanced testing equipment and an experienced technician team, we ensure every device is refurbished to the highest quality standards. Our capabilities support both consumer and commercial devices, delivering efficient, accurate, and sustainable refurbishment solutions for all your device restoration needs."

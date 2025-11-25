@@ -18,15 +18,16 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   title = "Trusted by Leading Companies",
   companies = defaultCompanies,
 }) => {
-  // Duplicate companies for seamless loop
-  const duplicatedCompanies = [...companies, ...companies, ...companies];
+  // Duplicate companies twice for seamless infinite loop
+  // When animation moves -50%, it loops back seamlessly
+  const duplicatedCompanies = [...companies, ...companies];
 
   return (
     <Box
       sx={{
         py: { xs: 2, md: 4 },
 
-        px: { xs: 8, md: 40 },
+        px: { xs: 8, md: 35 },
         position: "relative",
         background:
           "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
@@ -113,6 +114,14 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
             width: "100%",
             overflow: "hidden",
             py: 2,
+            maskImage: {
+              xs: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              md: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            },
+            WebkitMaskImage: {
+              xs: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              md: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            },
           }}
         >
           <Box
@@ -121,7 +130,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               display: "flex",
               gap: { xs: 3, md: 4 },
               width: "fit-content",
-              animation: "scroll-companies 10s linear infinite",
+              animation: "scroll-companies 20s linear infinite",
               "&:hover": {
                 animationPlayState: "paused",
               },
@@ -131,13 +140,13 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               <Box
                 key={`${company.id}-${index}`}
                 sx={{
-                  // background: "white",
                   borderRadius: 3,
                   p: { xs: 1, md: 2 },
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   maxWidth: { xs: 160, md: 200 },
+                  minWidth: { xs: 160, md: 200 },
                   flexShrink: 0,
                   position: "relative",
                   overflow: "hidden",
@@ -146,9 +155,14 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
                 <img
                   src={company.logo}
                   alt={company.name}
-                  style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  style={{ 
+                    maxWidth: "100%", 
+                    maxHeight: "100%",
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "auto",
+                  }}
                 />
-             
               </Box>
             ))}
           </Box>

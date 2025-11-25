@@ -134,7 +134,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                   },
                 }}
               >
-                <CustomCard item={item} action={false} />
+                <CustomCard item={item}  />
               </Box>
             </motion.div>
           ))}

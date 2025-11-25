@@ -108,7 +108,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
   stats = defaultStats,
   values = defaultValues,
-  imageUrl = "/images/services.avif",
+  imageUrl = "/images/about-page-mix.jpg",
   imageAlt = "Our Company",
 }) => {
   return (

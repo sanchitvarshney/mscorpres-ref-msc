@@ -29,7 +29,7 @@ export default function ElectronicsPage() {
           title="Comprehensive Electronics Solutions"
           subtitle="ELECTRONIC EXCELLENCE"
           description="We provide comprehensive electronics solutions engineered for performance, reliability, and innovation. From design and development to manufacturing, our team ensures every electronic product is created with precision, efficiency, and industry-best practices to support high-quality electronic systems."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/electro.jpg"
           features={electronicsFeatures}
           service={"Electronics"}
           description1="We provide reliable, high-quality electronics services—covering design, development, and manufacturing—tailored for diverse electronic applications. With advanced facilities and an experienced engineering team, we ensure every electronic product is built to the highest quality standards. Our capabilities support both prototype development and mass production, delivering efficient, accurate, and reliable electronic solutions for all your product needs."

@@ -29,7 +29,7 @@ export default function RapidPrototypingPage() {
           title="Advanced Rapid Prototyping Solutions"
           subtitle="FAST-TRACK INNOVATION"
           description="We provide professional rapid prototyping services engineered for speed, functionality, and validation. From concept to functional prototype, our team ensures every prototype is built with precision, efficiency, and industry-best practices to support accelerated product development."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/about-section.jpg"
           features={rapidPrototypingFeatures}
           service={"Rapid Prototyping"}
           description1="We provide reliable, fast rapid prototyping services—covering concept development, functional prototyping, and design validation—tailored for diverse product applications. With advanced prototyping technologies and an experienced engineering team, we ensure every prototype is built to the highest quality standards. Our capabilities support both early-stage validation and pre-production testing, delivering efficient, accurate, and functional prototypes for all your product development needs."

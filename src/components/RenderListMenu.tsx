@@ -57,6 +57,7 @@ const RenderListMenu = () => {
                 <Typography
                   variant="subtitle2"
                   sx={{ fontSize: 12, mt: 0.4, fontWeight: 600 }}
+                  textAlign={"center"}
                 >
                   {service?.label}
                 </Typography>
@@ -107,6 +108,7 @@ const RenderListMenu = () => {
                 <Typography
                   variant="subtitle2"
                   sx={{ fontSize: 12, mt: 0.4, fontWeight: 600 }}
+                      textAlign={"center"}
                 >
                   {service?.label}
                 </Typography>
@@ -157,6 +159,7 @@ const RenderListMenu = () => {
                 <Typography
                   variant="subtitle2"
                   sx={{ fontSize: 12, mt: 0.4, fontWeight: 600 }}
+                      textAlign={"center"}
                 >
                   {service?.label}
                 </Typography>

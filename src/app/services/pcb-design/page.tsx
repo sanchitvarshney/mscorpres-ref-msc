@@ -28,7 +28,7 @@ export default function PCBDesignPage() {
           title="Advanced PCB Design Solutions"
           subtitle="ENGINEERING PRECISION"
           description="We provide professional PCB design services engineered for performance, reliability, and seamless integration. From schematic creation to multilayer layout optimization, our team ensures every PCB is designed with precision, efficiency, and industry-best practices to support high-quality electronic products."
-          imageUrl="/images/pcb-services.jpg"
+          imageUrl="/images/pcb-assembly.jpg"
           features={pcbFeatures}
           service={"PCB"}
           description1="We provide reliable, high-precision PCB assembly services—covering SMT, through-hole, and mixed-technology assemblies—tailored for diverse electronic applications. With advanced equipment and an experienced engineering team, we ensure every board is assembled to the highest quality standards. Our capabilities support both HMLV (High-Mix Low-Volume) and LMHV (Low-Mix High-Volume) production, delivering efficient, accurate, and consistent results for all your electronic manufacturing needs."

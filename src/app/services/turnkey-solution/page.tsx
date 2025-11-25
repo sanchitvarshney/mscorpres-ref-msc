@@ -27,7 +27,7 @@ export default function TurnkeySolutionPage() {
           title="Complete Turnkey Solutions"
           subtitle="END-TO-END EXCELLENCE"
           description="We provide comprehensive turnkey solutions engineered for seamless project execution, from initial concept to final delivery. Our integrated approach handles design, manufacturing, assembly, testing, and quality assurance, ensuring every project is completed with precision, efficiency, and industry-best practices."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/trunKey2.png"
           features={turnkeySolutionFeatures}
           service={"Turnkey Solution"}
           description1="We provide reliable, comprehensive turnkey solutions—covering complete project management, design, manufacturing, assembly, and testing—tailored for diverse electronic applications. With advanced facilities and an experienced project management team, we ensure every project is executed to the highest quality standards. Our capabilities support both small-scale and large-scale production, delivering efficient, coordinated, and consistent results for all your electronic manufacturing needs."

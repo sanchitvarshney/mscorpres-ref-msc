@@ -29,7 +29,7 @@ export default function IoTManufacturingPage() {
           title="Advanced IoT Manufacturing Solutions"
           subtitle="SMART CONNECTIVITY"
           description="We provide professional IoT manufacturing services engineered for connectivity, reliability, and smart functionality. From sensor integration to cloud connectivity, our team ensures every IoT device is manufactured with precision, efficiency, and industry-best practices to support high-quality smart products."
-          imageUrl="/images/iot-details.avif"
+          imageUrl="/images/iot-manu.png"
           features={iotManufacturingFeatures}
           service={"IoT Manufacturing"}
           description1="We provide reliable, high-quality IoT manufacturing services—covering smart device assembly, sensor integration, and connectivity solutions—tailored for diverse IoT applications. With advanced manufacturing equipment and an experienced engineering team, we ensure every IoT device is built to the highest quality standards. Our capabilities support both prototype development and mass production, delivering efficient, connected, and reliable IoT solutions for all your smart product needs."

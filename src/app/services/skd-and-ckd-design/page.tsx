@@ -28,7 +28,7 @@ export default function SKDAndCKDDesignPage() {
           title="SKD and CKD Design Solutions"
           subtitle="MODULAR DESIGN EXCELLENCE"
           description="We provide professional SKD and CKD design services engineered for efficient manufacturing, optimized logistics, and flexible assembly. From modular component design to assembly-optimized packaging, our team ensures every product is designed with precision, efficiency, and industry-best practices to support cost-effective global manufacturing."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/skd.webp"
           features={skdCkdDesignFeatures}
           service={"SKD and CKD Design"}
           description1="We provide reliable, efficient SKD and CKD design services—covering Semi-Knocked Down and Completely Knocked Down solutions—tailored for diverse manufacturing and logistics requirements. With advanced design tools and an experienced engineering team, we ensure every product is designed for optimal assembly efficiency. Our capabilities support both regional and global manufacturing strategies, delivering cost-effective, logistics-optimized, and assembly-friendly designs for all your manufacturing needs."

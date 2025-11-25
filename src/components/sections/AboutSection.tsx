@@ -49,7 +49,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do.",
   secondParagraph = "We combine cutting-edge technology with expert craftsmanship to deliver solutions that exceed expectations and drive your business forward.",
   stats = defaultStats,
-  imageUrl = "/images/services.avif",
+  imageUrl = "/images/mix-about.jpg",
   imageAlt = "About Us",
 }) => {
   return (
@@ -166,7 +166,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                     src={imageUrl}
                     alt={imageAlt}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                     loading="lazy"
                     quality={85}
                   />

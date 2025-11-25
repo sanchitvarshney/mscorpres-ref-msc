@@ -196,6 +196,23 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 
                 <TextField
                   fullWidth
+                  label="Phone Number"
+                  type="tel"
+                  variant="outlined"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: customColor.primary,
+                      },
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: customColor.primary,
+                    },
+                  }}
+                />
+
+                <TextField
+                  fullWidth
                   label="Subject"
                   variant="outlined"
                   sx={{

@@ -26,38 +26,40 @@ export const defaultItems: CarouselItem[] = [
     title: "Welcome to MsCorpres",
     description:
       "Your trusted partner for electronics manufacturing and expert refurbishment",
-    image: "/images/welcome.jpg",
+    image: "/images/about-section2.jpg",
   },
   {
     id: 2,
     title: "Quality Services",
     description:
       "Providing high-standard electronics manufacturing and refurbishing tailored to your business needs",
-    image: "/images/pcb-assembly.jpg",
+    image: "/images/pcb-design.jpg",
   },
   {
     id: 3,
     title: "Our Expert Team",
     description:
       "Skilled professionals dedicated to delivering reliable manufacturing and refurbishing solutions",
-    image: "/images/team.jpg",
+    image: "/images/Product-Design.jpg",
   },
 ];
 
 export const cardsData = [
   {
-    image: "/images/iot.jpg",
+    image: "/images/iot-manu.png",
     title: "IoT Manufacturing",
     description:
       "Advanced IoT device manufacturing solutions with cutting-edge technology, ensuring smart connectivity and seamless integration for modern industrial applications.",
     action: true,
+    path: "/services/iot-manufacturing",
   },
   {
-    image: "/images/pcb-design.jpg",
+    image: "/images/pcb-assembly.jpg",
     title: "PCB Design",
     description:
       "Professional PCB design services delivering high-quality printed circuit boards with precision engineering, optimized layouts, and comprehensive testing for reliable electronic solutions.",
     action: true,
+    path: "/services/pcb-design",
   },
   {
     image: "/images/device.png",
@@ -65,6 +67,7 @@ export const cardsData = [
     description:
       "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage.",
     action: true,
+    path: "/services/device-refurbishment",
   },
   {
     image: "/images/erp.png",
@@ -72,6 +75,7 @@ export const cardsData = [
     description:
       "Comprehensive ERP and MES solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
     action: true,
+    path: "/services/erp-and-mes",
   },
   {
     image: "/images/soft.jpg",
@@ -79,6 +83,7 @@ export const cardsData = [
     description:
       "Custom software solutions tailored for electronics manufacturing, including embedded systems, firmware development, and automation software to enhance productivity and efficiency.",
     action: true,
+    path: "/services/software-solution-for-electronics",
   },
 ];
 
@@ -138,7 +143,6 @@ export const footerLinks = {
   company: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },
   ],
   services: [
     { label: "IoT Manufacturing", href: "/services/iot-manufacturing" },
@@ -151,9 +155,8 @@ export const footerLinks = {
     },
   ],
   support: [
-    { label: "Help Center", href: "/help" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "/terms" },
   ],
 };
@@ -178,4 +181,3 @@ export const productFeatures = [
       "We enable seamless implementation of design updates, engineering changes, and product improvements while minimizing disruptions and ensuring consistent performance across all phases.",
   },
 ];
-

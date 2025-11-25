@@ -108,6 +108,12 @@ export const softwareData = [
     img: "/services-img/soft.svg",
     path: "/services/software-solution-for-electronics",
   },
+  {
+    id: 3,
+    label: "Firmware & Embedded Software",
+    img: "/services-img/embeded-soft.svg",
+    path: "/services/firmware-embedded-software",
+  },
 ];
 
 export const pcbFeatures: any[] = [
@@ -679,6 +685,53 @@ export const softwareSolutionForElectronicsFeatures: any[] = [
     title: "Expert Software Team",
     description:
       "Skilled software engineers with extensive experience in electronics manufacturing and embedded systems.",
+  },
+];
+
+export const firmwareEmbeddedSoftwareFeatures: any[] = [
+  {
+    icon: <CodeOutlined sx={{ fontSize: 40, color: customColor.primary }} />,
+    title: "Firmware Development",
+    description:
+      "Professional firmware development services for microcontrollers, embedded systems, and IoT devices with optimized performance and reliability.",
+  },
+  {
+    icon: (
+      <EngineeringOutlined sx={{ fontSize: 40, color: customColor.primary }} />
+    ),
+    title: "Embedded Software Solutions",
+    description:
+      "Custom embedded software development tailored for your hardware platform, ensuring seamless integration and optimal functionality.",
+  },
+  {
+    icon: (
+      <MemoryOutlined sx={{ fontSize: 40, color: customColor.primary }} />
+    ),
+    title: "Real-Time Systems",
+    description:
+      "Development of real-time embedded systems with precise timing requirements and deterministic behavior for critical applications.",
+  },
+  {
+    icon: <SpeedOutlined sx={{ fontSize: 40, color: customColor.primary }} />,
+    title: "Optimized Performance",
+    description:
+      "Firmware and embedded software optimized for memory efficiency, power consumption, and processing speed to meet your device requirements.",
+  },
+  {
+    icon: (
+      <VerifiedUserOutlined sx={{ fontSize: 40, color: customColor.primary }} />
+    ),
+    title: "Industry Standards Compliance",
+    description:
+      "Embedded software developed following industry standards and best practices for security, reliability, and maintainability.",
+  },
+  {
+    icon: (
+      <SettingsOutlined sx={{ fontSize: 40, color: customColor.primary }} />
+    ),
+    title: "Expert Embedded Engineers",
+    description:
+      "Skilled firmware and embedded software engineers with extensive experience in various microcontrollers and embedded platforms.",
   },
 ];
 

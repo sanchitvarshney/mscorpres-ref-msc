@@ -28,7 +28,7 @@ export default function SoftwareSolutionForElectronicsPage() {
           title="Advanced Software Solutions for Electronics"
           subtitle="SOFTWARE EXCELLENCE"
           description="We provide professional software development services engineered for electronics manufacturing and embedded systems. From firmware to manufacturing software, our team ensures every software solution is developed with precision, efficiency, and industry-best practices to support high-quality electronic operations."
-          imageUrl="/images/services.avif"
+          imageUrl="/images/soft.jpg"
           features={softwareSolutionForElectronicsFeatures}
           service={"Software Solution for Electronics"}
           description1="We provide reliable, high-quality software solutions for electronics—covering firmware, embedded software, automation, and manufacturing software—tailored for diverse electronic applications. With advanced development tools and an experienced software engineering team, we ensure every software solution is built to the highest quality standards. Our capabilities support both embedded systems and manufacturing automation, delivering efficient, secure, and reliable software solutions for all your electronic needs."
