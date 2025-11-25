@@ -4,6 +4,7 @@ import  { Suspense, lazy } from "react";
 import Carousel from "@/components/Carousel";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const TestimonialsSection = lazy(
   () => import("@/components/sections/TestimonialsSection")
@@ -52,7 +53,7 @@ export const certificationItems: any[] = [
     id: 3,
     title: "Quality Assured",
     icon: (
-      <WorkspacePremiumOutlinedIcon
+      <VerifiedIcon
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),

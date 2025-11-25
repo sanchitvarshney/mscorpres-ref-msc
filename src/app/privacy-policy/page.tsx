@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
               gutterBottom
               sx={{ fontWeight: 700 }}
             >
-              Privacy Policy For MsCorpres Automation
+              Privacy Policy 
             </Typography>
           </Paper>
 

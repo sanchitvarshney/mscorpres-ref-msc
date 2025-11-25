@@ -49,7 +49,7 @@ const TermsOfService = () => {
               gutterBottom
               sx={{ fontWeight: 700 }}
             >
-              Terms Of Use For MsCorpres Automation Website
+              Terms Of Use
             </Typography>
           </Paper>
 

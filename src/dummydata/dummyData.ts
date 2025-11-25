@@ -115,7 +115,7 @@ export const defaultTestimonials: Testimonial[] = [
     company: "MsCorpres PVT. LTD.",
     rating: 4.5,
     comment:
-      " MsCorpres Automation Private Limited is an exceptional platform that fosters innovation and growth. As a software developer, I've flourished here, empowered by cutting-edge technologies and a collaborative environment. The company's commitment to excellence fuels my passion for crafting efficient solutions. It's a privilege to contribute to a team that champions creativity and values expertise. MsCorpres Automation sets the bar high for industry standards.",
+      " MsCorpres is an exceptional platform that fosters innovation and growth. As a software developer, I've flourished here, empowered by cutting-edge technologies and a collaborative environment. The company's commitment to excellence fuels my passion for crafting efficient solutions. It's a privilege to contribute to a team that champions creativity and values expertise. MsCorpres sets the bar high for industry standards.",
   },
   {
     id: 3,

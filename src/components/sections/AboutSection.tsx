@@ -115,6 +115,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                   mb: 3,
                   lineHeight: 1.8,
                   fontSize: "16px",
+                  textAlign:"justify"
                 }}
               >
                 {description}
@@ -126,6 +127,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                   mb: 2,
                   lineHeight: 1.8,
                   fontSize: "16px",
+                       textAlign:"justify"
                 }}
               >
                 {secondParagraph}

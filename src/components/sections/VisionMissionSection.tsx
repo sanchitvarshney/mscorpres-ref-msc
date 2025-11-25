@@ -179,6 +179,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
                     color: "rgba(255, 255, 255, 0.95)",
                     lineHeight: 1.8,
                     fontSize: "16px",
+                    textAlign: "justify",
                   }}
                 >
                   {visionDescription}
@@ -267,6 +268,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
                     color: "rgba(255, 255, 255, 0.95)",
                     lineHeight: 1.8,
                     fontSize: "16px",
+                         textAlign:"justify"
                   }}
                 >
                   {missionDescription}

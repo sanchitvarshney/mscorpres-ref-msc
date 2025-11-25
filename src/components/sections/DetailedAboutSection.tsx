@@ -252,6 +252,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                     mb: 3,
                     lineHeight: 1.9,
                     fontSize: "17px",
+                         textAlign:"justify"
                   }}
                 >
                   {mainDescription}
@@ -263,6 +264,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                     mb: 3,
                     lineHeight: 1.9,
                     fontSize: "17px",
+                         textAlign:"justify"
                   }}
                 >
                   {secondParagraph}
@@ -274,6 +276,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                     mb: 4,
                     lineHeight: 1.9,
                     fontSize: "17px",
+                         textAlign:"justify"
                   }}
                 >
                   {thirdParagraph}
@@ -282,108 +285,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             </Box>
           </Box>
 
-          {/* Stats Section */}
-          <motion.div
-            variants={containerVariants}
-            style={{ marginBottom: "3rem" }}
-          >
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 600,
-                mb: 6,
-                textAlign: "center",
-                color: "text.primary",
-                fontSize: { xs: "22px", md: "28px" },
-                position: "relative",
-
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -10,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 80,
-                  height: 4,
-                  background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                  borderRadius: 2,
-                },
-              }}
-            >
-              Our Achievements
-            </Typography>
-            <Grid container spacing={4}>
-              {stats.map((stat, index) => (
-                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-                  <motion.div variants={itemVariants}>
-                    <Box
-                      sx={{
-                        background: "white",
-                        borderRadius: 3,
-                        p: 4,
-                        height: "100%",
-                        textAlign: "center",
-                        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                        transition: "all 0.3s ease",
-                        border: "1px solid rgba(25, 118, 210, 0.1)",
-                        "&:hover": {
-                          transform: "translateY(-8px)",
-                          boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
-                          borderColor: customColor.primary,
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          color: customColor.primary,
-                          mb: 2,
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {stat.icon}
-                      </Box>
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          fontWeight: "bold",
-                          color: customColor.primary,
-                          mb: 1,
-                          fontSize: { xs: "32px", md: "40px" },
-                        }}
-                      >
-                        {stat.number}
-                      </Typography>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 600,
-                          mb: 1,
-                          color: "text.primary",
-                          fontSize: { xs: "16px", md: "18px" },
-                        }}
-                      >
-                        {stat.label}
-                      </Typography>
-                      {stat.description && (
-                        <Typography
-                          variant="caption"
-                          sx={{
-                            color: "text.secondary",
-                            fontSize: "12px",
-                            display: "block",
-                          }}
-                        >
-                          {stat.description}
-                        </Typography>
-                      )}
-                    </Box>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </motion.div>
+       
 
           {/* Vision & Mission Section */}
           <VisionMissionSection />
@@ -487,6 +389,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                         color: "text.secondary",
                         lineHeight: 1.7,
                         fontSize: "15px",
+                             textAlign:"justify"
                       }}
                     >
                       {value.description}

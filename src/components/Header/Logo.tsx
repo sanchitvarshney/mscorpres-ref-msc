@@ -1,14 +1,15 @@
+"use client";
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import { ArrowUpward } from "@mui/icons-material";
+import { Box } from "@mui/material";
 import Image from "next/image";
-import { customColor } from "@/utils/theme/customColor";
+import Link from "next/link";
 
 const Logo: React.FC = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+    <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }} >
  
-        <Image
+       <Link href="/">
+         <Image
           src="/logo/hrms_mscorpres_logo.png"
           alt="logo"
           width={200}
@@ -18,6 +19,7 @@ const Logo: React.FC = () => {
           priority
         />
  
+       </Link>
   
     </Box>
   );
