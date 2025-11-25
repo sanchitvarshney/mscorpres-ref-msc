@@ -26,7 +26,7 @@ export const defaultItems: CarouselItem[] = [
     title: "Welcome to MsCorpres",
     description:
       "Your trusted partner for electronics manufacturing and expert refurbishment",
-    image: "/images/about-section2.jpg",
+    image: "/images/about-section2.png",
   },
   {
     id: 2,
@@ -140,10 +140,7 @@ export const defaultTestimonials: Testimonial[] = [
 ];
 
 export const footerLinks = {
-  company: [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-  ],
+ 
   services: [
     { label: "IoT Manufacturing", href: "/services/iot-manufacturing" },
     { label: "PCB Design", href: "/services/pcb-design" },

@@ -1,7 +1,14 @@
 "use client";
 
-import React from "react";
-import { Box, Typography, Grid, IconButton } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  IconButton,
+  TextField,
+  Button,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import {
   Facebook,
@@ -13,16 +20,21 @@ import {
   LocationOn,
   YouTube,
   X,
+  Send,
 } from "@mui/icons-material";
 import Link from "next/link";
 import { customColor } from "@/utils/theme/customColor";
 import { footerLinks } from "@/dummydata/dummyData";
 
 const Footer: React.FC = () => {
- 
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
 
   const socialLinks = [
-  {
+    {
       name: "Facebook",
       icon: <Facebook />,
       link: "https://www.facebook.com/MsCorpres/",
@@ -34,7 +46,7 @@ const Footer: React.FC = () => {
     },
     {
       name: "Youtube",
-      icon: <YouTube  />,
+      icon: <YouTube />,
       link: "https://www.youtube.com/@mscorpres",
     },
     {
@@ -46,11 +58,44 @@ const Footer: React.FC = () => {
 
   const currentYear = new Date().getFullYear();
 
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !email.includes("@")) {
+      setSubmitStatus("error");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Simulate API call - Replace with your actual subscription API endpoint
+    try {
+      // TODO: Replace with actual API call
+      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+
+      // Simulate API delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setSubmitStatus("success");
+      setEmail("");
+
+      // Reset success message after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 3000);
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Box
       component="footer"
       sx={{
-      backgroundColor: customColor.dark,
+        backgroundColor: customColor.dark,
         color: "white",
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 6 },
@@ -83,7 +128,7 @@ const Footer: React.FC = () => {
                 sx={{
                   fontWeight: "bold",
                   mb: 2,
-                 backgroundColor: "#ffffff",
+                  backgroundColor: "#ffffff",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -91,13 +136,12 @@ const Footer: React.FC = () => {
               >
                 MsCorpres Manufacturer and Refurbisher Pvt. Ltd.
               </Typography>
-           
+
               <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
                 {socialLinks.map((social, index) => (
                   <IconButton
                     key={index}
-                    
-                      onClick={() => window.open(social.link, "_blank")}
+                    onClick={() => window.open(social.link, "_blank")}
                     sx={{
                       color: "rgba(255, 255, 255, 0.7)",
                       border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -115,10 +159,14 @@ const Footer: React.FC = () => {
                 ))}
               </Box>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                 <Typography
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Typography
                     variant="body2"
-                    sx={{ color: "rgba(255, 255, 255, 0.7)", fontWeight:600, fontSize:13 }}
+                    sx={{
+                      color: "rgba(255, 255, 255, 0.7)",
+                      fontWeight: 600,
+                      fontSize: 13,
+                    }}
                   >
                     GSTIN/UIN:
                   </Typography>
@@ -129,10 +177,14 @@ const Footer: React.FC = () => {
                     09AATCM1744R1ZH
                   </Typography>
                 </Box>
-                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                     <Typography
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Typography
                     variant="body2"
-                    sx={{ color: "rgba(255, 255, 255, 0.7)", fontWeight:600, fontSize:13 }}
+                    sx={{
+                      color: "rgba(255, 255, 255, 0.7)",
+                      fontWeight: 600,
+                      fontSize: 13,
+                    }}
                   >
                     CIN:
                   </Typography>
@@ -151,10 +203,10 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    +91 75 29 939393 (For Recruitment) 
+                    +91 75 29 939393 (For Recruitment)
                   </Typography>
                 </Box>
-                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                   <Phone
                     sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}
                   />
@@ -162,7 +214,7 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                   +91 88 26 788880 (For Sales)
+                    +91 88 26 788880 (For Sales)
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -196,37 +248,6 @@ const Footer: React.FC = () => {
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 600,
-                  mb: 2,
-                  color: "white",
-                }}
-              >
-                Company
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                {footerLinks.company.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className="text-[rgba(255,255,255,0.7)] no-underline text-[14px] transition-all duration-300 ease-in-out hover:text-white hover:translate-x-[5px]"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </Box>
-            </motion.div>
-          </Grid>
-
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-            <motion.div
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Typography
@@ -253,7 +274,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
@@ -280,6 +301,117 @@ const Footer: React.FC = () => {
                     {link.label}
                   </Link>
                 ))}
+              </Box>
+            </motion.div>
+          </Grid>
+
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+            <motion.div
+              initial={false}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  mb: 2,
+                  color: "white",
+                }}
+              >
+                Subscribe
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "rgba(255, 255, 255, 0.7)",
+                  mb: 2,
+                  fontSize: "14px",
+                }}
+              >
+                Stay updated with our latest news and updates.
+              </Typography>
+              <Box
+                component="form"
+                onSubmit={handleSubscribe}
+                sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}
+              >
+                <TextField
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      color: "white",
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      "& fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.2)",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.3)",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "rgba(255, 255, 255, 0.5)",
+                      },
+                    },
+                    "& .MuiInputBase-input::placeholder": {
+                      color: "rgba(255, 255, 255, 0.5)",
+                      opacity: 1,
+                    },
+                  }}
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  disabled={isSubmitting}
+                  endIcon={<Send />}
+                  sx={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.2)",
+                      borderColor: "rgba(255, 255, 255, 0.4)",
+                      transform: "translateY(-2px)",
+                    },
+                    "&:disabled": {
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                    transition: "all 0.3s ease",
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  {isSubmitting ? "Subscribing..." : "Subscribe"}
+                </Button>
+                {submitStatus === "success" && (
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#4caf50",
+                      fontSize: "13px",
+                      mt: 0.5,
+                    }}
+                  >
+                    Thank you for subscribing!
+                  </Typography>
+                )}
+                {submitStatus === "error" && (
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#f44336",
+                      fontSize: "13px",
+                      mt: 0.5,
+                    }}
+                  >
+                    Please enter a valid email address.
+                  </Typography>
+                )}
               </Box>
             </motion.div>
           </Grid>
