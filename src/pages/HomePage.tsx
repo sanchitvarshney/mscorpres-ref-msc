@@ -24,6 +24,7 @@ import {
   CircleOutlined,
   ShieldOutlined,
   TrackChangesOutlined,
+  VerifiedOutlined,
 } from "@mui/icons-material";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import { Typography, Box } from "@mui/material";
@@ -53,7 +54,7 @@ export const certificationItems: any[] = [
     id: 3,
     title: "Quality Assured",
     icon: (
-      <VerifiedIcon
+      <VerifiedOutlined
         sx={{ fontSize: { xs: 30, md: 60 }, color: customColor.primary }}
       />
     ),
