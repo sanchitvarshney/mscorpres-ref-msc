@@ -69,18 +69,14 @@ const Footer: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulate API call - Replace with your actual subscription API endpoint
+    
     try {
-      // TODO: Replace with actual API call
-      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
-
-      // Simulate API delay
+   
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setSubmitStatus("success");
       setEmail("");
 
-      // Reset success message after 3 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 3000);
