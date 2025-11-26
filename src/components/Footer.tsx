@@ -243,7 +243,7 @@ const Footer: React.FC = () => {
             </motion.div>
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <motion.div
               initial={false}
               whileInView={{ opacity: 1, y: 0 }}
