@@ -1,7 +1,15 @@
 "use client";
 
-import React from "react";
-import { Box, Typography, TextField, Button, Grid } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Grid,
+  Alert,
+  Snackbar,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -15,6 +23,8 @@ import {
   containerVariants,
 } from "@/utils/animationVarients/animation";
 import { customColor } from "@/utils/theme/customColor";
+import { validateEmail, validatePhone } from "@/utils/validations/validation";
+import api from "@/api/axiosInstance";
 
 const contactInfo = [
   {
@@ -48,10 +58,132 @@ interface ContactSectionProps {
   subtitle?: string;
 }
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  subject?: string;
+  message?: string;
+}
+
 const ContactSection: React.FC<ContactSectionProps> = ({
   title = "Get In Touch",
   subtitle = "Have questions or need assistance? We're here to help you with all your electronics and technology needs.",
 }) => {
+  const [formLoading, setFormLoading] = useState<boolean>(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [snackbar, setSnackbar] = useState<{
+    open: boolean;
+    message: string;
+    severity: "success" | "error";
+  }>({
+    open: false,
+    message: "",
+    severity: "success",
+  });
+
+  // Handle input change
+  const handleChange =
+    (field: keyof FormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      let value = e.target.value;
+
+      if (field === "phone") {
+        value = value.replace(/[^\d+\s]/g, "");
+        if (value.includes("+") && value.indexOf("+") !== 0) {
+          value = value.replace(/\+/g, "");
+          value = "+" + value;
+        }
+        if (value.replace(/\s/g, "").length > 16) {
+          return;
+        }
+      }
+
+      setFormData((prev) => ({ ...prev, [field]: value }));
+
+      if (errors[field]) {
+        setErrors((prev) => ({ ...prev, [field]: undefined }));
+      }
+    };
+
+  // Validate form
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setFormLoading(true);
+
+    try {
+      const response = await api.post("/submit", {
+        fullName: formData.name.trim(),
+        email: formData.email.trim(),
+        phoneNo: formData.phone.replace(/\s/g, ""),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+        type: "MSCMR",
+      });
+
+      if (response.data.success) {
+  
+        setSnackbar({
+          open: true,
+          message:
+            response.data.message || "Your message has been sent successfully!",
+          severity: "success",
+        });
+
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        setErrors({});
+      }
+
+      if (!response.data.success) {
+        setSnackbar({
+          open: true,
+          message:
+            response.data.message || "Something went wrong. Please try again.",
+          severity: "error",
+        });
+      }
+    } catch (error: any) {
+      setSnackbar({
+        open: true,
+        message: error
+          ? error?.response.data.message
+          : "Failed to send message. Please try again later.",
+        severity: "error",
+      });
+    } finally {
+      setFormLoading(false);
+    }
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
+  };
+
   return (
     <Box
       sx={{
@@ -155,6 +287,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               </Typography>
               <Box
                 component="form"
+                onSubmit={handleSubmit}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -165,6 +298,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   fullWidth
                   label="Your Name"
                   variant="outlined"
+                  value={formData.name}
+                  onChange={handleChange("name")}
+                  error={!!errors.name}
+                  helperText={errors.name}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&.Mui-focused fieldset": {
@@ -182,6 +319,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   label="Your Email"
                   type="email"
                   variant="outlined"
+                  value={formData.email}
+                  onChange={handleChange("email")}
+                  error={!!errors.email}
+                  helperText={errors.email}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&.Mui-focused fieldset": {
@@ -199,6 +340,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   label="Phone Number"
                   type="tel"
                   variant="outlined"
+                  value={formData.phone}
+                  onChange={handleChange("phone")}
+                  error={!!errors.phone}
+                  helperText={errors.phone}
+                  placeholder="+91 1234567890"
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&.Mui-focused fieldset": {
@@ -215,6 +361,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   fullWidth
                   label="Subject"
                   variant="outlined"
+                  value={formData.subject}
+                  onChange={handleChange("subject")}
+                  error={!!errors.subject}
+                  helperText={errors.subject}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&.Mui-focused fieldset": {
@@ -232,6 +382,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   multiline
                   rows={5}
                   variant="outlined"
+                  value={formData.message}
+                  onChange={handleChange("message")}
+                  error={!!errors.message}
+                  helperText={errors.message}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "&.Mui-focused fieldset": {
@@ -245,9 +399,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 />
                 <div className="flex justify-end">
                   <Button
+                    type="submit"
                     variant="contained"
                     size="large"
                     endIcon={<Send />}
+                    disabled={formLoading}
                     sx={{
                       fontWeight: 600,
                       py: 1.5,
@@ -256,10 +412,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                         transform: "translateY(-2px)",
                         boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
                       },
+                      "&:disabled": {
+                        backgroundColor: customColor.primary,
+                        opacity: 0.6,
+                      },
                       transition: "all 0.3s ease",
                     }}
                   >
-                    Send Message
+                    {formLoading ? "Sending..." : "Send Message"}
                   </Button>
                 </div>
               </Box>
@@ -348,6 +508,20 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           </Box>
         </div>
       </motion.div>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbar.severity}
+          sx={{ width: "100%" }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };

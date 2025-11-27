@@ -8,6 +8,8 @@ import {
   IconButton,
   TextField,
   Button,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import {
@@ -25,6 +27,7 @@ import {
 import Link from "next/link";
 import { customColor } from "@/utils/theme/customColor";
 import { footerLinks } from "@/dummydata/dummyData";
+import api from "@/api/axiosInstance";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -32,6 +35,15 @@ const Footer: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
     null
   );
+  const [snackbar, setSnackbar] = useState<{
+    open: boolean;
+    message: string;
+    severity: "success" | "error";
+  }>({
+    open: false,
+    message: "",
+    severity: "success",
+  });
 
   const socialLinks = [
     {
@@ -69,22 +81,45 @@ const Footer: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    
     try {
-   
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await api.post("/subscribe", {
+        email: email.trim(),
 
-      setSubmitStatus("success");
-      setEmail("");
+        type: "MSCMR",
+      });
 
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 3000);
-    } catch (error) {
-      setSubmitStatus("error");
+      if (response.data.success) {
+        setSnackbar({
+          open: true,
+          message:
+            response.data.message || "Your message has been sent successfully!",
+          severity: "success",
+        });
+        setEmail("");
+      }
+
+      if (!response.data.success) {
+        setSnackbar({
+          open: true,
+          message:
+            response.data.message || "Something went wrong. Please try again.",
+          severity: "error",
+        });
+      }
+    } catch (error: any) {
+      setSnackbar({
+        open: true,
+        message: error
+          ? error?.response.data.message
+          : "Failed to send message. Please try again later.",
+        severity: "error",
+      });
     } finally {
       setIsSubmitting(false);
     }
+  };
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
   };
 
   return (
@@ -384,30 +419,7 @@ const Footer: React.FC = () => {
                 >
                   {isSubmitting ? "Subscribing..." : "Subscribe"}
                 </Button>
-                {submitStatus === "success" && (
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#4caf50",
-                      fontSize: "13px",
-                      mt: 0.5,
-                    }}
-                  >
-                    Thank you for subscribing!
-                  </Typography>
-                )}
-                {submitStatus === "error" && (
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#f44336",
-                      fontSize: "13px",
-                      mt: 0.5,
-                    }}
-                  >
-                    Please enter a valid email address.
-                  </Typography>
-                )}
+              
               </Box>
             </motion.div>
           </Grid>
@@ -439,6 +451,20 @@ const Footer: React.FC = () => {
           </motion.div>
         </Box>
       </Box>
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbar.severity}
+          sx={{ width: "100%" }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
