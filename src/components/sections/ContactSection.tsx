@@ -25,6 +25,7 @@ import {
 import { customColor } from "@/utils/theme/customColor";
 import { validateEmail, validatePhone } from "@/utils/validations/validation";
 import api from "@/api/axiosInstance";
+import SuccessAlertCard from "@/components/SuccessAlertCard";
 
 const contactInfo = [
   {
@@ -96,6 +97,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     message: "",
     severity: "success",
   });
+  const [showSuccessAlert, setShowSuccessAlert] = useState<boolean>(false);
+  const [successMessage, setSuccessMessage] = useState<string>("");
 
   // Handle input change
   const handleChange =
@@ -140,14 +143,16 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       });
 
       if (response.data.success) {
-  
+        const message =
+          response.data.message || "Your message has been sent successfully!";
+        setSuccessMessage(message);
+        setShowSuccessAlert(true);
+
         setSnackbar({
           open: true,
-          message:
-            response.data.message || "Your message has been sent successfully!",
+          message: message,
           severity: "success",
         });
-
 
         setFormData({
           name: "",
@@ -522,6 +527,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           {snackbar.message}
         </Alert>
       </Snackbar>
+      {showSuccessAlert && (
+        <SuccessAlertCard
+          message={successMessage}
+          setAlert={setShowSuccessAlert}
+        />
+      )}
     </Box>
   );
 };
