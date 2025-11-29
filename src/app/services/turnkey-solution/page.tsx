@@ -14,13 +14,10 @@ export default function TurnkeySolutionPage() {
           title="Turnkey Solution"
           description="Complete end-to-end solutions from concept to delivery, handling every aspect of your project with expertise and precision."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+            imageUrl="/images/manufac.mp4"
         />
 
         <ManufacturerSection

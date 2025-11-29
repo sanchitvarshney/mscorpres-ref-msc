@@ -15,13 +15,10 @@ export default function FirmwareEmbeddedSoftwarePage() {
           title="Firmware & Embedded Software"
           description="Professional firmware and embedded software development services for microcontrollers, IoT devices, and embedded systems with optimized performance and reliability."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+        imageUrl="/images/software.mp4"
         />
 
         <ManufacturerSection

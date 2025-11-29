@@ -71,25 +71,25 @@ export const manufacAndRefruData = [
 ];
 export const productData = [
   {
-    id: 1,
+    id: 8,
     label: "Electronics",
     img: "/services-img/electro.svg",
     path: "/services/electronics",
   },
   {
-    id: 2,
+    id: 9,
     label: "Rapid Prototyping",
     img: "/services-img/rapid.svg",
     path: "/services/rapid-prototyping",
   },
   {
-    id: 3,
+    id: 10,
     label: "DFM Solution",
     img: "/services-img/dfm.svg",
     path: "/services/dfm-solution",
   },
   {
-    id: 4,
+    id: 11,
     label: "Product Life Cycle",
     img: "/services-img/cycle.svg",
     path: "/services/product-life-cycle",
@@ -97,21 +97,21 @@ export const productData = [
 ];
 export const softwareData = [
   {
-    id: 1,
+    id: 12,
     label: "ERP and MES ",
-    img: "/services-img/erp.png",
+    img: "/services-img/erp.svg",
     path: "/services/erp-and-mes",
   },
   {
-    id: 2,
+    id: 13,
     label: "Software Solution for Electronics",
     img: "/services-img/soft.svg",
     path: "/services/software-solution-for-electronics",
   },
   {
-    id: 3,
+    id: 14,
     label: "Firmware & Embedded Software",
-    img: "/services-img/embeded-soft.svg",
+    img: "/services-img/embeded.svg",
     path: "/services/firmware-embedded-software",
   },
 ];

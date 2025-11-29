@@ -15,13 +15,11 @@ export default function SoftwareSolutionForElectronicsPage() {
           title="Software Solution for Electronics"
           description="Custom software development tailored specifically for electronics manufacturing and embedded systems."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+       
+           imageUrl="/images/software.mp4"
         />
 
         <ManufacturerSection

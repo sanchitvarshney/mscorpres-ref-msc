@@ -16,13 +16,11 @@ export default function ERPAndMESPage() {
           title="ERP and MES"
           description="Comprehensive enterprise resource planning and manufacturing execution systems that streamline your entire manufacturing operations."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+          
+            imageUrl="/images/software.mp4"
         />
 
         <ManufacturerSection

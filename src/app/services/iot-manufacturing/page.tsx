@@ -16,13 +16,11 @@ export default function IoTManufacturingPage() {
           title="IoT Manufacturing"
           description="Cutting-edge Internet of Things devices designed for seamless connectivity and smart functionality."
           height={{
-            xs: "60vh",
+            xs: "30vh",
             md: "calc(100vh - 148px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+            imageUrl="/images/manufac.mp4"
+         
         />
 
         <ManufacturerSection

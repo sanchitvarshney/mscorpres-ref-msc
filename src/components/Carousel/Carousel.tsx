@@ -53,24 +53,13 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           <Box
             key={item.id}
             sx={{
-              height: { xs: "300px", md: "calc(100vh - 148px)" },
+              height: { xs: "300px", md: "calc(100vh - 130px)" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               position: "relative",
               overflow: "hidden",
-              "&::before": item.image
-                ? {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: "rgba(0, 0, 0, 0)",
-                    zIndex: 1,
-                  }
-                : {},
+             
             }}
           >
             {item.image && (
@@ -98,7 +87,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             <Box
               sx={{
                 textAlign: "center",
-                color: "#fff",
+                color: item.id === 1 ? "#000" : "#fff",
                 zIndex: 2,
                 position: "relative",
                 px: 3,

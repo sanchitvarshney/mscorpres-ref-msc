@@ -15,13 +15,11 @@ export default function SKDAndCKDDesignPage() {
           title="SKD and CKD Design"
           description="Semi-Knocked Down (SKD) and Completely Knocked Down (CKD) design solutions for efficient manufacturing and assembly processes."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+        
+               imageUrl="/images/manufac.mp4"
         />
 
         <ManufacturerSection

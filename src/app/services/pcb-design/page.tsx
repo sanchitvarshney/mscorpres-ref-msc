@@ -6,6 +6,7 @@ import ManufacturerSection from "@/components/sections/ManufacturerSection";
 import { pcbFeatures } from "@/dummydata/servicesData";
 
 export default function PCBDesignPage() {
+  const path = "/services/pcb-design";
   return (
     <MainLayout>
       <div className="w-full min-h-screen">
@@ -15,13 +16,11 @@ export default function PCBDesignPage() {
           title="PCB Design"
           description="Professional printed circuit board design solutions with precision engineering and optimized layouts for your electronic systems."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+      
+          imageUrl="/images/manufac.mp4"
         />
 
         <ManufacturerSection
@@ -34,7 +33,6 @@ export default function PCBDesignPage() {
           description1="We provide reliable, high-precision PCB assembly services—covering SMT, through-hole, and mixed-technology assemblies—tailored for diverse electronic applications. With advanced equipment and an experienced engineering team, we ensure every board is assembled to the highest quality standards. Our capabilities support both HMLV (High-Mix Low-Volume) and LMHV (Low-Mix High-Volume) production, delivering efficient, accurate, and consistent results for all your electronic manufacturing needs."
           description2="Our advanced infrastructure and rigorous testing workflows make us a trusted partner for high-quality PCB assembly. With meticulous inspections, precision machinery, and zero-defect standards, we ensure every board meets industry-grade reliability. Partner with us for exceptional service, fast turnaround times, and cost-effective PCB assembly solutions tailored to your exact requirements."
         />
-       
       </div>
     </MainLayout>
   );

@@ -15,13 +15,11 @@ export default function BoxBuildingPage() {
           title="Box Building"
           description="Complete box building solutions for electronic assemblies with quality craftsmanship and attention to detail."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+        
+           imageUrl="/images/manufac.mp4"
         />
 
         <ManufacturerSection
