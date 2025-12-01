@@ -90,6 +90,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           loop
           muted
           playsInline
+            preload="auto"
           style={{
             width: "100%",
             height: "100%",
