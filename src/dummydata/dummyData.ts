@@ -71,7 +71,7 @@ export const cardsData = [
   },
   {
     image: [{title:"dashboard", src:"/dashboards/spigen.png"},{title:"dashboard", src:"/dashboards/oakter.png"},{title:"dashboard", src:"/dashboards/alwar.png"},{title:"dashboard", src:"/dashboards/dummyDash.png"},{title:"dashboard", src:"/dashboards/dummyDash2.png"},],
-    title: "ERP and Tools",
+    title: "ERP and MES Tools",
     description:
       "Comprehensive ERP, MES and more tools solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
     action: true,
