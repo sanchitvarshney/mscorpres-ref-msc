@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { memo, useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -11,10 +11,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { customColor } from "@/utils/theme/customColor";
 
-// Helper function to convert service title to URL-friendly ID
-const titleToId = (title: string): string => {
-  return title.toLowerCase().replace(/\s+/g, "-");
-};
 
 interface CardProps {
   item: any;
@@ -56,14 +52,19 @@ const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
               },
             }}
           >
-            <Image
-              src={item?.image}
-              alt={item?.title || "Service image"}
-              fill
-              style={{ objectFit: "cover" }}
-              loading="lazy"
-              quality={85}
-            />
+            {Array.isArray(item?.image) ? (
+              <ImageSlider imageArrays={item?.image} />
+            ) : (
+              <Image
+                src={item?.image}
+                alt={item?.title || "Service image"}
+                fill
+                style={{ objectFit: "cover" }}
+                loading="lazy"
+                quality={85}
+              />
+            )}
+          
           </Box>
           {/* Text Overlay on Image */}
           <Box
@@ -133,5 +134,20 @@ const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
     </Card>
   );
 };
+
+const ImageSlider = memo(({ imageArrays }:any) => {
+  const allImages = imageArrays?.flat();
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex(prev => (prev + 1) % allImages?.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return <img src={allImages[index]?.src} width={300} />;
+})
 
 export default CustomCard;

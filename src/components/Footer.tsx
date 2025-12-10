@@ -234,20 +234,10 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    +91 75 29 939393 (For Recruitment)
+                    +91 75 29 939393
                   </Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <Phone
-                    sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}
-                  />
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "rgba(255, 255, 255, 0.7)" }}
-                  >
-                    +91 88 26 788880 (For Sales)
-                  </Typography>
-                </Box>
+
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                   <Email
                     sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}
@@ -268,6 +258,19 @@ const Footer: React.FC = () => {
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
                     B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305
+                  </Typography>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <LocationOn
+                    sx={{ fontSize: 16, color: "rgba(255, 255, 255, 0.7)" }}
+                  />
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                    Our Presence at: - Unit No - A 123, Dubai Silicon Oasis,
+                    DDP, Building A3, Dubai, United Arab Emirates PO Box: 418425
+                    Mob: +971 44218356
                   </Typography>
                 </Box>
               </Box>
@@ -419,7 +422,6 @@ const Footer: React.FC = () => {
                 >
                   {isSubmitting ? "Subscribing..." : "Subscribe"}
                 </Button>
-              
               </Box>
             </motion.div>
           </Grid>

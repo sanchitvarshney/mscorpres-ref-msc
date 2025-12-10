@@ -70,10 +70,10 @@ export const cardsData = [
     path: "/services/device-refurbishment",
   },
   {
-    image: "/images/erp.png",
-    title: "ERP and MES",
+    image: [{title:"dashboard", src:"/dashboards/spigen.png"},{title:"dashboard", src:"/dashboards/oakter.png"},{title:"dashboard", src:"/dashboards/alwar.png"},{title:"dashboard", src:"/dashboards/dummyDash.png"},{title:"dashboard", src:"/dashboards/dummyDash2.png"},],
+    title: "ERP and Tools",
     description:
-      "Comprehensive ERP and MES solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
+      "Comprehensive ERP, MES and more tools solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
     action: true,
     path: "/services/erp-and-mes",
   },
@@ -94,6 +94,8 @@ export const defaultCompanies: Company[] = [
   { id: 4, name: "Spigen", logo: "/logo/SpigenImage.png" },
   { id: 5, name: "Yours Freshly", logo: "/images/img-client.webp" },
   { id: 6, name: "Bharartpr", logo: "/logo/bharatpe-logo.png" },
+  { id: 7, name: "HGD", logo: "/logo/HGD-logo.png" },
+  { id: 8, name: "Carretx", logo: "/logo/carretxlogo.webp" },
 ];
 
 export const defaultTestimonials: Testimonial[] = [
@@ -127,7 +129,7 @@ export const defaultTestimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Yours Freshly",
+    name: "Sarthak Anand",
     image: "/images/img-client.webp",
     company: "Yours Freshly",
     rating: 4,
