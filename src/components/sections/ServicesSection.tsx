@@ -10,18 +10,12 @@ import {
 } from "@/utils/animationVarients/animation";
 import { customColor } from "@/utils/theme/customColor";
 
-interface ServiceItem {
-  id?: number;
-  image?: string;
-  title?: string;
-  description?: string;
-  action?: boolean;
-}
+
 
 interface ServicesSectionProps {
   title?: string;
   subtitle?: string;
-  services?: ServiceItem[];
+  services?: any[];
 }
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({
