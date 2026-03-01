@@ -46,10 +46,10 @@ const defaultStats: StatItem[] = [
 const AboutSection: React.FC<AboutSectionProps> = ({
   title = "Leading Excellence in Electronics & Technology",
   subtitle = "ABOUT US",
-  description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do.",
-  secondParagraph = "We combine cutting-edge technology with expert craftsmanship to deliver solutions that exceed expectations and drive your business forward.",
+  description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do. From concept to completion, we leverage cutting-edge technology, rigorous testing standards, and a customer-first approach to deliver solutions that consistently exceed expectations. As the industry evolves, we continue to adapt, innovate, and refine our processes to ensure our clients always receive the most reliable and forward-thinking products and services.",
+  secondParagraph = "",
   stats = defaultStats,
-  imageUrl = "/images/mix-about.jpg",
+  imageUrl = "/images/about-combine.jpg",
   imageAlt = "About Us",
 }) => {
   return (
@@ -73,7 +73,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             alignItems: "center",
           }}
         >
-         
           <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
             <motion.div
               variants={{
@@ -115,25 +114,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                   mb: 3,
                   lineHeight: 1.8,
                   fontSize: "16px",
-                  textAlign:"justify"
+                  textAlign: "justify",
                 }}
               >
                 {description}
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "text.secondary",
-                  mb: 2,
-                  lineHeight: 1.8,
-                  fontSize: "16px",
-                       textAlign:"justify"
-                }}
-              >
-                {secondParagraph}
-              </Typography>
-
-       
             </motion.div>
           </Box>
 

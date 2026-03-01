@@ -46,6 +46,12 @@ const contactInfo = [
     value: "B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305",
     description: "Noida, Uttar Pradesh - 201305",
   },
+    {
+    icon: <LocationOn sx={{ color: customColor.primary }} />,
+    title: "Address (Mob: +971 44218356)",
+    value: "Unit No - A 123, Dubai Silicon Oasis, DDP, Building A3, Dubai, United Arab Emirates",
+    description: "Dubai, United Arab Emirates PO Box: 418425",
+  },
   {
     icon: <AccessTime sx={{ color: customColor.primary }} />,
     title: "Working Hours",

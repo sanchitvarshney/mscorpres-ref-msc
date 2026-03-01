@@ -25,7 +25,9 @@ const Header: React.FC = () => {
             py: 0.5,
           }}
         >
-          <Logo />
+          <Box  sx={{display: {xs: "none", md: "block"}}}/>
+          <Box sx={{display: {xs: "block", md: "none"}}}><Logo /></Box>
+          <Box sx={{position:"absolute", top: {xs: "0px", md: "6px"}}}><Logo /></Box>
           <ContactInfo />
         </Box>
         <NavigationBar />

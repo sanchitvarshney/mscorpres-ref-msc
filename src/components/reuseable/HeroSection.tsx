@@ -3,6 +3,8 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import { useParams, usePathname } from "next/navigation";
+import { gradientPaths } from "@/dummydata/pathData";
 
 interface HeroSectionProps {
   imageUrl?: string;
@@ -26,16 +28,15 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  imageUrl = "/images/gifanim_nw.mp4",
+  imageUrl = "/images/elec.mp4",
   alt = "Hero Image",
   subtitle,
   title,
   description,
   gradientOverlay = {
-    startColor:  "rgba(255, 255, 255, 0.1)",
-    endColor:  "rgba(255, 255, 255, 1)",
-   
-  
+    startColor: "rgba(0, 0, 0, 0.2)",
+    endColor: "rgba(0, 0, 0, 0.8)",
+
     opacity: 1,
   },
   height = {
@@ -47,7 +48,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     md: "500px",
   },
 }) => {
-
+ 
+  const pathname:any = usePathname();
+  const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 140%)`;
 
   return (
     <Box
@@ -58,7 +61,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         minHeight: minHeight,
         overflow: "hidden",
         display: "flex",
-      
+        "&::before": gradientPaths.includes(pathname) ? {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: overlayGradient,
+          zIndex: 1,
+        } : {},
       }}
     >
       {/* Background Image */}
@@ -70,7 +82,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           width: "100%",
           height: "100%",
           zIndex: 0,
-        
         }}
       >
         <video
@@ -79,6 +90,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           loop
           muted
           playsInline
+            preload="auto"
           style={{
             width: "100%",
             height: "100%",
@@ -93,8 +105,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           position: "relative",
           zIndex: 2,
           textAlign: "center",
-          color: "#000000",
-          mt:2
+          color: "#ffffff",
+
+          mt: 2,
         }}
       >
         <motion.div
@@ -111,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 letterSpacing: 4,
                 fontWeight: 600,
                 mb: 2,
-                color: "rgba(0, 0, 0, 0.9)",
+                color: "rgba(255, 255, 255, 0.9)",
               }}
             >
               {subtitle}
@@ -126,7 +139,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               mb: description ? 3 : 0,
               textShadow: "0 2px 10px rgba(0,0,0,0.3)",
               lineHeight: 1.2,
-              color: "#000000"
+              color: "#ffffff",
             }}
           >
             {title}
@@ -136,10 +149,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               variant="h6"
               sx={{
                 fontSize: { xs: "16px", md: "20px" },
-                fontWeight: 400,
+                fontWeight: "bold",
+
                 maxWidth: "800px",
                 mx: "auto",
-                color: "rgba(0, 0, 0, 0.95)",
+                color: "#ffffff",
+
                 textShadow: "0 1px 5px rgba(0,0,0,0.2)",
                 lineHeight: 1.6,
               }}

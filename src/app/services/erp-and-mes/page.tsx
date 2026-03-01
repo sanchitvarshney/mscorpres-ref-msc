@@ -10,19 +10,15 @@ export default function ERPAndMESPage() {
     <MainLayout>
       <div className="w-full min-h-screen">
         <HeroSection
-       
           alt="ERP and MES Hero"
           subtitle="OUR SERVICES"
-          title="ERP and MES"
+          title="ERP and MES Tools"
           description="Comprehensive enterprise resource planning and manufacturing execution systems that streamline your entire manufacturing operations."
           height={{
-            xs: "60vh",
-            md: "calc(100vh - 148px)",
+            xs: "30vh",
+            md: "calc(100vh - 132px)",
           }}
-          minHeight={{
-            xs: "400px",
-            md: "500px",
-          }}
+          imageUrl="/images/software.mp4"
         />
 
         <ManufacturerSection
@@ -39,4 +35,3 @@ export default function ERPAndMESPage() {
     </MainLayout>
   );
 }
-

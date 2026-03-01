@@ -12,14 +12,11 @@ import {
 import { customColor } from "@/utils/theme/customColor";
 import { defaultTestimonials, Testimonial } from "@/dummydata/dummyData";
 
-
 interface TestimonialsSectionProps {
   title?: string;
   subtitle?: string;
   testimonials?: Testimonial[];
 }
-
-
 
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   title = "What Our Clients Say",
@@ -217,36 +214,27 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     </Avatar>
                   )}
                   <Box>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: 600,
-                        color: "text.primary",
-                        fontSize: { xs: "16px", md: "18px" },
-                        mb: 0.5,
-                      }}
-                    >
-                      {testimonial.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "text.secondary",
-                        fontSize: { xs: "13px", md: "14px" },
-                      }}
-                    >
-                      {testimonial.position}
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        color: "text.primary",
-                        fontSize: { xs: "12px", md: "13px" },
-                        fontWeight: 500,
-                      }}
-                    >
-                      {testimonial.company}
-                    </Typography>
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <span
+                        style={{
+                          fontWeight: 600,
+                          color: "text.primary",
+                               fontSize: "16px",
+                        }}
+                      >
+                        {testimonial.name}
+                      </span>
+
+                      <span
+                        style={{
+                          color: "text.primary",
+                          fontSize: "13px",
+                     
+                        }}
+                      >
+                        {testimonial.company}
+                      </span>
+                    </Box>
                   </Box>
                 </Box>
               </Box>

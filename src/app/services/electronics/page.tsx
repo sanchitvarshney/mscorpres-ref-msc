@@ -23,6 +23,8 @@ export default function ElectronicsPage() {
             xs: "400px",
             md: "500px",
           }}
+     
+
         />
 
         <ManufacturerSection

@@ -78,27 +78,28 @@ const defaultValues: ValueItem[] = [
     icon: <EngineeringOutlined sx={{ fontSize: 36 }} />,
     title: "Innovation",
     description:
-      "We continuously invest in cutting-edge technology and innovative solutions to stay ahead of industry trends and deliver superior results.",
+      "We bring forward-thinking ideas and advanced technologies to every project that push your products ahead of the competition.",
   },
   {
     icon: <VerifiedUserOutlined sx={{ fontSize: 36 }} />,
     title: "Quality",
     description:
-      "Quality is at the heart of everything we do. We maintain rigorous standards and comprehensive quality control processes.",
+      "We deliver products that meet strict performance standards, backed by thorough testing and reliable engineering practices.",
   },
   {
     icon: <LocalShippingOutlined sx={{ fontSize: 36 }} />,
     title: "Reliability",
     description:
-      "Our clients trust us because we deliver on our promises. We ensure timely delivery and consistent performance.",
+      "We provide dependable manufacturing and service delivery, ensuring your products arrive on time and perform as expected.",
   },
   {
     icon: <TrendingUpOutlined sx={{ fontSize: 36 }} />,
     title: "Excellence",
     description:
-      "We strive for excellence in every project, going above and beyond to exceed expectations and drive success.",
+      "We consistently raise the bar—offering refined processes, detailed craftsmanship, and results that elevate your business.",
   },
 ];
+
 
 const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   title = "Our Journey of Excellence",
@@ -108,7 +109,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
   stats = defaultStats,
   values = defaultValues,
-  imageUrl = "/images/about-page-mix.jpg",
+  imageUrl = "/images/mix-about.jpg",
   imageAlt = "Our Company",
 }) => {
   return (
@@ -195,20 +196,10 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                 <Box
                   sx={{
                     position: "relative",
-                    borderRadius: 4,
+              
                     overflow: "hidden",
                     boxShadow: "0 15px 50px rgba(0,0,0,0.15)",
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background:
-                        "linear-gradient(135deg, rgba(25,118,210,0.15) 0%, rgba(13,71,161,0.15) 100%)",
-                      zIndex: 1,
-                    },
+                  
                   }}
                 >
                   <Box

@@ -7,7 +7,6 @@ export interface CarouselItem {
 export interface Testimonial {
   id: number;
   name: string;
-  position: string;
   company: string;
   image?: string;
   rating: number;
@@ -35,13 +34,14 @@ export const defaultItems: CarouselItem[] = [
       "Providing high-standard electronics manufacturing and refurbishing tailored to your business needs",
     image: "/images/pcb-design.jpg",
   },
-  {
+   {
     id: 3,
-    title: "Our Expert Team",
+    title: "End-to-End Solutions",
     description:
-      "Skilled professionals dedicated to delivering reliable manufacturing and refurbishing solutions",
-    image: "/images/Product-Design.jpg",
+      "From product development to refurbishment, we ensure complete, high-quality solutions at every stage",
+    image: "/images/solu.jpg",
   },
+
 ];
 
 export const cardsData = [
@@ -62,7 +62,7 @@ export const cardsData = [
     path: "/services/pcb-design",
   },
   {
-    image: "/images/device.png",
+    image: "/images/device.jpg",
     title: "Device Refurbishment",
     description:
       "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage.",
@@ -70,10 +70,10 @@ export const cardsData = [
     path: "/services/device-refurbishment",
   },
   {
-    image: "/images/erp.png",
-    title: "ERP and MES",
+    image: [{title:"dashboard", src:"/dashboards/spigen.png"},{title:"dashboard", src:"/dashboards/oakter.png"},{title:"dashboard", src:"/dashboards/alwar.png"},{title:"dashboard", src:"/dashboards/dummyDash.png"},{title:"dashboard", src:"/dashboards/dummyDash2.png"},],
+    title: "ERP and MES Tools",
     description:
-      "Comprehensive ERP and MES solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
+      "Comprehensive ERP, MES and more tools solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
     action: true,
     path: "/services/erp-and-mes",
   },
@@ -94,15 +94,16 @@ export const defaultCompanies: Company[] = [
   { id: 4, name: "Spigen", logo: "/logo/SpigenImage.png" },
   { id: 5, name: "Yours Freshly", logo: "/images/img-client.webp" },
   { id: 6, name: "Bharartpr", logo: "/logo/bharatpe-logo.png" },
+  { id: 7, name: "HGD", logo: "/logo/HGD-logo.png" },
+  { id: 8, name: "Carretx", logo: "/logo/carretxlogo.webp" },
 ];
 
 export const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "C-PRAV",
+    name: "Praven Kumar",
     image: "/images/ausclient.jpg",
-    position: "CEO",
-    company: "Australia",
+    company: "C-PRAV (Australia)",
     rating: 4,
     comment:
       "If you have reached out to MsCorpres you are in the right hands. Our requirements were well understood and very professionally handled from start to finish. Very honest, sincere and hardworking staff who go out of their way to deliver efficient services. Highly recommend MsCorpres and we wish them continuing deserving success in their endeavours.",
@@ -111,8 +112,8 @@ export const defaultTestimonials: Testimonial[] = [
     id: 2,
     name: "Yogesh Soni",
     image: "/images/client-img.jpg",
-    position: "SD",
-    company: "MsCorpres PVT. LTD.",
+  
+    company: "SD Lecturer (IIT Delhi)",
     rating: 4.5,
     comment:
       " MsCorpres is an exceptional platform that fosters innovation and growth. As a software developer, I've flourished here, empowered by cutting-edge technologies and a collaborative environment. The company's commitment to excellence fuels my passion for crafting efficient solutions. It's a privilege to contribute to a team that champions creativity and values expertise. MsCorpres sets the bar high for industry standards.",
@@ -121,17 +122,15 @@ export const defaultTestimonials: Testimonial[] = [
     id: 3,
     name: "Shishir Gupta",
     image: "/images/oak-client.jpg",
-    position: "CEO",
-    company: "Oakter",
+    company: "CEO Oakter (India)",
     rating: 4.5,
     comment:
       "We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently handle our finance, billing, Production, warehousing & logistics. Its a pleasure to work with MsCorpres with seamless coordination with our internal team. The whole team works poore dil se for mutual company's growth. Aur Shahrukh khan sir & Paulo Coelho sir ne bhi kaha hai......jis cheez ko dil se chahe to poori kaaynat lag jaati hai tumhe woh dilane ke liye.",
   },
   {
     id: 4,
-    name: "Yours Freshly",
+    name: "Sarthak Anand",
     image: "/images/img-client.webp",
-    position: "",
     company: "Yours Freshly",
     rating: 4,
     comment:

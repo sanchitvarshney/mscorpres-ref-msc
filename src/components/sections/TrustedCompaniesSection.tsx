@@ -27,7 +27,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
       sx={{
         py: { xs: 2, md: 4 },
 
-        px: { xs: 8, md: 35 },
+        px: { xs: 4, md: 10 },
         position: "relative",
         background:
           "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
@@ -113,7 +113,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
             position: "relative",
             width: "100%",
             overflow: "hidden",
-            py: 2,
+            py: 1,
             maskImage: {
               xs: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
               md: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
