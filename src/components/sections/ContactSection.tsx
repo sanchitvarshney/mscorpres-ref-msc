@@ -31,7 +31,7 @@ const contactInfo = [
   {
     icon: <Phone sx={{ color: customColor.primary }} />,
     title: "Phone",
-    value: "+91 75 29 939393",
+    value: "+91 7529949494",
     description: "Call us anytime",
   },
   {
