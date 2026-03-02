@@ -78,7 +78,7 @@ const ContactInfo: React.FC = () => {
       <ContactItem
         icon={<Phone sx={{ fontSize: 20 }} />}
         label="Call Us"
-        value="+91 7529949494"
+        value="+91 7529949494 (For Recruitment)"
         iconColor="primary.main"
       />
       <ContactItem

@@ -234,7 +234,7 @@ const Footer: React.FC = () => {
                     variant="body2"
                     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
                   >
-                    +91 7529949494
+                    +91 7529949494(For Recruitment)
                   </Typography>
                 </Box>
 
