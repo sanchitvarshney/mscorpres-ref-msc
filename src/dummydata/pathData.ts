@@ -10,5 +10,6 @@ export const gradientPaths = [
   "/services/electronics",
   "/services/rapid-prototyping",
   "/services/dfm-solution",
-  "/services/product-life-cycle"
+  "/services/product-life-cycle",
+  "/careers"
 ];

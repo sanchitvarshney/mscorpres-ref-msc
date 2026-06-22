@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import ReduxProvider from "@/components/ReduxProvider";
+import { Toaster } from "react-hot-toast";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Roboto } from "next/font/google";
 
@@ -46,7 +48,10 @@ export default function RootLayout({
       </head>
       <AppRouterCacheProvider>
         <body className={`${roboto.className} antialiased`}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ReduxProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+            <Toaster position="top-right" toastOptions={{ duration: 4000 }} />
+          </ReduxProvider>
         </body>
       </AppRouterCacheProvider>
     </html>
