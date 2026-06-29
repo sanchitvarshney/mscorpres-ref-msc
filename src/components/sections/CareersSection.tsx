@@ -373,7 +373,7 @@ const CareersSection: React.FC = () => {
                             </Box>
                             <Button
                               component={Link}
-                              href={`/careers/apply/${job.key}`}
+                              href={`https://www.nextgenz.net/jobdetail/${job?.key}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               variant="outlined"
