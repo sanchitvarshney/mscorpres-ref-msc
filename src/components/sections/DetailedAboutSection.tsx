@@ -15,6 +15,8 @@ import {
 } from "@mui/icons-material";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
+import StatCard from "@/components/reuseable/StatCard";
+import { ChipGlyph } from "@/components/reuseable/decor";
 import VisionMissionSection from "./VisionMissionSection";
 
 interface StatItem {
@@ -127,15 +129,15 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
           "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.78) 50%, rgba(255,255,255,0.9) 100%)",
         "& .reveal": {
           opacity: 0,
-          translate: "0 26px",
+          translate: "0 16px",
           transition:
-            "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "& .reveal-l": {
           opacity: 0,
-          translate: "-32px 0",
+          translate: "-20px 0",
           transition:
-            "opacity .65s cubic-bezier(0.22,1,0.36,1), translate .65s cubic-bezier(0.22,1,0.36,1)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1), translate .4s cubic-bezier(0.22,1,0.36,1)",
         },
         "&.in-view .reveal, &.in-view .reveal-l": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -200,6 +202,11 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                 borderRadius: 4,
                 pointerEvents: "none",
               }}
+            />
+            <ChipGlyph
+              size={92}
+              opacity={0.4}
+              sx={{ position: "absolute", right: -24, top: -24, zIndex: 2 }}
             />
             <Box
               sx={{
@@ -273,70 +280,16 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
           }}
         >
           {stats.map((stat, i) => (
-            <Box
+            <StatCard
               key={stat.label}
-              className="reveal"
-              style={{ "--reveal-delay": `${0.06 + i * 0.07}s` } as React.CSSProperties}
-              sx={{
-                p: { xs: 2.5, md: 3 },
-                borderRadius: 3,
-                bgcolor: "#fff",
-                border: "1px solid rgba(4,176,168,0.12)",
-                boxShadow: "0 12px 30px -22px rgba(4,20,19,0.35)",
-                textAlign: "center",
-                transition:
-                  "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: "0 24px 44px -24px rgba(4,176,168,0.45)",
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  width: 52,
-                  height: 52,
-                  mx: "auto",
-                  mb: 1.5,
-                  borderRadius: "16px",
-                  display: "grid",
-                  placeItems: "center",
-                  bgcolor: customColor.light,
-                  color: customColor.primary,
-                  "& svg": { fontSize: 28 },
-                }}
-              >
-                {stat.icon}
-              </Box>
-              <Typography
-                sx={{
-                  fontWeight: 800,
-                  fontSize: { xs: "22px", md: "26px" },
-                  lineHeight: 1.1,
-                  color: "text.primary",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {stat.number}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "13px",
-                  fontWeight: 600,
-                  color: "text.primary",
-                  mt: 0.5,
-                }}
-              >
-                {stat.label}
-              </Typography>
-              {stat.description && (
-                <Typography
-                  sx={{ fontSize: "11.5px", color: "text.secondary", mt: 0.5, lineHeight: 1.5 }}
-                >
-                  {stat.description}
-                </Typography>
-              )}
-            </Box>
+              icon={stat.icon}
+              number={stat.number}
+              label={stat.label}
+              description={stat.description}
+              align="center"
+              active={inView}
+              delay={0.06 + i * 0.07}
+            />
           ))}
         </Box>
 
@@ -399,7 +352,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                   border: "1px solid rgba(4,176,168,0.12)",
                   boxShadow: "0 14px 36px -24px rgba(4,20,19,0.32)",
                   transition:
-                    "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
+                    "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
                   "&:hover": {
                     transform: "translateY(-6px)",
                     boxShadow: "0 30px 54px -28px rgba(4,176,168,0.45)",

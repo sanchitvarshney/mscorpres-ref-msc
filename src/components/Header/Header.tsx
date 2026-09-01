@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.35, ease: easeSmooth }}
         style={{ transformOrigin: "left center" }}
         sx={{
-          bgcolor: "#ffffff",
+          // bgcolor: "#ffffff",
           transition: "box-shadow .35s ease, border-color .35s ease",
           borderBottom: "1px solid",
           borderColor: scrolled ? "rgba(0,0,0,0.06)" : "transparent",

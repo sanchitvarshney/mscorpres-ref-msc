@@ -2,12 +2,13 @@
 
 import React from "react";
 import { Box } from "@mui/material";
+import { CircuitTraces, DecorGrid, GlowRing } from "./decor";
 
 /**
  * Site-wide ambient backdrop: a soft off-white base washed with brand-teal
- * glows and a faint dot grid near the top, plus a couple of thin outline
- * rings. Fixed and non-interactive — it sits behind everything and only
- * whispers through the translucent section backgrounds.
+ * glows, a faint PCB dot grid near the top, a couple of thin outline rings and
+ * a low-opacity circuit motif. Fixed and non-interactive — it sits behind
+ * everything and only whispers through the translucent section backgrounds.
  */
 const BackgroundDecor: React.FC = () => {
   return (
@@ -27,44 +28,32 @@ const BackgroundDecor: React.FC = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* dot grid, fading out down the page */}
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "radial-gradient(rgba(2,82,78,0.16) 1px, transparent 1.5px)",
-          backgroundSize: "30px 30px",
-          opacity: 0.34,
-          maskImage:
-            "radial-gradient(ellipse 92% 55% at 50% -6%, #000, transparent 78%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 92% 55% at 50% -6%, #000, transparent 78%)",
-        }}
+      <DecorGrid
+        variant="dots"
+        opacity={0.32}
+        mask="radial-gradient(ellipse 92% 55% at 50% -6%, #000, transparent 78%)"
       />
 
-      {/* thin outline rings */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "16%",
-          left: "-170px",
-          width: 380,
-          height: 380,
-          borderRadius: "50%",
-          border: "1px solid rgba(4,176,168,0.16)",
-        }}
+      <CircuitTraces
+        opacity={0.05}
+        sx={{ top: "8%", right: 0, width: 460, height: 320 }}
       />
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "8%",
-          right: "-210px",
-          width: 470,
-          height: 470,
-          borderRadius: "50%",
-          border: "1px solid rgba(2,82,78,0.13)",
-        }}
+      <CircuitTraces
+        opacity={0.045}
+        sx={{ bottom: "6%", left: 0, width: 420, height: 300 }}
+      />
+
+      <GlowRing
+        size={380}
+        variant="outline"
+        color="rgba(4,176,168,0.16)"
+        sx={{ top: "16%", left: -170 }}
+      />
+      <GlowRing
+        size={470}
+        variant="outline"
+        color="rgba(2,82,78,0.13)"
+        sx={{ bottom: "8%", right: -210 }}
       />
     </Box>
   );

@@ -55,9 +55,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
         },
         "& .reveal": {
           opacity: 0,
-          translate: "0 26px",
+          translate: "0 16px",
           transition:
-            "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -123,7 +123,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               key={t.id || i}
               className="reveal"
               style={
-                { "--reveal-delay": `${0.08 + i * 0.08}s` } as React.CSSProperties
+                { "--reveal-delay": `${0.08 + i * 0.045}s` } as React.CSSProperties
               }
               sx={{
                 position: "relative",
@@ -133,10 +133,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                 bgcolor: "#fff",
                 borderRadius: 3,
                 p: { xs: 3, md: 4 },
-                border: "1px solid rgba(4,176,168,0.12)",
-                boxShadow: "0 14px 40px -24px rgba(4,20,19,0.35)",
+                border: "1px solid rgba(4,176,168,0.14)",
+                boxShadow:
+                  "0 2px 6px rgba(4,20,19,0.04), 0 22px 50px -28px rgba(4,20,19,0.4)",
                 transition:
-                  "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
+                  "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
                 "&:hover": {
                   transform: "translateY(-6px)",
                   boxShadow: "0 30px 56px -28px rgba(4,176,168,0.45)",
@@ -148,11 +149,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                 aria-hidden
                 sx={{
                   position: "absolute",
-                  top: 18,
-                  right: 20,
+                  top: 10,
+                  right: 14,
                   color: customColor.primary,
-                  opacity: 0.12,
-                  "& svg": { fontSize: 64 },
+                  opacity: 0.1,
+                  "& svg": { fontSize: 88 },
                 }}
               >
                 <FormatQuote />

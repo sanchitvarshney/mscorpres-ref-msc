@@ -196,16 +196,13 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
                             style={{ overflow: "hidden" }}
                           >
                             <Box
-                              onClick={onClose}
                               sx={{
                                 my: 1.5,
-                                px: 1,
-                                py: 0.5,
-                                backgroundColor: "rgba(255,255,255,0.05)",
-                                borderRadius: 1.5,
+                                borderRadius: 2,
+                                overflow: "hidden",
                               }}
                             >
-                              <RenderListMenu />
+                              <RenderListMenu compact onNavigate={onClose} />
                             </Box>
                           </motion.div>
                         )}

@@ -56,9 +56,9 @@ const CTABanner: React.FC<CTABannerProps> = ({
         },
         "& .reveal": {
           opacity: 0,
-          translate: "0 24px",
+          translate: "0 16px",
           transition:
-            "opacity .7s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .7s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .42s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .42s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {

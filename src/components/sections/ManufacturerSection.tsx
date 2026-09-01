@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import {
   PrecisionManufacturingOutlined,
@@ -12,11 +11,10 @@ import {
   VerifiedUserOutlined,
   BuildOutlined,
 } from "@mui/icons-material";
-import {
-  containerVariants,
-  itemVariants,
-} from "@/utils/animationVarients/animation";
+import SectionShell from "@/components/reuseable/SectionShell";
+import SectionHeading from "@/components/reuseable/SectionHeading";
 import FeatureCard from "@/components/reuseable/FeatureCard";
+import { CircuitTraces, GlowRing, ChipGlyph } from "@/components/reuseable/decor";
 import { customColor } from "@/utils/theme/customColor";
 
 interface FeatureItem {
@@ -88,183 +86,209 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
   description1,
 }) => {
   return (
-    <Box
-      sx={{
-        p: { xs: 2, md: 4 },
-        background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
-        position: "relative",
-        overflow: "hidden",
-      }}
+    <SectionShell
+      tone="tint"
+      maxWidth={1200}
+      decor={
+        <>
+          <GlowRing
+            size={460}
+            sx={{ top: -160, right: -180, opacity: 0.9 }}
+            color="rgba(4,176,168,0.14)"
+          />
+          <CircuitTraces
+            opacity={0.09}
+            sx={{
+              bottom: 0,
+              left: 0,
+              width: { xs: 340, md: 520 },
+              height: { xs: 260, md: 380 },
+            }}
+          />
+        </>
+      }
     >
-      <Container maxWidth="lg">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
+      <SectionHeading
+        eyebrow={subtitle}
+        title={title}
+        intro={description}
+        sx={{ mb: { xs: 5, md: 8 }, maxWidth: 760 }}
+      />
+
+      {/* Asymmetric split: framed visual + the two supporting paragraphs */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "0.95fr 1.05fr" },
+          gap: { xs: 4, md: 7 },
+          alignItems: "center",
+          mb: { xs: 6, md: 9 },
+        }}
+      >
+        <Box
+          className={isReverse ? "reveal-r" : "reveal-l"}
+          sx={{
+            position: "relative",
+            order: { xs: 0, md: isReverse ? 1 : 0 },
+          }}
         >
-          {/* Header Section */}
-          <motion.div
-            variants={itemVariants}
-            style={{ textAlign: "center", marginBottom: "4rem" }}
+          <Box
+            aria-hidden
+            sx={{
+              position: "absolute",
+              right: { xs: -10, md: -18 },
+              bottom: { xs: -10, md: -18 },
+              width: "58%",
+              height: "58%",
+              border: "2px solid rgba(4,176,168,0.35)",
+              borderRadius: 4,
+              pointerEvents: "none",
+            }}
+          />
+          <ChipGlyph
+            size={96}
+            sx={{ position: "absolute", left: -26, top: -26, zIndex: 2 }}
+            opacity={0.4}
+          />
+          <Box
+            sx={{
+              position: "relative",
+              borderRadius: 4,
+              overflow: "hidden",
+              bgcolor: "#fff",
+              border: "1px solid rgba(4,176,168,0.16)",
+              boxShadow: "0 36px 66px -34px rgba(4,20,19,0.42)",
+              "& img": { transition: "transform .5s cubic-bezier(0.22,1,0.36,1)" },
+              "&:hover img": { transform: "scale(1.04)" },
+            }}
           >
-            <Typography
-              variant="overline"
+            <Box
               sx={{
-                color: customColor.primary,
-                fontWeight: 600,
-                letterSpacing: 3,
-                mb: 1,
-                display: "block",
-                fontSize: "12px",
-              }}
-            >
-              {subtitle}
-            </Typography>
-            <Typography
-              variant="h4"
-              component="h2"
-              sx={{
-                fontWeight: "bold",
-                mb: 2,
-                color: "text.primary",
-                fontSize: { xs: "28px", md: "36px" },
                 position: "relative",
-                display: "inline-block",
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -10,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 60,
-                  height: 3,
-                  background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                  borderRadius: 2,
-                },
+                width: "100%",
+                height: { xs: 280, sm: 380, md: 440 },
               }}
             >
-              {title}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "text.secondary",
-                fontSize: "16px",
-                maxWidth: "800px",
-                mx: "auto",
-                lineHeight: 1.8,
-              }}
-            >
-              {description}
-            </Typography>
-          </motion.div>
+              <Image
+                src={imageUrl}
+                alt={`${service} — MsCorpres`}
+                fill
+                sizes="(max-width: 900px) 100vw, 45vw"
+                style={{ objectFit: "cover" }}
+                loading="lazy"
+                quality={85}
+              />
+            </Box>
+          </Box>
+        </Box>
+
+        <Box className={isReverse ? "reveal-l" : "reveal-r"}>
+          <Typography
+            component="h3"
+            sx={{
+              fontWeight: 800,
+              color: "text.primary",
+              fontSize: { xs: "20px", md: "26px" },
+              letterSpacing: "-0.01em",
+              lineHeight: 1.25,
+              mb: 2,
+            }}
+          >
+            Why Choose Our {service} Services?
+          </Typography>
 
           <Box
             sx={{
+              pl: { xs: 2, md: 2.5 },
+              borderLeft: `3px solid ${customColor.primary}`,
               display: "flex",
-              flexDirection: {
-                xs: "column",
-                md: isReverse ? "row-reverse" : "row",
-              },
-              gap: 4,
-              alignItems: "center",
-
-              mb: 5,
+              flexDirection: "column",
+              gap: 1.75,
             }}
           >
-            <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
-              <motion.div
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+            {description1 && (
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.85,
+                  fontSize: { xs: "14px", md: "15px" },
+                }}
               >
-                <Box
-                  sx={{
-                    position: "relative",
-                    borderRadius: 3,
-                    overflow: "hidden",
-                    // boxShadow: "0 10px 40px rgba(0,0,0,0.1)",
-                    backgroundColor: "transparent",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      height: { xs: 300, md: 400 },
-                    }}
-                  >
-                    <Image
-                      src={imageUrl}
-                      alt="Manufacturing"
-                      fill
-                      style={{ objectFit: "cover" }}
-                      loading="lazy"
-                      quality={85}
-                    />
-                  </Box>
-                </Box>
-              </motion.div>
-            </Box>
-
-            <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
-              <motion.div variants={itemVariants}>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 600,
-                    mb: 1,
-                    color: "text.primary",
-                    fontSize: { xs: "22px", md: "28px" },
-                  }}
-                >
-                  Why Choose Our {service} Services?
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    mb: 2,
-                    lineHeight: 1.8,
-                    fontSize: "15px",
-                    textAlign: "justify",
-                  }}
-                >
-                  {description1}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    mb: 1,
-                    lineHeight: 1.8,
-                    fontSize: "15px",
-                    textAlign: "justify",
-                  }}
-                >
-                  {description2}{" "}
-                </Typography>
-              </motion.div>
-            </Box>
+                {description1}
+              </Typography>
+            )}
+            {description2 && (
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.85,
+                  fontSize: { xs: "14px", md: "15px" },
+                }}
+              >
+                {description2}
+              </Typography>
+            )}
           </Box>
 
-          <motion.div variants={containerVariants}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {features.map((feature, index) => (
-                <FeatureCard
-                  key={index}
-                  icon={feature.icon}
-                  title={feature.title}
-                  description={feature.description}
-                />
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
-      </Container>
-    </Box>
+          <Box
+            sx={{
+              mt: 2.5,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1,
+              px: 1.75,
+              py: 0.75,
+              borderRadius: 999,
+              bgcolor: customColor.light,
+              border: "1px solid rgba(4,176,168,0.25)",
+            }}
+          >
+            <Box
+              sx={{
+                width: 7,
+                height: 7,
+                borderRadius: "50%",
+                bgcolor: customColor.primary,
+              }}
+            />
+            <Typography
+              sx={{
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: customColor.secondary,
+              }}
+            >
+              {service}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Capability grid */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, minmax(0, 1fr))",
+            lg: "repeat(3, minmax(0, 1fr))",
+          },
+          gap: { xs: 2.5, md: 3 },
+        }}
+      >
+        {features.map((feature, index) => (
+          <FeatureCard
+            key={index}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+            index={index}
+          />
+        ))}
+      </Box>
+    </SectionShell>
   );
 };
 

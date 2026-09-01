@@ -15,6 +15,7 @@ import {
 import Link from "next/link";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
+import { CircuitTraces } from "@/components/reuseable/decor";
 import { footerLinks } from "@/dummydata/dummyData";
 import api from "@/api/axiosInstance";
 
@@ -140,28 +141,31 @@ const Footer: React.FC = () => {
       ref={ref}
       className={inView ? "in-view" : undefined}
       sx={{
-        backgroundColor: customColor.dark,
         color: "#fff",
         pt: { xs: 6, md: 9 },
         pb: { xs: 3, md: 4 },
         px: { xs: 3, md: 6 },
         position: "relative",
         overflow: "hidden",
+        backgroundColor: "#03211f",
+        backgroundImage:
+          "radial-gradient(900px 380px at 12% -10%, rgba(4,176,168,0.30), transparent 60%)," +
+          "radial-gradient(760px 340px at 100% 110%, rgba(4,176,168,0.16), transparent 65%)," +
+          `linear-gradient(180deg, ${customColor.secondary} 0%, #04211f 55%, #021412 100%)`,
         "&::before": {
           content: '""',
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent)",
+          height: "3px",
+          background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary}, ${customColor.primary})`,
         },
         "& .reveal": {
           opacity: 0,
-          translate: "0 20px",
+          translate: "0 14px",
           transition:
-            "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -169,7 +173,13 @@ const Footer: React.FC = () => {
         },
       }}
     >
-      <Box sx={{ maxWidth: 1240, mx: "auto" }}>
+      <CircuitTraces
+        color="#8fe9e3"
+        opacity={0.05}
+        sx={{ right: 0, top: 0, width: { xs: 320, md: 520 }, height: { xs: 260, md: 360 } }}
+      />
+
+      <Box sx={{ maxWidth: "90%", mx: "auto", position: "relative", zIndex: 1 }}>
         {/* Top: brand + link columns + newsletter */}
         <Box
           sx={{

@@ -45,9 +45,9 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
         },
         "& .reveal": {
           opacity: 0,
-          translate: "0 26px",
+          translate: "0 16px",
           transition:
-            "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -130,7 +130,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               className="reveal"
               style={
                 {
-                  "--reveal-delay": `${0.06 + index * 0.07}s`,
+                  "--reveal-delay": `${0.06 + index * 0.04}s`,
                 } as React.CSSProperties
               }
               sx={{
@@ -141,7 +141,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
                 justifyContent: "center",
                 borderRadius: 3,
                 transition:
-                  "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s cubic-bezier(0.22,1,0.36,1), filter .3s ease",
+                  "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s cubic-bezier(0.22,1,0.36,1), filter .3s ease",
                 "&:hover": {
                   transform: "translateY(-8px)",
                   filter: "drop-shadow(0 24px 40px rgba(4,176,168,0.22))",

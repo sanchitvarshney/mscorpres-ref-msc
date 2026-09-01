@@ -11,6 +11,8 @@ import {
 } from "@mui/icons-material";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
+import StatCard from "@/components/reuseable/StatCard";
+import { ChipGlyph } from "@/components/reuseable/decor";
 
 interface StatItem {
   icon: React.ReactNode;
@@ -73,11 +75,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         "& .reveal, & .reveal-l, & .reveal-r": {
           opacity: 0,
           transition:
-            "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
-        "& .reveal": { translate: "0 26px" },
-        "& .reveal-l": { translate: "-34px 0" },
-        "& .reveal-r": { translate: "34px 0" },
+        "& .reveal": { translate: "0 16px" },
+        "& .reveal-l": { translate: "-20px 0" },
+        "& .reveal-r": { translate: "20px 0" },
         "&.in-view .reveal, &.in-view .reveal-l, &.in-view .reveal-r": {
           opacity: 1,
           translate: "0 0",
@@ -185,6 +187,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 pointerEvents: "none",
               }}
             />
+            <ChipGlyph
+              size={92}
+              opacity={0.4}
+              sx={{ position: "absolute", left: -24, top: -24, zIndex: 2 }}
+            />
             <Box
               sx={{
                 position: "relative",
@@ -229,69 +236,14 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           }}
         >
           {stats.map((stat, i) => (
-            <Box
+            <StatCard
               key={stat.label}
-              className="reveal"
-              style={
-                {
-                  "--reveal-delay": `${0.1 + i * 0.08}s`,
-                } as React.CSSProperties
-              }
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1.75,
-                p: { xs: 2, md: 2.5 },
-                borderRadius: 3,
-                bgcolor: "#fff",
-                border: "1px solid rgba(4,176,168,0.12)",
-                boxShadow: "0 12px 30px -22px rgba(4,20,19,0.35)",
-                transition:
-                  "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
-                "&:hover": {
-                  transform: "translateY(-4px)",
-                  boxShadow: "0 24px 44px -24px rgba(4,176,168,0.45)",
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  flexShrink: 0,
-                  width: { xs: 44, md: 50 },
-                  height: { xs: 44, md: 50 },
-                  borderRadius: "14px",
-                  display: "grid",
-                  placeItems: "center",
-                  bgcolor: customColor.light,
-                  color: customColor.primary,
-                  "& svg": { fontSize: { xs: 22, md: 26 } },
-                }}
-              >
-                {stat.icon}
-              </Box>
-              <Box sx={{ minWidth: 0 }}>
-                <Typography
-                  sx={{
-                    fontWeight: 800,
-                    fontSize: { xs: "20px", md: "24px" },
-                    lineHeight: 1.1,
-                    color: "text.primary",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {stat.number}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "11.5px", md: "12.5px" },
-                    color: "text.secondary",
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {stat.label}
-                </Typography>
-              </Box>
-            </Box>
+              icon={stat.icon}
+              number={stat.number}
+              label={stat.label}
+              active={inView}
+              delay={0.1 + i * 0.08}
+            />
           ))}
         </Box>
       </Box>

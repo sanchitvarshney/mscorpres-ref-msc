@@ -11,6 +11,7 @@ import {
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
+import { CircuitTraces } from "@/components/reuseable/decor";
 
 interface CertItem {
   id: number;
@@ -82,9 +83,9 @@ const CertificationsSection: React.FC = () => {
         // stays free for hover lifts
         "& .reveal": {
           opacity: 0,
-          translate: "0 26px",
+          translate: "0 16px",
           transition:
-            "opacity .6s cubic-bezier(0.22,1,0.36,1), translate .6s cubic-bezier(0.22,1,0.36,1)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1), translate .4s cubic-bezier(0.22,1,0.36,1)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -94,9 +95,19 @@ const CertificationsSection: React.FC = () => {
       className={inView ? "in-view" : undefined}
     >
       <Box className="max-w-7xl mx-auto" sx={{ position: "relative" }}>
+        <CircuitTraces
+          opacity={0.06}
+          sx={{
+            top: { xs: 120, md: 90 },
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "min(900px, 100%)",
+            height: 300,
+          }}
+        />
         <Box
           className="reveal"
-          sx={{ textAlign: "center", mb: { xs: 5, md: 7 }, maxWidth: 620, mx: "auto" }}
+          sx={{ textAlign: "center", mb: { xs: 5, md: 7 }, maxWidth: 620, mx: "auto", position: "relative" }}
         >
           <Typography
             sx={{
@@ -148,6 +159,8 @@ const CertificationsSection: React.FC = () => {
 
         <Box
           sx={{
+            position: "relative",
+            zIndex: 1,
             display: "grid",
             gridTemplateColumns: {
               xs: "repeat(2, minmax(0, 1fr))",
@@ -162,7 +175,7 @@ const CertificationsSection: React.FC = () => {
               key={item.id}
               className="reveal"
               style={
-                { "--reveal-delay": `${0.06 + i * 0.08}s` } as React.CSSProperties
+                { "--reveal-delay": `${0.06 + i * 0.045}s` } as React.CSSProperties
               }
               sx={{
                 position: "relative",
@@ -177,7 +190,7 @@ const CertificationsSection: React.FC = () => {
                 border: "1px solid rgba(4,176,168,0.12)",
                 boxShadow: "0 10px 30px -20px rgba(4,20,19,0.3)",
                 transition:
-                  "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
+                  "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
                 "&:hover": {
                   transform: "translateY(-6px)",
                   boxShadow: "0 26px 50px -24px rgba(4,176,168,0.5)",

@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CarouselItem, defaultItems } from "@/dummydata/dummyData";
 import { settings as baseSettings } from "@/utils/carouselSetting";
 import { customColor } from "@/utils/theme/customColor";
+import { CircuitTraces } from "@/components/reuseable/decor";
 
 interface CarouselProps {
   items?: CarouselItem[];
@@ -121,6 +122,25 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
           </Box>
         ))}
       </Slider>
+
+      {/* Circuit-line overlay — very faint, sits over the scrim */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          pointerEvents: "none",
+          overflow: "hidden",
+        }}
+      >
+        <CircuitTraces
+          color="#ffffff"
+          opacity={0.07}
+          animated
+          sx={{ right: "-4%", top: "-6%", width: "70%", height: "116%" }}
+        />
+      </Box>
 
       {/* Copy layer */}
       <Box

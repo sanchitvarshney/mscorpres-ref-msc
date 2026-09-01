@@ -53,9 +53,9 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
       sx={{
         "& .reveal": {
           opacity: 0,
-          translate: "0 26px",
+          translate: "0 16px",
           transition:
-            "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
@@ -142,7 +142,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
               background: card.gradient,
               boxShadow: "0 30px 60px -34px rgba(2,82,78,0.55)",
               transition:
-                "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
+                "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
               "&:hover": {
                 transform: "translateY(-8px)",
                 boxShadow: "0 40px 76px -34px rgba(2,82,78,0.7)",

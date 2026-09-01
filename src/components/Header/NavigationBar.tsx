@@ -23,9 +23,9 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(() => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#f4faf9",
     color: "rgba(0, 0, 0, 0.87)",
-    boxShadow: "0 24px 60px -18px rgba(0,0,0,0.25)",
+    boxShadow: "0 30px 70px -22px rgba(2,40,38,0.4)",
     fontSize: 11,
     maxWidth: "calc(100vw - 0px)",
     width: "100vw",
@@ -36,7 +36,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
     marginLeft: -10,
   },
   [`& .${tooltipClasses.arrow}`]: {
-    color: "#ffffff",
+    color: "#04b0a8",
   },
 }));
 
@@ -59,7 +59,7 @@ const NavigationBar: React.FC = () => {
     <Box
       sx={{
         position: "relative",
-        bgcolor: { xs: customColor.primary, md: "transparent" },
+        bgcolor: { xs: customColor.secondary, md: "transparent" },
       }}
     >
       {/* Curved teal background (desktop only) */}

@@ -1,15 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useId } from "react";
 import { customColor } from "@/utils/theme/customColor";
 
 interface CurvedNavBackgroundProps {
   color?: string;
 }
 
+const SHAPE = "M0,100 L0,50 L360,50 C370,0 380,0 400,0 L1440,0 L1440,100 Z";
+
 const CurvedNavBackground: React.FC<CurvedNavBackgroundProps> = ({
-  color = customColor.primary,
+  color = customColor.secondary,
 }) => {
+  const uid = useId().replace(/[:]/g, "");
+  const gradId = `nav-grad-${uid}`;
+
   return (
     <svg
       aria-hidden="true"
@@ -23,10 +28,15 @@ const CurvedNavBackground: React.FC<CurvedNavBackgroundProps> = ({
         display: "block",
       }}
     >
-      <path
-        d="M0,100 L0,50 L360,50 C370,0 380,0 400,0 L1440,0 L1440,100 Z"
-        fill={color}
-      />
+      <defs>
+        <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#01312e" />
+          <stop offset="0.5" stopColor={color} />
+          <stop offset="1" stopColor="#023f3b" />
+        </linearGradient>
+      </defs>
+
+      <path d={SHAPE} fill={`url(#${gradId})`} />
     </svg>
   );
 };

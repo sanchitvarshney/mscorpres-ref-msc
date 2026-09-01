@@ -36,9 +36,9 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
           "linear-gradient(180deg, rgba(248,249,250,0.78) 0%, rgba(255,255,255,0.9) 50%, rgba(248,249,250,0.78) 100%)",
         "& .reveal": {
           opacity: 0,
-          translate: "0 24px",
+          translate: "0 16px",
           transition:
-            "opacity .6s cubic-bezier(0.22,1,0.36,1), translate .6s cubic-bezier(0.22,1,0.36,1)",
+            "opacity .4s cubic-bezier(0.22,1,0.36,1), translate .4s cubic-bezier(0.22,1,0.36,1)",
         },
         "&.in-view .reveal": { opacity: 1, translate: "0 0" },
         "@media (prefers-reduced-motion: reduce)": {
