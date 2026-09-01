@@ -3,8 +3,9 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { gradientPaths } from "@/dummydata/pathData";
+import { customColor } from "@/utils/theme/customColor";
 
 interface HeroSectionProps {
   imageUrl?: string;
@@ -27,16 +28,17 @@ interface HeroSectionProps {
   };
 }
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 const HeroSection: React.FC<HeroSectionProps> = ({
   imageUrl = "/images/elec.mp4",
-  alt = "Hero Image",
+  alt = "Hero background",
   subtitle,
   title,
   description,
   gradientOverlay = {
-    startColor: "rgba(0, 0, 0, 0.2)",
-    endColor: "rgba(0, 0, 0, 0.8)",
-
+    startColor: "rgba(4, 20, 19, 0.25)",
+    endColor: "rgba(4, 20, 19, 0.85)",
     opacity: 1,
   },
   height = {
@@ -48,115 +50,156 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     md: "500px",
   },
 }) => {
- 
-  const pathname:any = usePathname();
-  const overlayGradient = `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 140%)`;
+  const pathname = usePathname() ?? "";
+  const emphasized = gradientPaths.includes(pathname);
 
   return (
     <Box
+      component="section"
       sx={{
         position: "relative",
         width: "100%",
-        height: height,
-        minHeight: minHeight,
+        height,
+        minHeight,
         overflow: "hidden",
         display: "flex",
-        "&::before": gradientPaths.includes(pathname) ? {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: overlayGradient,
-          zIndex: 1,
-        } : {},
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      {/* Background Image */}
+      {/* Background video */}
       <Box
+        component="video"
+        src={imageUrl}
+        aria-label={alt}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
         sx={{
           position: "absolute",
-          top: 0,
-          left: 0,
+          inset: 0,
           width: "100%",
           height: "100%",
+          objectFit: "cover",
           zIndex: 0,
         }}
-      >
-        <video
-          src={imageUrl}
-          autoPlay
-          loop
-          muted
-          playsInline
-            preload="auto"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+      />
+
+      {/* Scrims — always readable, a touch deeper on emphasized routes */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          background:
+            "linear-gradient(180deg, rgba(4,20,19,0.42) 0%, rgba(4,20,19,0.2) 42%, rgba(4,20,19,0.78) 100%)",
+        }}
+      />
+      {emphasized && (
+        <Box
+          aria-hidden
+          sx={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+            opacity: gradientOverlay.opacity ?? 1,
+            background: `linear-gradient(0deg, ${gradientOverlay.startColor} 0%, ${gradientOverlay.endColor} 150%)`,
           }}
         />
-      </Box>
+      )}
+      {/* Brand teal glow rising from the bottom */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          background:
+            "radial-gradient(1200px 460px at 50% 128%, rgba(4,176,168,0.32), transparent 70%)",
+          mixBlendMode: "screen",
+        }}
+      />
 
-      {/* Text Overlay */}
+      {/* Content */}
       <Container
         sx={{
           position: "relative",
           zIndex: 2,
           textAlign: "center",
-          color: "#ffffff",
-
-          mt: 2,
+          color: "#fff",
+          px: { xs: 3, md: 4 },
         }}
       >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.75, ease: EASE }}
         >
           {subtitle && (
-            <Typography
-              variant="overline"
+            <Box
               sx={{
-                display: "block",
-                fontSize: { xs: "12px", md: "14px" },
-                letterSpacing: 4,
-                fontWeight: 600,
-                mb: 2,
-                color: "rgba(255, 255, 255, 0.9)",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 1.25,
+                px: 2,
+                py: 0.75,
+                mb: { xs: 2, md: 2.5 },
+                borderRadius: 999,
+                border: "1px solid rgba(255,255,255,0.35)",
+                backdropFilter: "blur(4px)",
               }}
             >
-              {subtitle}
-            </Typography>
+              <Box
+                sx={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  bgcolor: customColor.primary,
+                }}
+              />
+              <Typography
+                sx={{
+                  fontSize: { xs: 11, md: 12.5 },
+                  fontWeight: 700,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.92)",
+                }}
+              >
+                {subtitle}
+              </Typography>
+            </Box>
           )}
+
           <Typography
-            variant="h2"
             component="h1"
             sx={{
-              fontSize: { xs: "25px", sm: "40px", md: "50px" },
-              fontWeight: "bold",
-              mb: description ? 3 : 0,
-              textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-              lineHeight: 1.2,
-              color: "#ffffff",
+              fontSize: { xs: "27px", sm: "40px", md: "54px" },
+              fontWeight: 800,
+              lineHeight: 1.12,
+              letterSpacing: "-0.02em",
+              maxWidth: 920,
+              mx: "auto",
+              textShadow: "0 6px 28px rgba(0,0,0,0.4)",
+              mb: description ? { xs: 2, md: 2.5 } : 0,
             }}
           >
             {title}
           </Typography>
+
           {description && (
             <Typography
-              variant="h6"
               sx={{
-                fontSize: { xs: "16px", md: "20px" },
-                fontWeight: "bold",
-
-                maxWidth: "800px",
+                fontSize: { xs: "15px", md: "18px" },
+                fontWeight: 400,
+                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.9)",
+                maxWidth: 720,
                 mx: "auto",
-                color: "#ffffff",
-
-                textShadow: "0 1px 5px rgba(0,0,0,0.2)",
-                lineHeight: 1.6,
+                textShadow: "0 2px 14px rgba(0,0,0,0.35)",
               }}
             >
               {description}
@@ -164,6 +207,46 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           )}
         </motion.div>
       </Container>
+
+      {/* Scroll cue (tall heroes only) */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          bottom: 22,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 2,
+          display: { xs: "none", md: "flex" },
+          "@keyframes heroScrollDot": {
+            "0%, 100%": { transform: "translateY(0)", opacity: 0.9 },
+            "50%": { transform: "translateY(9px)", opacity: 0.3 },
+          },
+        }}
+      >
+        <Box
+          sx={{
+            width: 22,
+            height: 34,
+            borderRadius: 999,
+            border: "2px solid rgba(255,255,255,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            pt: "6px",
+          }}
+        >
+          <Box
+            sx={{
+              width: 3,
+              height: 7,
+              borderRadius: 999,
+              bgcolor: "rgba(255,255,255,0.85)",
+              animation: "heroScrollDot 1.6s ease-in-out infinite",
+              "@media (prefers-reduced-motion: reduce)": { animation: "none" },
+            }}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };

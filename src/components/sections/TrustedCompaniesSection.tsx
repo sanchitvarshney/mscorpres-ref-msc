@@ -2,172 +2,161 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import {
-  containerVariants,
-} from "@/utils/animationVarients/animation";
 import { Company, defaultCompanies } from "@/dummydata/dummyData";
+import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 
 interface TrustedCompaniesSectionProps {
   title?: string;
+  subtitle?: string;
   companies?: Company[];
 }
 
 const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
   title = "Trusted by Leading Companies",
+  subtitle = "Our Partners",
   companies = defaultCompanies,
 }) => {
-  // Duplicate companies twice for seamless infinite loop
-  // When animation moves -50%, it loops back seamlessly
-  const duplicatedCompanies = [...companies, ...companies];
+  const { ref, inView } = useInView<HTMLDivElement>();
+
+  // duplicated for a seamless -50% loop
+  const track = [...companies, ...companies];
 
   return (
     <Box
+      component="section"
+      ref={ref}
+      className={inView ? "in-view" : undefined}
       sx={{
-        py: { xs: 2, md: 4 },
-
-        px: { xs: 4, md: 10 },
         position: "relative",
-        background:
-          "linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%)",
         overflow: "hidden",
+        py: { xs: 6, md: 9 },
+        px: { xs: 2, md: 4 },
+        background:
+          "linear-gradient(180deg, rgba(248,249,250,0.78) 0%, rgba(255,255,255,0.9) 50%, rgba(248,249,250,0.78) 100%)",
+        "& .reveal": {
+          opacity: 0,
+          translate: "0 24px",
+          transition:
+            "opacity .6s cubic-bezier(0.22,1,0.36,1), translate .6s cubic-bezier(0.22,1,0.36,1)",
+        },
+        "&.in-view .reveal": { opacity: 1, translate: "0 0" },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& .reveal": { opacity: 1, translate: "0 0", transition: "none" },
+          "& .marquee-track": { animation: "none !important" },
+        },
       }}
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-        style={{ position: "relative", zIndex: 1 }}
-      >
+      <Box sx={{ maxWidth: 1200, mx: "auto", position: "relative" }}>
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          style={{
-            textAlign: "center",
-            marginBottom: "1rem",
-            width: "100%",
-          }}
+        <Box
+          className="reveal"
+          sx={{ textAlign: "center", maxWidth: 620, mx: "auto", mb: { xs: 4, md: 6 } }}
         >
           <Typography
-            variant="overline"
             sx={{
               color: customColor.primary,
-              fontWeight: 600,
-              letterSpacing: 3,
-              mb: 1,
-              display: "block",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              mb: 1.5,
               fontSize: "12px",
+              textTransform: "uppercase",
             }}
           >
-            OUR PARTNERS
+            {subtitle}
           </Typography>
           <Typography
-            variant="h4"
             component="h2"
             sx={{
-              fontWeight: "bold",
-              mb: 1,
+              fontWeight: 800,
               color: "text.primary",
-              fontSize: { xs: "28px", md: "36px" },
-              position: "relative",
-              display: "inline-block",
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                bottom: -10,
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: 60,
-                height: 3,
-                background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                borderRadius: 2,
-              },
+              fontSize: { xs: "24px", sm: "30px", md: "36px" },
+              lineHeight: 1.2,
+              letterSpacing: "-0.02em",
+              mb: 2,
             }}
           >
             {title}
           </Typography>
+          <Box
+            sx={{
+              width: 56,
+              height: 4,
+              mx: "auto",
+              mb: 2.5,
+              borderRadius: 2,
+              background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary})`,
+            }}
+          />
           <Typography
-            variant="body2"
             sx={{
               color: "text.secondary",
-              fontSize: "14px",
-              maxWidth: "600px",
-              mx: "auto",
-              mt: 2,
+              fontSize: { xs: "13.5px", md: "14.5px" },
+              lineHeight: 1.7,
             }}
           >
-            We're proud to work with industry leaders and trusted partners
-            worldwide
+            We&apos;re proud to work with industry leaders and trusted partners
+            worldwide.
           </Typography>
-        </motion.div>
+        </Box>
 
-        {/* Horizontal Scrolling Companies */}
+        {/* Marquee */}
         <Box
+          className="reveal"
           sx={{
             position: "relative",
             width: "100%",
             overflow: "hidden",
             py: 1,
-            maskImage: {
-              xs: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              md: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-            },
-            WebkitMaskImage: {
-              xs: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              md: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-            },
+            maskImage:
+              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
           }}
         >
           <Box
-            className="scroll-container"
+            className="marquee-track"
             sx={{
               display: "flex",
-              gap: { xs: 3, md: 4 },
+              gap: { xs: 2, md: 3 },
               width: "fit-content",
-              animation: "scroll-companies 20s linear infinite",
-              "&:hover": {
-                animationPlayState: "paused",
-              },
+              animation: "scroll-companies 32s linear infinite",
+              "&:hover": { animationPlayState: "paused" },
             }}
           >
-            {duplicatedCompanies.map((company, index) => (
+            {track.map((company, index) => (
               <Box
                 key={`${company.id}-${index}`}
                 sx={{
-                  borderRadius: 3,
-                  p: { xs: 1, md: 2 },
+                  flexShrink: 0,
+                  width: { xs: 150, md: 190 },
+                  height: { xs: 78, md: 92 },
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  maxWidth: { xs: 160, md: 200 },
-                  minWidth: { xs: 160, md: 200 },
-                  flexShrink: 0,
-                  position: "relative",
-                  overflow: "hidden",
+                  px: { xs: 2, md: 3 },
+                  transition: "transform .3s ease",
+                  "& img": {
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                  },
+                  "&:hover": { transform: "translateY(-4px)" },
                 }}
               >
                 <img
                   src={company.logo}
                   alt={company.name}
-                  style={{ 
-                    maxWidth: "100%", 
-                    maxHeight: "100%",
-                    objectFit: "contain",
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  loading="lazy"
+                  decoding="async"
                 />
               </Box>
             ))}
           </Box>
         </Box>
-      </motion.div>
+      </Box>
     </Box>
   );
 };

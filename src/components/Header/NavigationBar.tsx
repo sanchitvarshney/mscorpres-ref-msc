@@ -9,15 +9,10 @@ import {
   TooltipProps,
   Zoom,
 } from "@mui/material";
-import { KeyboardArrowDown } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { customColor } from "@/utils/theme/customColor";
-import {
-  staggerRow,
-  rowItem,
-  easeSmooth,
-} from "@/utils/animationVarients/headerAnimation";
+import { staggerRow, rowItem } from "@/utils/animationVarients/headerAnimation";
 import RenderListMenu from "../RenderListMenu";
 import NavLink from "./NavLink";
 import MenuToggleButton from "./MenuToggleButton";
@@ -59,11 +54,9 @@ const NavigationBar: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const isActive = (path: string) => pathname === path;
-  const servicesUnderlineOn = dropdownOpen || isActive("/services");
 
   return (
     <Box
-    
       sx={{
         position: "relative",
         bgcolor: { xs: customColor.primary, md: "transparent" },
@@ -103,7 +96,7 @@ const NavigationBar: React.FC = () => {
           sx={{
             display: { xs: "none", md: "flex" },
             alignItems: "center",
-            gap: { md: 3, lg: 4.5 },
+            gap: { md: 0.5, lg: 1.25 },
           }}
         >
           {navLinks.map((link) =>
@@ -119,49 +112,12 @@ const NavigationBar: React.FC = () => {
                   slots={{ transition: Zoom }}
                   slotProps={{ transition: { timeout: 320 } }}
                 >
-                  <Box
-                    component={motion.div}
-                    animate={{ color: dropdownOpen ? "#022d2a" : "#ffffff" }}
-                    transition={{ duration: 0.22, ease: easeSmooth }}
-                    sx={{
-                      position: "relative",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 0.25,
-                      cursor: "pointer",
-                      fontSize: "0.82rem",
-                      fontWeight: 500,
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      padding: "6px 2px",
-                    }}
-                  >
-                    {link.label}
-                    <motion.span
-                      animate={{ rotate: dropdownOpen ? 180 : 0 }}
-                      transition={{ duration: 0.28, ease: easeSmooth }}
-                      style={{ display: "inline-flex" }}
-                    >
-                      <KeyboardArrowDown sx={{ fontSize: 18 }} />
-                    </motion.span>
-
-                    <motion.span
-                      aria-hidden
-                      style={{
-                        position: "absolute",
-                        left: 0,
-                        right: 18,
-                        bottom: 0,
-                        height: 2,
-                        borderRadius: 2,
-                        background: "currentColor",
-                        transformOrigin: "left center",
-                      }}
-                      animate={{
-                        scaleX: servicesUnderlineOn ? 1 : 0,
-                        opacity: servicesUnderlineOn ? 1 : 0.001,
-                      }}
-                      transition={{ duration: 0.3, ease: easeSmooth }}
+                  <Box component="span" sx={{ display: "inline-flex" }}>
+                    <NavLink
+                      label={link.label}
+                      hasDropdown
+                      open={dropdownOpen}
+                      active={isActive(link.path)}
                     />
                   </Box>
                 </LightTooltip>

@@ -62,3 +62,28 @@ export const drawerItem = {
     transition: { duration: 0.3, ease: easeSmooth },
   },
 };
+
+// Services mega-menu — columns settle in, then their tiles cascade.
+export const megaColumn = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.05, when: "beforeChildren" as const },
+  },
+};
+
+export const megaGrid = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.028 },
+  },
+};
+
+export const megaItem = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.28, ease: easeSmooth },
+  },
+};

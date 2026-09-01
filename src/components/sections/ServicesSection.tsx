@@ -2,15 +2,9 @@
 
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import { motion } from "framer-motion";
 import CustomCard from "@/components/reuseable/CustomCard";
-import {
-  serviceCardVariants,
-  servicesContainerVariants,
-} from "@/utils/animationVarients/animation";
+import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
-
-
 
 interface ServicesSectionProps {
   title?: string;
@@ -23,117 +17,142 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   subtitle = "We provide high-quality, reliable services designed to support your business with efficiency and excellence.",
   services = [],
 }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
   return (
     <Box
+      component="section"
+      ref={ref}
+      className={inView ? "in-view" : undefined}
       sx={{
-        p: { xs: 2, md: 4 },
         position: "relative",
-
         overflow: "hidden",
+        px: { xs: 2, md: 4 },
+        py: { xs: 6, md: 10 },
+        background:
+          "linear-gradient(180deg, rgba(244,248,247,0.8) 0%, rgba(255,255,255,0.92) 100%)",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          bottom: -160,
+          left: -140,
+          width: 440,
+          height: 440,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(4,176,168,0.10), transparent 70%)",
+          pointerEvents: "none",
+        },
+        "& .reveal": {
+          opacity: 0,
+          translate: "0 26px",
+          transition:
+            "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+        },
+        "&.in-view .reveal": { opacity: 1, translate: "0 0" },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& .reveal": { opacity: 1, translate: "0 0", transition: "none" },
+        },
       }}
     >
-      <motion.div
-        className="w-full flex flex-col justify-center items-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        style={{ maxWidth: "1200px", margin: "0 auto" }}
+      <Box
+        sx={{ maxWidth: 1200, mx: "auto", position: "relative" }}
+        className="w-full"
       >
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          style={{
-            textAlign: "center",
-            marginBottom: "2rem",
-            width: "100%",
-          }}
+        {/* Header */}
+        <Box
+          className="reveal"
+          sx={{ textAlign: "center", maxWidth: 640, mx: "auto", mb: { xs: 5, md: 7 } }}
         >
           <Typography
-            variant="overline"
             sx={{
               color: customColor.primary,
-              fontWeight: 600,
-              letterSpacing: 3,
-              mb: 1,
-              display: "block",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              mb: 1.5,
               fontSize: "12px",
+              textTransform: "uppercase",
             }}
           >
-            WHAT WE OFFER
+            What We Offer
           </Typography>
           <Typography
-            variant="h4"
             component="h2"
             sx={{
-              fontWeight: "bold",
-              mb: 2,
+              fontWeight: 800,
               color: "text.primary",
-              fontSize: { xs: "28px", md: "36px" },
-              position: "relative",
-              display: "inline-block",
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                bottom: -10,
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: 60,
-                height: 3,
-                background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                borderRadius: 2,
-              },
+              fontSize: { xs: "26px", sm: "32px", md: "38px" },
+              lineHeight: 1.2,
+              letterSpacing: "-0.02em",
+              overflowWrap: "break-word",
+              mb: 2,
             }}
           >
             {title}
           </Typography>
+          <Box
+            sx={{
+              width: 56,
+              height: 4,
+              mx: "auto",
+              mb: 2.5,
+              borderRadius: 2,
+              background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary})`,
+            }}
+          />
           <Typography
-            variant="body1"
             sx={{
               color: "text.secondary",
-              fontSize: "16px",
-              maxWidth: "700px",
-              mx: "auto",
-              lineHeight: 1.8,
+              fontSize: { xs: "14px", md: "15px" },
+              lineHeight: 1.7,
             }}
           >
             {subtitle}
           </Typography>
-        </motion.div>
+        </Box>
 
-        {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"
-          variants={servicesContainerVariants}
-          style={{ width: "100%" }}
+        {/* Services grid */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "minmax(0, 1fr)",
+              sm: "repeat(2, minmax(0, 1fr))",
+              lg: "repeat(3, minmax(0, 1fr))",
+            },
+            gap: { xs: 3, md: 4 },
+            justifyItems: "center",
+          }}
         >
           {services.map((item: any, index: number) => (
-            <motion.div
+            <Box
               key={item.id || index}
-              variants={serviceCardVariants}
-              style={{
+              className="reveal"
+              style={
+                {
+                  "--reveal-delay": `${0.06 + index * 0.07}s`,
+                } as React.CSSProperties
+              }
+              sx={{
+                width: "100%",
+                maxWidth: 360,
+                height: "100%",
                 display: "flex",
                 justifyContent: "center",
+                borderRadius: 3,
+                transition:
+                  "opacity .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .6s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s cubic-bezier(0.22,1,0.36,1), filter .3s ease",
+                "&:hover": {
+                  transform: "translateY(-8px)",
+                  filter: "drop-shadow(0 24px 40px rgba(4,176,168,0.22))",
+                },
               }}
             >
-              <Box
-                sx={{
-                  width: "100%",
-                  transition: "transform 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                  },
-                }}
-              >
-                <CustomCard item={item}  />
-              </Box>
-            </motion.div>
+              <CustomCard item={item} />
+            </Box>
           ))}
-        </motion.div>
-      </motion.div>
+        </Box>
+      </Box>
     </Box>
   );
 };

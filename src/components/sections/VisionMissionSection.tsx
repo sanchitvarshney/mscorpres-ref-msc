@@ -2,12 +2,8 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
 import { VisibilityOutlined, FlagOutlined } from "@mui/icons-material";
-import {
-  cardVariants,
-  containerVariants,
-} from "@/utils/animationVarients/animation";
+import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 
 interface VisionMissionSectionProps {
@@ -17,267 +13,195 @@ interface VisionMissionSectionProps {
   missionDescription?: string;
 }
 
+interface CardData {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  gradient: string;
+  delay: number;
+}
+
 const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
   visionTitle = "Our Vision",
   visionDescription = "To become a global leader in electronics and technology solutions by setting new benchmarks in excellence, innovation, and customer satisfaction. We envision a future where our IoT products, PCB design expertise, device refurbishment services, ERP/MES platforms, and software solutions empower businesses worldwide to operate with greater efficiency, reliability, and confidence.",
   missionTitle = "Our Mission",
-  missionDescription = "To deliver world-class electronics and technology solutions through advanced innovation, expert engineering, and an unwavering commitment to quality. Our mission is to help businesses achieve their goals by providing reliable IoT systems, precision PCB design, professional refurbishment services, and intelligent ERP/MES and software solutions—building long-term partnerships founded on trust, performance, and mutual success.",
+  missionDescription = "To deliver world-class electronics and technology solutions through advanced innovation, expert engineering, and an unwavering commitment to quality. Our mission is to help businesses achieve their goals by providing reliable IoT systems, precision PCB design, professional refurbishment services, and intelligent ERP/MES and software solutions — building long-term partnerships founded on trust, performance, and mutual success.",
 }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
+  const cards: CardData[] = [
+    {
+      icon: <VisibilityOutlined sx={{ fontSize: 30 }} />,
+      title: visionTitle,
+      description: visionDescription,
+      gradient: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
+      delay: 0.08,
+    },
+    {
+      icon: <FlagOutlined sx={{ fontSize: 30 }} />,
+      title: missionTitle,
+      description: missionDescription,
+      gradient: `linear-gradient(135deg, ${customColor.secondary} 0%, ${customColor.primary} 100%)`,
+      delay: 0.16,
+    },
+  ];
+
   return (
     <Box
+      ref={ref}
+      className={inView ? "in-view" : undefined}
       sx={{
-        p: { xs: 2, md: 4 },
-        background: "linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)",
+        "& .reveal": {
+          opacity: 0,
+          translate: "0 26px",
+          transition:
+            "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+        },
+        "&.in-view .reveal": { opacity: 1, translate: "0 0" },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& .reveal": { opacity: 1, translate: "0 0", transition: "none" },
+        },
       }}
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-        className="max-w-7xl mx-auto"
+      {/* Header */}
+      <Box
+        className="reveal"
+        sx={{ textAlign: "center", maxWidth: 600, mx: "auto", mb: { xs: 4, md: 6 } }}
       >
-        {/* Section Title */}
-        <motion.div
-          variants={cardVariants}
-          style={{ textAlign: "center", marginBottom: "2rem" }}
+        <Box
+          sx={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 1.25,
+            mb: 2,
+          }}
         >
+          <Box
+            sx={{ width: 30, height: 2, borderRadius: 2, bgcolor: customColor.primary }}
+          />
           <Typography
-            variant="overline"
             sx={{
               color: customColor.primary,
-              fontWeight: 600,
-              letterSpacing: 2,
-              mb: 1,
-              display: "block",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              fontSize: "12px",
+              textTransform: "uppercase",
             }}
           >
-            WHO WE ARE
+            Who We Are
           </Typography>
-          <Typography
-            variant="h4"
-            component="h2"
+        </Box>
+        <Typography
+          component="h3"
+          sx={{
+            fontWeight: 800,
+            color: "text.primary",
+            fontSize: { xs: "22px", md: "30px" },
+            letterSpacing: "-0.02em",
+            mb: 1.5,
+          }}
+        >
+          Vision &amp; Mission
+        </Typography>
+        <Box
+          sx={{
+            width: 48,
+            height: 4,
+            mx: "auto",
+            mb: 2,
+            borderRadius: 2,
+            background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary})`,
+          }}
+        />
+        <Typography sx={{ color: "text.secondary", fontSize: { xs: "14px", md: "15px" } }}>
+          Excellence drives our mission and vision forward.
+        </Typography>
+      </Box>
+
+      {/* Cards */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" },
+          gap: { xs: 3, md: 4 },
+          maxWidth: 1040,
+          mx: "auto",
+        }}
+      >
+        {cards.map((card) => (
+          <Box
+            key={card.title}
+            className="reveal"
+            style={{ "--reveal-delay": `${card.delay}s` } as React.CSSProperties}
             sx={{
-              fontWeight: "bold",
-              mb: 3,
-              color: "text.primary",
-              fontSize: { xs: "28px", md: "36px" },
               position: "relative",
-              display: "inline-block",
+              overflow: "hidden",
+              borderRadius: 4,
+              p: { xs: 3, md: 4 },
+              color: "#fff",
+              background: card.gradient,
+              boxShadow: "0 30px 60px -34px rgba(2,82,78,0.55)",
+              transition:
+                "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
+              "&:hover": {
+                transform: "translateY(-8px)",
+                boxShadow: "0 40px 76px -34px rgba(2,82,78,0.7)",
+              },
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: -70,
+                right: -70,
+                width: 220,
+                height: 220,
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.12)",
+              },
               "&::after": {
                 content: '""',
                 position: "absolute",
-                bottom: -10,
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: 60,
-                height: 3,
-                background: (theme) =>
-                  `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                borderRadius: 2,
+                bottom: -50,
+                left: -50,
+                width: 170,
+                height: 170,
+                borderRadius: "50%",
+                background: "rgba(0,0,0,0.08)",
               },
             }}
           >
-            Vision & Mission
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "text.secondary",
-              maxWidth: "600px",
-              mx: "auto",
-            }}
-          >
-            Excellence drives our mission and vision forward.
-          </Typography>
-        </motion.div>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 4,
-            justifyContent: "center",
-          }}
-        >
-          <motion.div
-            variants={cardVariants}
-            style={{ flex: 1, maxWidth: "500px" }}
-          >
-            <Box
-              sx={{
-                background: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
-                borderRadius: 3,
-                p: { xs: 3, md: 4 },
-                height: "100%",
-                color: "white",
-                position: "relative",
-                overflow: "hidden",
-
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-8px)",
-                },
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: -50,
-                  right: -50,
-                  width: 200,
-                  height: 200,
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.1)",
-                  zIndex: 0,
-                },
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -30,
-                  left: -30,
-                  width: 150,
-                  height: 150,
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.1)",
-                  zIndex: 0,
-                },
-              }}
-            >
-              <Box sx={{ position: "relative", zIndex: 1 }}>
+            <Box sx={{ position: "relative", zIndex: 1 }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2.5 }}>
                 <Box
                   sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    mb: 3,
+                    flexShrink: 0,
+                    width: 52,
+                    height: 52,
+                    borderRadius: "16px",
+                    display: "grid",
+                    placeItems: "center",
+                    bgcolor: "rgba(255,255,255,0.18)",
+                    border: "1px solid rgba(255,255,255,0.28)",
                   }}
                 >
-                  <Box
-                    sx={{
-                      background: "rgba(255, 255, 255, 0.2)",
-                      borderRadius: "50%",
-                      p: 1.5,
-                      mr: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <VisibilityOutlined sx={{ fontSize: 32 }} />
-                  </Box>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: "bold",
-                      color: "white",
-                    }}
-                  >
-                    {visionTitle}
-                  </Typography>
+                  {card.icon}
                 </Box>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "rgba(255, 255, 255, 0.95)",
-                    lineHeight: 1.8,
-                    fontSize: "16px",
-                    textAlign: "justify",
-                  }}
-                >
-                  {visionDescription}
+                <Typography sx={{ fontWeight: 800, fontSize: { xs: "19px", md: "22px" } }}>
+                  {card.title}
                 </Typography>
               </Box>
+              <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.92)",
+                  lineHeight: 1.8,
+                  fontSize: { xs: "14px", md: "14.5px" },
+                }}
+              >
+                {card.description}
+              </Typography>
             </Box>
-          </motion.div>
-
-          {/* Mission Card */}
-          <motion.div
-            variants={cardVariants}
-            style={{ flex: 1, maxWidth: "500px" }}
-          >
-            <Box
-              sx={{
-                background: `linear-gradient(135deg, ${customColor?.secondary} 0%, ${customColor?.primary} 100%)`,
-                borderRadius: 3,
-                p: { xs: 3, md: 4 },
-                height: "100%",
-                color: "white",
-                position: "relative",
-                overflow: "hidden",
-
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-8px)",
-                },
-                "&::before": {
-                  content: '""',
-                  position: "absolute",
-                  top: -50,
-                  right: -50,
-                  width: 200,
-                  height: 200,
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.1)",
-                  zIndex: 0,
-                },
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -30,
-                  left: -30,
-                  width: 150,
-                  height: 150,
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.1)",
-                  zIndex: 0,
-                },
-              }}
-            >
-              <Box sx={{ position: "relative", zIndex: 1 }}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    mb: 3,
-                  }}
-                >
-                  <Box
-                    sx={{
-                      background: "rgba(255, 255, 255, 0.2)",
-                      borderRadius: "50%",
-                      p: 1.5,
-                      mr: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <FlagOutlined sx={{ fontSize: 32 }} />
-                  </Box>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: "bold",
-                      color: "white",
-                    }}
-                  >
-                    {missionTitle}
-                  </Typography>
-                </Box>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "rgba(255, 255, 255, 0.95)",
-                    lineHeight: 1.8,
-                    fontSize: "16px",
-                         textAlign:"justify"
-                  }}
-                >
-                  {missionDescription}
-                </Typography>
-              </Box>
-            </Box>
-          </motion.div>
-        </Box>
-      </motion.div>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };

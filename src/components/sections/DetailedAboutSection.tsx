@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography, Container, Grid } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography, Container } from "@mui/material";
 import Image from "next/image";
 import {
   BusinessOutlined,
@@ -14,10 +13,7 @@ import {
   VerifiedUserOutlined,
   TrendingUpOutlined,
 } from "@mui/icons-material";
-import {
-  containerVariants,
-  itemVariants,
-} from "@/utils/animationVarients/animation";
+import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import VisionMissionSection from "./VisionMissionSection";
 
@@ -47,350 +43,409 @@ interface DetailedAboutSectionProps {
 }
 
 const defaultStats: StatItem[] = [
-  {
-    icon: <BusinessOutlined sx={{ fontSize: 40 }} />,
-    number: "15+",
-    label: "Years Experience",
-    description: "Serving clients with excellence",
-  },
-  {
-    icon: <GroupsOutlined sx={{ fontSize: 40 }} />,
-    number: "500+",
-    label: "Happy Clients",
-    description: "Trusted by businesses worldwide",
-  },
-  {
-    icon: <EmojiEventsOutlined sx={{ fontSize: 40 }} />,
-    number: "1000+",
-    label: "Projects Completed",
-    description: "Successfully delivered solutions",
-  },
-  {
-    icon: <ShieldOutlined sx={{ fontSize: 40 }} />,
-    number: "100%",
-    label: "Satisfaction Rate",
-    description: "Client satisfaction guaranteed",
-  },
+  { icon: <BusinessOutlined />, number: "15+", label: "Years Experience", description: "Serving clients with excellence" },
+  { icon: <GroupsOutlined />, number: "500+", label: "Happy Clients", description: "Trusted by businesses worldwide" },
+  { icon: <EmojiEventsOutlined />, number: "1000+", label: "Projects Completed", description: "Successfully delivered solutions" },
+  { icon: <ShieldOutlined />, number: "100%", label: "Satisfaction Rate", description: "Client satisfaction guaranteed" },
 ];
 
 const defaultValues: ValueItem[] = [
   {
-    icon: <EngineeringOutlined sx={{ fontSize: 36 }} />,
+    icon: <EngineeringOutlined />,
     title: "Innovation",
     description:
       "We bring forward-thinking ideas and advanced technologies to every project that push your products ahead of the competition.",
   },
   {
-    icon: <VerifiedUserOutlined sx={{ fontSize: 36 }} />,
+    icon: <VerifiedUserOutlined />,
     title: "Quality",
     description:
       "We deliver products that meet strict performance standards, backed by thorough testing and reliable engineering practices.",
   },
   {
-    icon: <LocalShippingOutlined sx={{ fontSize: 36 }} />,
+    icon: <LocalShippingOutlined />,
     title: "Reliability",
     description:
       "We provide dependable manufacturing and service delivery, ensuring your products arrive on time and perform as expected.",
   },
   {
-    icon: <TrendingUpOutlined sx={{ fontSize: 36 }} />,
+    icon: <TrendingUpOutlined />,
     title: "Excellence",
     description:
-      "We consistently raise the bar—offering refined processes, detailed craftsmanship, and results that elevate your business.",
+      "We consistently raise the bar — offering refined processes, detailed craftsmanship, and results that elevate your business.",
   },
 ];
 
+const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <Box
+    sx={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 1.25,
+      mb: 2,
+    }}
+  >
+    <Box sx={{ width: 30, height: 2, borderRadius: 2, bgcolor: customColor.primary }} />
+    <Typography
+      sx={{
+        color: customColor.primary,
+        fontWeight: 700,
+        letterSpacing: "0.18em",
+        fontSize: "12px",
+        textTransform: "uppercase",
+      }}
+    >
+      {children}
+    </Typography>
+  </Box>
+);
 
 const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
   title = "Our Journey of Excellence",
-  subtitle = "ABOUT OUR COMPANY",
+  subtitle = "About Our Company",
   mainDescription = "Founded with a vision to revolutionize the electronics and technology industry, we have grown from a small startup to a trusted leader in IoT manufacturing, PCB design, device refurbishment, ERP/MES solutions, and software development for electronics. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
   secondParagraph = "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including IoT Manufacturing, PCB Design, Device Refurbishment, ERP and MES solutions, and Software Solutions for Electronics. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
-  thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success. Our commitment to sustainability and environmental responsibility also ensures that our operations contribute positively to the industry and the planet.",
+  thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success.",
   stats = defaultStats,
   values = defaultValues,
   imageUrl = "/images/mix-about.jpg",
   imageAlt = "Our Company",
 }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
   return (
     <Box
+      component="section"
+      ref={ref}
+      className={inView ? "in-view" : undefined}
       sx={{
-        py: { xs: 2, md: 6 },
+        py: { xs: 6, md: 10 },
         px: { xs: 2, md: 4 },
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%)",
         position: "relative",
         overflow: "hidden",
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.78) 50%, rgba(255,255,255,0.9) 100%)",
+        "& .reveal": {
+          opacity: 0,
+          translate: "0 26px",
+          transition:
+            "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+        },
+        "& .reveal-l": {
+          opacity: 0,
+          translate: "-32px 0",
+          transition:
+            "opacity .65s cubic-bezier(0.22,1,0.36,1), translate .65s cubic-bezier(0.22,1,0.36,1)",
+        },
+        "&.in-view .reveal, &.in-view .reveal-l": { opacity: 1, translate: "0 0" },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& .reveal, & .reveal-l": {
+            opacity: 1,
+            translate: "0 0",
+            transition: "none",
+          },
+        },
       }}
     >
-      <Container maxWidth="lg">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
+      <Container maxWidth="lg" sx={{ position: "relative" }}>
+        {/* Header */}
+        <Box
+          className="reveal"
+          sx={{ textAlign: "center", maxWidth: 640, mx: "auto", mb: { xs: 5, md: 8 } }}
         >
-          {/* Header Section */}
-          <motion.div
-            variants={itemVariants}
-            style={{ textAlign: "center", marginBottom: "3rem" }}
-          >
-            <Typography
-              variant="overline"
-              sx={{
-                color: customColor.primary,
-                fontWeight: 600,
-                letterSpacing: 3,
-                mb: 2,
-                display: "block",
-                fontSize: "12px",
-              }}
-            >
-              {subtitle}
-            </Typography>
-            <Typography
-              variant="h4"
-              component="h2"
-              sx={{
-                fontWeight: "bold",
-
-                color: "text.primary",
-                fontSize: { xs: "28px", md: "40px" },
-                position: "relative",
-                display: "inline-block",
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -10,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 80,
-                  height: 4,
-                  background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                  borderRadius: 2,
-                },
-              }}
-            >
-              {title}
-            </Typography>
-          </motion.div>
-
-          {/* Main Content with Image */}
-          <Box
+          <Eyebrow>{subtitle}</Eyebrow>
+          <Typography
+            component="h2"
             sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              gap: 6,
-              alignItems: "center",
-              mb: 3,
+              fontWeight: 800,
+              color: "text.primary",
+              fontSize: { xs: "26px", sm: "32px", md: "40px" },
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+              mb: 2,
             }}
           >
-            {/* Left Side - Image */}
-            <Box sx={{ flex: 1, width: { xs: "100%", md: "45%" } }}>
-              <motion.div
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Box
-                  sx={{
-                    position: "relative",
-              
-                    overflow: "hidden",
-                    boxShadow: "0 15px 50px rgba(0,0,0,0.15)",
-                  
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      height: { xs: 350, md: 600 },
-                    }}
-                  >
-                    <Image
-                      src={imageUrl}
-                      alt={imageAlt}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      loading="lazy"
-                      quality={85}
-                    />
-                  </Box>
-                </Box>
-              </motion.div>
-            </Box>
+            {title}
+          </Typography>
+          <Box
+            sx={{
+              width: 56,
+              height: 4,
+              mx: "auto",
+              borderRadius: 2,
+              background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary})`,
+            }}
+          />
+        </Box>
 
-            {/* Right Side - Content */}
-            <Box sx={{ flex: 1, width: { xs: "100%", md: "55%" } }}>
-              <motion.div variants={itemVariants}>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 600,
-                    mb: 3,
-                    color: "text.primary",
-                    fontSize: { xs: "22px", md: "28px" },
-                  }}
-                >
-                  Our Story
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    mb: 3,
-                    lineHeight: 1.9,
-                    fontSize: "17px",
-                         textAlign:"justify"
-                  }}
-                >
-                  {mainDescription}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    mb: 3,
-                    lineHeight: 1.9,
-                    fontSize: "17px",
-                         textAlign:"justify"
-                  }}
-                >
-                  {secondParagraph}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    mb: 4,
-                    lineHeight: 1.9,
-                    fontSize: "17px",
-                         textAlign:"justify"
-                  }}
-                >
-                  {thirdParagraph}
-                </Typography>
-              </motion.div>
+        {/* Story: image + text */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "0.9fr 1.1fr" },
+            gap: { xs: 4, md: 7 },
+            alignItems: "center",
+          }}
+        >
+          <Box className="reveal-l" sx={{ position: "relative" }}>
+            <Box
+              aria-hidden
+              sx={{
+                position: "absolute",
+                left: { xs: -10, md: -20 },
+                bottom: { xs: -10, md: -20 },
+                width: "60%",
+                height: "60%",
+                border: "2px solid rgba(4,176,168,0.35)",
+                borderRadius: 4,
+                pointerEvents: "none",
+              }}
+            />
+            <Box
+              sx={{
+                position: "relative",
+                borderRadius: 4,
+                overflow: "hidden",
+                border: "1px solid rgba(4,176,168,0.15)",
+                boxShadow: "0 40px 70px -34px rgba(4,20,19,0.45)",
+              }}
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "100%",
+                  height: { xs: 300, sm: 400, md: 520 },
+                }}
+              >
+                <Image
+                  src={imageUrl}
+                  alt={imageAlt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                  style={{ objectFit: "cover" }}
+                  loading="lazy"
+                  quality={85}
+                />
+              </Box>
             </Box>
           </Box>
 
-       
-
-          {/* Vision & Mission Section */}
-          <VisionMissionSection />
-          <motion.div variants={containerVariants}>
+          <Box className="reveal">
             <Typography
-              variant="h5"
               sx={{
-                fontWeight: 600,
-                my: 3,
-                textAlign: "center",
+                fontWeight: 800,
                 color: "text.primary",
-                fontSize: { xs: "22px", md: "28px" },
-                position: "relative",
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -10,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 80,
-                  height: 4,
-                  background: (theme) =>
-                    `linear-gradient(90deg, transparent, ${customColor.primary}, transparent)`,
-                  borderRadius: 2,
+                fontSize: { xs: "20px", md: "26px" },
+                letterSpacing: "-0.01em",
+                mb: 2.5,
+              }}
+            >
+              Our Story
+            </Typography>
+            {[mainDescription, secondParagraph, thirdParagraph]
+              .filter(Boolean)
+              .map((para, i) => (
+                <Typography
+                  key={i}
+                  sx={{
+                    color: "text.secondary",
+                    lineHeight: 1.85,
+                    fontSize: { xs: "14.5px", md: "15.5px" },
+                    mb: 2,
+                  }}
+                >
+                  {para}
+                </Typography>
+              ))}
+          </Box>
+        </Box>
+
+        {/* Stats band */}
+        <Box
+          sx={{
+            mt: { xs: 6, md: 9 },
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "repeat(2, minmax(0, 1fr))",
+              md: "repeat(4, minmax(0, 1fr))",
+            },
+            gap: { xs: 2, md: 3 },
+          }}
+        >
+          {stats.map((stat, i) => (
+            <Box
+              key={stat.label}
+              className="reveal"
+              style={{ "--reveal-delay": `${0.06 + i * 0.07}s` } as React.CSSProperties}
+              sx={{
+                p: { xs: 2.5, md: 3 },
+                borderRadius: 3,
+                bgcolor: "#fff",
+                border: "1px solid rgba(4,176,168,0.12)",
+                boxShadow: "0 12px 30px -22px rgba(4,20,19,0.35)",
+                textAlign: "center",
+                transition:
+                  "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                  boxShadow: "0 24px 44px -24px rgba(4,176,168,0.45)",
                 },
+              }}
+            >
+              <Box
+                sx={{
+                  width: 52,
+                  height: 52,
+                  mx: "auto",
+                  mb: 1.5,
+                  borderRadius: "16px",
+                  display: "grid",
+                  placeItems: "center",
+                  bgcolor: customColor.light,
+                  color: customColor.primary,
+                  "& svg": { fontSize: 28 },
+                }}
+              >
+                {stat.icon}
+              </Box>
+              <Typography
+                sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: "22px", md: "26px" },
+                  lineHeight: 1.1,
+                  color: "text.primary",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {stat.number}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  color: "text.primary",
+                  mt: 0.5,
+                }}
+              >
+                {stat.label}
+              </Typography>
+              {stat.description && (
+                <Typography
+                  sx={{ fontSize: "11.5px", color: "text.secondary", mt: 0.5, lineHeight: 1.5 }}
+                >
+                  {stat.description}
+                </Typography>
+              )}
+            </Box>
+          ))}
+        </Box>
+
+        {/* Vision & Mission (unchanged) */}
+        <Box sx={{ mt: { xs: 6, md: 9 } }}>
+          <VisionMissionSection />
+        </Box>
+
+        {/* Core Values */}
+        <Box sx={{ mt: { xs: 6, md: 9 } }}>
+          <Box
+            className="reveal"
+            sx={{ textAlign: "center", maxWidth: 600, mx: "auto", mb: { xs: 4, md: 6 } }}
+          >
+            <Typography
+              component="h3"
+              sx={{
+                fontWeight: 800,
+                color: "text.primary",
+                fontSize: { xs: "22px", md: "30px" },
+                letterSpacing: "-0.02em",
+                mb: 1.5,
               }}
             >
               Our Core Values
             </Typography>
-            <Typography
-              variant="body2"
+            <Box
               sx={{
-                color: "text.secondary",
-                textAlign: "center",
-                mb: 5,
-                fontSize: "16px",
-                maxWidth: "600px",
+                width: 48,
+                height: 4,
                 mx: "auto",
+                mb: 2,
+                borderRadius: 2,
+                background: `linear-gradient(90deg, ${customColor.primary}, ${customColor.secondary})`,
               }}
+            />
+            <Typography
+              sx={{ color: "text.secondary", fontSize: { xs: "14px", md: "15px" } }}
             >
-              The principles that guide everything we do
+              The principles that guide everything we do.
             </Typography>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {values.map((value, index) => (
-                <motion.div variants={itemVariants} key={index}>
+          </Box>
+
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" },
+              gap: { xs: 2.5, md: 3 },
+            }}
+          >
+            {values.map((value, i) => (
+              <Box
+                key={value.title}
+                className="reveal"
+                style={{ "--reveal-delay": `${0.06 + i * 0.07}s` } as React.CSSProperties}
+                sx={{
+                  p: { xs: 3, md: 3.5 },
+                  borderRadius: 3,
+                  bgcolor: "#fff",
+                  border: "1px solid rgba(4,176,168,0.12)",
+                  boxShadow: "0 14px 36px -24px rgba(4,20,19,0.32)",
+                  transition:
+                    "opacity .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .65s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), transform .3s ease, box-shadow .3s ease, border-color .3s ease",
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    boxShadow: "0 30px 54px -28px rgba(4,176,168,0.45)",
+                    borderColor: "rgba(4,176,168,0.4)",
+                  },
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1.5 }}>
                   <Box
                     sx={{
-                      background:
-                        "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
-                      borderRadius: 3,
-                      p: 4,
-                      height: "100%",
-                      border: "2px solid transparent",
-                      transition: "all 0.3s ease",
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-                      "&:hover": {
-                        transform: "translateY(-5px)",
-                        boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-                        borderColor: customColor.primary,
-                        background: "white",
-                      },
+                      flexShrink: 0,
+                      width: 52,
+                      height: 52,
+                      borderRadius: "16px",
+                      display: "grid",
+                      placeItems: "center",
+                      bgcolor: customColor.light,
+                      color: customColor.primary,
+                      "& svg": { fontSize: 28 },
                     }}
                   >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-
-                        mb: 2,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          color: customColor.primary,
-                          mr: 2,
-                          p: 1.5,
-                          borderRadius: 2,
-                          backgroundColor: customColor.light,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        {value.icon}
-                      </Box>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 600,
-                          color: "text.primary",
-                          fontSize: { xs: "18px", md: "20px" },
-                          flex: 1,
-                        }}
-                      >
-                        {value.title}
-                      </Typography>
-                    </Box>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "text.secondary",
-                        lineHeight: 1.7,
-                        fontSize: "15px",
-                             textAlign:"justify"
-                      }}
-                    >
-                      {value.description}
-                    </Typography>
+                    {value.icon}
                   </Box>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                      color: "text.primary",
+                      fontSize: { xs: "17px", md: "19px" },
+                    }}
+                  >
+                    {value.title}
+                  </Typography>
+                </Box>
+                <Typography
+                  sx={{
+                    color: "text.secondary",
+                    lineHeight: 1.7,
+                    fontSize: { xs: "14px", md: "14.5px" },
+                  }}
+                >
+                  {value.description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
