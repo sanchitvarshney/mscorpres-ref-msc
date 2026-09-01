@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { gradientPaths } from "@/dummydata/pathData";
 import { customColor } from "@/utils/theme/customColor";
+import { CircuitTraces } from "@/components/reuseable/decor";
 
 interface HeroSectionProps {
   imageUrl?: string;
@@ -122,6 +123,40 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           mixBlendMode: "screen",
         }}
       />
+
+      {/* Circuit motif */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          overflow: "hidden",
+          pointerEvents: "none",
+        }}
+      >
+        <CircuitTraces
+          color="#ffffff"
+          opacity={0.08}
+          animated
+          sx={{
+            right: { xs: "-18%", md: "-4%" },
+            top: "-8%",
+            width: { xs: "82%", md: "58%" },
+            height: "118%",
+          }}
+        />
+        <CircuitTraces
+          color={customColor.primary}
+          opacity={0.14}
+          sx={{
+            left: "-12%",
+            bottom: "-14%",
+            width: { xs: "70%", md: "44%" },
+            height: "90%",
+          }}
+        />
+      </Box>
 
       {/* Content */}
       <Container

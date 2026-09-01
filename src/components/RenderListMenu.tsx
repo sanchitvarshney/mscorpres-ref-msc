@@ -93,28 +93,68 @@ const ServiceTile: React.FC<{ service: Service; compact?: boolean; onNavigate?: 
     >
       <Box
         sx={{
+          position: "relative",
           height: "100%",
           display: "flex",
           flexDirection: compact ? "row" : "column",
           alignItems: "center",
           textAlign: compact ? "left" : "center",
           gap: compact ? 1.5 : 1,
-          px: compact ? 1.25 : 1,
+          px: compact ? 1.5 : 1,
           py: compact ? 1 : 1.5,
           borderRadius: 2.5,
           border: "1px solid transparent",
-          transition: `transform .25s ${cssEase}, box-shadow .25s ${cssEase}, border-color .25s ${cssEase}, background-color .25s ${cssEase}`,
-          "&:hover, &:active": {
-            transform: compact ? "none" : "translateY(-3px)",
-            bgcolor: "#ffffff",
-            borderColor: "rgba(4,176,168,0.28)",
-            boxShadow: "0 14px 30px -14px rgba(4,176,168,0.5)",
+          overflow: "hidden",
+          isolation: "isolate",
+          transition: `transform .28s ${cssEase}, box-shadow .28s ${cssEase}, border-color .28s ${cssEase}`,
+          // wash that fades in from the accent side
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            zIndex: -1,
+            borderRadius: "inherit",
+            background: compact
+              ? `linear-gradient(90deg, ${customColor.light}, #ffffff)`
+              : `linear-gradient(180deg, #ffffff, ${customColor.light})`,
+            opacity: 0,
+            transition: `opacity .28s ${cssEase}`,
           },
-          "&:hover .svc-icon, &:active .svc-icon": {
-            borderColor: "rgba(4,176,168,0.45)",
-            transform: compact ? "none" : "scale(1.06)",
+          // growing accent bar (left in compact, bottom in grid)
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            borderRadius: 4,
+            background: `linear-gradient(${customColor.primary}, ${customColor.secondary})`,
+            transition: `transform .3s ${cssEase}`,
+            ...(compact
+              ? { left: 0, top: "50%", width: 3, height: 22, transform: "translateY(-50%) scaleY(0)" }
+              : { left: "50%", bottom: 6, height: 3, width: 24, transform: "translateX(-50%) scaleX(0)" }),
           },
-          "&:hover .svc-label, &:active .svc-label": { color: customColor.primary },
+          "&:hover, &:focus-visible, &:active": {
+            transform: compact ? "translateX(3px)" : "translateY(-4px)",
+            borderColor: "rgba(4,176,168,0.32)",
+            boxShadow: compact
+              ? "0 10px 24px -14px rgba(4,176,168,0.45)"
+              : "0 18px 34px -16px rgba(4,176,168,0.5)",
+          },
+          "&:hover::before, &:focus-visible::before, &:active::before": { opacity: 1 },
+          "&:hover::after, &:focus-visible::after, &:active::after": {
+            transform: compact
+              ? "translateY(-50%) scaleY(1)"
+              : "translateX(-50%) scaleX(1)",
+          },
+          "&:hover .svc-icon, &:focus-visible .svc-icon, &:active .svc-icon": {
+            borderColor: "rgba(4,176,168,0.5)",
+            boxShadow: "0 10px 20px -8px rgba(4,176,168,0.5)",
+            transform: compact ? "scale(1.05)" : "translateY(-2px) scale(1.06)",
+          },
+          "&:hover .svc-icon img, &:focus-visible .svc-icon img, &:active .svc-icon img": {
+            transform: "scale(1.08)",
+          },
+          "&:hover .svc-label, &:focus-visible .svc-label, &:active .svc-label": {
+            color: customColor.primary,
+          },
         }}
       >
         <Box
@@ -130,7 +170,8 @@ const ServiceTile: React.FC<{ service: Service; compact?: boolean; onNavigate?: 
             bgcolor: "#ffffff",
             border: "1px solid rgba(4,176,168,0.18)",
             boxShadow: "0 6px 16px -10px rgba(4,20,19,0.35)",
-            transition: `transform .25s ${cssEase}, border-color .25s ${cssEase}`,
+            transition: `transform .28s ${cssEase}, border-color .28s ${cssEase}, box-shadow .28s ${cssEase}`,
+            "& img": { transition: `transform .28s ${cssEase}` },
           }}
         >
           <Box
@@ -186,7 +227,7 @@ const RenderListMenu: React.FC<RenderListMenuProps> = ({ compact = false, onNavi
         {!compact && (
           <CircuitTraces
             opacity={0.06}
-            sx={{ right: 0, top: 0, width: 420, height: "100%" }}
+            sx={{ right: 0, top: 0, width: "100%", height: "100%" }}
           />
         )}
       </Box>
