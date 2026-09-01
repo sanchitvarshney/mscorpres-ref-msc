@@ -28,7 +28,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
         position: "relative",
         overflow: "hidden",
         px: { xs: 2, md: 4 },
-        py: { xs: 6, md: 10 },
+        py: { xs: 4, md: 7 },
         background:
           "linear-gradient(180deg, rgba(244,248,247,0.8) 0%, rgba(255,255,255,0.92) 100%)",
         "&::before": {

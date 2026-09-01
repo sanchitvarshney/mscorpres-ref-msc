@@ -30,7 +30,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
       sx={{
         position: "relative",
         overflow: "hidden",
-        py: { xs: 6, md: 9 },
+        py: { xs: 4, md: 7 },
         px: { xs: 2, md: 4 },
         background:
           "linear-gradient(180deg, rgba(248,249,250,0.78) 0%, rgba(255,255,255,0.9) 50%, rgba(248,249,250,0.78) 100%)",

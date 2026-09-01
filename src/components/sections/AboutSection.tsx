@@ -57,7 +57,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         position: "relative",
         overflow: "hidden",
         px: { xs: 2, md: 4 },
-        py: { xs: 6, md: 10 },
+        py: { xs: 4, md: 7 },
         background:
           "linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(240,249,248,0.8) 100%)",
         "&::before": {
