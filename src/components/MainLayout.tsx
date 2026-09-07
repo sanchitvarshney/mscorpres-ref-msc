@@ -13,9 +13,11 @@ const MainLayout: React.FC<MasterProps> = ({ children }) => {
     <div className="w-full h-full" style={{ position: "relative", isolation: "isolate" }}>
       <BackgroundDecor />
 
-      <Header />
+      {/* <div className="w-full fixed top-0 z-[999]"> */}
+        <Header />
+      {/* </div> */}
 
-      <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
+      <main style={{ position: "relative", zIndex: 1,  }}>{children}</main>
       <CTABanner />
       <Footer />
     </div>
