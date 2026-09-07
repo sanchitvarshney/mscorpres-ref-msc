@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           borderBottom: "1px solid",
           borderColor: scrolled ? "rgba(0,0,0,0.06)" : "transparent",
           boxShadow: scrolled ? "0 10px 28px -20px rgba(0,0,0,0.35)" : "none",
-          borderRadius: scrolled ? 0.5 : 0,
+          borderRadius: scrolled ? 4 : 0,
         }}
       >
         <Box
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           </Box>
         </Box>
 
-        <NavigationBar />
+        <NavigationBar scrolled={scrolled} />
       </Box>
     </Box>
   );

@@ -24,7 +24,7 @@ const navLinks: NavItem[] = [
   { label: "Contact Us", path: "/contact" },
 ];
 
-const NavigationBar: React.FC = () => {
+const NavigationBar: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -39,6 +39,7 @@ const NavigationBar: React.FC = () => {
       sx={{
         position: "relative",
         bgcolor: { xs: customColor.secondary, md: "transparent" },
+    
       }}
     >
       {/* Curved teal background (desktop only) */}
@@ -49,6 +50,9 @@ const NavigationBar: React.FC = () => {
           inset: 0,
           display: { xs: "none", md: "block" },
           pointerEvents: "none",
+          overflow: "hidden",
+          borderBottomLeftRadius: scrolled ? 50 : 0,
+          borderBottomRightRadius: scrolled ? 50 : 0,
         }}
       >
         <CurvedNavBackground />

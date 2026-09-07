@@ -26,6 +26,7 @@ const CurvedNavBackground: React.FC<CurvedNavBackgroundProps> = ({
         width: "100%",
         height: "100%",
         display: "block",
+      
       }}
     >
       <defs>
