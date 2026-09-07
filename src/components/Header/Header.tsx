@@ -23,13 +23,13 @@ const Header: React.FC = () => {
       variants={fadeSlideDown}
       initial={reduceMotion ? false : "hidden"}
       animate="visible"
-      sx={{ position: "sticky", top: 0, zIndex: 999 }}
+      sx={{ position: "sticky", top: 0, zIndex: 999, backgroundColor: "transparent" }}
     >
       <Box
         component={motion.div}
-        animate={{ scale: reduceMotion ? 1 : scrolled ? 0.997 : 1 }}
+        animate={{ scale: reduceMotion ? 1 : scrolled ? 0.82 : 1 }}
         transition={{ duration: 0.35, ease: easeSmooth }}
-        style={{ transformOrigin: "left center" }}
+        style={{ transformOrigin: "left center right" }}
         sx={{
           backgroundColor: scrolled
             ? "rgba(255,255,255,0.55)"
@@ -41,9 +41,9 @@ const Header: React.FC = () => {
           borderBottom: "1px solid",
           borderColor: scrolled ? "rgba(0,0,0,0.06)" : "transparent",
           boxShadow: scrolled ? "0 10px 28px -20px rgba(0,0,0,0.35)" : "none",
+          borderRadius: scrolled ? 0.5 : 0,
         }}
       >
-        {/* Top bar: logo + contact + social */}
         <Box
           sx={{
             display: "flex",
