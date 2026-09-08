@@ -31,11 +31,11 @@ const contactItems = [
   { icon: <Email sx={{ fontSize: 16 }} />, text: "marketing@mscorpres.in" },
   {
     icon: <LocationOn sx={{ fontSize: 16 }} />,
-    text: "B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305",
+    text: "35B, Udyog Vihar, Ecotech-II, Udyog Vihar, Greater Noida, Noida, Uttar Pradesh - 201306",
   },
   {
     icon: <LocationOn sx={{ fontSize: 16 }} />,
-    text: "Unit No - A 123, Dubai Silicon Oasis, DDP, Building A3, Dubai, UAE — PO Box: 418425 · Mob: +971 44218356",
+    text: "B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305",
   },
 ];
 

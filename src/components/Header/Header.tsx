@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       variants={fadeSlideDown}
       initial={reduceMotion ? false : "hidden"}
       animate="visible"
-      sx={{ position: "sticky", top: 0, zIndex: 999, backgroundColor: "transparent" }}
+      sx={{ position: "fixed", top: 0, zIndex: 999, backgroundColor: "transparent", width: "100%" }}
     >
       <Box
         component={motion.div}
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         sx={{
           backgroundColor: scrolled
             ? "rgba(255,255,255,0.55)"
-            : "rgba(255,255,255,0.35)",
+            : "rgba(255,255,255,0.68)",
           backdropFilter: "blur(14px) saturate(150%)",
           WebkitBackdropFilter: "blur(14px) saturate(150%)",
           transition:
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
               display: "flex",
               alignSelf: "center",
               position: "absolute",
-              top: { xs: 0, md: 8 },
+              top: { xs: 0, md: 10 },
               left: { xs: 15, md: 30 },
               "& img": {
                 height: { xs: 40, md: 56 },

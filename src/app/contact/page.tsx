@@ -10,7 +10,7 @@ import { customColor } from "@/utils/theme/customColor";
 export default function ContactPage() {
   return (
     <MainLayout>
-      <div className="w-full min-h-screen">
+      <div className="w-full min-h-screen mt-10">
       
 
         <ContactSection
