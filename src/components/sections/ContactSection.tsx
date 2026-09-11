@@ -26,15 +26,15 @@ const contactInfo = [
   {
     icon: <LocationOn />,
     title: "Address",
-    value: "B88, B Block, Sector 83, Noida, Uttar Pradesh - 201305",
-    description: "Noida, Uttar Pradesh - 201305",
+    value: "35B, Udyog Vihar, Ecotech-II, Udyog Vihar, Greater Noida",
+    description: "Noida, Uttar Pradesh - 201306",
   },
   {
     icon: <LocationOn />,
     title: "Address (Mob: +971 44218356)",
     value:
-      "Unit No - A 123, Dubai Silicon Oasis, DDP, Building A3, Dubai, United Arab Emirates",
-    description: "Dubai, United Arab Emirates PO Box: 418425",
+      "B88, B Block, Sector 83",
+    description: "Noida, Uttar Pradesh - 201305",
   },
   {
     icon: <AccessTime />,

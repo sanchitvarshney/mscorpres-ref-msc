@@ -46,7 +46,7 @@ const LegalDoc: React.FC<LegalDocProps> = ({
           title={heroTitle}
           imageUrl="/images/pcb-video.mp4"
           height={{ xs: "44vh", md: "52vh" }}
-          minHeight={{ xs: "320px", md: "380px" }}
+          minHeight={{ xs: "420px", md: "580px" }}
         />
 
         <Box
