@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   BusinessOutlined,
@@ -10,11 +9,10 @@ import {
   EmojiEventsOutlined,
   ShieldOutlined,
 } from "@mui/icons-material";
-import {
-  containerVariants,
-  itemVariants,
-} from "@/utils/animationVarients/animation";
+import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
+import StatCard from "@/components/reuseable/StatCard";
+import { ChipGlyph } from "@/components/reuseable/decor";
 
 interface StatItem {
   icon: React.ReactNode;
@@ -35,134 +33,220 @@ interface AboutSectionProps {
 const defaultStats: StatItem[] = [
   { icon: <BusinessOutlined />, number: "15+", label: "Years Experience" },
   { icon: <GroupsOutlined />, number: "500+", label: "Happy Clients" },
-  {
-    icon: <EmojiEventsOutlined />,
-    number: "1000+",
-    label: "Projects Completed",
-  },
+  { icon: <EmojiEventsOutlined />, number: "1000+", label: "Projects Completed" },
   { icon: <ShieldOutlined />, number: "100%", label: "Satisfaction Rate" },
 ];
 
 const AboutSection: React.FC<AboutSectionProps> = ({
   title = "Leading Excellence in Electronics & Technology",
-  subtitle = "ABOUT US",
+  subtitle = "About Us",
   description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do. From concept to completion, we leverage cutting-edge technology, rigorous testing standards, and a customer-first approach to deliver solutions that consistently exceed expectations. As the industry evolves, we continue to adapt, innovate, and refine our processes to ensure our clients always receive the most reliable and forward-thinking products and services.",
   secondParagraph = "",
   stats = defaultStats,
   imageUrl = "/images/about-combine.jpg",
   imageAlt = "About Us",
 }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
   return (
     <Box
+      component="section"
+      ref={ref}
+      className={inView ? "in-view" : undefined}
       sx={{
-        background: customColor.light,
-        p: { xs: 2, md: 4 },
+        position: "relative",
+        overflow: "hidden",
+        px: { xs: 2, md: 4 },
+        py: { xs: 4, md: 7 },
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(240,249,248,0.8) 100%)",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: -120,
+          right: -140,
+          width: 420,
+          height: 420,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(4,176,168,0.10), transparent 70%)",
+          pointerEvents: "none",
+        },
+        "& .reveal, & .reveal-l, & .reveal-r": {
+          opacity: 0,
+          transition:
+            "opacity .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s), translate .4s cubic-bezier(0.22,1,0.36,1) var(--reveal-delay,0s)",
+        },
+        "& .reveal": { translate: "0 16px" },
+        "& .reveal-l": { translate: "-20px 0" },
+        "& .reveal-r": { translate: "20px 0" },
+        "&.in-view .reveal, &.in-view .reveal-l, &.in-view .reveal-r": {
+          opacity: 1,
+          translate: "0 0",
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& .reveal, & .reveal-l, & .reveal-r": {
+            opacity: 1,
+            translate: "0 0",
+            transition: "none",
+          },
+        },
       }}
     >
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto"
-      >
+      <Box sx={{ maxWidth: 1200, mx: "auto", position: "relative" }}>
         <Box
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 4,
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "1.05fr 0.95fr" },
+            gap: { xs: 4, md: 7 },
             alignItems: "center",
           }}
         >
-          <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                  transition: { duration: 0.6 },
-                },
+          {/* Copy */}
+          <Box className="reveal-l">
+            <Box
+              sx={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 1.25,
+                mb: 2,
               }}
             >
+              <Box
+                sx={{
+                  width: 30,
+                  height: 2,
+                  borderRadius: 2,
+                  bgcolor: customColor.primary,
+                }}
+              />
               <Typography
-                variant="h6"
                 sx={{
                   color: customColor.primary,
-                  fontWeight: 600,
-                  letterSpacing: 2,
-                  mb: 1,
-                  display: "block",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
                 }}
               >
                 {subtitle}
               </Typography>
+            </Box>
+
+            <Typography
+              component="h2"
+              sx={{
+                fontWeight: 800,
+                color: "text.primary",
+                fontSize: { xs: "26px", sm: "32px", md: "36px" },
+                lineHeight: 1.2,
+                letterSpacing: "-0.02em",
+                mb: 2.5,
+              }}
+            >
+              {title}
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "text.secondary",
+                lineHeight: 1.85,
+                fontSize: { xs: "14.5px", md: "15.5px" },
+                mb: secondParagraph ? 2 : 0,
+              }}
+            >
+              {description}
+            </Typography>
+
+            {secondParagraph && (
               <Typography
-                variant="h5"
-                component="h2"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 1,
-                  color: "text.primary",
-                }}
-              >
-                {title}
-              </Typography>
-              <Typography
-                variant="body1"
                 sx={{
                   color: "text.secondary",
-                  mb: 3,
-                  lineHeight: 1.8,
-                  fontSize: "16px",
-                  textAlign: "justify",
+                  lineHeight: 1.85,
+                  fontSize: { xs: "14.5px", md: "15.5px" },
                 }}
               >
-                {description}
+                {secondParagraph}
               </Typography>
-            </motion.div>
+            )}
           </Box>
 
-          {/* Right Side - Image/Visual */}
-          <Box sx={{ flex: 1, width: { xs: "100%", md: "50%" } }}>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 50 },
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                  transition: { duration: 0.6, delay: 0.2 },
-                },
+          {/* Visual */}
+          <Box className="reveal-r" sx={{ position: "relative" }}>
+            {/* accent frame */}
+            <Box
+              aria-hidden
+              sx={{
+                position: "absolute",
+                right: { xs: -10, md: -18 },
+                bottom: { xs: -10, md: -18 },
+                width: "62%",
+                height: "62%",
+                border: "2px solid rgba(4,176,168,0.35)",
+                borderRadius: 4,
+                pointerEvents: "none",
               }}
-              className="relative"
+            />
+            <ChipGlyph
+              size={92}
+              opacity={0.4}
+              sx={{ position: "absolute", left: -24, top: -24, zIndex: 2 }}
+            />
+            <Box
+              sx={{
+                position: "relative",
+                borderRadius: 4,
+                overflow: "hidden",
+                bgcolor: "#fff",
+                border: "1px solid rgba(4,176,168,0.15)",
+                boxShadow: "0 34px 64px -32px rgba(4,20,19,0.4)",
+              }}
             >
               <Box
                 sx={{
                   position: "relative",
-                  borderRadius: 3,
-                  overflow: "hidden",
+                  width: "100%",
+                  height: { xs: 320, sm: 400, md: 470 },
                 }}
               >
-                <Box
-                  sx={{
-                    position: "relative",
-                    width: "100%",
-                    height: { xs: 300, md: 500 },
-                  }}
-                >
-                  <Image
-                    src={imageUrl}
-                    alt={imageAlt}
-                    fill
-                    style={{ objectFit: "contain" }}
-                    loading="lazy"
-                    quality={85}
-                  />
-                </Box>
+                <Image
+                  src={imageUrl}
+                  alt={imageAlt}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                  style={{ objectFit: "contain" }}
+                  loading="lazy"
+                  quality={85}
+                />
               </Box>
-            </motion.div>
+            </Box>
           </Box>
         </Box>
-      </motion.div>
+
+        {/* Stats */}
+        <Box
+          sx={{
+            mt: { xs: 5, md: 8 },
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "repeat(2, minmax(0, 1fr))",
+              md: "repeat(4, minmax(0, 1fr))",
+            },
+            gap: { xs: 2, md: 3 },
+          }}
+        >
+          {stats.map((stat, i) => (
+            <StatCard
+              key={stat.label}
+              icon={stat.icon}
+              number={stat.number}
+              label={stat.label}
+              active={inView}
+              delay={0.1 + i * 0.08}
+            />
+          ))}
+        </Box>
+      </Box>
     </Box>
   );
 };

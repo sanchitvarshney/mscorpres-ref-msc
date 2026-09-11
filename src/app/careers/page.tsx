@@ -7,8 +7,8 @@ import CareersSection from "@/components/sections/CareersSection";
 export default function CareersPage() {
   return (
     <MainLayout>
-      <div className="w-full min-h-screen">
-   
+      <div className="w-full min-h-screen mt-10">
+
         <CareersSection />
       </div>
     </MainLayout>

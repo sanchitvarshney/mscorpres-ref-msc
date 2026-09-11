@@ -13,8 +13,8 @@ const Logo: React.FC = () => {
          <Image
           src="/logo/hrms_mscorpres_logo.png"
           alt="logo"
-          width={ smallDevice ? 130 :230}
-          height={100}
+          width={ smallDevice ? 80 :180}
+          height={80}
           style={{ objectFit: "cover" }}
           loading="eager"
           priority
