@@ -1,0 +1,630 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "careers": "Careers",
+    "contact": "Contact Us"
+  },
+  "Header": {
+    "megaMenu": {
+      "manufacturing": "Manufacturing & Refurbishment",
+      "productEngineering": "Product Engineering",
+      "softwareServices": "Software Services"
+    }
+  },
+  "Footer": {
+    "servicesHeading": "Services",
+    "supportHeading": "Support",
+    "subscribeHeading": "Subscribe",
+    "newsletterText": "Stay updated with our latest news and updates.",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "subscribing": "Subscribing...",
+    "copyright": "© {year} MsCorpres. All Rights Reserved.",
+    "serviceLinks": {
+      "iotManufacturing": "IoT Manufacturing",
+      "pcbDesign": "PCB Design",
+      "deviceRefurbishment": "Device Refurbishment",
+      "erpAndMes": "ERP and MES",
+      "softwareSolution": "Software Solution for Electronics"
+    },
+    "supportLinks": {
+      "careers": "Careers",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or the URL might be incorrect.",
+    "goHome": "Go to Homepage",
+    "goBack": "Go Back"
+  },
+  "Services": {
+    "heroEyebrow": "OUR SERVICES",
+    "whyChooseHeading": "Why Choose Our {service} Services?",
+    "sectionEyebrow": "What We Offer",
+    "sectionHeading": "Our Services",
+    "sectionSubheading": "We provide high-quality, reliable services designed to support your business with efficiency and excellence.",
+    "catalog": {
+      "pcbDesign": "PCB Design",
+      "boxBuilding": "Box Building",
+      "turnkeySolution": "TurnKey Solution",
+      "skdAndCkdDesign": "SKD and CKD Design",
+      "prototypeDesign": "Prototype Design",
+      "iotManufacturing": "IoT Manufacturing",
+      "deviceRefurbishment": "Device Refurbisher",
+      "electronics": "Electronics",
+      "rapidPrototyping": "Rapid Prototyping",
+      "dfmSolution": "DFM Solution",
+      "productLifeCycle": "Product Life Cycle",
+      "erpAndMes": "ERP and MES ",
+      "softwareSolutionForElectronics": "Software Solution for Electronics",
+      "firmwareEmbeddedSoftware": "Firmware & Embedded Software"
+    },
+    "cards": {
+      "iotManufacturing": {
+        "title": "IoT Manufacturing",
+        "description": "Advanced IoT device manufacturing solutions with cutting-edge technology, ensuring smart connectivity and seamless integration for modern industrial applications."
+      },
+      "pcbDesign": {
+        "title": "PCB Design",
+        "description": "Professional PCB design services delivering high-quality printed circuit boards with precision engineering, optimized layouts, and comprehensive testing for reliable electronic solutions."
+      },
+      "deviceRefurbishment": {
+        "title": "Device Refurbishment",
+        "description": "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage."
+      },
+      "erpAndMes": {
+        "title": "ERP and MES Tools",
+        "description": "Comprehensive ERP, MES and more tools solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations."
+      },
+      "softwareSolutionForElectronics": {
+        "title": "Software Solution for Electronics",
+        "description": "Custom software solutions tailored for electronics manufacturing, including embedded systems, firmware development, and automation software to enhance productivity and efficiency."
+      }
+    },
+    "pages": {
+      "pcbDesign": {
+        "heroTitle": "PCB Design",
+        "heroDescription": "Professional printed circuit board design solutions with precision engineering and optimized layouts for your electronic systems.",
+        "manufacturerTitle": "Advanced PCB Design Solutions",
+        "manufacturerSubtitle": "ENGINEERING PRECISION",
+        "manufacturerDescription": "We provide professional PCB design services engineered for performance, reliability, and seamless integration. From schematic creation to multilayer layout optimization, our team ensures every PCB is designed with precision, efficiency, and industry-best practices to support high-quality electronic products.",
+        "description1": "We provide reliable, high-precision PCB assembly services—covering SMT, through-hole, and mixed-technology assemblies—tailored for diverse electronic applications. With advanced equipment and an experienced engineering team, we ensure every board is assembled to the highest quality standards. Our capabilities support both HMLV (High-Mix Low-Volume) and LMHV (Low-Mix High-Volume) production, delivering efficient, accurate, and consistent results for all your electronic manufacturing needs.",
+        "description2": "Our advanced infrastructure and rigorous testing workflows make us a trusted partner for high-quality PCB assembly. With meticulous inspections, precision machinery, and zero-defect standards, we ensure every board meets industry-grade reliability. Partner with us for exceptional service, fast turnaround times, and cost-effective PCB assembly solutions tailored to your exact requirements."
+      },
+      "boxBuilding": {
+        "heroTitle": "Box Building",
+        "heroDescription": "Complete box building solutions for electronic assemblies with quality craftsmanship and attention to detail.",
+        "manufacturerTitle": "Professional Box Building Solutions",
+        "manufacturerSubtitle": "ASSEMBLY EXCELLENCE",
+        "manufacturerDescription": "We provide comprehensive box building services engineered for quality, reliability, and seamless integration. From component assembly to final product integration, our team ensures every box build is completed with precision, efficiency, and industry-best practices to support high-quality electronic products.",
+        "description1": "We provide reliable, high-quality box building services—covering complete electronic assembly, component integration, and final product assembly—tailored for diverse electronic applications. With advanced equipment and an experienced assembly team, we ensure every box build meets the highest quality standards. Our capabilities support both custom and standard box building requirements, delivering efficient, accurate, and consistent results for all your electronic manufacturing needs.",
+        "description2": "Our advanced infrastructure and rigorous quality control workflows make us a trusted partner for high-quality box building. With meticulous inspections, precision assembly processes, and zero-defect standards, we ensure every box build meets industry-grade reliability. Partner with us for exceptional service, fast turnaround times, and cost-effective box building solutions tailored to your exact requirements."
+      },
+      "deviceRefurbishment": {
+        "heroTitle": "Device Refurbishment",
+        "heroDescription": "Transform used electronic devices into like-new condition through comprehensive inspection, cleaning, repair, and restoration processes.",
+        "manufacturerTitle": "Professional Device Refurbishment Solutions",
+        "manufacturerSubtitle": "RESTORATION EXCELLENCE",
+        "manufacturerDescription": "We provide professional device refurbishment services engineered for quality restoration, reliability, and sustainability. From comprehensive inspection to complete restoration, our team ensures every device is refurbished with precision, efficiency, and industry-best practices to restore devices to like-new condition.",
+        "description1": "We provide reliable, high-quality device refurbishment services—covering comprehensive inspection, cleaning, repair, and restoration—tailored for diverse electronic devices. With advanced testing equipment and an experienced technician team, we ensure every device is refurbished to the highest quality standards. Our capabilities support both consumer and commercial devices, delivering efficient, accurate, and sustainable refurbishment solutions for all your device restoration needs.",
+        "description2": "Our advanced refurbishment infrastructure and rigorous quality control workflows make us a trusted partner for high-quality device restoration. With meticulous inspections, genuine parts replacement, and comprehensive testing, we ensure every refurbished device meets or exceeds original specifications. Partner with us for exceptional service, secure data handling, and cost-effective refurbishment solutions tailored to your exact requirements."
+      },
+      "dfmSolution": {
+        "heroTitle": "DFM Solution",
+        "heroDescription": "Design for Manufacturing solutions that optimize your products for efficient, cost-effective production processes.",
+        "manufacturerTitle": "Advanced DFM Solution Services",
+        "manufacturerSubtitle": "MANUFACTURING OPTIMIZATION",
+        "manufacturerDescription": "We provide professional Design for Manufacturing solutions engineered for efficiency, cost-effectiveness, and quality. From design analysis to manufacturability optimization, our team ensures every product is designed with precision, efficiency, and industry-best practices to support cost-effective production.",
+        "description1": "We provide reliable, comprehensive DFM solution services—covering design analysis, manufacturability optimization, and cost reduction—tailored for diverse manufacturing requirements. With advanced analysis tools and an experienced engineering team, we ensure every design is optimized for efficient production. Our capabilities support both new product development and existing product optimization, delivering cost-effective, manufacturable, and quality-enhanced designs for all your manufacturing needs.",
+        "description2": "Our advanced DFM infrastructure and rigorous analysis workflows make us a trusted partner for high-quality design optimization. With meticulous design review, manufacturability assessment, and cost optimization, we ensure every product meets industry-grade manufacturing standards. Partner with us for exceptional service, faster production cycles, and cost-effective DFM solutions tailored to your exact requirements."
+      },
+      "electronics": {
+        "heroTitle": "Electronics",
+        "heroDescription": "Comprehensive electronics solutions covering design, development, and manufacturing of electronic products and systems.",
+        "manufacturerTitle": "Comprehensive Electronics Solutions",
+        "manufacturerSubtitle": "ELECTRONIC EXCELLENCE",
+        "manufacturerDescription": "We provide comprehensive electronics solutions engineered for performance, reliability, and innovation. From design and development to manufacturing, our team ensures every electronic product is created with precision, efficiency, and industry-best practices to support high-quality electronic systems.",
+        "description1": "We provide reliable, high-quality electronics services—covering design, development, and manufacturing—tailored for diverse electronic applications. With advanced facilities and an experienced engineering team, we ensure every electronic product is built to the highest quality standards. Our capabilities support both prototype development and mass production, delivering efficient, accurate, and reliable electronic solutions for all your product needs.",
+        "description2": "Our advanced electronics infrastructure and rigorous quality control workflows make us a trusted partner for high-quality electronic products. With meticulous design validation, comprehensive testing, and industry-standard manufacturing, we ensure every product meets industry-grade reliability. Partner with us for exceptional service, scalable production, and cost-effective electronics solutions tailored to your exact requirements."
+      },
+      "erpAndMes": {
+        "heroTitle": "ERP and MES Tools",
+        "heroDescription": "Comprehensive enterprise resource planning and manufacturing execution systems that streamline your entire manufacturing operations.",
+        "manufacturerTitle": "Comprehensive ERP and MES Solutions",
+        "manufacturerSubtitle": "OPERATIONAL EXCELLENCE",
+        "manufacturerDescription": "We provide professional ERP and MES solutions engineered for operational efficiency, real-time visibility, and business optimization. From enterprise resource planning to manufacturing execution, our team ensures every system is implemented with precision, efficiency, and industry-best practices to support streamlined manufacturing operations.",
+        "description1": "We provide reliable, comprehensive ERP and MES solutions—covering enterprise resource planning, manufacturing execution, inventory management, and business analytics—tailored for diverse manufacturing requirements. With advanced software platforms and an experienced implementation team, we ensure every system is configured to the highest quality standards. Our capabilities support both small-scale and enterprise-level operations, delivering efficient, integrated, and analytics-driven solutions for all your manufacturing needs.",
+        "description2": "Our advanced ERP and MES infrastructure and rigorous implementation workflows make us a trusted partner for high-quality enterprise systems. With meticulous system integration, real-time visibility, and comprehensive analytics, we ensure every solution meets industry-grade operational standards. Partner with us for exceptional service, streamlined operations, and cost-effective ERP and MES solutions tailored to your exact requirements."
+      },
+      "firmwareEmbeddedSoftware": {
+        "heroTitle": "Firmware & Embedded Software",
+        "heroDescription": "Professional firmware and embedded software development services for microcontrollers, IoT devices, and embedded systems with optimized performance and reliability.",
+        "manufacturerTitle": "Advanced Firmware & Embedded Software Solutions",
+        "manufacturerSubtitle": "EMBEDDED EXCELLENCE",
+        "manufacturerDescription": "We provide professional firmware and embedded software development services engineered for performance, reliability, and seamless hardware integration. From microcontroller firmware to real-time embedded systems, our team ensures every software solution is developed with precision, efficiency, and industry-best practices to support high-quality electronic products.",
+        "description1": "We provide reliable, high-quality firmware and embedded software solutions—covering microcontroller firmware, real-time systems, IoT device software, and embedded automation—tailored for diverse electronic applications. With advanced development tools and an experienced embedded engineering team, we ensure every firmware and embedded software solution is built to the highest quality standards. Our capabilities support various microcontrollers and embedded platforms, delivering efficient, secure, and reliable software solutions for all your embedded system needs.",
+        "description2": "Our advanced firmware development infrastructure and rigorous testing workflows make us a trusted partner for high-quality embedded software solutions. With meticulous code review, comprehensive hardware-in-the-loop testing, and industry-standard practices, we ensure every firmware and embedded software solution meets industry-grade reliability and performance. Partner with us for exceptional service, scalable solutions, and cost-effective firmware development tailored to your exact hardware and application requirements."
+      },
+      "iotManufacturing": {
+        "heroTitle": "IoT Manufacturing",
+        "heroDescription": "Cutting-edge Internet of Things devices designed for seamless connectivity and smart functionality.",
+        "manufacturerTitle": "Advanced IoT Manufacturing Solutions",
+        "manufacturerSubtitle": "SMART CONNECTIVITY",
+        "manufacturerDescription": "We provide professional IoT manufacturing services engineered for connectivity, reliability, and smart functionality. From sensor integration to cloud connectivity, our team ensures every IoT device is manufactured with precision, efficiency, and industry-best practices to support high-quality smart products.",
+        "description1": "We provide reliable, high-quality IoT manufacturing services—covering smart device assembly, sensor integration, and connectivity solutions—tailored for diverse IoT applications. With advanced manufacturing equipment and an experienced engineering team, we ensure every IoT device is built to the highest quality standards. Our capabilities support both prototype development and mass production, delivering efficient, connected, and reliable IoT solutions for all your smart product needs.",
+        "description2": "Our advanced IoT manufacturing infrastructure and rigorous testing workflows make us a trusted partner for high-quality smart devices. With meticulous quality control, connectivity testing, and security validation, we ensure every IoT device meets industry-grade reliability and security standards. Partner with us for exceptional service, scalable production, and cost-effective IoT manufacturing solutions tailored to your exact requirements."
+      },
+      "prototypeDesign": {
+        "heroTitle": "Prototype Design",
+        "heroDescription": "Rapid prototyping services to transform your ideas into functional prototypes with speed and precision.",
+        "manufacturerTitle": "Professional Prototype Design Solutions",
+        "manufacturerSubtitle": "RAPID INNOVATION",
+        "manufacturerDescription": "We provide professional prototype design services engineered for speed, functionality, and validation. From concept development to functional prototypes, our team ensures every prototype is designed with precision, efficiency, and industry-best practices to support rapid product development and innovation.",
+        "description1": "We provide reliable, rapid prototype design services—covering concept development, functional prototyping, and design validation—tailored for diverse electronic applications. With advanced prototyping tools and an experienced engineering team, we ensure every prototype is built to the highest quality standards. Our capabilities support both early-stage validation and pre-production testing, delivering efficient, accurate, and functional prototypes for all your product development needs.",
+        "description2": "Our advanced prototyping infrastructure and rigorous testing workflows make us a trusted partner for high-quality prototype development. With meticulous design validation, functional testing, and rapid iteration capabilities, we ensure every prototype meets industry-grade standards. Partner with us for exceptional service, fast turnaround times, and cost-effective prototype design solutions tailored to your exact requirements."
+      },
+      "rapidPrototyping": {
+        "heroTitle": "Rapid Prototyping",
+        "heroDescription": "Fast-track your product development with our rapid prototyping services that bring your concepts to life quickly and efficiently.",
+        "manufacturerTitle": "Advanced Rapid Prototyping Solutions",
+        "manufacturerSubtitle": "FAST-TRACK INNOVATION",
+        "manufacturerDescription": "We provide professional rapid prototyping services engineered for speed, functionality, and validation. From concept to functional prototype, our team ensures every prototype is built with precision, efficiency, and industry-best practices to support accelerated product development.",
+        "description1": "We provide reliable, fast rapid prototyping services—covering concept development, functional prototyping, and design validation—tailored for diverse product applications. With advanced prototyping technologies and an experienced engineering team, we ensure every prototype is built to the highest quality standards. Our capabilities support both early-stage validation and pre-production testing, delivering efficient, accurate, and functional prototypes for all your product development needs.",
+        "description2": "Our advanced rapid prototyping infrastructure and rigorous testing workflows make us a trusted partner for high-quality prototype development. With meticulous design validation, functional testing, and rapid iteration capabilities, we ensure every prototype meets industry-grade standards. Partner with us for exceptional service, fast turnaround times, and cost-effective rapid prototyping solutions tailored to your exact requirements."
+      },
+      "skdAndCkdDesign": {
+        "heroTitle": "SKD and CKD Design",
+        "heroDescription": "Semi-Knocked Down (SKD) and Completely Knocked Down (CKD) design solutions for efficient manufacturing and assembly processes.",
+        "manufacturerTitle": "SKD and CKD Design Solutions",
+        "manufacturerSubtitle": "MODULAR DESIGN EXCELLENCE",
+        "manufacturerDescription": "We provide professional SKD and CKD design services engineered for efficient manufacturing, optimized logistics, and flexible assembly. From modular component design to assembly-optimized packaging, our team ensures every product is designed with precision, efficiency, and industry-best practices to support cost-effective global manufacturing.",
+        "description1": "We provide reliable, efficient SKD and CKD design services—covering Semi-Knocked Down and Completely Knocked Down solutions—tailored for diverse manufacturing and logistics requirements. With advanced design tools and an experienced engineering team, we ensure every product is designed for optimal assembly efficiency. Our capabilities support both regional and global manufacturing strategies, delivering cost-effective, logistics-optimized, and assembly-friendly designs for all your manufacturing needs.",
+        "description2": "Our advanced design infrastructure and rigorous optimization workflows make us a trusted partner for high-quality SKD and CKD solutions. With meticulous design validation, assembly optimization, and cost-effective packaging, we ensure every product meets industry-grade manufacturing standards. Partner with us for exceptional service, flexible manufacturing options, and cost-effective SKD/CKD design solutions tailored to your exact requirements."
+      },
+      "softwareSolutionForElectronics": {
+        "heroTitle": "Software Solution for Electronics",
+        "heroDescription": "Custom software development tailored specifically for electronics manufacturing and embedded systems.",
+        "manufacturerTitle": "Advanced Software Solutions for Electronics",
+        "manufacturerSubtitle": "SOFTWARE EXCELLENCE",
+        "manufacturerDescription": "We provide professional software development services engineered for electronics manufacturing and embedded systems. From firmware to manufacturing software, our team ensures every software solution is developed with precision, efficiency, and industry-best practices to support high-quality electronic operations.",
+        "description1": "We provide reliable, high-quality software solutions for electronics—covering firmware, embedded software, automation, and manufacturing software—tailored for diverse electronic applications. With advanced development tools and an experienced software engineering team, we ensure every software solution is built to the highest quality standards. Our capabilities support both embedded systems and manufacturing automation, delivering efficient, secure, and reliable software solutions for all your electronic needs.",
+        "description2": "Our advanced software development infrastructure and rigorous testing workflows make us a trusted partner for high-quality software solutions. With meticulous code review, comprehensive testing, and industry-standard practices, we ensure every software solution meets industry-grade reliability and security. Partner with us for exceptional service, scalable solutions, and cost-effective software development tailored to your exact requirements."
+      },
+      "turnkeySolution": {
+        "heroTitle": "Turnkey Solution",
+        "heroDescription": "Complete end-to-end solutions from concept to delivery, handling every aspect of your project with expertise and precision.",
+        "manufacturerTitle": "Complete Turnkey Solutions",
+        "manufacturerSubtitle": "END-TO-END EXCELLENCE",
+        "manufacturerDescription": "We provide comprehensive turnkey solutions engineered for seamless project execution, from initial concept to final delivery. Our integrated approach handles design, manufacturing, assembly, testing, and quality assurance, ensuring every project is completed with precision, efficiency, and industry-best practices.",
+        "description1": "We provide reliable, comprehensive turnkey solutions—covering complete project management, design, manufacturing, assembly, and testing—tailored for diverse electronic applications. With advanced facilities and an experienced project management team, we ensure every project is executed to the highest quality standards. Our capabilities support both small-scale and large-scale production, delivering efficient, coordinated, and consistent results for all your electronic manufacturing needs.",
+        "description2": "Our integrated infrastructure and rigorous quality control workflows make us a trusted partner for complete turnkey solutions. With meticulous project management, precision manufacturing, and zero-defect standards, we ensure every project meets industry-grade reliability. Partner with us for exceptional service, streamlined communication, and cost-effective turnkey solutions tailored to your exact requirements."
+      },
+      "productLifeCycle": {
+        "heroTitle": "Product Life Cycle",
+        "heroDescription": "Comprehensive product life cycle management from concept and design through manufacturing, support, and end-of-life planning.",
+        "sectionTitle": "Product Life Cycle",
+        "sectionDescription": "The Product Life Cycle (PLC) describes the stages a product goes through from its introduction to the market until its withdrawal. It helps businesses plan marketing, pricing, production, and investment strategies.",
+        "serviceLabel": "Managing Products from Concept to Completion"
+      }
+    },
+    "features": {
+      "pcbDesign": [
+        { "title": "High-Precision Layouts", "description": "Accurate PCB layouts designed with advanced tools to ensure signal integrity and optimal performance." },
+        { "title": "Custom PCB Engineering", "description": "Tailored PCB design solutions optimized for your device's power, size, and functionality requirements." },
+        { "title": "Design Quality Assurance", "description": "Comprehensive design validation, DFM/DFT checks, and error-free schematic-to-layout workflows." },
+        { "title": "Fast Prototype Delivery", "description": "Accelerated PCB design and prototype turnaround to help you move quickly from concept to testing." },
+        { "title": "Industry Standards Compliance", "description": "PCB designs aligned with IPC standards, ensuring reliability, safety, and global compatibility." },
+        { "title": "Experienced PCB Engineers", "description": "A skilled team with expertise in multilayer PCBs, high-speed circuits, and complex routing." }
+      ],
+      "boxBuilding": [
+        { "title": "Complete Assembly Solutions", "description": "End-to-end box building services from component integration to final product assembly with precision and care." },
+        { "title": "Custom Enclosure Design", "description": "Tailored box building solutions designed to meet your specific product requirements, size constraints, and functionality needs." },
+        { "title": "Quality Craftsmanship", "description": "Meticulous attention to detail ensuring every box build meets the highest standards of quality and durability." },
+        { "title": "Efficient Production", "description": "Streamlined box building processes that deliver completed assemblies within agreed timelines without compromising quality." },
+        { "title": "Protected & Secure", "description": "Robust box building ensuring your electronic products are properly housed, protected, and ready for deployment." },
+        { "title": "Expert Assembly Team", "description": "Skilled professionals with extensive experience in electronic box building and product assembly." }
+      ],
+      "turnkeySolution": [
+        { "title": "End-to-End Solutions", "description": "Complete project management from concept to delivery, handling every aspect of your product development lifecycle." },
+        { "title": "Integrated Engineering", "description": "Seamless integration of design, manufacturing, assembly, and testing processes for optimal efficiency and quality." },
+        { "title": "Quality Assurance", "description": "Comprehensive quality control at every stage ensuring your product meets the highest industry standards." },
+        { "title": "Faster Time-to-Market", "description": "Streamlined processes and coordinated workflows that accelerate your product launch timeline." },
+        { "title": "Single Point of Contact", "description": "One dedicated team managing your entire project, simplifying communication and ensuring accountability." },
+        { "title": "Expert Project Management", "description": "Experienced professionals coordinating all aspects of your turnkey solution with precision and expertise." }
+      ],
+      "skdAndCkdDesign": [
+        { "title": "Modular Design Solutions", "description": "Semi-Knocked Down (SKD) and Completely Knocked Down (CKD) designs optimized for efficient assembly and logistics." },
+        { "title": "Assembly-Optimized Engineering", "description": "Products designed for easy assembly in different locations, reducing shipping costs and optimizing manufacturing flexibility." },
+        { "title": "Quality Component Integration", "description": "Carefully designed SKD/CKD solutions ensuring components are properly packaged and protected during transit." },
+        { "title": "Efficient Logistics", "description": "Optimized designs that reduce shipping volumes and costs while maintaining product quality and assembly simplicity." },
+        { "title": "Global Manufacturing Support", "description": "SKD/CKD designs that enable cost-effective manufacturing across multiple locations and markets." },
+        { "title": "Assembly Documentation", "description": "Comprehensive assembly guides and documentation ensuring smooth assembly processes at any location." }
+      ],
+      "prototypeDesign": [
+        { "title": "Rapid Prototyping", "description": "Fast turnaround from concept to functional prototype, enabling quick validation and iteration of your ideas." },
+        { "title": "Concept to Reality", "description": "Transform your innovative ideas into tangible prototypes with precision engineering and attention to detail." },
+        { "title": "Functional Testing", "description": "Prototypes designed for comprehensive testing, allowing you to validate functionality before full-scale production." },
+        { "title": "Quick Iteration Cycles", "description": "Accelerated design refinement process enabling multiple iterations to perfect your product concept." },
+        { "title": "Design Validation", "description": "Prototypes that help validate design concepts, user experience, and technical feasibility early in development." },
+        { "title": "Innovation Support", "description": "Expert support in bringing innovative concepts to life with cutting-edge prototyping techniques and materials." }
+      ],
+      "iotManufacturing": [
+        { "title": "Smart Device Manufacturing", "description": "Cutting-edge IoT devices manufactured with advanced connectivity features and smart functionality." },
+        { "title": "Connectivity Solutions", "description": "IoT devices engineered for seamless wireless connectivity, sensor integration, and cloud communication." },
+        { "title": "Rigorous Testing", "description": "Comprehensive testing protocols ensuring every IoT device meets reliability, security, and performance standards." },
+        { "title": "Scalable Production", "description": "Manufacturing capabilities that scale from prototype to mass production, supporting your IoT deployment needs." },
+        { "title": "Industry Standards", "description": "IoT devices manufactured in compliance with international standards for safety, security, and interoperability." },
+        { "title": "Advanced Components", "description": "Integration of high-quality sensors, processors, and communication modules for reliable IoT performance." }
+      ],
+      "deviceRefurbishment": [
+        { "title": "Complete Restoration", "description": "Comprehensive refurbishment process that transforms used devices into like-new condition with genuine parts." },
+        { "title": "Expert Repair Services", "description": "Skilled technicians performing thorough inspection, diagnosis, and repair of all device components." },
+        { "title": "Quality Assurance", "description": "Rigorous testing and quality checks ensuring every refurbished device meets or exceeds original specifications." },
+        { "title": "Efficient Processing", "description": "Streamlined refurbishment workflows that deliver restored devices quickly without compromising quality." },
+        { "title": "Genuine Parts Only", "description": "Exclusive use of authentic components and parts, ensuring reliability and maintaining device integrity." },
+        { "title": "Data Security", "description": "Secure data wiping and restoration processes protecting your information during the refurbishment process." }
+      ],
+      "electronics": [
+        { "title": "Comprehensive Electronics Solutions", "description": "End-to-end electronics services covering design, development, and manufacturing of electronic products and systems." },
+        { "title": "Custom Electronic Design", "description": "Tailored electronic solutions designed to meet your specific requirements, functionality, and performance needs." },
+        { "title": "Quality Manufacturing", "description": "High-quality electronic manufacturing with rigorous quality control ensuring reliable and durable products." },
+        { "title": "Efficient Development", "description": "Streamlined development processes that deliver electronic solutions within agreed timelines without compromising quality." },
+        { "title": "Industry Standards", "description": "Electronics solutions designed and manufactured in compliance with international standards for safety and reliability." },
+        { "title": "Expert Electronics Team", "description": "Skilled professionals with extensive experience in electronic design, development, and manufacturing." }
+      ],
+      "dfmSolution": [
+        { "title": "Design Optimization", "description": "Comprehensive Design for Manufacturing analysis that optimizes your products for efficient, cost-effective production." },
+        { "title": "Manufacturability Analysis", "description": "Detailed analysis and refinement of designs to ensure manufacturability, reduce costs, and improve quality." },
+        { "title": "Quality Enhancement", "description": "DFM solutions that enhance product quality while reducing manufacturing complexity and production costs." },
+        { "title": "Faster Production", "description": "Optimized designs that accelerate production timelines and reduce manufacturing bottlenecks." },
+        { "title": "Cost Optimization", "description": "DFM solutions that identify cost-saving opportunities without compromising product quality or functionality." },
+        { "title": "Expert DFM Engineers", "description": "Experienced team with deep knowledge of manufacturing processes and design optimization techniques." }
+      ],
+      "rapidPrototyping": [
+        { "title": "Fast-Track Development", "description": "Rapid prototyping services that fast-track your product development by bringing concepts to life quickly and efficiently." },
+        { "title": "Advanced Prototyping Technologies", "description": "Utilization of cutting-edge prototyping technologies to help validate designs and test functionality." },
+        { "title": "Functional Validation", "description": "Prototypes designed for comprehensive testing, allowing you to validate concepts before full-scale production." },
+        { "title": "Accelerated Time-to-Market", "description": "Rapid prototyping that accelerates your time-to-market by enabling quick design validation and iteration." },
+        { "title": "Concept Validation", "description": "Prototypes that help validate design concepts, functionality, and user experience early in development." },
+        { "title": "Innovation Support", "description": "Expert support in rapid prototyping with advanced techniques and materials for innovative product development." }
+      ],
+      "erpAndMes": [
+        { "title": "Comprehensive ERP & MES", "description": "Complete enterprise resource planning and manufacturing execution systems that streamline your entire manufacturing operations." },
+        { "title": "Real-Time Visibility", "description": "Advanced software platforms offering real-time visibility into production processes, inventory, and quality control." },
+        { "title": "Integrated Solutions", "description": "Seamlessly integrated ERP and MES systems that optimize manufacturing operations and business analytics." },
+        { "title": "Operational Efficiency", "description": "Streamlined operations through automated processes, reducing manual work and improving overall efficiency." },
+        { "title": "Business Analytics", "description": "Comprehensive business analytics and reporting tools that provide insights for data-driven decision making." },
+        { "title": "Expert Implementation Team", "description": "Experienced professionals with deep expertise in ERP and MES system implementation and optimization." }
+      ],
+      "softwareSolutionForElectronics": [
+        { "title": "Custom Software Development", "description": "Custom software development tailored specifically for electronics manufacturing and embedded systems." },
+        { "title": "Firmware & Embedded Software", "description": "Development of firmware, embedded software, and automation solutions that enhance productivity and efficiency." },
+        { "title": "Manufacturing Software", "description": "Specialized manufacturing software solutions that streamline operations and improve operational efficiency." },
+        { "title": "Rapid Development", "description": "Fast software development cycles that deliver custom solutions within agreed timelines without compromising quality." },
+        { "title": "Industry Best Practices", "description": "Software solutions developed following industry best practices for security, reliability, and maintainability." },
+        { "title": "Expert Software Team", "description": "Skilled software engineers with extensive experience in electronics manufacturing and embedded systems." }
+      ],
+      "firmwareEmbeddedSoftware": [
+        { "title": "Firmware Development", "description": "Professional firmware development services for microcontrollers, embedded systems, and IoT devices with optimized performance and reliability." },
+        { "title": "Embedded Software Solutions", "description": "Custom embedded software development tailored for your hardware platform, ensuring seamless integration and optimal functionality." },
+        { "title": "Real-Time Systems", "description": "Development of real-time embedded systems with precise timing requirements and deterministic behavior for critical applications." },
+        { "title": "Optimized Performance", "description": "Firmware and embedded software optimized for memory efficiency, power consumption, and processing speed to meet your device requirements." },
+        { "title": "Industry Standards Compliance", "description": "Embedded software developed following industry standards and best practices for security, reliability, and maintainability." },
+        { "title": "Expert Embedded Engineers", "description": "Skilled firmware and embedded software engineers with extensive experience in various microcontrollers and embedded platforms." }
+      ],
+      "productLifeCycle": [
+        { "title": "Lifecycle Planning", "description": "We help you plan and optimize your product’s entire lifecycle—from initial concept to end-of-life—ensuring efficient management, cost control, and smooth operations at every stage." },
+        { "title": "Data & Documentation Management", "description": "Our PLM services cover complete data handling, documentation, and revision control, maintaining accuracy, traceability, and the integrity of your product information throughout its lifecycle." },
+        { "title": "Change Management", "description": "We enable seamless implementation of design updates, engineering changes, and product improvements while minimizing disruptions and ensuring consistent performance across all phases." }
+      ]
+    }
+  },
+  "Home": {
+    "certifications": {
+      "eyebrow": "Why Choose Us",
+      "heading": "Certifications & Commitments",
+      "tagline": "The standards and promises that stand behind every board we design, build, and refurbish.",
+      "items": [
+        { "title": "ISO Certified", "desc": "Processes audited and certified to international ISO quality standards." },
+        { "title": "RoHS Compliant", "desc": "Every build meets RoHS limits on hazardous substances and materials." },
+        { "title": "Quality Assured", "desc": "Multi-stage inspection and testing before anything leaves the floor." },
+        { "title": "On-Time Delivery", "desc": "Committed timelines backed by planned capacity and clear tracking." },
+        { "title": "100% Satisfaction", "desc": "We stand behind our work with responsive, accountable support." }
+      ]
+    },
+    "about": {
+      "subtitle": "About Us",
+      "title": "Leading Excellence in Electronics & Technology",
+      "description": "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do. From concept to completion, we leverage cutting-edge technology, rigorous testing standards, and a customer-first approach to deliver solutions that consistently exceed expectations. As the industry evolves, we continue to adapt, innovate, and refine our processes to ensure our clients always receive the most reliable and forward-thinking products and services.",
+      "stats": [
+        { "number": "15+", "label": "Years Experience" },
+        { "number": "500+", "label": "Happy Clients" },
+        { "number": "1000+", "label": "Projects Completed" },
+        { "number": "100%", "label": "Satisfaction Rate" }
+      ]
+    },
+    "testimonials": {
+      "subtitle": "Testimonials",
+      "title": "What Our Clients Say",
+      "items": {
+        "1": "If you have reached out to MsCorpres you are in the right hands. Our requirements were well understood and very professionally handled from start to finish. Very honest, sincere and hardworking staff who go out of their way to deliver efficient services. Highly recommend MsCorpres and we wish them continuing deserving success in their endeavours.",
+        "2": "MsCorpres is an exceptional platform that fosters innovation and growth. As a software developer, I've flourished here, empowered by cutting-edge technologies and a collaborative environment. The company's commitment to excellence fuels my passion for crafting efficient solutions. It's a privilege to contribute to a team that champions creativity and values expertise. MsCorpres sets the bar high for industry standards.",
+        "3": "We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently handle our finance, billing, Production, warehousing & logistics. Its a pleasure to work with MsCorpres with seamless coordination with our internal team. The whole team works poore dil se for mutual company's growth. Aur Shahrukh khan sir & Paulo Coelho sir ne bhi kaha hai......jis cheez ko dil se chahe to poori kaaynat lag jaati hai tumhe woh dilane ke liye.",
+        "4": "It was not even a year since we launched our start up and we were in discussions to raise our seed round. As you can imagine juggling between building an year old start up and the massive documentation, compliances, proofing/modifying the SHA etc is not an easy feat. A friend connected us to MsCorpres Team. We were sceptical to work with a team who is based in another city than someone available in person. It was a short but intense journey and they helped us through it till the end. Thanks Team MsCorpres for your guidance and assistance. Look forward to working with you again."
+      }
+    },
+    "trustedCompanies": {
+      "subtitle": "Our Partners",
+      "title": "Trusted by Leading Companies",
+      "tagline": "We're proud to work with industry leaders and trusted partners worldwide."
+    },
+    "carousel": {
+      "kickers": ["Your Trusted Partner", "Precision & Quality", "Complete Solutions"],
+      "ctaPrimary": "Get a Quote",
+      "ctaSecondary": "Discover More",
+      "slides": [
+        { "title": "Welcome to MsCorpres", "description": "Your trusted partner for electronics manufacturing and expert refurbishment" },
+        { "title": "Quality Services", "description": "Providing high-standard electronics manufacturing and refurbishing tailored to your business needs" },
+        { "title": "End-to-End Solutions", "description": "From product development to refurbishment, we ensure complete, high-quality solutions at every stage" }
+      ]
+    }
+  },
+  "About": {
+    "hero": {
+      "subtitle": "About Us",
+      "title": "Leading Excellence in Electronics & Technology",
+      "description": "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do."
+    },
+    "detailed": {
+      "subtitle": "About Our Company",
+      "title": "Our Journey of Excellence",
+      "mainDescription": "Founded with a vision to revolutionize the electronics and technology industry, we have grown from a small startup to a trusted leader in IoT manufacturing, PCB design, device refurbishment, ERP/MES solutions, and software development for electronics. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
+      "secondParagraph": "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including IoT Manufacturing, PCB Design, Device Refurbishment, ERP and MES solutions, and Software Solutions for Electronics. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
+      "thirdParagraph": "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success.",
+      "ourStory": "Our Story",
+      "stats": [
+        { "number": "15+", "label": "Years Experience", "description": "Serving clients with excellence" },
+        { "number": "500+", "label": "Happy Clients", "description": "Trusted by businesses worldwide" },
+        { "number": "1000+", "label": "Projects Completed", "description": "Successfully delivered solutions" },
+        { "number": "100%", "label": "Satisfaction Rate", "description": "Client satisfaction guaranteed" }
+      ],
+      "coreValuesHeading": "Our Core Values",
+      "coreValuesTagline": "The principles that guide everything we do.",
+      "values": [
+        { "title": "Innovation", "description": "We bring forward-thinking ideas and advanced technologies to every project that push your products ahead of the competition." },
+        { "title": "Quality", "description": "We deliver products that meet strict performance standards, backed by thorough testing and reliable engineering practices." },
+        { "title": "Reliability", "description": "We provide dependable manufacturing and service delivery, ensuring your products arrive on time and perform as expected." },
+        { "title": "Excellence", "description": "We consistently raise the bar — offering refined processes, detailed craftsmanship, and results that elevate your business." }
+      ]
+    },
+    "visionMission": {
+      "eyebrow": "Who We Are",
+      "heading": "Vision & Mission",
+      "tagline": "Excellence drives our mission and vision forward.",
+      "visionTitle": "Our Vision",
+      "visionDescription": "To become a global leader in electronics and technology solutions by setting new benchmarks in excellence, innovation, and customer satisfaction. We envision a future where our IoT products, PCB design expertise, device refurbishment services, ERP/MES platforms, and software solutions empower businesses worldwide to operate with greater efficiency, reliability, and confidence.",
+      "missionTitle": "Our Mission",
+      "missionDescription": "To deliver world-class electronics and technology solutions through advanced innovation, expert engineering, and an unwavering commitment to quality. Our mission is to help businesses achieve their goals by providing reliable IoT systems, precision PCB design, professional refurbishment services, and intelligent ERP/MES and software solutions — building long-term partnerships founded on trust, performance, and mutual success."
+    }
+  },
+  "Careers": {
+    "eyebrow": "JOIN OUR TEAM",
+    "title": "Explore Career Opportunities",
+    "intro": "Search by job title or department to find roles that match your skills. Browse our latest openings below.",
+    "jobTitleLabel": "Job Title",
+    "jobTitlePlaceholder": "Type job title...",
+    "departmentLabel": "Department",
+    "departmentPlaceholder": "Select department...",
+    "search": "Search",
+    "reset": "Reset",
+    "showingCount": "Showing {count} open positions",
+    "foundCount": "{count, plural, one {# job found} other {# jobs found}}",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Failed to load job listings. Please try again later.",
+    "emptyTitle": "No jobs found",
+    "emptyBody": "Try different filters or reset to see all openings.",
+    "applyNow": "Apply Now"
+  },
+  "Contact": {
+    "heroTitle": "Get In Touch",
+    "heroSubtitle": "Have questions or need assistance? We're here to help you with all your electronics and technology needs. Reach out to us and let's start a conversation.",
+    "eyebrow": "CONTACT US",
+    "formHeading": "Send us a Message",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+91 1234567890",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "info": [
+      { "title": "Phone", "description": "Call us anytime" },
+      { "title": "Email", "description": "Send us an email" },
+      { "title": "Address", "description": "Noida, Uttar Pradesh - 201306" },
+      { "title": "Address (Mob: +971 44218356)", "description": "Noida, Uttar Pradesh - 201305" },
+      { "title": "Working Hours", "description": "Saturday is being worked day" }
+    ]
+  },
+  "PrivacyPolicy": {
+    "heroSubtitle": "PRIVACY POLICY",
+    "heroTitle": "Privacy Policy",
+    "intro": [
+      "The protection and security of your personal information is among our top priorities. This Privacy Policy (“Policy”) discloses our practice with respect to the information collected from the users of this Website and for that personal information that you provide us while visiting our website or participating in our events, campaigns and surveys.",
+      "You are hereby advised to read this Policy carefully and fully understand the nature and purpose of gathering and/or collecting sensitive, personal and other information and the usage, disclosure and sharing of such information. By viewing or accessing the Website or by requesting any services through the Website, you hereby also consent to MsC for sharing information with third party service providers engaged by MsC in relation to its operations and to the transfer and/or storage of personal information and data across borders. We store your information reliably and do transfer your personal information to third parties or service providers to fulfill your requests or activity needs. We always make all appropriate arrangements in order to ensure correct and secure data processing in compliance with applicable data protection law."
+    ],
+    "callout": "The Privacy Policy covers the following areas. This list is not all-inclusive and is subject to further updates in the future.",
+    "governingNotice": "This page is available in multiple languages for your convenience. In the event of any discrepancy or inconsistency between translations, the English version of this Privacy Policy shall govern and prevail.",
+    "contactHeading": "Contact Us",
+    "contactText": "For any questions or concerns regarding this Privacy Policy, please contact us at",
+    "table": {
+      "headers": ["Purpose", "Data (key elements)", "Basis"],
+      "rows": [
+        ["Enquiring about our organization and its work", "Name, email, message, phone number", "Legitimate interests - it is necessary for us to read and store your message so that we can respond in the way that you would expect"],
+        ["Subscribing to email updates about our work", "Name, email, phone number", "Consent - you have given your active consent."],
+        ["Request for services", "Name, email, message, phone number", "To further contact you."],
+        ["Website functionality", "Website activity collected through cookies", "Legitimate interests - it is necessary for us to store a small amount of information, usually through cookies, to deliver functionality that you would expect, such as remembering the contents you have shared earlier."],
+        ["Visitors/users", "Identity, IP addresses, time spent on website, browser and device of the user.", "Legitimate interests- to provide better user experience."]
+      ]
+    },
+    "sections": {
+      "collection": {
+        "title": "Collection of personally identifiable information",
+        "paragraphs": [
+          "For the purposes of this Policy, 'Personal Information' is any data which relates to an individual who may be identified from that data, or from a combination of a set of data, and other information which is in possession of MsC. The following table explains the types of data we collect and the legal basis, under current data protection legislation, on which this data is processed."
+        ]
+      },
+      "usage": {
+        "title": "How we use your data",
+        "paragraphs": [
+          "We will only use your data in a manner that is appropriate considering the basis on which that data was collected, as set out in the table at the top of this policy.",
+          "For example, we may use your personal information to:"
+        ],
+        "listItems": [
+          "a). Reply to enquiries you send to us;",
+          "b). Where you have specifically agreed to this, send you marketing communications by email relating to our work which we think may be of interest to you.",
+          "c). To provide better user experience to visitors/users."
+        ]
+      },
+      "sharing": {
+        "title": "When we share your data",
+        "paragraphs": [
+          "We will only pass your data to third parties in the following circumstances:"
+        ],
+        "listItems": [
+          "a). You have provided your explicit consent for us to pass data to a third party;",
+          "b). We are using a third party purely for the purposes of processing data on our behalf and we have in place a data processing agreement with that third party that fulfills our legal obligations in relation to the use of third-party data processors; or",
+          "c). We are required by law to share your data."
+        ]
+      },
+      "retention": {
+        "title": "How long we keep your data",
+        "paragraphs": [
+          "We take the principles of data minimization and removal seriously and have internal policies in place to ensure that we only ever ask for the minimum amount of data for the associated purpose and delete that data promptly once it is no longer required."
+        ]
+      },
+      "rights": {
+        "title": "Rights you have over your data",
+        "paragraphs": [
+          "You have a range of rights over your data, which include the following:"
+        ],
+        "listItems": [
+          "a). Where data processing is based on consent, you may revoke this consent at any time and we will make it as easy as possible for you to do this (for example by putting 'unsubscribe' links at the bottom of all our marketing emails).",
+          "b). You have the right to ask for rectification and/or deletion of your information.",
+          "c). You have the right of access to your information.",
+          "d). These rights may be limited in some situations – for example, where we can demonstrate that we have a legal requirement to process your Personal Information.",
+          "e). You can assert your rights in the corresponding sections where such information was provided or by contacting us at iot@mscorpres.in."
+        ]
+      },
+      "cookies": {
+        "title": "Use of Cookies",
+        "paragraphs": [
+          "A \"cookie\" is a small piece of information stored by a Web server on a Web browser so that it can be later read from that browser. Cookies are useful for enabling the browser to remember information specific to a given user. This is done to recognize your device during your future visits to our Website, primarily in order to provide better user experience."
+        ]
+      },
+      "consequences": {
+        "title": "Consequences of not providing Personal Information",
+        "paragraphs": [
+          "If you choose not to provide your Personal Information that is mandatory to process your request, we may not be able to provide the corresponding experience."
+        ]
+      },
+      "updates": {
+        "title": "Updates to this privacy statement",
+        "paragraphs": [
+          "MsC may change the data privacy practices and update this privacy statement as and when the need arises, and the same will be made available on the website. But our commitment to protect the privacy of website users will continue to remain."
+        ]
+      }
+    }
+  },
+  "Terms": {
+    "heroSubtitle": "TERMS OF USE",
+    "heroTitle": "Terms Of Use",
+    "intro": [
+      "If you disagree with any part of these Terms, please discontinue using our Website immediately. We reserve the right to modify, alter or update these Terms at any time and you agree to be bound by such modifications, alterations and updates.",
+      "The term 'you' refers to the user or viewer of our Website."
+    ],
+    "callout": "Please read these Terms of Use carefully before using our Website. By accessing or using this Website, you agree to be bound by these Terms of Use.",
+    "governingNotice": "This page is available in multiple languages for your convenience. In the event of any discrepancy or inconsistency between translations, the English version of these Terms of Use shall govern and prevail.",
+    "sections": {
+      "content": {
+        "title": "Website Content",
+        "paragraphs": [
+          "All materials, including reports, newsletters, photographs, illustrations, images, artwork, designs, text, graphics, logos, button icons, images, audio and video clips, blogs etc. (collectively, \"Content\") appearing on or accessible through this Website are owned and controlled by the MsC and/or its affiliates and are protected by the intellectual property laws."
+        ]
+      },
+      "useOfContent": {
+        "title": "Use of content",
+        "paragraphs": [
+          "Subject to the terms and conditions set forth in this Terms and any other policy as may be referred here you have been granted a non-exclusive, non-transferable, limited right to access and use this Website. You agree not to interrupt or attempt to interrupt the operation of the Website in any manner. You shall not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from this Website."
+        ]
+      },
+      "accuracy": {
+        "title": "Accuracy of content",
+        "paragraphs": [
+          "Notwithstanding best endeavors, this Website may contain mistakes or typographical blunders. MsC makes no representations about the accuracy, reliability, completeness, or timelines of the Website or the Content. The utilization of the Website and Content is at your hazard. Changes are periodically made to the Website and may be made at any time. If you rely on any representation of information contained on this Website, then it shall be at your own risk."
+        ]
+      },
+      "blogs": {
+        "title": "Blogs and other social media channels",
+        "paragraphs": [
+          "MsC employees, volunteers and associates may contribute their articles and opinion as a blog on this website entirely at the sole discretion of MsC. You hereby acknowledge and agree that these blogs constitute the opinion of the Individuals in their personal capacity and may not represent official opinion of MsC in any manner.",
+          "You may be permitted to post comments and feedback to these blogs. By doing so, you expressly agree and acknowledge to abide by the following with respect to the blog and Website both:"
+        ],
+        "listItems": [
+          "a) You shall not defame, abuse, harass, stalk threaten or otherwise violate the legal rights of MsC or any third party.",
+          "b) You shall not contribute any content or take any action that may in any manner adversely affect the reputation of MsC, or that is otherwise detrimental to MsC. You shall not upload or otherwise make available, files that contain images, photographs, software or other material protected by intellectual property laws, including, by way of example, and not as limitation, copyright or trademark laws (or by rights of privacy or publicity) unless You own or control the rights thereto or have received all necessary consent to do the same.",
+          "c) You shall not in any manner publish or post any inappropriate, defamatory, infringing, obscene, racist, terrorist, politically slanted, indecent or unlawful topic, name, material or information. You shall not use objectionable language or abbreviations.",
+          "d) You shall not in any manner reveal confidential or proprietary information of any third party. Specifically, you shall not post any material for which you do not have requisite and applicable right(s) under law.",
+          "e) You shall not upload files that contain viruses, trojan horses, worms, time bombs, cancelbots, corrupted files, or any other similar software or programs that may damage the operation of another's computer or property of another.",
+          "f) You shall not advertise or offer to sell or buy any goods or services for any business purpose.",
+          "g) You shall not download any file posted that You know, or should know, cannot be legally reproduced, displayed, performed, and/or distributed in such manner.",
+          "h) You shall not falsify or delete any copyright management information, such as author attributions, legal or other proper notices or proprietary designations or labels of the origin or source of software or other material contained in a file that is uploaded.",
+          "i) You shall not create a false identity for the purpose of misleading others.",
+          "j) You acknowledge that MsC may, at its sole discretion, monitor, remove or edit any content that You contribute. MsC may also pursue remedies available to it under law for any violation of these terms and conditions.",
+          "k) You shall indemnify and hold harmless MsC from any claims and loss incurred by MsC as a result of your violation of these Terms of Use."
+        ]
+      },
+      "ownership": {
+        "title": "Ownership of Intellectual Property Rights",
+        "paragraphs": [
+          "All content including trademark, copyrights, names etc. shall have the ownership of MsC only. No use of these made for any purpose whatsoever without the prior written authorization/consent of MsC is allowed."
+        ]
+      },
+      "warranties": {
+        "title": "No warranties",
+        "paragraphs": [
+          "MsC has compiled all the data, content and information posted on this Website through various sources. No representation is made, or warranty given as to the completeness or accuracy of such information. There is no express or implied warranty, regarding third party content. Despite of MsC's best endeavors, there is no warranty that this Website will be free of any computer viruses."
+        ]
+      },
+      "liability": {
+        "title": "Limitation of liabilities",
+        "paragraphs": [
+          "MsC shall not be liable for any direct, indirect, special, consequential or other damages (including, without limitation, any lost profits, business interruption, loss of information or programs or other data on your information handling system) that are related to the use of, or the inability to use, the content, materials, and functions of this Website or any linked Website, even if MsC has expressly advised of the possibility of such damages."
+        ]
+      },
+      "indemnification": {
+        "title": "Indemnification",
+        "paragraphs": [
+          "You shall be liable to indemnify, defend and keep MsC harmless and its trustees, employees, associates, affiliates etc. (\"Indemnified Parties\") from and against any and all liability and costs, including, without limitation, reasonable attorneys' fees, incurred by the Indemnified Parties in connection with any claim arising out of any breach by you of these Terms and intellectual property rights."
+        ]
+      },
+      "modification": {
+        "title": "Modification",
+        "paragraphs": [
+          "MsC reserves the rights, at its sole discretion, to change, modify, add, remove or impose restriction on features or service or any portion of these Terms of Use in whole or in part, at any time. Changes in these Terms of Use will be effective when notice of such change is posted. Your continued use of the Website after any changes to these Terms of Use are posted will be considered acceptance of those changes."
+        ]
+      },
+      "applicableLaws": {
+        "title": "Applicable Laws",
+        "paragraphs": [
+          "This Website, including the Content and information contained herein, shall be governed by the laws of the Republic of India and the courts of New Delhi, India shall retain exclusive jurisdiction to entertain any proceedings in relation to any disputes arising out of the same."
+        ]
+      }
+    }
+  }
+}

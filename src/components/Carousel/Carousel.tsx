@@ -7,7 +7,8 @@ import {
   ArrowForwardRounded,
 } from "@mui/icons-material";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CarouselItem, defaultItems } from "@/dummydata/dummyData";
@@ -22,19 +23,24 @@ interface CarouselProps {
 const AUTOPLAY_MS = 6000;
 const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
-const kickers = [
-  "Your Trusted Partner",
-  "Precision & Quality",
-  "Complete Solutions",
-];
-
-const ctas = [
-  { label: "Get a Quote", href: "/contact" },
-  { label: "Discover More", href: "/about" },
-];
-
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
-  const data = items && items.length ? items : defaultItems;
+  const t = useTranslations("Home.carousel");
+  const kickers = t.raw("kickers") as string[];
+  const slides = t.raw("slides") as { title: string; description: string }[];
+  const ctas = [
+    { label: t("ctaPrimary"), href: "/contact" },
+    { label: t("ctaSecondary"), href: "/about" },
+  ];
+
+  const data = useMemo(() => {
+    const base = items && items.length ? items : defaultItems;
+    return base.map((item, i) => ({
+      ...item,
+      title: slides[i % slides.length]?.title,
+      description: slides[i % slides.length]?.description,
+    }));
+  }, [items, slides]);
+
   const sliderRef = useRef<Slider>(null);
   const [current, setCurrent] = useState(0);
 

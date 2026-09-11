@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Logo from "./Logo";
 import ContactInfo from "./ContactInfo";
 import SocialLinks from "./SocialLinks";
+import LanguageSwitcher from "./LanguageSwitcher";
 import NavigationBar from "./NavigationBar";
 import { useScrolled } from "@/hooks/useScrolled";
 import {
@@ -96,6 +97,15 @@ const Header: React.FC = () => {
               }}
             />
             <SocialLinks />
+            <Box
+              aria-hidden
+              sx={{
+                width: "1px",
+                height: 20,
+                bgcolor: "rgba(0,0,0,0.12)",
+              }}
+            />
+            <LanguageSwitcher />
           </Box>
         </Box>
 

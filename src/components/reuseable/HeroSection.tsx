@@ -3,7 +3,7 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 import { gradientPaths } from "@/dummydata/pathData";
 import { customColor } from "@/utils/theme/customColor";
 import { CircuitTraces } from "@/components/reuseable/decor";

@@ -1,0 +1,45 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "careers": "Karriere",
+    "contact": "Kontakt"
+  },
+  "Header": {
+    "megaMenu": {
+      "manufacturing": "Fertigung & Wiederaufbereitung",
+      "productEngineering": "Produktentwicklung",
+      "softwareServices": "Softwaredienste"
+    }
+  },
+  "Footer": {
+    "servicesHeading": "Dienstleistungen",
+    "supportHeading": "Support",
+    "subscribeHeading": "Abonnieren",
+    "newsletterText": "Bleiben Sie über unsere neuesten Nachrichten und Updates informiert.",
+    "emailPlaceholder": "E-Mail-Adresse eingeben",
+    "subscribeButton": "Abonnieren",
+    "subscribing": "Wird abonniert...",
+    "copyright": "© {year} MsCorpres. Alle Rechte vorbehalten.",
+    "serviceLinks": {
+      "iotManufacturing": "IoT-Fertigung",
+      "pcbDesign": "PCB-Design",
+      "deviceRefurbishment": "Geräte-Wiederaufbereitung",
+      "erpAndMes": "ERP und MES",
+      "softwareSolution": "Softwarelösung für Elektronik"
+    },
+    "supportLinks": {
+      "careers": "Karriere",
+      "contact": "Kontakt",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsOfService": "Nutzungsbedingungen"
+    }
+  },
+  "NotFound": {
+    "title": "Seite Nicht Gefunden",
+    "description": "Hoppla! Die gesuchte Seite existiert nicht. Sie wurde möglicherweise verschoben, gelöscht, oder die URL ist falsch.",
+    "goHome": "Zur Startseite",
+    "goBack": "Zurück"
+  }
+}

@@ -12,7 +12,8 @@ import {
   Facebook,
   Send,
 } from "@mui/icons-material";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import { CircuitTraces } from "@/components/reuseable/decor";
@@ -40,6 +41,21 @@ const contactItems = [
 ];
 
 const muted = "rgba(255,255,255,0.66)";
+
+const serviceLinkKeys: Record<string, string> = {
+  "/services/iot-manufacturing": "iotManufacturing",
+  "/services/pcb-design": "pcbDesign",
+  "/services/device-refurbishment": "deviceRefurbishment",
+  "/services/erp-and-mes": "erpAndMes",
+  "/services/software-solution-for-electronics": "softwareSolution",
+};
+
+const supportLinkKeys: Record<string, string> = {
+  "/careers": "careers",
+  "/contact": "contact",
+  "/privacy-policy": "privacyPolicy",
+  "/terms": "termsOfService",
+};
 
 const FooterHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <Typography
@@ -90,6 +106,7 @@ const Footer: React.FC = () => {
 
   const { ref, inView } = useInView<HTMLDivElement>();
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("Footer");
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -265,11 +282,13 @@ const Footer: React.FC = () => {
             className="reveal"
             style={{ "--reveal-delay": "0.08s" } as React.CSSProperties}
           >
-            <FooterHeading>Services</FooterHeading>
+            <FooterHeading>{t("servicesHeading")}</FooterHeading>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.25 }}>
               {footerLinks.services.map((link) => (
                 <FooterLink key={link.href} href={link.href}>
-                  {link.label}
+                  {serviceLinkKeys[link.href]
+                    ? t(`serviceLinks.${serviceLinkKeys[link.href]}`)
+                    : link.label}
                 </FooterLink>
               ))}
             </Box>
@@ -280,11 +299,13 @@ const Footer: React.FC = () => {
             className="reveal"
             style={{ "--reveal-delay": "0.14s" } as React.CSSProperties}
           >
-            <FooterHeading>Support</FooterHeading>
+            <FooterHeading>{t("supportHeading")}</FooterHeading>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.25 }}>
               {footerLinks.support.map((link) => (
                 <FooterLink key={link.href} href={link.href}>
-                  {link.label}
+                  {supportLinkKeys[link.href]
+                    ? t(`supportLinks.${supportLinkKeys[link.href]}`)
+                    : link.label}
                 </FooterLink>
               ))}
             </Box>
@@ -295,9 +316,9 @@ const Footer: React.FC = () => {
             className="reveal"
             style={{ "--reveal-delay": "0.2s" } as React.CSSProperties}
           >
-            <FooterHeading>Subscribe</FooterHeading>
+            <FooterHeading>{t("subscribeHeading")}</FooterHeading>
             <Typography sx={{ color: muted, fontSize: 14, lineHeight: 1.6, mb: 2 }}>
-              Stay updated with our latest news and updates.
+              {t("newsletterText")}
             </Typography>
             <Box
               component="form"
@@ -306,7 +327,7 @@ const Footer: React.FC = () => {
             >
               <TextField
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t("emailPlaceholder")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -352,7 +373,7 @@ const Footer: React.FC = () => {
                   },
                 }}
               >
-                {isSubmitting ? "Subscribing..." : "Subscribe"}
+                {isSubmitting ? t("subscribing") : t("subscribeButton")}
               </Button>
             </Box>
           </Box>
@@ -432,14 +453,16 @@ const Footer: React.FC = () => {
                     "&:hover": { color: "#fff" },
                   }}
                 >
-                  {link.label}
+                  {supportLinkKeys[link.href]
+                    ? t(`supportLinks.${supportLinkKeys[link.href]}`)
+                    : link.label}
                 </Box>
               </React.Fragment>
             ))}
           </Box>
 
           <Typography sx={{ fontSize: 12.5, color: "rgba(255,255,255,0.5)" }}>
-            © {currentYear} MsCorpres. All Rights Reserved.
+            {t("copyright", { year: currentYear })}
           </Typography>
         </Box>
       </Box>

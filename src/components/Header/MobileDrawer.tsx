@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Box, IconButton } from "@mui/material";
 import { Close, KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +17,7 @@ import {
 import RenderListMenu from "../RenderListMenu";
 import SocialLinks from "./SocialLinks";
 import ContactInfo from "./ContactInfo";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
 
 export interface NavItem {
@@ -263,6 +264,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
               >
                 <ContactInfo tone="dark" />
                 <SocialLinks tone="dark" iconSize={20} />
+                <LanguageSwitcher tone="dark" onNavigate={onClose} />
               </Box>
             </Box>
           </motion.div>

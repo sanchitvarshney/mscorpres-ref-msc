@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import { useTranslations } from "next-intl";
 import CustomCard from "@/components/reuseable/CustomCard";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
@@ -13,11 +14,14 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({
-  title = "Our Services",
-  subtitle = "We provide high-quality, reliable services designed to support your business with efficiency and excellence.",
+  title,
+  subtitle,
   services = [],
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Services");
+  const resolvedTitle = title ?? t("sectionHeading");
+  const resolvedSubtitle = subtitle ?? t("sectionSubheading");
 
   return (
     <Box
@@ -74,7 +78,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               textTransform: "uppercase",
             }}
           >
-            What We Offer
+            {t("sectionEyebrow")}
           </Typography>
           <Typography
             component="h2"
@@ -88,7 +92,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               mb: 2,
             }}
           >
-            {title}
+            {resolvedTitle}
           </Typography>
           <Box
             sx={{
@@ -107,7 +111,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
               lineHeight: 1.7,
             }}
           >
-            {subtitle}
+            {resolvedSubtitle}
           </Typography>
         </Box>
 

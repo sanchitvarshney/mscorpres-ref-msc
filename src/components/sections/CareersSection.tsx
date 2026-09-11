@@ -20,6 +20,7 @@ import {
   WorkOutline,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import SectionShell from "@/components/reuseable/SectionShell";
 import SectionHeading from "@/components/reuseable/SectionHeading";
 import { CircuitTraces, GlowRing } from "@/components/reuseable/decor";
@@ -35,6 +36,7 @@ const stripHtml = (html: string) =>
   html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 
 const CareersSection: React.FC = () => {
+  const t = useTranslations("Careers");
   const { data: allJobs = [], isLoading: jobsLoading, isError: jobsError } =
     useFetchJobsQuery();
   const { data: rawDepts = [], isLoading: deptsLoading } =
@@ -52,9 +54,9 @@ const CareersSection: React.FC = () => {
   const displayedJobs = hasSearched ? (searchResults ?? []) : allJobs;
 
   const resultLabel = useMemo(() => {
-    if (!hasSearched) return `Showing ${displayedJobs.length} open positions`;
-    return `${displayedJobs.length} job${displayedJobs.length === 1 ? "" : "s"} found`;
-  }, [displayedJobs.length, hasSearched]);
+    if (!hasSearched) return t("showingCount", { count: displayedJobs.length });
+    return t("foundCount", { count: displayedJobs.length });
+  }, [displayedJobs.length, hasSearched, t]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,9 +93,9 @@ const CareersSection: React.FC = () => {
       }
     >
       <SectionHeading
-        eyebrow="JOIN OUR TEAM"
-        title="Explore Career Opportunities"
-        intro="Search by job title or department to find roles that match your skills. Browse our latest openings below."
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
         sx={{ mb: { xs: 4, md: 6 }, maxWidth: 660 }}
       />
 
@@ -113,8 +115,8 @@ const CareersSection: React.FC = () => {
             <Grid size={{ xs: 12, md: 5 }}>
               <TextField
                 fullWidth
-                label="Job Title"
-                placeholder="Type job title..."
+                label={t("jobTitleLabel")}
+                placeholder={t("jobTitlePlaceholder")}
                 value={titleInput}
                 onChange={(e) => setTitleInput(e.target.value)}
                 slotProps={{
@@ -136,8 +138,8 @@ const CareersSection: React.FC = () => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label="Department"
-                    placeholder="Select department..."
+                    label={t("departmentLabel")}
+                    placeholder={t("departmentPlaceholder")}
                     slotProps={{
                       input: {
                         ...params.InputProps,
@@ -173,7 +175,7 @@ const CareersSection: React.FC = () => {
                   "&:hover": { bgcolor: customColor.secondary },
                 }}
               >
-                Search
+                {t("search")}
               </Button>
               {hasSearched && (
                 <Button
@@ -188,7 +190,7 @@ const CareersSection: React.FC = () => {
                     color: customColor.primary,
                   }}
                 >
-                  Reset
+                  {t("reset")}
                 </Button>
               )}
             </Grid>
@@ -212,10 +214,10 @@ const CareersSection: React.FC = () => {
           }}
         >
           <Typography variant="h6" gutterBottom>
-            Something went wrong
+            {t("errorTitle")}
           </Typography>
           <Typography color="text.secondary">
-            Failed to load job listings. Please try again later.
+            {t("errorBody")}
           </Typography>
         </Paper>
       ) : (
@@ -240,10 +242,10 @@ const CareersSection: React.FC = () => {
               }}
             >
               <Typography variant="h6" gutterBottom>
-                No jobs found
+                {t("emptyTitle")}
               </Typography>
               <Typography color="text.secondary">
-                Try different filters or reset to see all openings.
+                {t("emptyBody")}
               </Typography>
             </Paper>
           ) : (
@@ -376,7 +378,7 @@ const CareersSection: React.FC = () => {
                         },
                       }}
                     >
-                      Apply Now
+                      {t("applyNow")}
                     </Button>
                   </Box>
                 </Grid>

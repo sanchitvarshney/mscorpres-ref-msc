@@ -9,6 +9,7 @@ import {
   EmojiEventsOutlined,
   ShieldOutlined,
 } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import StatCard from "@/components/reuseable/StatCard";
@@ -30,23 +31,33 @@ interface AboutSectionProps {
   imageAlt?: string;
 }
 
-const defaultStats: StatItem[] = [
-  { icon: <BusinessOutlined />, number: "15+", label: "Years Experience" },
-  { icon: <GroupsOutlined />, number: "500+", label: "Happy Clients" },
-  { icon: <EmojiEventsOutlined />, number: "1000+", label: "Projects Completed" },
-  { icon: <ShieldOutlined />, number: "100%", label: "Satisfaction Rate" },
+const defaultStatIcons = [
+  <BusinessOutlined key="0" />,
+  <GroupsOutlined key="1" />,
+  <EmojiEventsOutlined key="2" />,
+  <ShieldOutlined key="3" />,
 ];
 
 const AboutSection: React.FC<AboutSectionProps> = ({
-  title = "Leading Excellence in Electronics & Technology",
-  subtitle = "About Us",
-  description = "With years of industry experience, we have established ourselves as a trusted partner in electronics and technology solutions. Our commitment to quality, innovation, and customer satisfaction drives everything we do. From concept to completion, we leverage cutting-edge technology, rigorous testing standards, and a customer-first approach to deliver solutions that consistently exceed expectations. As the industry evolves, we continue to adapt, innovate, and refine our processes to ensure our clients always receive the most reliable and forward-thinking products and services.",
+  title,
+  subtitle,
+  description,
   secondParagraph = "",
-  stats = defaultStats,
+  stats,
   imageUrl = "/images/about-combine.jpg",
   imageAlt = "About Us",
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Home.about");
+  const resolvedTitle = title ?? t("title");
+  const resolvedSubtitle = subtitle ?? t("subtitle");
+  const resolvedDescription = description ?? t("description");
+  const resolvedStats: StatItem[] =
+    stats ??
+    (t.raw("stats") as { number: string; label: string }[]).map((s, i) => ({
+      ...s,
+      icon: defaultStatIcons[i],
+    }));
 
   return (
     <Box
@@ -129,7 +140,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                   textTransform: "uppercase",
                 }}
               >
-                {subtitle}
+                {resolvedSubtitle}
               </Typography>
             </Box>
 
@@ -144,7 +155,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 mb: 2.5,
               }}
             >
-              {title}
+              {resolvedTitle}
             </Typography>
 
             <Typography
@@ -155,7 +166,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 mb: secondParagraph ? 2 : 0,
               }}
             >
-              {description}
+              {resolvedDescription}
             </Typography>
 
             {secondParagraph && (
@@ -235,7 +246,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             gap: { xs: 2, md: 3 },
           }}
         >
-          {stats.map((stat, i) => (
+          {resolvedStats.map((stat, i) => (
             <StatCard
               key={stat.label}
               icon={stat.icon}

@@ -9,6 +9,7 @@ import {
   VerifiedOutlined,
 } from "@mui/icons-material";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+import { useTranslations } from "next-intl";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import { CircuitTraces } from "@/components/reuseable/decor";
@@ -20,41 +21,24 @@ interface CertItem {
   icon: ReactNode;
 }
 
-export const certificationItems: CertItem[] = [
-  {
-    id: 1,
-    title: "ISO Certified",
-    desc: "Processes audited and certified to international ISO quality standards.",
-    icon: <WorkspacePremiumOutlinedIcon />,
-  },
-  {
-    id: 2,
-    title: "RoHS Compliant",
-    desc: "Every build meets RoHS limits on hazardous substances and materials.",
-    icon: <CheckCircleOutline />,
-  },
-  {
-    id: 3,
-    title: "Quality Assured",
-    desc: "Multi-stage inspection and testing before anything leaves the floor.",
-    icon: <VerifiedOutlined />,
-  },
-  {
-    id: 4,
-    title: "On-Time Delivery",
-    desc: "Committed timelines backed by planned capacity and clear tracking.",
-    icon: <AccessTimeOutlined />,
-  },
-  {
-    id: 5,
-    title: "100% Satisfaction",
-    desc: "We stand behind our work with responsive, accountable support.",
-    icon: <TrackChangesOutlined />,
-  },
+const certificationIcons: ReactNode[] = [
+  <WorkspacePremiumOutlinedIcon key="0" />,
+  <CheckCircleOutline key="1" />,
+  <VerifiedOutlined key="2" />,
+  <AccessTimeOutlined key="3" />,
+  <TrackChangesOutlined key="4" />,
 ];
 
 const CertificationsSection: React.FC = () => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Home.certifications");
+  const items = t.raw("items") as { title: string; desc: string }[];
+  const certificationItems: CertItem[] = items.map((item, i) => ({
+    id: i + 1,
+    title: item.title,
+    desc: item.desc,
+    icon: certificationIcons[i],
+  }));
 
   return (
     <Box
@@ -119,7 +103,7 @@ const CertificationsSection: React.FC = () => {
               textTransform: "uppercase",
             }}
           >
-            Why Choose Us
+            {t("eyebrow")}
           </Typography>
           <Typography
             component="h2"
@@ -133,7 +117,7 @@ const CertificationsSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Certifications &amp; Commitments
+            {t("heading")}
           </Typography>
           <Box
             sx={{
@@ -152,8 +136,7 @@ const CertificationsSection: React.FC = () => {
               lineHeight: 1.7,
             }}
           >
-            The standards and promises that stand behind every board we design,
-            build, and refurbish.
+            {t("tagline")}
           </Typography>
         </Box>
 

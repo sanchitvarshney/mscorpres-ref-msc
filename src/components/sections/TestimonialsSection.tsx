@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Typography, Avatar, Rating } from "@mui/material";
 import { FormatQuote } from "@mui/icons-material";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import { defaultTestimonials, Testimonial } from "@/dummydata/dummyData";
@@ -23,11 +24,20 @@ const initials = (name: string) =>
     .toUpperCase();
 
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
-  title = "What Our Clients Say",
-  subtitle = "Testimonials",
-  testimonials = defaultTestimonials,
+  title,
+  subtitle,
+  testimonials,
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Home.testimonials");
+  const resolvedTitle = title ?? t("title");
+  const resolvedSubtitle = subtitle ?? t("subtitle");
+  const resolvedTestimonials: Testimonial[] =
+    testimonials ??
+    defaultTestimonials.map((item) => ({
+      ...item,
+      comment: t(`items.${item.id}`),
+    }));
 
   return (
     <Box
@@ -81,7 +91,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               textTransform: "uppercase",
             }}
           >
-            {subtitle}
+            {resolvedSubtitle}
           </Typography>
           <Typography
             component="h2"
@@ -94,7 +104,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               mb: 2,
             }}
           >
-            {title}
+            {resolvedTitle}
           </Typography>
           <Box
             sx={{
@@ -118,9 +128,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
             gap: { xs: 3, md: 4 },
           }}
         >
-          {testimonials.map((t, i) => (
+          {resolvedTestimonials.map((item, i) => (
             <Box
-              key={t.id || i}
+              key={item.id || i}
               className="reveal"
               style={
                 { "--reveal-delay": `${0.08 + i * 0.045}s` } as React.CSSProperties
@@ -160,7 +170,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               </Box>
 
               <Rating
-                value={t.rating}
+                value={item.rating}
                 readOnly
                 precision={0.5}
                 sx={{
@@ -179,7 +189,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   mb: 3,
                 }}
               >
-                &ldquo;{t.comment}&rdquo;
+                &ldquo;{item.comment}&rdquo;
               </Typography>
 
               <Box
@@ -191,7 +201,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   borderTop: "1px solid rgba(0,0,0,0.08)",
                 }}
               >
-                {t.image ? (
+                {item.image ? (
                   <Box
                     sx={{
                       width: { xs: 48, md: 56 },
@@ -204,8 +214,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                     }}
                   >
                     <Image
-                      src={t.image}
-                      alt={t.name}
+                      src={item.image}
+                      alt={item.name}
                       fill
                       sizes="56px"
                       style={{ objectFit: "cover" }}
@@ -223,7 +233,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                       fontWeight: 700,
                     }}
                   >
-                    {initials(t.name)}
+                    {initials(item.name)}
                   </Avatar>
                 )}
                 <Box sx={{ minWidth: 0 }}>
@@ -235,7 +245,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                       lineHeight: 1.3,
                     }}
                   >
-                    {t.name}
+                    {item.name}
                   </Typography>
                   <Typography
                     sx={{
@@ -244,7 +254,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                       fontWeight: 600,
                     }}
                   >
-                    {t.company}
+                    {item.company}
                   </Typography>
                 </Box>
               </Box>

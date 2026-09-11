@@ -3,7 +3,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { ArrowForward, Phone } from "@mui/icons-material";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 

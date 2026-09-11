@@ -13,6 +13,7 @@ import {
   VerifiedUserOutlined,
   TrendingUpOutlined,
 } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 import StatCard from "@/components/reuseable/StatCard";
@@ -44,38 +45,18 @@ interface DetailedAboutSectionProps {
   imageAlt?: string;
 }
 
-const defaultStats: StatItem[] = [
-  { icon: <BusinessOutlined />, number: "15+", label: "Years Experience", description: "Serving clients with excellence" },
-  { icon: <GroupsOutlined />, number: "500+", label: "Happy Clients", description: "Trusted by businesses worldwide" },
-  { icon: <EmojiEventsOutlined />, number: "1000+", label: "Projects Completed", description: "Successfully delivered solutions" },
-  { icon: <ShieldOutlined />, number: "100%", label: "Satisfaction Rate", description: "Client satisfaction guaranteed" },
+const defaultStatIcons = [
+  <BusinessOutlined key="0" />,
+  <GroupsOutlined key="1" />,
+  <EmojiEventsOutlined key="2" />,
+  <ShieldOutlined key="3" />,
 ];
 
-const defaultValues: ValueItem[] = [
-  {
-    icon: <EngineeringOutlined />,
-    title: "Innovation",
-    description:
-      "We bring forward-thinking ideas and advanced technologies to every project that push your products ahead of the competition.",
-  },
-  {
-    icon: <VerifiedUserOutlined />,
-    title: "Quality",
-    description:
-      "We deliver products that meet strict performance standards, backed by thorough testing and reliable engineering practices.",
-  },
-  {
-    icon: <LocalShippingOutlined />,
-    title: "Reliability",
-    description:
-      "We provide dependable manufacturing and service delivery, ensuring your products arrive on time and perform as expected.",
-  },
-  {
-    icon: <TrendingUpOutlined />,
-    title: "Excellence",
-    description:
-      "We consistently raise the bar — offering refined processes, detailed craftsmanship, and results that elevate your business.",
-  },
+const defaultValueIcons = [
+  <EngineeringOutlined key="0" />,
+  <VerifiedUserOutlined key="1" />,
+  <LocalShippingOutlined key="2" />,
+  <TrendingUpOutlined key="3" />,
 ];
 
 const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -103,17 +84,34 @@ const Eyebrow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
-  title = "Our Journey of Excellence",
-  subtitle = "About Our Company",
-  mainDescription = "Founded with a vision to revolutionize the electronics and technology industry, we have grown from a small startup to a trusted leader in IoT manufacturing, PCB design, device refurbishment, ERP/MES solutions, and software development for electronics. Our journey has been marked by continuous innovation, unwavering commitment to quality, and a deep understanding of our clients' needs.",
-  secondParagraph = "Over the years, we have built a reputation for delivering exceptional results through our comprehensive range of services including IoT Manufacturing, PCB Design, Device Refurbishment, ERP and MES solutions, and Software Solutions for Electronics. Our state-of-the-art facilities, combined with our expert team of professionals, enable us to handle projects of any scale with precision and efficiency.",
-  thirdParagraph = "What sets us apart is our client-centric approach. We don't just provide services; we build lasting partnerships. Every project is an opportunity to understand our clients' unique challenges and deliver tailored solutions that drive their success.",
-  stats = defaultStats,
-  values = defaultValues,
+  title,
+  subtitle,
+  mainDescription,
+  secondParagraph,
+  thirdParagraph,
+  stats,
+  values,
   imageUrl = "/images/mix-about.jpg",
   imageAlt = "Our Company",
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("About.detailed");
+  const resolvedTitle = title ?? t("title");
+  const resolvedSubtitle = subtitle ?? t("subtitle");
+  const resolvedMainDescription = mainDescription ?? t("mainDescription");
+  const resolvedSecondParagraph = secondParagraph ?? t("secondParagraph");
+  const resolvedThirdParagraph = thirdParagraph ?? t("thirdParagraph");
+  const resolvedStats: StatItem[] =
+    stats ??
+    (t.raw("stats") as { number: string; label: string; description: string }[]).map(
+      (s, i) => ({ ...s, icon: defaultStatIcons[i] })
+    );
+  const resolvedValues: ValueItem[] =
+    values ??
+    (t.raw("values") as { title: string; description: string }[]).map((v, i) => ({
+      ...v,
+      icon: defaultValueIcons[i],
+    }));
 
   return (
     <Box
@@ -155,7 +153,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
           className="reveal"
           sx={{ textAlign: "center", maxWidth: 640, mx: "auto", mb: { xs: 5, md: 8 } }}
         >
-          <Eyebrow>{subtitle}</Eyebrow>
+          <Eyebrow>{resolvedSubtitle}</Eyebrow>
           <Typography
             component="h2"
             sx={{
@@ -167,7 +165,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               mb: 2,
             }}
           >
-            {title}
+            {resolvedTitle}
           </Typography>
           <Box
             sx={{
@@ -247,9 +245,9 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                 mb: 2.5,
               }}
             >
-              Our Story
+              {t("ourStory")}
             </Typography>
-            {[mainDescription, secondParagraph, thirdParagraph]
+            {[resolvedMainDescription, resolvedSecondParagraph, resolvedThirdParagraph]
               .filter(Boolean)
               .map((para, i) => (
                 <Typography
@@ -279,7 +277,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             gap: { xs: 2, md: 3 },
           }}
         >
-          {stats.map((stat, i) => (
+          {resolvedStats.map((stat, i) => (
             <StatCard
               key={stat.label}
               icon={stat.icon}
@@ -314,7 +312,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
                 mb: 1.5,
               }}
             >
-              Our Core Values
+              {t("coreValuesHeading")}
             </Typography>
             <Box
               sx={{
@@ -329,7 +327,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
             <Typography
               sx={{ color: "text.secondary", fontSize: { xs: "14px", md: "15px" } }}
             >
-              The principles that guide everything we do.
+              {t("coreValuesTagline")}
             </Typography>
           </Box>
 
@@ -340,7 +338,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
               gap: { xs: 2.5, md: 3 },
             }}
           >
-            {values.map((value, i) => (
+            {resolvedValues.map((value, i) => (
               <Box
                 key={value.title}
                 className="reveal"

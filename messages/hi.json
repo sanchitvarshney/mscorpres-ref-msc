@@ -1,0 +1,45 @@
+{
+  "Navigation": {
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "services": "सेवाएं",
+    "careers": "करियर",
+    "contact": "संपर्क करें"
+  },
+  "Header": {
+    "megaMenu": {
+      "manufacturing": "विनिर्माण और पुनर्निर्माण",
+      "productEngineering": "उत्पाद इंजीनियरिंग",
+      "softwareServices": "सॉफ्टवेयर सेवाएं"
+    }
+  },
+  "Footer": {
+    "servicesHeading": "सेवाएं",
+    "supportHeading": "सहायता",
+    "subscribeHeading": "सदस्यता लें",
+    "newsletterText": "हमारे नवीनतम समाचार और अपडेट के साथ जुड़े रहें।",
+    "emailPlaceholder": "अपना ईमेल दर्ज करें",
+    "subscribeButton": "सदस्यता लें",
+    "subscribing": "सदस्यता ली जा रही है...",
+    "copyright": "© {year} एमएसकॉर्प्रेस. सर्वाधिकार सुरक्षित।",
+    "serviceLinks": {
+      "iotManufacturing": "IoT विनिर्माण",
+      "pcbDesign": "पीसीबी डिज़ाइन",
+      "deviceRefurbishment": "डिवाइस पुनर्निर्माण",
+      "erpAndMes": "ईआरपी और एमईएस",
+      "softwareSolution": "इलेक्ट्रॉनिक्स के लिए सॉफ्टवेयर समाधान"
+    },
+    "supportLinks": {
+      "careers": "करियर",
+      "contact": "संपर्क करें",
+      "privacyPolicy": "गोपनीयता नीति",
+      "termsOfService": "सेवा की शर्तें"
+    }
+  },
+  "NotFound": {
+    "title": "पृष्ठ नहीं मिला",
+    "description": "ओह! आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है। इसे स्थानांतरित, हटाया जा सकता है, या URL गलत हो सकता है।",
+    "goHome": "होमपेज पर जाएं",
+    "goBack": "वापस जाएं"
+  }
+}
