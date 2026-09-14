@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         style={{ transformOrigin: "left center right" }}
         sx={{
           backgroundColor: scrolled
-            ? "rgba(255,255,255,0.9)"
+            ? "rgba(255,255,255,0.55)"
             : "rgba(255,255,255,0.68)",
           backdropFilter: "blur(14px) saturate(150%)",
           WebkitBackdropFilter: "blur(14px) saturate(150%)",
