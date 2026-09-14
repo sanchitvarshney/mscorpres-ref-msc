@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import {
   PrecisionManufacturingOutlined,
   EngineeringOutlined,
@@ -85,6 +86,8 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
   description2,
   description1,
 }) => {
+  const t = useTranslations("Services");
+
   return (
     <SectionShell
       tone="tint"
@@ -194,7 +197,7 @@ const ManufacturerSection: React.FC<ManufacturerSectionProps> = ({
               mb: 2,
             }}
           >
-            Why Choose Our {service} Services?
+            {t("whyChooseHeading", { service })}
           </Typography>
 
           <Box

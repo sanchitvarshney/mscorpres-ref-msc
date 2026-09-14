@@ -3,7 +3,8 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { ArrowForward, Phone } from "@mui/icons-material";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 
@@ -18,15 +19,21 @@ interface CTABannerProps {
 }
 
 const CTABanner: React.FC<CTABannerProps> = ({
-  eyebrow = "Let's Work Together",
-  title = "Ready to Transform Your Business?",
-  description = "Let's discuss how we can help you with IoT manufacturing, refurbishment, or consultation services.",
-  primaryButtonText = "Get Started Today",
+  eyebrow,
+  title,
+  description,
+  primaryButtonText,
   primaryButtonHref = "/contact",
-  secondaryButtonText = "Call Us Now",
+  secondaryButtonText,
   secondaryButtonHref = "/contact",
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("CTABanner");
+  const resolvedEyebrow = eyebrow ?? t("eyebrow");
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
+  const resolvedPrimaryButtonText = primaryButtonText ?? t("primaryButtonText");
+  const resolvedSecondaryButtonText = secondaryButtonText ?? t("secondaryButtonText");
 
   return (
     <Box
@@ -104,7 +111,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
                 bgcolor: customColor.primary,
               }}
             />
-            {eyebrow}
+            {resolvedEyebrow}
           </Typography>
 
           <Typography
@@ -120,7 +127,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               mb: 1.5,
             }}
           >
-            {title}
+            {resolvedTitle}
           </Typography>
 
           <Typography
@@ -132,7 +139,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
               color: "text.secondary",
             }}
           >
-            {description}
+            {resolvedDescription}
           </Typography>
         </Box>
 
@@ -173,10 +180,10 @@ const CTABanner: React.FC<CTABannerProps> = ({
               },
             }}
           >
-            {primaryButtonText}
+            {resolvedPrimaryButtonText}
           </Button>
 
-          {secondaryButtonText && (
+          {resolvedSecondaryButtonText && (
             <Button
               component={Link}
               href={secondaryButtonHref}
@@ -202,7 +209,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
                 },
               }}
             >
-              {secondaryButtonText}
+              {resolvedSecondaryButtonText}
             </Button>
           )}
         </Box>

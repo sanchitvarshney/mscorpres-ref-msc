@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { VisibilityOutlined, FlagOutlined } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
 
@@ -22,25 +23,26 @@ interface CardData {
 }
 
 const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
-  visionTitle = "Our Vision",
-  visionDescription = "To become a global leader in electronics and technology solutions by setting new benchmarks in excellence, innovation, and customer satisfaction. We envision a future where our IoT products, PCB design expertise, device refurbishment services, ERP/MES platforms, and software solutions empower businesses worldwide to operate with greater efficiency, reliability, and confidence.",
-  missionTitle = "Our Mission",
-  missionDescription = "To deliver world-class electronics and technology solutions through advanced innovation, expert engineering, and an unwavering commitment to quality. Our mission is to help businesses achieve their goals by providing reliable IoT systems, precision PCB design, professional refurbishment services, and intelligent ERP/MES and software solutions — building long-term partnerships founded on trust, performance, and mutual success.",
+  visionTitle,
+  visionDescription,
+  missionTitle,
+  missionDescription,
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("About.visionMission");
 
   const cards: CardData[] = [
     {
       icon: <VisibilityOutlined sx={{ fontSize: 30 }} />,
-      title: visionTitle,
-      description: visionDescription,
+      title: visionTitle ?? t("visionTitle"),
+      description: visionDescription ?? t("visionDescription"),
       gradient: `linear-gradient(135deg, ${customColor.primary} 0%, ${customColor.secondary} 100%)`,
       delay: 0.08,
     },
     {
       icon: <FlagOutlined sx={{ fontSize: 30 }} />,
-      title: missionTitle,
-      description: missionDescription,
+      title: missionTitle ?? t("missionTitle"),
+      description: missionDescription ?? t("missionDescription"),
       gradient: `linear-gradient(135deg, ${customColor.secondary} 0%, ${customColor.primary} 100%)`,
       delay: 0.16,
     },
@@ -88,7 +90,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
               textTransform: "uppercase",
             }}
           >
-            Who We Are
+            {t("eyebrow")}
           </Typography>
         </Box>
         <Typography
@@ -101,7 +103,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
             mb: 1.5,
           }}
         >
-          Vision &amp; Mission
+          {t("heading")}
         </Typography>
         <Box
           sx={{
@@ -114,7 +116,7 @@ const VisionMissionSection: React.FC<VisionMissionSectionProps> = ({
           }}
         />
         <Typography sx={{ color: "text.secondary", fontSize: { xs: "14px", md: "15px" } }}>
-          Excellence drives our mission and vision forward.
+          {t("tagline")}
         </Typography>
       </Box>
 

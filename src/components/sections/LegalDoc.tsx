@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 import MainLayout from "@/components/MainLayout";
 import HeroSection from "@/components/reuseable/HeroSection";
 import { CircuitTraces, DecorGrid, GlowRing } from "@/components/reuseable/decor";
@@ -36,6 +37,7 @@ const LegalDoc: React.FC<LegalDocProps> = ({
   footerNote,
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Common");
 
   return (
     <MainLayout>
@@ -95,7 +97,7 @@ const LegalDoc: React.FC<LegalDocProps> = ({
             {/* Sticky index (desktop) */}
             <Box
               component="nav"
-              aria-label="Sections"
+              aria-label={t("onThisPage")}
               className="reveal"
               sx={{
                 display: { xs: "none", md: "block" },
@@ -113,7 +115,7 @@ const LegalDoc: React.FC<LegalDocProps> = ({
                   mb: 1.5,
                 }}
               >
-                On this page
+                {t("onThisPage")}
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 {sections.map((s, i) => (

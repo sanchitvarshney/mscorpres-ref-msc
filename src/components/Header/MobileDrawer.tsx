@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Box, IconButton } from "@mui/material";
 import { Close, KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { customColor } from "@/utils/theme/customColor";
 import {
   drawerBackdrop,
@@ -17,6 +18,7 @@ import {
 import RenderListMenu from "../RenderListMenu";
 import SocialLinks from "./SocialLinks";
 import ContactInfo from "./ContactInfo";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Logo from "./Logo";
 
 export interface NavItem {
@@ -40,6 +42,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
 }) => {
   const [mounted, setMounted] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const t = useTranslations("Header");
 
   useEffect(() => setMounted(true), []);
 
@@ -68,7 +71,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
         <Box
           role="dialog"
           aria-modal="true"
-          aria-label="Site menu"
+          aria-label={t("siteMenu")}
           sx={{ position: "fixed", inset: 0, zIndex: 10000 }}
         >
           <motion.div
@@ -122,7 +125,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
               </Box>
               <IconButton
                 onClick={onClose}
-                aria-label="Close menu"
+                aria-label={t("closeMenu")}
                 sx={{
                   color: "#fff",
                   "&:hover": { bgcolor: "rgba(255,255,255,0.12)" },
@@ -263,6 +266,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
               >
                 <ContactInfo tone="dark" />
                 <SocialLinks tone="dark" iconSize={20} />
+                <LanguageSwitcher tone="dark" onNavigate={onClose} />
               </Box>
             </Box>
           </motion.div>

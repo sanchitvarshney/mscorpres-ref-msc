@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const Logo: React.FC = () => {
   const smallDevice = useMediaQuery("(max-width: 600px)");

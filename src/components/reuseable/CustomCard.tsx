@@ -7,7 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { ArrowForwardRounded } from "@mui/icons-material";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { customColor } from "@/utils/theme/customColor";
 
@@ -17,6 +18,7 @@ interface CardProps {
 }
 
 const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
+  const t = useTranslations("Common");
   return (
     <Card
       elevation={0}
@@ -140,7 +142,7 @@ const CustomCard: React.FC<CardProps> = ({ item, action = true }) => {
               "&:hover": { bgcolor: customColor.secondary },
             }}
           >
-            Learn More
+            {t("learnMore")}
           </Button>
         </CardActions>
       )}

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Box, Typography, TextField, Button, Alert, Snackbar } from "@mui/material";
 import { Phone, Email, LocationOn, AccessTime, Send } from "@mui/icons-material";
+import { useTranslations } from "next-intl";
 import SectionShell from "@/components/reuseable/SectionShell";
 import SectionHeading from "@/components/reuseable/SectionHeading";
 import { CircuitTraces, GlowRing, ChipGlyph } from "@/components/reuseable/decor";
@@ -10,38 +11,12 @@ import { customColor } from "@/utils/theme/customColor";
 import api from "@/api/axiosInstance";
 import SuccessAlertCard from "@/components/SuccessAlertCard";
 
-const contactInfo = [
-  {
-    icon: <Phone />,
-    title: "Phone",
-    value: "+91 7529949494 (For Recruitment)",
-    description: "Call us anytime",
-  },
-  {
-    icon: <Email />,
-    title: "Email",
-    value: "marketing@mscorpres.in",
-    description: "Send us an email",
-  },
-  {
-    icon: <LocationOn />,
-    title: "Address",
-    value: "35B, Udyog Vihar, Ecotech-II, Udyog Vihar, Greater Noida",
-    description: "Noida, Uttar Pradesh - 201306",
-  },
-  {
-    icon: <LocationOn />,
-    title: "Address (Mob: +971 44218356)",
-    value:
-      "B88, B Block, Sector 83",
-    description: "Noida, Uttar Pradesh - 201305",
-  },
-  {
-    icon: <AccessTime />,
-    title: "Working Hours",
-    value: "Mon - Sat: 9:00 am - 18:00 pm",
-    description: "Saturday is being worked day",
-  },
+const contactValues = [
+  { icon: <Phone />, value: "+91 7529949494 (For Recruitment)" },
+  { icon: <Email />, value: "marketing@mscorpres.in" },
+  { icon: <LocationOn />, value: "35B, Udyog Vihar, Ecotech-II, Udyog Vihar, Greater Noida" },
+  { icon: <LocationOn />, value: "B88, B Block, Sector 83" },
+  { icon: <AccessTime />, value: "Mon - Sat: 9:00 am - 18:00 pm" },
 ];
 
 interface ContactSectionProps {
@@ -73,10 +48,18 @@ const fieldSx = {
   "& .MuiInputLabel-root.Mui-focused": { color: customColor.primary },
 } as const;
 
-const ContactSection: React.FC<ContactSectionProps> = ({
-  title = "Get In Touch",
-  subtitle = "Have questions or need assistance? We're here to help you with all your electronics and technology needs.",
-}) => {
+const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle }) => {
+  const t = useTranslations("Contact");
+  const tForms = useTranslations("Forms");
+  const resolvedTitle = title ?? t("heroTitle");
+  const resolvedSubtitle = subtitle ?? t("heroSubtitle");
+  const infoText = t.raw("info") as { title: string; description: string }[];
+  const contactInfo = contactValues.map((item, i) => ({
+    ...item,
+    title: infoText[i]?.title,
+    description: infoText[i]?.description,
+  }));
+
   const [formLoading, setFormLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -132,8 +115,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       });
 
       if (response.data.success) {
-        const message =
-          response.data.message || "Your message has been sent successfully!";
+        const message = response.data.message || tForms("sentSuccess");
         setSuccessMessage(message);
         setShowSuccessAlert(true);
 
@@ -152,8 +134,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       if (!response.data.success) {
         setSnackbar({
           open: true,
-          message:
-            response.data.message || "Something went wrong. Please try again.",
+          message: response.data.message || tForms("genericError"),
           severity: "error",
         });
       }
@@ -162,7 +143,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         open: true,
         message: error
           ? error?.response.data.message
-          : "Failed to send message. Please try again later.",
+          : tForms("sendFailed"),
         severity: "error",
       });
     } finally {
@@ -198,9 +179,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       }
     >
       <SectionHeading
-        eyebrow="CONTACT US"
-        title={title}
-        intro={subtitle}
+        eyebrow={t("eyebrow")}
+        title={resolvedTitle}
+        intro={resolvedSubtitle}
         sx={{ mb: { xs: 5, md: 7 }, maxWidth: 700 }}
       />
 
@@ -240,7 +221,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               mb: 3,
             }}
           >
-            Send us a Message
+            {t("formHeading")}
           </Typography>
           <Box
             component="form"
@@ -249,7 +230,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           >
             <TextField
               fullWidth
-              label="Your Name"
+              label={t("nameLabel")}
               variant="outlined"
               value={formData.name}
               onChange={handleChange("name")}
@@ -259,7 +240,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             />
             <TextField
               fullWidth
-              label="Your Email"
+              label={t("emailLabel")}
               type="email"
               variant="outlined"
               value={formData.email}
@@ -270,19 +251,19 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             />
             <TextField
               fullWidth
-              label="Phone Number"
+              label={t("phoneLabel")}
               type="tel"
               variant="outlined"
               value={formData.phone}
               onChange={handleChange("phone")}
               error={!!errors.phone}
               helperText={errors.phone}
-              placeholder="+91 1234567890"
+              placeholder={t("phonePlaceholder")}
               sx={fieldSx}
             />
             <TextField
               fullWidth
-              label="Subject"
+              label={t("subjectLabel")}
               variant="outlined"
               value={formData.subject}
               onChange={handleChange("subject")}
@@ -292,7 +273,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             />
             <TextField
               fullWidth
-              label="Message"
+              label={t("messageLabel")}
               multiline
               rows={5}
               variant="outlined"
@@ -328,7 +309,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   "&:disabled": { filter: "grayscale(0.3)", opacity: 0.7, color: "#fff" },
                 }}
               >
-                {formLoading ? "Sending..." : "Send Message"}
+                {formLoading ? t("sending") : t("sendButton")}
               </Button>
             </Box>
           </Box>

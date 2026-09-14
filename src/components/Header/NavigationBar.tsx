@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 import { customColor } from "@/utils/theme/customColor";
 import {
   staggerRow,
@@ -16,18 +17,19 @@ import MenuToggleButton from "./MenuToggleButton";
 import MobileDrawer, { NavItem } from "./MobileDrawer";
 import CurvedNavBackground from "./CurvedNavBackground";
 
-const navLinks: NavItem[] = [
-  { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
-  { label: "Services", path: "/services", isDropdown: true },
-  { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/contact" },
-];
-
 const NavigationBar: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const navLinks: NavItem[] = [
+    { label: t("home"), path: "/" },
+    { label: t("about"), path: "/about" },
+    { label: t("services"), path: "/services", isDropdown: true },
+    { label: t("careers"), path: "/careers" },
+    { label: t("contact"), path: "/contact" },
+  ];
 
   const isActive = (path: string) => pathname === path;
 
@@ -51,8 +53,8 @@ const NavigationBar: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
           display: { xs: "none", md: "block" },
           pointerEvents: "none",
           overflow: "hidden",
-          borderBottomLeftRadius: scrolled ? 50 : 0,
-          borderBottomRightRadius: scrolled ? 50 : 0,
+          borderBottomLeftRadius: scrolled ? { xs: 0, md: 50 } : 0,
+          borderBottomRightRadius: scrolled ? { xs: 0, md: 50 } : 0,
         }}
       >
         <CurvedNavBackground />
@@ -127,7 +129,7 @@ const NavigationBar: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
             component={motion.div}
             key="services-mega-menu"
             initial={{ opacity: 0, y: -14, scaleY: 0.96 }}
-            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            animate={{ opacity: 1, y: -6, scaleY: 1 }}
             exit={{ opacity: 0, y: -14, scaleY: 0.96 }}
             transition={{ duration: 0.3, ease: easeSmooth }}
             onMouseEnter={openDropdown}

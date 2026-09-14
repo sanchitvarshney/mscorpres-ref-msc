@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 
 import { FaXmark } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 interface SuccessAlertCardProps {
   message: string;
@@ -17,14 +18,15 @@ const SuccessAlertCard: React.FC<SuccessAlertCardProps> = ({
   message,
   setAlert,
 }) => {
+  const t = useTranslations("SuccessAlert");
   return (
     <Card>
       <div>
         <FaXmark className="close" onClick={() => setAlert(false)} />
         <IoMdCheckmarkCircle className="success" />
-        <h3>Success</h3>
+        <h3>{t("title")}</h3>
         <p>{message}</p>
-        <button onClick={() => setAlert(false)}>Ok</button>
+        <button onClick={() => setAlert(false)}>{t("ok")}</button>
       </div>
     </Card>
   );

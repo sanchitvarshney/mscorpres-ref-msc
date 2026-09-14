@@ -4,6 +4,7 @@ import React from "react";
 import { IconButton } from "@mui/material";
 import { Menu, Close } from "@mui/icons-material";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { easeSmooth } from "@/utils/animationVarients/headerAnimation";
 
 interface MenuToggleButtonProps {
@@ -21,10 +22,11 @@ const MenuToggleButton: React.FC<MenuToggleButtonProps> = ({
   onClick,
   color = "#ffffff",
 }) => {
+  const t = useTranslations("Header");
   return (
     <IconButton
       onClick={onClick}
-      aria-label={open ? "Close menu" : "Open menu"}
+      aria-label={open ? t("closeMenu") : t("openMenu")}
       aria-expanded={open}
       sx={{
         color,

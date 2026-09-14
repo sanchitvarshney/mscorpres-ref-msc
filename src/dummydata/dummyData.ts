@@ -19,69 +19,40 @@ export interface Company {
   logo?: string | any;
 }
 
-export const defaultItems: CarouselItem[] = [
-  {
-    id: 1,
-    title: "Welcome to MsCorpres",
-    description:
-      "Your trusted partner for electronics manufacturing and expert refurbishment",
-    image: "/images/about-section2.png",
-  },
-  {
-    id: 2,
-    title: "Quality Services",
-    description:
-      "Providing high-standard electronics manufacturing and refurbishing tailored to your business needs",
-    image: "/images/pcb-design.jpg",
-  },
-   {
-    id: 3,
-    title: "End-to-End Solutions",
-    description:
-      "From product development to refurbishment, we ensure complete, high-quality solutions at every stage",
-    image: "/images/solu.jpg",
-  },
-
+export const defaultItems: Omit<CarouselItem, "title" | "description">[] = [
+  { id: 1, image: "/images/about-section2.png" },
+  { id: 2, image: "/images/pcb-design.jpg" },
+  { id: 3, image: "/images/solu.jpg" },
 ];
 
 export const cardsData = [
   {
+    key: "iotManufacturing",
     image: "/images/iot-manu.png",
-    title: "IoT Manufacturing",
-    description:
-      "Advanced IoT device manufacturing solutions with cutting-edge technology, ensuring smart connectivity and seamless integration for modern industrial applications.",
     action: true,
     path: "/services/iot-manufacturing",
   },
   {
+    key: "pcbDesign",
     image: "/images/pcb-assembly.jpg",
-    title: "PCB Design",
-    description:
-      "Professional PCB design services delivering high-quality printed circuit boards with precision engineering, optimized layouts, and comprehensive testing for reliable electronic solutions.",
     action: true,
     path: "/services/pcb-design",
   },
   {
+    key: "deviceRefurbishment",
     image: "/images/device.jpg",
-    title: "Device Refurbishment",
-    description:
-      "Expert device refurbishment services that restore electronic devices to like-new condition with comprehensive testing, quality assurance, and warranty coverage.",
     action: true,
     path: "/services/device-refurbishment",
   },
   {
+    key: "erpAndMes",
     image: [{title:"dashboard", src:"/dashboards/spigen.png"},{title:"dashboard", src:"/dashboards/oakter.png"},{title:"dashboard", src:"/dashboards/alwar.png"},{title:"dashboard", src:"/dashboards/dummyDash.png"},{title:"dashboard", src:"/dashboards/dummyDash2.png"},],
-    title: "ERP and MES Tools",
-    description:
-      "Comprehensive ERP, MES and more tools solutions that streamline manufacturing operations, optimize production processes, and provide real-time visibility into your business operations.",
     action: true,
     path: "/services/erp-and-mes",
   },
   {
+    key: "softwareSolutionForElectronics",
     image: "/images/soft.jpg",
-    title: "Software Solution for Electronics",
-    description:
-      "Custom software solutions tailored for electronics manufacturing, including embedded systems, firmware development, and automation software to enhance productivity and efficiency.",
     action: true,
     path: "/services/software-solution-for-electronics",
   },
@@ -98,25 +69,20 @@ export const defaultCompanies: Company[] = [
   { id: 8, name: "Carretx", logo: "/logo/carretxlogo.webp" },
 ];
 
-export const defaultTestimonials: Testimonial[] = [
+export const defaultTestimonials: Omit<Testimonial, "comment">[] = [
   {
     id: 1,
     name: "Praven Kumar",
     image: "/images/ausclient.jpg",
     company: "C-PRAV (Australia)",
     rating: 4,
-    comment:
-      "If you have reached out to MsCorpres you are in the right hands. Our requirements were well understood and very professionally handled from start to finish. Very honest, sincere and hardworking staff who go out of their way to deliver efficient services. Highly recommend MsCorpres and we wish them continuing deserving success in their endeavours.",
   },
   {
     id: 2,
     name: "Yogesh Soni",
     image: "/images/client-img.jpg",
-  
     company: "SD Lecturer (IIT Delhi)",
     rating: 4.5,
-    comment:
-      " MsCorpres is an exceptional platform that fosters innovation and growth. As a software developer, I've flourished here, empowered by cutting-edge technologies and a collaborative environment. The company's commitment to excellence fuels my passion for crafting efficient solutions. It's a privilege to contribute to a team that champions creativity and values expertise. MsCorpres sets the bar high for industry standards.",
   },
   {
     id: 3,
@@ -124,8 +90,6 @@ export const defaultTestimonials: Testimonial[] = [
     image: "/images/oak-client.jpg",
     company: "CEO Oakter (India)",
     rating: 4.5,
-    comment:
-      "We have been working with MsCorpres for more than 4 years. Its a delight working with the team. They very efficiently handle our finance, billing, Production, warehousing & logistics. Its a pleasure to work with MsCorpres with seamless coordination with our internal team. The whole team works poore dil se for mutual company's growth. Aur Shahrukh khan sir & Paulo Coelho sir ne bhi kaha hai......jis cheez ko dil se chahe to poori kaaynat lag jaati hai tumhe woh dilane ke liye.",
   },
   {
     id: 4,
@@ -133,13 +97,11 @@ export const defaultTestimonials: Testimonial[] = [
     image: "/images/img-client.webp",
     company: "Yours Freshly",
     rating: 4,
-    comment:
-      "It was not even a year since we launched our start up and we were in discussions to raise our seed round. As you can imagine juggling between building an year old start up and the massive documentation, compliances, proofing/modifying the SHA etc is not an easy feat. A friend connected us to MsCorpres Team. We were sceptical to work with a team who is based in another city than someone available in person.  It was a short but intense journey and they helped us through it till the end. Thanks Team MsCorpres for your guidance and assistance. Look forward to working with you again.",
   },
 ];
 
 export const footerLinks = {
- 
+
   services: [
     { label: "IoT Manufacturing", href: "/services/iot-manufacturing" },
     { label: "PCB Design", href: "/services/pcb-design" },
@@ -157,24 +119,3 @@ export const footerLinks = {
     { label: "Terms of Service", href: "/terms" },
   ],
 };
-
-export const productFeatures = [
-  {
-    id: 1,
-    title: "Lifecycle Planning",
-    description:
-      "We help you plan and optimize your product’s entire lifecycle—from initial concept to end-of-life—ensuring efficient management, cost control, and smooth operations at every stage.",
-  },
-  {
-    id: 2,
-    title: "Data & Documentation Management",
-    description:
-      "Our PLM services cover complete data handling, documentation, and revision control, maintaining accuracy, traceability, and the integrity of your product information throughout its lifecycle.",
-  },
-  {
-    id: 3,
-    title: "Change Management",
-    description:
-      "We enable seamless implementation of design updates, engineering changes, and product improvements while minimizing disruptions and ensuring consistent performance across all phases.",
-  },
-];

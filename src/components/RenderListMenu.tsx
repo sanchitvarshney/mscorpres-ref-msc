@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { customColor } from "@/utils/theme/customColor";
 import { CircuitTraces, DecorGrid } from "@/components/reuseable/decor";
@@ -20,7 +21,7 @@ import {
 
 interface Service {
   id: number;
-  label: string;
+  key: string;
   img: string;
   path?: string;
 }
@@ -31,12 +32,6 @@ interface RenderListMenuProps {
   /** called when a service link is chosen (e.g. close the drawer) */
   onNavigate?: () => void;
 }
-
-const columns: { title: string; items: Service[] }[] = [
-  { title: "Manufacturing & Refurbishment", items: manufacAndRefruData },
-  { title: "Product Engineering", items: productData },
-  { title: "Software Services", items: softwareData },
-];
 
 const cssEase = `cubic-bezier(${easeSmooth.join(",")})`;
 
@@ -84,7 +79,11 @@ const ServiceTile: React.FC<{ service: Service; compact?: boolean; onNavigate?: 
   service,
   compact,
   onNavigate,
-}) => (
+}) => {
+  const t = useTranslations("Services.catalog");
+  const label = t(service.key as any);
+
+  return (
   <Box component={motion.div} variants={megaItem}>
     <Link
       href={service.path || "#"}
@@ -177,7 +176,7 @@ const ServiceTile: React.FC<{ service: Service; compact?: boolean; onNavigate?: 
           <Box
             component="img"
             src={service.img}
-            alt={service.label}
+            alt={label}
             loading="lazy"
             sx={{ width: compact ? 22 : 26, height: compact ? 22 : 26, objectFit: "contain" }}
           />
@@ -192,14 +191,23 @@ const ServiceTile: React.FC<{ service: Service; compact?: boolean; onNavigate?: 
             transition: `color .25s ${cssEase}`,
           }}
         >
-          {service.label}
+          {label}
         </Typography>
       </Box>
     </Link>
   </Box>
-);
+  );
+};
 
 const RenderListMenu: React.FC<RenderListMenuProps> = ({ compact = false, onNavigate }) => {
+  const t = useTranslations("Header.megaMenu");
+
+  const columns: { title: string; items: Service[] }[] = [
+    { title: t("manufacturing"), items: manufacAndRefruData },
+    { title: t("productEngineering"), items: productData },
+    { title: t("softwareServices"), items: softwareData },
+  ];
+
   return (
     <Box
       sx={{

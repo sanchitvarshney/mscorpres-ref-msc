@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 import { Company, defaultCompanies } from "@/dummydata/dummyData";
 import { useInView } from "@/hooks/useInView";
 import { customColor } from "@/utils/theme/customColor";
@@ -13,11 +14,14 @@ interface TrustedCompaniesSectionProps {
 }
 
 const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
-  title = "Trusted by Leading Companies",
-  subtitle = "Our Partners",
+  title,
+  subtitle,
   companies = defaultCompanies,
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const t = useTranslations("Home.trustedCompanies");
+  const resolvedTitle = title ?? t("title");
+  const resolvedSubtitle = subtitle ?? t("subtitle");
 
   // duplicated for a seamless -50% loop
   const track = [...companies, ...companies];
@@ -63,7 +67,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               textTransform: "uppercase",
             }}
           >
-            {subtitle}
+            {resolvedSubtitle}
           </Typography>
           <Typography
             component="h2"
@@ -76,7 +80,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               mb: 2,
             }}
           >
-            {title}
+            {resolvedTitle}
           </Typography>
           <Box
             sx={{
@@ -95,8 +99,7 @@ const TrustedCompaniesSection: React.FC<TrustedCompaniesSectionProps> = ({
               lineHeight: 1.7,
             }}
           >
-            We&apos;re proud to work with industry leaders and trusted partners
-            worldwide.
+            {t("tagline")}
           </Typography>
         </Box>
 
