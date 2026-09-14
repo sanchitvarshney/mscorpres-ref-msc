@@ -119,7 +119,7 @@ const DetailedAboutSection: React.FC<DetailedAboutSectionProps> = ({
       ref={ref}
       className={inView ? "in-view" : undefined}
       sx={{
-        py: { xs: 6, md: 10 },
+        py: { xs: 3, md: 5 },
         px: { xs: 2, md: 4 },
         position: "relative",
         overflow: "hidden",

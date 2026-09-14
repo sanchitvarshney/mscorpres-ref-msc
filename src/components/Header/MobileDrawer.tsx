@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { Box, IconButton } from "@mui/material";
 import { Close, KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { customColor } from "@/utils/theme/customColor";
 import {
   drawerBackdrop,
@@ -41,6 +42,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
 }) => {
   const [mounted, setMounted] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const t = useTranslations("Header");
 
   useEffect(() => setMounted(true), []);
 
@@ -69,7 +71,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
         <Box
           role="dialog"
           aria-modal="true"
-          aria-label="Site menu"
+          aria-label={t("siteMenu")}
           sx={{ position: "fixed", inset: 0, zIndex: 10000 }}
         >
           <motion.div
@@ -123,7 +125,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
               </Box>
               <IconButton
                 onClick={onClose}
-                aria-label="Close menu"
+                aria-label={t("closeMenu")}
                 sx={{
                   color: "#fff",
                   "&:hover": { bgcolor: "rgba(255,255,255,0.12)" },

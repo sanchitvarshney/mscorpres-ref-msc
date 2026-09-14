@@ -13,7 +13,7 @@ export default function ContactPage() {
 
   return (
     <MainLayout>
-      <div className="w-full min-h-screen mt-10">
+      <div className="w-full bg-transparent min-h-screen mt-20 sm:mt-10">
 
 
         <ContactSection
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <Box
             component="iframe"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.4035905519668!2d77.47855701134861!3d28.495765675638516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceb00240292d1%3A0xeba576dc1820214a!2sMsCorpres%20Manufacturer%20and%20Refurbisher%20Pvt.%20Ltd.!5e1!3m2!1sen!2sin!4v1788778253987!5m2!1sen!2sin"
-            title="MsCorpres location map"
+            title={t("mapTitle")}
             loading="lazy"
             sx={{
               display: "block",

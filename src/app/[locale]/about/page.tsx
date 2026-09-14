@@ -18,8 +18,8 @@ export default function AboutPage() {
           description={t("description")}
           imageUrl="/images/pcb-video.mp4"
           height={{
-            xs: "64vh",
-            md: "calc(100vh - 132px)",
+        xs: "clamp(460px, 82svh, 640px)",
+            md: "calc(100vh - 35px)",
           }}
         />
 

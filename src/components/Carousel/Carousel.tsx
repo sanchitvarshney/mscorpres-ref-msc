@@ -25,6 +25,7 @@ const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const t = useTranslations("Home.carousel");
+  const tCommon = useTranslations("Common");
   const kickers = t.raw("kickers") as string[];
   const slides = t.raw("slides") as { title: string; description: string }[];
   const ctas = [
@@ -77,7 +78,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         bgcolor: "#05201e",
         height: {
           xs: "clamp(460px, 82svh, 640px)",
-          md: "calc(100vh - 130px)",
+          md: "calc(100vh - 34px)",
         },
         "& .slick-slider, & .slick-list, & .slick-track": { height: "100%" },
         "& .slick-slide > div": { height: "100%" },
@@ -354,7 +355,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
                 <Box
                   key={item.id}
                   component="button"
-                  aria-label={`Go to slide ${i + 1}`}
+                  aria-label={tCommon("goToSlide", { number: i + 1 })}
                   onClick={() => goTo(i)}
                   sx={{
                     p: 0,

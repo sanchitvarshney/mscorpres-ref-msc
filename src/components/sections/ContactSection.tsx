@@ -50,6 +50,7 @@ const fieldSx = {
 
 const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle }) => {
   const t = useTranslations("Contact");
+  const tForms = useTranslations("Forms");
   const resolvedTitle = title ?? t("heroTitle");
   const resolvedSubtitle = subtitle ?? t("heroSubtitle");
   const infoText = t.raw("info") as { title: string; description: string }[];
@@ -114,8 +115,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle }) => {
       });
 
       if (response.data.success) {
-        const message =
-          response.data.message || "Your message has been sent successfully!";
+        const message = response.data.message || tForms("sentSuccess");
         setSuccessMessage(message);
         setShowSuccessAlert(true);
 
@@ -134,8 +134,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle }) => {
       if (!response.data.success) {
         setSnackbar({
           open: true,
-          message:
-            response.data.message || "Something went wrong. Please try again.",
+          message: response.data.message || tForms("genericError"),
           severity: "error",
         });
       }
@@ -144,7 +143,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ title, subtitle }) => {
         open: true,
         message: error
           ? error?.response.data.message
-          : "Failed to send message. Please try again later.",
+          : tForms("sendFailed"),
         severity: "error",
       });
     } finally {

@@ -53,8 +53,8 @@ const NavigationBar: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
           display: { xs: "none", md: "block" },
           pointerEvents: "none",
           overflow: "hidden",
-          borderBottomLeftRadius: scrolled ? 50 : 0,
-          borderBottomRightRadius: scrolled ? 50 : 0,
+          borderBottomLeftRadius: scrolled ? { xs: 0, md: 50 } : 0,
+          borderBottomRightRadius: scrolled ? { xs: 0, md: 50 } : 0,
         }}
       >
         <CurvedNavBackground />

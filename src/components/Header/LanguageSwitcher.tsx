@@ -80,6 +80,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         open={open}
         onClose={() => setAnchorEl(null)}
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        sx={{ zIndex: 10050 }}
       >
         {routing.locales.map((l) => (
           <MenuItem

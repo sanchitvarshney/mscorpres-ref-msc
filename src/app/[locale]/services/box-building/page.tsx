@@ -21,8 +21,8 @@ export default function BoxBuildingPage() {
           title={p.heroTitle}
           description={p.heroDescription}
           height={{
-            xs: "30vh",
-            md: "calc(100vh - 132px)",
+            xs: "clamp(460px, 82svh, 640px)",
+            md: "calc(100vh - 34px)",
           }}
           imageUrl="/images/manufac.mp4"
         />

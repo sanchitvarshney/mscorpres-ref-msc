@@ -7,6 +7,9 @@
     "contact": "Contáctenos"
   },
   "Header": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "siteMenu": "Menú del sitio",
     "megaMenu": {
       "manufacturing": "Fabricación y Reacondicionamiento",
       "productEngineering": "Ingeniería de Producto",
@@ -41,5 +44,612 @@
     "description": "¡Vaya! La página que buscas no existe. Puede que haya sido movida, eliminada o que la URL sea incorrecta.",
     "goHome": "Ir al Inicio",
     "goBack": "Volver"
+  },
+  "Common": {
+    "onThisPage": "En esta página",
+    "learnMore": "Saber Más",
+    "goToSlide": "Ir a la diapositiva {number}"
+  },
+  "SuccessAlert": {
+    "title": "Éxito",
+    "ok": "Aceptar"
+  },
+  "CTABanner": {
+    "eyebrow": "Trabajemos Juntos",
+    "title": "¿Listo para Transformar su Negocio?",
+    "description": "Hablemos sobre cómo podemos ayudarle con fabricación IoT, reacondicionamiento o servicios de consultoría.",
+    "primaryButtonText": "Comience Hoy",
+    "secondaryButtonText": "Llámenos Ahora"
+  },
+  "Forms": {
+    "sentSuccess": "¡Su mensaje ha sido enviado con éxito!",
+    "genericError": "Algo salió mal. Por favor, inténtelo de nuevo.",
+    "sendFailed": "Error al enviar el mensaje. Por favor, inténtelo más tarde."
+  },
+  "Services": {
+    "heroEyebrow": "NUESTROS SERVICIOS",
+    "whyChooseHeading": "¿Por Qué Elegir Nuestros Servicios de {service}?",
+    "sectionEyebrow": "Lo Que Ofrecemos",
+    "sectionHeading": "Nuestros Servicios",
+    "sectionSubheading": "Ofrecemos servicios confiables y de alta calidad, diseñados para respaldar su negocio con eficiencia y excelencia.",
+    "catalog": {
+      "pcbDesign": "Diseño de PCB",
+      "boxBuilding": "Ensamblaje de Gabinetes",
+      "turnkeySolution": "Solución Llave en Mano",
+      "skdAndCkdDesign": "Diseño SKD y CKD",
+      "prototypeDesign": "Diseño de Prototipos",
+      "iotManufacturing": "Fabricación IoT",
+      "deviceRefurbishment": "Reacondicionador de Dispositivos",
+      "electronics": "Electrónica",
+      "rapidPrototyping": "Prototipado Rápido",
+      "dfmSolution": "Solución DFM",
+      "productLifeCycle": "Ciclo de Vida del Producto",
+      "erpAndMes": "ERP y MES ",
+      "softwareSolutionForElectronics": "Solución de Software para Electrónica",
+      "firmwareEmbeddedSoftware": "Firmware y Software Embebido"
+    },
+    "cards": {
+      "iotManufacturing": {
+        "title": "Fabricación IoT",
+        "description": "Soluciones avanzadas de fabricación de dispositivos IoT con tecnología de vanguardia, que garantizan conectividad inteligente e integración perfecta para aplicaciones industriales modernas."
+      },
+      "pcbDesign": {
+        "title": "Diseño de PCB",
+        "description": "Servicios profesionales de diseño de PCB que ofrecen placas de circuito impreso de alta calidad, con ingeniería de precisión, diseños optimizados y pruebas exhaustivas para soluciones electrónicas confiables."
+      },
+      "deviceRefurbishment": {
+        "title": "Reacondicionamiento de Dispositivos",
+        "description": "Servicios expertos de reacondicionamiento de dispositivos que restauran equipos electrónicos a un estado como nuevo, con pruebas exhaustivas, garantía de calidad y cobertura de garantía."
+      },
+      "erpAndMes": {
+        "title": "Herramientas ERP y MES",
+        "description": "Soluciones integrales de herramientas ERP, MES y más que optimizan las operaciones de fabricación, mejoran los procesos de producción y brindan visibilidad en tiempo real de las operaciones de su negocio."
+      },
+      "softwareSolutionForElectronics": {
+        "title": "Solución de Software para Electrónica",
+        "description": "Soluciones de software personalizadas para la fabricación electrónica, que incluyen sistemas embebidos, desarrollo de firmware y software de automatización para mejorar la productividad y la eficiencia."
+      }
+    },
+    "pages": {
+      "pcbDesign": {
+        "heroTitle": "Diseño de PCB",
+        "heroDescription": "Soluciones profesionales de diseño de placas de circuito impreso con ingeniería de precisión y diseños optimizados para sus sistemas electrónicos.",
+        "manufacturerTitle": "Soluciones Avanzadas de Diseño de PCB",
+        "manufacturerSubtitle": "PRECISIÓN EN INGENIERÍA",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de diseño de PCB, diseñados para el rendimiento, la confiabilidad y la integración perfecta. Desde la creación de esquemáticos hasta la optimización de diseños multicapa, nuestro equipo garantiza que cada PCB se diseñe con precisión, eficiencia y las mejores prácticas de la industria para respaldar productos electrónicos de alta calidad.",
+        "description1": "Ofrecemos servicios confiables y de alta precisión de ensamblaje de PCB —que abarcan montaje SMT, through-hole y de tecnología mixta— adaptados a diversas aplicaciones electrónicas. Con equipos avanzados y un equipo de ingeniería experimentado, garantizamos que cada placa se ensamble conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto la producción HMLV (alta mezcla, bajo volumen) como LMHV (baja mezcla, alto volumen), ofreciendo resultados eficientes, precisos y consistentes para todas sus necesidades de fabricación electrónica.",
+        "description2": "Nuestra infraestructura avanzada y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para el ensamblaje de PCB de alta calidad. Con inspecciones meticulosas, maquinaria de precisión y estándares de cero defectos, garantizamos que cada placa cumpla con la confiabilidad exigida por la industria. Asóciese con nosotros para obtener un servicio excepcional, tiempos de entrega rápidos y soluciones de ensamblaje de PCB rentables, adaptadas exactamente a sus necesidades."
+      },
+      "boxBuilding": {
+        "heroTitle": "Ensamblaje de Gabinetes",
+        "heroDescription": "Soluciones completas de ensamblaje de gabinetes para conjuntos electrónicos, con calidad artesanal y atención al detalle.",
+        "manufacturerTitle": "Soluciones Profesionales de Ensamblaje de Gabinetes",
+        "manufacturerSubtitle": "EXCELENCIA EN ENSAMBLAJE",
+        "manufacturerDescription": "Ofrecemos servicios integrales de ensamblaje de gabinetes, diseñados para la calidad, la confiabilidad y la integración perfecta. Desde el ensamblaje de componentes hasta la integración final del producto, nuestro equipo garantiza que cada ensamblaje se complete con precisión, eficiencia y las mejores prácticas de la industria para respaldar productos electrónicos de alta calidad.",
+        "description1": "Ofrecemos servicios confiables y de alta calidad de ensamblaje de gabinetes —que abarcan el ensamblaje electrónico completo, la integración de componentes y el montaje final del producto— adaptados a diversas aplicaciones electrónicas. Con equipos avanzados y un equipo de ensamblaje experimentado, garantizamos que cada gabinete cumpla con los más altos estándares de calidad. Nuestras capacidades respaldan tanto requisitos personalizados como estándar, ofreciendo resultados eficientes, precisos y consistentes para todas sus necesidades de fabricación electrónica.",
+        "description2": "Nuestra infraestructura avanzada y nuestros rigurosos procesos de control de calidad nos convierten en un socio confiable para el ensamblaje de gabinetes de alta calidad. Con inspecciones meticulosas, procesos de ensamblaje de precisión y estándares de cero defectos, garantizamos que cada gabinete cumpla con la confiabilidad exigida por la industria. Asóciese con nosotros para obtener un servicio excepcional, tiempos de entrega rápidos y soluciones de ensamblaje de gabinetes rentables, adaptadas exactamente a sus necesidades."
+      },
+      "deviceRefurbishment": {
+        "heroTitle": "Reacondicionamiento de Dispositivos",
+        "heroDescription": "Transformamos dispositivos electrónicos usados a un estado como nuevo mediante procesos exhaustivos de inspección, limpieza, reparación y restauración.",
+        "manufacturerTitle": "Soluciones Profesionales de Reacondicionamiento de Dispositivos",
+        "manufacturerSubtitle": "EXCELENCIA EN RESTAURACIÓN",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de reacondicionamiento de dispositivos, diseñados para una restauración de calidad, confiabilidad y sostenibilidad. Desde la inspección exhaustiva hasta la restauración completa, nuestro equipo garantiza que cada dispositivo se reacondicione con precisión, eficiencia y las mejores prácticas de la industria para devolverlo a un estado como nuevo.",
+        "description1": "Ofrecemos servicios confiables y de alta calidad de reacondicionamiento de dispositivos —que abarcan inspección exhaustiva, limpieza, reparación y restauración— adaptados a diversos dispositivos electrónicos. Con equipos de prueba avanzados y un equipo técnico experimentado, garantizamos que cada dispositivo se reacondicione conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto dispositivos de consumo como comerciales, ofreciendo soluciones de reacondicionamiento eficientes, precisas y sostenibles para todas sus necesidades de restauración.",
+        "description2": "Nuestra infraestructura avanzada de reacondicionamiento y nuestros rigurosos procesos de control de calidad nos convierten en un socio confiable para la restauración de dispositivos de alta calidad. Con inspecciones meticulosas, reemplazo de piezas genuinas y pruebas exhaustivas, garantizamos que cada dispositivo reacondicionado cumpla o supere las especificaciones originales. Asóciese con nosotros para obtener un servicio excepcional, manejo seguro de datos y soluciones de reacondicionamiento rentables, adaptadas exactamente a sus necesidades."
+      },
+      "dfmSolution": {
+        "heroTitle": "Solución DFM",
+        "heroDescription": "Soluciones de Diseño para Fabricación (DFM) que optimizan sus productos para procesos de producción eficientes y rentables.",
+        "manufacturerTitle": "Servicios Avanzados de Soluciones DFM",
+        "manufacturerSubtitle": "OPTIMIZACIÓN DE LA FABRICACIÓN",
+        "manufacturerDescription": "Ofrecemos soluciones profesionales de Diseño para Fabricación, diseñadas para la eficiencia, la rentabilidad y la calidad. Desde el análisis del diseño hasta la optimización de la fabricabilidad, nuestro equipo garantiza que cada producto se diseñe con precisión, eficiencia y las mejores prácticas de la industria para respaldar una producción rentable.",
+        "description1": "Ofrecemos servicios confiables e integrales de soluciones DFM —que abarcan análisis de diseño, optimización de la fabricabilidad y reducción de costos— adaptados a diversos requisitos de fabricación. Con herramientas de análisis avanzadas y un equipo de ingeniería experimentado, garantizamos que cada diseño se optimice para una producción eficiente. Nuestras capacidades respaldan tanto el desarrollo de nuevos productos como la optimización de productos existentes, ofreciendo diseños rentables, fabricables y de calidad mejorada para todas sus necesidades de fabricación.",
+        "description2": "Nuestra infraestructura avanzada de DFM y nuestros rigurosos procesos de análisis nos convierten en un socio confiable para la optimización de diseño de alta calidad. Con una revisión meticulosa del diseño, evaluación de la fabricabilidad y optimización de costos, garantizamos que cada producto cumpla con los estándares de fabricación exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, ciclos de producción más rápidos y soluciones DFM rentables, adaptadas exactamente a sus necesidades."
+      },
+      "electronics": {
+        "heroTitle": "Electrónica",
+        "heroDescription": "Soluciones electrónicas integrales que abarcan el diseño, desarrollo y fabricación de productos y sistemas electrónicos.",
+        "manufacturerTitle": "Soluciones Electrónicas Integrales",
+        "manufacturerSubtitle": "EXCELENCIA ELECTRÓNICA",
+        "manufacturerDescription": "Ofrecemos soluciones electrónicas integrales, diseñadas para el rendimiento, la confiabilidad y la innovación. Desde el diseño y desarrollo hasta la fabricación, nuestro equipo garantiza que cada producto electrónico se cree con precisión, eficiencia y las mejores prácticas de la industria para respaldar sistemas electrónicos de alta calidad.",
+        "description1": "Ofrecemos servicios electrónicos confiables y de alta calidad —que abarcan diseño, desarrollo y fabricación— adaptados a diversas aplicaciones electrónicas. Con instalaciones avanzadas y un equipo de ingeniería experimentado, garantizamos que cada producto electrónico se fabrique conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto el desarrollo de prototipos como la producción en masa, ofreciendo soluciones electrónicas eficientes, precisas y confiables para todas sus necesidades.",
+        "description2": "Nuestra infraestructura electrónica avanzada y nuestros rigurosos procesos de control de calidad nos convierten en un socio confiable para productos electrónicos de alta calidad. Con una validación meticulosa del diseño, pruebas exhaustivas y fabricación conforme a los estándares de la industria, garantizamos que cada producto cumpla con la confiabilidad exigida por la industria. Asóciese con nosotros para obtener un servicio excepcional, producción escalable y soluciones electrónicas rentables, adaptadas exactamente a sus necesidades."
+      },
+      "erpAndMes": {
+        "heroTitle": "Herramientas ERP y MES",
+        "heroDescription": "Sistemas integrales de planificación de recursos empresariales (ERP) y de ejecución de manufactura (MES) que optimizan todas sus operaciones de fabricación.",
+        "manufacturerTitle": "Soluciones Integrales de ERP y MES",
+        "manufacturerSubtitle": "EXCELENCIA OPERATIVA",
+        "manufacturerDescription": "Ofrecemos soluciones profesionales de ERP y MES, diseñadas para la eficiencia operativa, la visibilidad en tiempo real y la optimización empresarial. Desde la planificación de recursos empresariales hasta la ejecución de manufactura, nuestro equipo garantiza que cada sistema se implemente con precisión, eficiencia y las mejores prácticas de la industria para respaldar operaciones de fabricación optimizadas.",
+        "description1": "Ofrecemos soluciones confiables e integrales de ERP y MES —que abarcan planificación de recursos empresariales, ejecución de manufactura, gestión de inventario y análisis empresarial— adaptadas a diversos requisitos de fabricación. Con plataformas de software avanzadas y un equipo de implementación experimentado, garantizamos que cada sistema se configure conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto operaciones a pequeña escala como a nivel empresarial, ofreciendo soluciones eficientes, integradas y basadas en análisis de datos para todas sus necesidades de fabricación.",
+        "description2": "Nuestra infraestructura avanzada de ERP y MES y nuestros rigurosos procesos de implementación nos convierten en un socio confiable para sistemas empresariales de alta calidad. Con una integración de sistemas meticulosa, visibilidad en tiempo real y análisis exhaustivos, garantizamos que cada solución cumpla con los estándares operativos exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, operaciones optimizadas y soluciones de ERP y MES rentables, adaptadas exactamente a sus necesidades."
+      },
+      "firmwareEmbeddedSoftware": {
+        "heroTitle": "Firmware y Software Embebido",
+        "heroDescription": "Servicios profesionales de desarrollo de firmware y software embebido para microcontroladores, dispositivos IoT y sistemas embebidos, con rendimiento y confiabilidad optimizados.",
+        "manufacturerTitle": "Soluciones Avanzadas de Firmware y Software Embebido",
+        "manufacturerSubtitle": "EXCELENCIA EN SISTEMAS EMBEBIDOS",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de desarrollo de firmware y software embebido, diseñados para el rendimiento, la confiabilidad y la integración perfecta con el hardware. Desde firmware para microcontroladores hasta sistemas embebidos en tiempo real, nuestro equipo garantiza que cada solución de software se desarrolle con precisión, eficiencia y las mejores prácticas de la industria para respaldar productos electrónicos de alta calidad.",
+        "description1": "Ofrecemos soluciones confiables y de alta calidad de firmware y software embebido —que abarcan firmware para microcontroladores, sistemas en tiempo real, software para dispositivos IoT y automatización embebida— adaptadas a diversas aplicaciones electrónicas. Con herramientas de desarrollo avanzadas y un equipo de ingeniería embebida experimentado, garantizamos que cada solución de firmware y software embebido se desarrolle conforme a los más altos estándares de calidad. Nuestras capacidades respaldan diversos microcontroladores y plataformas embebidas, ofreciendo soluciones de software eficientes, seguras y confiables para todas sus necesidades de sistemas embebidos.",
+        "description2": "Nuestra infraestructura avanzada de desarrollo de firmware y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para soluciones de software embebido de alta calidad. Con una revisión meticulosa del código, pruebas exhaustivas hardware-in-the-loop y prácticas conforme a los estándares de la industria, garantizamos que cada solución de firmware y software embebido cumpla con la confiabilidad y el rendimiento exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, soluciones escalables y desarrollo de firmware rentable, adaptado exactamente a sus requisitos de hardware y aplicación."
+      },
+      "iotManufacturing": {
+        "heroTitle": "Fabricación IoT",
+        "heroDescription": "Dispositivos de Internet de las Cosas de vanguardia, diseñados para una conectividad perfecta y funcionalidad inteligente.",
+        "manufacturerTitle": "Soluciones Avanzadas de Fabricación IoT",
+        "manufacturerSubtitle": "CONECTIVIDAD INTELIGENTE",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de fabricación IoT, diseñados para la conectividad, la confiabilidad y la funcionalidad inteligente. Desde la integración de sensores hasta la conectividad en la nube, nuestro equipo garantiza que cada dispositivo IoT se fabrique con precisión, eficiencia y las mejores prácticas de la industria para respaldar productos inteligentes de alta calidad.",
+        "description1": "Ofrecemos servicios confiables y de alta calidad de fabricación IoT —que abarcan el ensamblaje de dispositivos inteligentes, la integración de sensores y soluciones de conectividad— adaptados a diversas aplicaciones IoT. Con equipos de fabricación avanzados y un equipo de ingeniería experimentado, garantizamos que cada dispositivo IoT se fabrique conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto el desarrollo de prototipos como la producción en masa, ofreciendo soluciones IoT eficientes, conectadas y confiables para todas sus necesidades de productos inteligentes.",
+        "description2": "Nuestra infraestructura avanzada de fabricación IoT y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para dispositivos inteligentes de alta calidad. Con un control de calidad meticuloso, pruebas de conectividad y validación de seguridad, garantizamos que cada dispositivo IoT cumpla con los estándares de confiabilidad y seguridad exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, producción escalable y soluciones de fabricación IoT rentables, adaptadas exactamente a sus necesidades."
+      },
+      "prototypeDesign": {
+        "heroTitle": "Diseño de Prototipos",
+        "heroDescription": "Servicios de prototipado rápido para transformar sus ideas en prototipos funcionales con rapidez y precisión.",
+        "manufacturerTitle": "Soluciones Profesionales de Diseño de Prototipos",
+        "manufacturerSubtitle": "INNOVACIÓN RÁPIDA",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de diseño de prototipos, diseñados para la rapidez, la funcionalidad y la validación. Desde el desarrollo del concepto hasta prototipos funcionales, nuestro equipo garantiza que cada prototipo se diseñe con precisión, eficiencia y las mejores prácticas de la industria para respaldar el desarrollo rápido de productos y la innovación.",
+        "description1": "Ofrecemos servicios confiables y rápidos de diseño de prototipos —que abarcan el desarrollo del concepto, el prototipado funcional y la validación del diseño— adaptados a diversas aplicaciones electrónicas. Con herramientas de prototipado avanzadas y un equipo de ingeniería experimentado, garantizamos que cada prototipo se fabrique conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto la validación en etapas tempranas como las pruebas previas a la producción, ofreciendo prototipos eficientes, precisos y funcionales para todas sus necesidades de desarrollo de productos.",
+        "description2": "Nuestra infraestructura avanzada de prototipado y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para el desarrollo de prototipos de alta calidad. Con una validación meticulosa del diseño, pruebas funcionales y capacidad de iteración rápida, garantizamos que cada prototipo cumpla con los estándares exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, tiempos de entrega rápidos y soluciones de diseño de prototipos rentables, adaptadas exactamente a sus necesidades."
+      },
+      "rapidPrototyping": {
+        "heroTitle": "Prototipado Rápido",
+        "heroDescription": "Acelere el desarrollo de su producto con nuestros servicios de prototipado rápido, que dan vida a sus conceptos de forma rápida y eficiente.",
+        "manufacturerTitle": "Soluciones Avanzadas de Prototipado Rápido",
+        "manufacturerSubtitle": "INNOVACIÓN ACELERADA",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de prototipado rápido, diseñados para la rapidez, la funcionalidad y la validación. Desde el concepto hasta el prototipo funcional, nuestro equipo garantiza que cada prototipo se fabrique con precisión, eficiencia y las mejores prácticas de la industria para respaldar el desarrollo acelerado de productos.",
+        "description1": "Ofrecemos servicios confiables y rápidos de prototipado —que abarcan el desarrollo del concepto, el prototipado funcional y la validación del diseño— adaptados a diversas aplicaciones de producto. Con tecnologías de prototipado avanzadas y un equipo de ingeniería experimentado, garantizamos que cada prototipo se fabrique conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto la validación en etapas tempranas como las pruebas previas a la producción, ofreciendo prototipos eficientes, precisos y funcionales para todas sus necesidades de desarrollo de productos.",
+        "description2": "Nuestra infraestructura avanzada de prototipado rápido y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para el desarrollo de prototipos de alta calidad. Con una validación meticulosa del diseño, pruebas funcionales y capacidad de iteración rápida, garantizamos que cada prototipo cumpla con los estándares exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, tiempos de entrega rápidos y soluciones de prototipado rápido rentables, adaptadas exactamente a sus necesidades."
+      },
+      "skdAndCkdDesign": {
+        "heroTitle": "Diseño SKD y CKD",
+        "heroDescription": "Soluciones de diseño Semi-Knocked Down (SKD) y Completely Knocked Down (CKD) para procesos de fabricación y ensamblaje eficientes.",
+        "manufacturerTitle": "Soluciones de Diseño SKD y CKD",
+        "manufacturerSubtitle": "EXCELENCIA EN DISEÑO MODULAR",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de diseño SKD y CKD, diseñados para una fabricación eficiente, una logística optimizada y un ensamblaje flexible. Desde el diseño modular de componentes hasta el empaque optimizado para el ensamblaje, nuestro equipo garantiza que cada producto se diseñe con precisión, eficiencia y las mejores prácticas de la industria para respaldar una fabricación global rentable.",
+        "description1": "Ofrecemos servicios confiables y eficientes de diseño SKD y CKD —que abarcan soluciones Semi-Knocked Down y Completely Knocked Down— adaptados a diversos requisitos de fabricación y logística. Con herramientas de diseño avanzadas y un equipo de ingeniería experimentado, garantizamos que cada producto se diseñe para una eficiencia de ensamblaje óptima. Nuestras capacidades respaldan tanto estrategias de fabricación regionales como globales, ofreciendo diseños rentables, optimizados en logística y de fácil ensamblaje para todas sus necesidades de fabricación.",
+        "description2": "Nuestra infraestructura avanzada de diseño y nuestros rigurosos procesos de optimización nos convierten en un socio confiable para soluciones SKD y CKD de alta calidad. Con una validación meticulosa del diseño, optimización del ensamblaje y empaque rentable, garantizamos que cada producto cumpla con los estándares de fabricación exigidos por la industria. Asóciese con nosotros para obtener un servicio excepcional, opciones de fabricación flexibles y soluciones de diseño SKD/CKD rentables, adaptadas exactamente a sus necesidades."
+      },
+      "softwareSolutionForElectronics": {
+        "heroTitle": "Solución de Software para Electrónica",
+        "heroDescription": "Desarrollo de software personalizado, diseñado específicamente para la fabricación electrónica y los sistemas embebidos.",
+        "manufacturerTitle": "Soluciones de Software Avanzadas para Electrónica",
+        "manufacturerSubtitle": "EXCELENCIA EN SOFTWARE",
+        "manufacturerDescription": "Ofrecemos servicios profesionales de desarrollo de software, diseñados para la fabricación electrónica y los sistemas embebidos. Desde firmware hasta software de fabricación, nuestro equipo garantiza que cada solución de software se desarrolle con precisión, eficiencia y las mejores prácticas de la industria para respaldar operaciones electrónicas de alta calidad.",
+        "description1": "Ofrecemos soluciones de software confiables y de alta calidad para electrónica —que abarcan firmware, software embebido, automatización y software de fabricación— adaptadas a diversas aplicaciones electrónicas. Con herramientas de desarrollo avanzadas y un equipo de ingeniería de software experimentado, garantizamos que cada solución de software se desarrolle conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto sistemas embebidos como automatización de la fabricación, ofreciendo soluciones de software eficientes, seguras y confiables para todas sus necesidades electrónicas.",
+        "description2": "Nuestra infraestructura avanzada de desarrollo de software y nuestros rigurosos procesos de prueba nos convierten en un socio confiable para soluciones de software de alta calidad. Con una revisión meticulosa del código, pruebas exhaustivas y prácticas conforme a los estándares de la industria, garantizamos que cada solución de software cumpla con la confiabilidad y la seguridad exigidas por la industria. Asóciese con nosotros para obtener un servicio excepcional, soluciones escalables y desarrollo de software rentable, adaptado exactamente a sus necesidades."
+      },
+      "turnkeySolution": {
+        "heroTitle": "Solución Llave en Mano",
+        "heroDescription": "Soluciones completas de principio a fin, desde el concepto hasta la entrega, gestionando cada aspecto de su proyecto con experiencia y precisión.",
+        "manufacturerTitle": "Soluciones Llave en Mano Completas",
+        "manufacturerSubtitle": "EXCELENCIA DE PRINCIPIO A FIN",
+        "manufacturerDescription": "Ofrecemos soluciones llave en mano integrales, diseñadas para una ejecución de proyectos fluida, desde el concepto inicial hasta la entrega final. Nuestro enfoque integrado abarca el diseño, la fabricación, el ensamblaje, las pruebas y el aseguramiento de la calidad, garantizando que cada proyecto se complete con precisión, eficiencia y las mejores prácticas de la industria.",
+        "description1": "Ofrecemos soluciones llave en mano confiables e integrales —que abarcan la gestión completa del proyecto, el diseño, la fabricación, el ensamblaje y las pruebas— adaptadas a diversas aplicaciones electrónicas. Con instalaciones avanzadas y un equipo de gestión de proyectos experimentado, garantizamos que cada proyecto se ejecute conforme a los más altos estándares de calidad. Nuestras capacidades respaldan tanto la producción a pequeña escala como a gran escala, ofreciendo resultados eficientes, coordinados y consistentes para todas sus necesidades de fabricación electrónica.",
+        "description2": "Nuestra infraestructura integrada y nuestros rigurosos procesos de control de calidad nos convierten en un socio confiable para soluciones llave en mano completas. Con una gestión de proyectos meticulosa, fabricación de precisión y estándares de cero defectos, garantizamos que cada proyecto cumpla con la confiabilidad exigida por la industria. Asóciese con nosotros para obtener un servicio excepcional, comunicación optimizada y soluciones llave en mano rentables, adaptadas exactamente a sus necesidades."
+      },
+      "productLifeCycle": {
+        "heroTitle": "Ciclo de Vida del Producto",
+        "heroDescription": "Gestión integral del ciclo de vida del producto, desde el concepto y el diseño hasta la fabricación, el soporte y la planificación de fin de vida útil.",
+        "sectionTitle": "Ciclo de Vida del Producto",
+        "sectionDescription": "El Ciclo de Vida del Producto (PLC, por sus siglas en inglés) describe las etapas por las que atraviesa un producto desde su introducción en el mercado hasta su retiro. Ayuda a las empresas a planificar estrategias de marketing, precios, producción e inversión.",
+        "serviceLabel": "Gestionando Productos desde el Concepto hasta su Finalización"
+      }
+    },
+    "features": {
+      "pcbDesign": [
+        { "title": "Diseños de Alta Precisión", "description": "Diseños de PCB precisos, elaborados con herramientas avanzadas para garantizar la integridad de la señal y un rendimiento óptimo." },
+        { "title": "Ingeniería de PCB Personalizada", "description": "Soluciones de diseño de PCB a medida, optimizadas según los requisitos de potencia, tamaño y funcionalidad de su dispositivo." },
+        { "title": "Aseguramiento de la Calidad del Diseño", "description": "Validación integral del diseño, verificaciones DFM/DFT y flujos de trabajo sin errores desde el esquemático hasta el diseño final." },
+        { "title": "Entrega Rápida de Prototipos", "description": "Diseño de PCB acelerado y entrega rápida de prototipos para ayudarlo a avanzar rápidamente del concepto a las pruebas." },
+        { "title": "Cumplimiento de Estándares de la Industria", "description": "Diseños de PCB alineados con los estándares IPC, garantizando confiabilidad, seguridad y compatibilidad global." },
+        { "title": "Ingenieros de PCB Experimentados", "description": "Un equipo capacitado con experiencia en PCB multicapa, circuitos de alta velocidad y enrutamiento complejo." }
+      ],
+      "boxBuilding": [
+        { "title": "Soluciones de Ensamblaje Completas", "description": "Servicios integrales de ensamblaje de gabinetes, desde la integración de componentes hasta el montaje final del producto, con precisión y cuidado." },
+        { "title": "Diseño de Gabinetes Personalizado", "description": "Soluciones de ensamblaje a medida, diseñadas para satisfacer los requisitos específicos de su producto, las limitaciones de tamaño y las necesidades de funcionalidad." },
+        { "title": "Calidad Artesanal", "description": "Atención meticulosa al detalle que garantiza que cada gabinete cumpla con los más altos estándares de calidad y durabilidad." },
+        { "title": "Producción Eficiente", "description": "Procesos de ensamblaje optimizados que entregan conjuntos terminados dentro de los plazos acordados sin comprometer la calidad." },
+        { "title": "Protegido y Seguro", "description": "Ensamblaje robusto que garantiza que sus productos electrónicos estén debidamente alojados, protegidos y listos para su implementación." },
+        { "title": "Equipo de Ensamblaje Experto", "description": "Profesionales capacitados con amplia experiencia en el ensamblaje de gabinetes electrónicos y montaje de productos." }
+      ],
+      "turnkeySolution": [
+        { "title": "Soluciones de Principio a Fin", "description": "Gestión completa del proyecto desde el concepto hasta la entrega, gestionando cada aspecto del ciclo de vida del desarrollo de su producto." },
+        { "title": "Ingeniería Integrada", "description": "Integración fluida de los procesos de diseño, fabricación, ensamblaje y pruebas para una eficiencia y calidad óptimas." },
+        { "title": "Aseguramiento de la Calidad", "description": "Control de calidad integral en cada etapa, garantizando que su producto cumpla con los más altos estándares de la industria." },
+        { "title": "Menor Tiempo de Lanzamiento al Mercado", "description": "Procesos optimizados y flujos de trabajo coordinados que aceleran el cronograma de lanzamiento de su producto." },
+        { "title": "Punto Único de Contacto", "description": "Un equipo dedicado que gestiona todo su proyecto, simplificando la comunicación y garantizando la responsabilidad." },
+        { "title": "Gestión de Proyectos Experta", "description": "Profesionales experimentados que coordinan todos los aspectos de su solución llave en mano con precisión y experiencia." }
+      ],
+      "skdAndCkdDesign": [
+        { "title": "Soluciones de Diseño Modular", "description": "Diseños Semi-Knocked Down (SKD) y Completely Knocked Down (CKD) optimizados para un ensamblaje y una logística eficientes." },
+        { "title": "Ingeniería Optimizada para el Ensamblaje", "description": "Productos diseñados para un ensamblaje sencillo en diferentes ubicaciones, reduciendo los costos de envío y optimizando la flexibilidad de fabricación." },
+        { "title": "Integración de Componentes de Calidad", "description": "Soluciones SKD/CKD cuidadosamente diseñadas que garantizan que los componentes estén debidamente empacados y protegidos durante el transporte." },
+        { "title": "Logística Eficiente", "description": "Diseños optimizados que reducen los volúmenes y costos de envío, manteniendo la calidad del producto y la simplicidad del ensamblaje." },
+        { "title": "Soporte para Fabricación Global", "description": "Diseños SKD/CKD que permiten una fabricación rentable en múltiples ubicaciones y mercados." },
+        { "title": "Documentación de Ensamblaje", "description": "Guías y documentación de ensamblaje completas que garantizan procesos de ensamblaje fluidos en cualquier ubicación." }
+      ],
+      "prototypeDesign": [
+        { "title": "Prototipado Rápido", "description": "Entrega rápida desde el concepto hasta el prototipo funcional, permitiendo una validación e iteración ágil de sus ideas." },
+        { "title": "Del Concepto a la Realidad", "description": "Transformamos sus ideas innovadoras en prototipos tangibles con ingeniería de precisión y atención al detalle." },
+        { "title": "Pruebas Funcionales", "description": "Prototipos diseñados para pruebas exhaustivas, que le permiten validar la funcionalidad antes de la producción a gran escala." },
+        { "title": "Ciclos de Iteración Rápidos", "description": "Proceso acelerado de refinamiento del diseño que permite múltiples iteraciones para perfeccionar el concepto de su producto." },
+        { "title": "Validación del Diseño", "description": "Prototipos que ayudan a validar conceptos de diseño, experiencia de usuario y viabilidad técnica en etapas tempranas del desarrollo." },
+        { "title": "Soporte a la Innovación", "description": "Apoyo experto para dar vida a conceptos innovadores con técnicas y materiales de prototipado de vanguardia." }
+      ],
+      "iotManufacturing": [
+        { "title": "Fabricación de Dispositivos Inteligentes", "description": "Dispositivos IoT de vanguardia, fabricados con funciones de conectividad avanzadas y funcionalidad inteligente." },
+        { "title": "Soluciones de Conectividad", "description": "Dispositivos IoT diseñados para una conectividad inalámbrica fluida, integración de sensores y comunicación en la nube." },
+        { "title": "Pruebas Rigurosas", "description": "Protocolos de prueba exhaustivos que garantizan que cada dispositivo IoT cumpla con los estándares de confiabilidad, seguridad y rendimiento." },
+        { "title": "Producción Escalable", "description": "Capacidades de fabricación que escalan desde el prototipo hasta la producción en masa, respaldando sus necesidades de implementación IoT." },
+        { "title": "Estándares de la Industria", "description": "Dispositivos IoT fabricados conforme a estándares internacionales de seguridad, protección e interoperabilidad." },
+        { "title": "Componentes Avanzados", "description": "Integración de sensores, procesadores y módulos de comunicación de alta calidad para un rendimiento IoT confiable." }
+      ],
+      "deviceRefurbishment": [
+        { "title": "Restauración Completa", "description": "Proceso de reacondicionamiento integral que transforma dispositivos usados a un estado como nuevo, utilizando piezas genuinas." },
+        { "title": "Servicios de Reparación Expertos", "description": "Técnicos capacitados que realizan una inspección, diagnóstico y reparación exhaustivos de todos los componentes del dispositivo." },
+        { "title": "Aseguramiento de la Calidad", "description": "Pruebas rigurosas y controles de calidad que garantizan que cada dispositivo reacondicionado cumpla o supere las especificaciones originales." },
+        { "title": "Procesamiento Eficiente", "description": "Flujos de trabajo de reacondicionamiento optimizados que entregan dispositivos restaurados rápidamente sin comprometer la calidad." },
+        { "title": "Solo Piezas Genuinas", "description": "Uso exclusivo de componentes y piezas auténticas, garantizando la confiabilidad y manteniendo la integridad del dispositivo." },
+        { "title": "Seguridad de Datos", "description": "Procesos seguros de borrado y restauración de datos que protegen su información durante el proceso de reacondicionamiento." }
+      ],
+      "electronics": [
+        { "title": "Soluciones Electrónicas Integrales", "description": "Servicios electrónicos de principio a fin que abarcan el diseño, desarrollo y fabricación de productos y sistemas electrónicos." },
+        { "title": "Diseño Electrónico Personalizado", "description": "Soluciones electrónicas a medida, diseñadas para satisfacer sus requisitos específicos, funcionalidad y necesidades de rendimiento." },
+        { "title": "Fabricación de Calidad", "description": "Fabricación electrónica de alta calidad con un riguroso control de calidad que garantiza productos confiables y duraderos." },
+        { "title": "Desarrollo Eficiente", "description": "Procesos de desarrollo optimizados que entregan soluciones electrónicas dentro de los plazos acordados sin comprometer la calidad." },
+        { "title": "Estándares de la Industria", "description": "Soluciones electrónicas diseñadas y fabricadas conforme a estándares internacionales de seguridad y confiabilidad." },
+        { "title": "Equipo Experto en Electrónica", "description": "Profesionales capacitados con amplia experiencia en diseño, desarrollo y fabricación electrónica." }
+      ],
+      "dfmSolution": [
+        { "title": "Optimización del Diseño", "description": "Análisis integral de Diseño para Fabricación que optimiza sus productos para una producción eficiente y rentable." },
+        { "title": "Análisis de Fabricabilidad", "description": "Análisis detallado y refinamiento de diseños para garantizar la fabricabilidad, reducir costos y mejorar la calidad." },
+        { "title": "Mejora de la Calidad", "description": "Soluciones DFM que mejoran la calidad del producto mientras reducen la complejidad de fabricación y los costos de producción." },
+        { "title": "Producción Más Rápida", "description": "Diseños optimizados que aceleran los plazos de producción y reducen los cuellos de botella en la fabricación." },
+        { "title": "Optimización de Costos", "description": "Soluciones DFM que identifican oportunidades de ahorro de costos sin comprometer la calidad o funcionalidad del producto." },
+        { "title": "Ingenieros DFM Expertos", "description": "Equipo experimentado con amplio conocimiento de los procesos de fabricación y las técnicas de optimización del diseño." }
+      ],
+      "rapidPrototyping": [
+        { "title": "Desarrollo Acelerado", "description": "Servicios de prototipado rápido que aceleran el desarrollo de su producto, dando vida a los conceptos de forma rápida y eficiente." },
+        { "title": "Tecnologías de Prototipado Avanzadas", "description": "Utilización de tecnologías de prototipado de vanguardia para ayudar a validar diseños y probar la funcionalidad." },
+        { "title": "Validación Funcional", "description": "Prototipos diseñados para pruebas exhaustivas, que le permiten validar conceptos antes de la producción a gran escala." },
+        { "title": "Tiempo de Lanzamiento Acelerado", "description": "Prototipado rápido que acelera su tiempo de lanzamiento al mercado, permitiendo una validación e iteración de diseño ágil." },
+        { "title": "Validación del Concepto", "description": "Prototipos que ayudan a validar conceptos de diseño, funcionalidad y experiencia de usuario en etapas tempranas del desarrollo." },
+        { "title": "Soporte a la Innovación", "description": "Apoyo experto en prototipado rápido con técnicas y materiales avanzados para el desarrollo de productos innovadores." }
+      ],
+      "erpAndMes": [
+        { "title": "ERP y MES Integrales", "description": "Sistemas completos de planificación de recursos empresariales y ejecución de manufactura que optimizan todas sus operaciones de fabricación." },
+        { "title": "Visibilidad en Tiempo Real", "description": "Plataformas de software avanzadas que ofrecen visibilidad en tiempo real de los procesos de producción, el inventario y el control de calidad." },
+        { "title": "Soluciones Integradas", "description": "Sistemas ERP y MES integrados sin fisuras que optimizan las operaciones de fabricación y el análisis empresarial." },
+        { "title": "Eficiencia Operativa", "description": "Operaciones optimizadas mediante procesos automatizados, reduciendo el trabajo manual y mejorando la eficiencia general." },
+        { "title": "Análisis Empresarial", "description": "Herramientas integrales de análisis empresarial y generación de informes que brindan información para la toma de decisiones basada en datos." },
+        { "title": "Equipo de Implementación Experto", "description": "Profesionales experimentados con amplia experiencia en la implementación y optimización de sistemas ERP y MES." }
+      ],
+      "softwareSolutionForElectronics": [
+        { "title": "Desarrollo de Software Personalizado", "description": "Desarrollo de software personalizado, diseñado específicamente para la fabricación electrónica y los sistemas embebidos." },
+        { "title": "Firmware y Software Embebido", "description": "Desarrollo de firmware, software embebido y soluciones de automatización que mejoran la productividad y la eficiencia." },
+        { "title": "Software de Fabricación", "description": "Soluciones de software de fabricación especializadas que optimizan las operaciones y mejoran la eficiencia operativa." },
+        { "title": "Desarrollo Rápido", "description": "Ciclos de desarrollo de software rápidos que entregan soluciones personalizadas dentro de los plazos acordados sin comprometer la calidad." },
+        { "title": "Mejores Prácticas de la Industria", "description": "Soluciones de software desarrolladas siguiendo las mejores prácticas de la industria en materia de seguridad, confiabilidad y mantenibilidad." },
+        { "title": "Equipo de Software Experto", "description": "Ingenieros de software capacitados con amplia experiencia en fabricación electrónica y sistemas embebidos." }
+      ],
+      "firmwareEmbeddedSoftware": [
+        { "title": "Desarrollo de Firmware", "description": "Servicios profesionales de desarrollo de firmware para microcontroladores, sistemas embebidos y dispositivos IoT, con rendimiento y confiabilidad optimizados." },
+        { "title": "Soluciones de Software Embebido", "description": "Desarrollo de software embebido personalizado, adaptado a su plataforma de hardware, garantizando una integración fluida y una funcionalidad óptima." },
+        { "title": "Sistemas en Tiempo Real", "description": "Desarrollo de sistemas embebidos en tiempo real con requisitos de temporización precisos y comportamiento determinista para aplicaciones críticas." },
+        { "title": "Rendimiento Optimizado", "description": "Firmware y software embebido optimizados para la eficiencia de memoria, el consumo de energía y la velocidad de procesamiento, conforme a los requisitos de su dispositivo." },
+        { "title": "Cumplimiento de Estándares de la Industria", "description": "Software embebido desarrollado siguiendo los estándares y las mejores prácticas de la industria en materia de seguridad, confiabilidad y mantenibilidad." },
+        { "title": "Ingenieros Embebidos Expertos", "description": "Ingenieros de firmware y software embebido capacitados, con amplia experiencia en diversos microcontroladores y plataformas embebidas." }
+      ],
+      "productLifeCycle": [
+        { "title": "Planificación del Ciclo de Vida", "description": "Le ayudamos a planificar y optimizar todo el ciclo de vida de su producto —desde el concepto inicial hasta el fin de su vida útil— garantizando una gestión eficiente, control de costos y operaciones fluidas en cada etapa." },
+        { "title": "Gestión de Datos y Documentación", "description": "Nuestros servicios PLM abarcan el manejo completo de datos, documentación y control de revisiones, manteniendo la precisión, la trazabilidad y la integridad de la información de su producto durante todo su ciclo de vida." },
+        { "title": "Gestión de Cambios", "description": "Facilitamos la implementación fluida de actualizaciones de diseño, cambios de ingeniería y mejoras de producto, minimizando interrupciones y garantizando un rendimiento constante en todas las fases." }
+      ]
+    }
+  },
+  "Home": {
+    "certifications": {
+      "eyebrow": "Por Qué Elegirnos",
+      "heading": "Certificaciones y Compromisos",
+      "tagline": "Los estándares y las promesas que respaldan cada placa que diseñamos, fabricamos y reacondicionamos.",
+      "items": [
+        { "title": "Certificado ISO", "desc": "Procesos auditados y certificados conforme a los estándares internacionales de calidad ISO." },
+        { "title": "Cumple con RoHS", "desc": "Cada fabricación cumple con los límites de RoHS sobre sustancias y materiales peligrosos." },
+        { "title": "Calidad Garantizada", "desc": "Inspección y pruebas en múltiples etapas antes de que cualquier producto salga de la planta." },
+        { "title": "Entrega a Tiempo", "desc": "Plazos comprometidos, respaldados por capacidad planificada y un seguimiento claro." },
+        { "title": "100% de Satisfacción", "desc": "Respaldamos nuestro trabajo con un soporte receptivo y responsable." }
+      ]
+    },
+    "about": {
+      "subtitle": "Sobre Nosotros",
+      "title": "Liderando la Excelencia en Electrónica y Tecnología",
+      "description": "Con años de experiencia en la industria, nos hemos consolidado como un socio confiable en soluciones de electrónica y tecnología. Nuestro compromiso con la calidad, la innovación y la satisfacción del cliente impulsa todo lo que hacemos. Desde el concepto hasta la finalización, aprovechamos tecnología de vanguardia, rigurosos estándares de prueba y un enfoque centrado en el cliente para ofrecer soluciones que superan constantemente las expectativas. A medida que la industria evoluciona, seguimos adaptándonos, innovando y perfeccionando nuestros procesos para garantizar que nuestros clientes reciban siempre los productos y servicios más confiables y de mayor visión de futuro.",
+      "stats": [
+        { "number": "15+", "label": "Años de Experiencia" },
+        { "number": "500+", "label": "Clientes Satisfechos" },
+        { "number": "1000+", "label": "Proyectos Completados" },
+        { "number": "100%", "label": "Tasa de Satisfacción" }
+      ]
+    },
+    "testimonials": {
+      "subtitle": "Testimonios",
+      "title": "Lo Que Dicen Nuestros Clientes",
+      "items": {
+        "1": "Si se ha puesto en contacto con MsCorpres, está en muy buenas manos. Nuestros requisitos fueron bien comprendidos y gestionados de manera muy profesional de principio a fin. Un personal muy honesto, sincero y trabajador que se esfuerza al máximo por ofrecer un servicio eficiente. Recomendamos ampliamente a MsCorpres y les deseamos un éxito continuo y merecido en sus proyectos.",
+        "2": "MsCorpres es una plataforma excepcional que fomenta la innovación y el crecimiento. Como desarrollador de software, he prosperado aquí, impulsado por tecnologías de vanguardia y un entorno colaborativo. El compromiso de la empresa con la excelencia alimenta mi pasión por crear soluciones eficientes. Es un privilegio contribuir a un equipo que defiende la creatividad y valora la experiencia. MsCorpres marca el estándar más alto de la industria.",
+        "3": "Llevamos más de 4 años trabajando con MsCorpres. Es un placer trabajar con el equipo. Gestionan con gran eficiencia nuestras finanzas, facturación, producción, almacenamiento y logística. Es un gusto trabajar con MsCorpres gracias a la coordinación perfecta con nuestro equipo interno. Todo el equipo trabaja de corazón por el crecimiento mutuo de la empresa, con la entrega y sinceridad de quien realmente desea lo mejor para el otro. Como bien se ha dicho: cuando algo se desea de corazón, el universo entero conspira para ayudarte a conseguirlo.",
+        "4": "No había pasado ni un año desde que lanzamos nuestra startup cuando ya estábamos en conversaciones para levantar nuestra ronda semilla. Como pueden imaginar, compaginar la gestión de una startup de apenas un año con la enorme documentación, el cumplimiento normativo, la revisión y modificación del SHA, etc., no es tarea fácil. Un amigo nos puso en contacto con el equipo de MsCorpres. Al principio dudábamos en trabajar con un equipo ubicado en otra ciudad en lugar de alguien disponible en persona. Fue un recorrido corto pero intenso, y nos acompañaron hasta el final. Gracias, equipo de MsCorpres, por su orientación y asistencia. Esperamos con interés volver a trabajar con ustedes."
+      }
+    },
+    "trustedCompanies": {
+      "subtitle": "Nuestros Socios",
+      "title": "La Confianza de Empresas Líderes",
+      "tagline": "Nos enorgullece trabajar con líderes de la industria y socios de confianza en todo el mundo."
+    },
+    "carousel": {
+      "kickers": ["Su Socio de Confianza", "Precisión y Calidad", "Soluciones Integrales"],
+      "ctaPrimary": "Solicitar Cotización",
+      "ctaSecondary": "Descubra Más",
+      "slides": [
+        { "title": "Bienvenido a MsCorpres", "description": "Su socio de confianza para la fabricación electrónica y el reacondicionamiento experto" },
+        { "title": "Servicios de Calidad", "description": "Ofrecemos fabricación y reacondicionamiento electrónico de alto estándar, adaptados a las necesidades de su negocio" },
+        { "title": "Soluciones Integrales", "description": "Desde el desarrollo del producto hasta el reacondicionamiento, garantizamos soluciones completas y de alta calidad en cada etapa" }
+      ]
+    }
+  },
+  "About": {
+    "hero": {
+      "subtitle": "Sobre Nosotros",
+      "title": "Liderando la Excelencia en Electrónica y Tecnología",
+      "description": "Con años de experiencia en la industria, nos hemos consolidado como un socio confiable en soluciones de electrónica y tecnología. Nuestro compromiso con la calidad, la innovación y la satisfacción del cliente impulsa todo lo que hacemos."
+    },
+    "detailed": {
+      "subtitle": "Sobre Nuestra Empresa",
+      "title": "Nuestro Camino hacia la Excelencia",
+      "mainDescription": "Fundada con la visión de revolucionar la industria de la electrónica y la tecnología, hemos crecido de una pequeña startup a un líder confiable en fabricación IoT, diseño de PCB, reacondicionamiento de dispositivos, soluciones ERP/MES y desarrollo de software para electrónica. Nuestro camino ha estado marcado por la innovación continua, un compromiso inquebrantable con la calidad y una profunda comprensión de las necesidades de nuestros clientes.",
+      "secondParagraph": "A lo largo de los años, hemos construido una reputación por ofrecer resultados excepcionales a través de nuestra amplia gama de servicios, que incluye fabricación IoT, diseño de PCB, reacondicionamiento de dispositivos, soluciones ERP y MES, y soluciones de software para electrónica. Nuestras instalaciones de última generación, junto con nuestro equipo de profesionales expertos, nos permiten gestionar proyectos de cualquier escala con precisión y eficiencia.",
+      "thirdParagraph": "Lo que nos distingue es nuestro enfoque centrado en el cliente. No solo ofrecemos servicios; construimos relaciones duraderas. Cada proyecto es una oportunidad para comprender los desafíos únicos de nuestros clientes y ofrecer soluciones a medida que impulsan su éxito.",
+      "ourStory": "Nuestra Historia",
+      "stats": [
+        { "number": "15+", "label": "Años de Experiencia", "description": "Sirviendo a nuestros clientes con excelencia" },
+        { "number": "500+", "label": "Clientes Satisfechos", "description": "La confianza de empresas de todo el mundo" },
+        { "number": "1000+", "label": "Proyectos Completados", "description": "Soluciones entregadas con éxito" },
+        { "number": "100%", "label": "Tasa de Satisfacción", "description": "Satisfacción del cliente garantizada" }
+      ],
+      "coreValuesHeading": "Nuestros Valores Fundamentales",
+      "coreValuesTagline": "Los principios que guían todo lo que hacemos.",
+      "values": [
+        { "title": "Innovación", "description": "Aportamos ideas visionarias y tecnologías avanzadas a cada proyecto, impulsando sus productos por delante de la competencia." },
+        { "title": "Calidad", "description": "Entregamos productos que cumplen con estrictos estándares de rendimiento, respaldados por pruebas exhaustivas y prácticas de ingeniería confiables." },
+        { "title": "Confiabilidad", "description": "Ofrecemos fabricación y entrega de servicios confiables, garantizando que sus productos lleguen a tiempo y funcionen según lo esperado." },
+        { "title": "Excelencia", "description": "Elevamos constantemente el estándar, ofreciendo procesos refinados, un trabajo artesanal detallado y resultados que impulsan su negocio." }
+      ]
+    },
+    "visionMission": {
+      "eyebrow": "Quiénes Somos",
+      "heading": "Visión y Misión",
+      "tagline": "La excelencia impulsa nuestra misión y visión hacia adelante.",
+      "visionTitle": "Nuestra Visión",
+      "visionDescription": "Convertirnos en un líder global en soluciones de electrónica y tecnología, estableciendo nuevos estándares de excelencia, innovación y satisfacción del cliente. Visualizamos un futuro en el que nuestros productos IoT, nuestra experiencia en diseño de PCB, nuestros servicios de reacondicionamiento de dispositivos, nuestras plataformas ERP/MES y nuestras soluciones de software permitan a empresas de todo el mundo operar con mayor eficiencia, confiabilidad y confianza.",
+      "missionTitle": "Nuestra Misión",
+      "missionDescription": "Ofrecer soluciones de electrónica y tecnología de clase mundial a través de innovación avanzada, ingeniería experta y un compromiso inquebrantable con la calidad. Nuestra misión es ayudar a las empresas a alcanzar sus objetivos, proporcionando sistemas IoT confiables, diseño de PCB de precisión, servicios de reacondicionamiento profesionales y soluciones inteligentes de ERP/MES y software, construyendo relaciones a largo plazo fundadas en la confianza, el desempeño y el éxito mutuo."
+    }
+  },
+  "Careers": {
+    "eyebrow": "ÚNETE A NUESTRO EQUIPO",
+    "title": "Explora Oportunidades Laborales",
+    "intro": "Busca por título del puesto o departamento para encontrar roles que coincidan con tus habilidades. Explora nuestras últimas vacantes a continuación.",
+    "jobTitleLabel": "Título del Puesto",
+    "jobTitlePlaceholder": "Escribe el título del puesto...",
+    "departmentLabel": "Departamento",
+    "departmentPlaceholder": "Selecciona un departamento...",
+    "search": "Buscar",
+    "reset": "Restablecer",
+    "showingCount": "Mostrando {count} posiciones abiertas",
+    "foundCount": "{count, plural, one {# empleo encontrado} other {# empleos encontrados}}",
+    "errorTitle": "Algo salió mal",
+    "errorBody": "No se pudieron cargar las ofertas de empleo. Por favor, inténtalo de nuevo más tarde.",
+    "emptyTitle": "No se encontraron empleos",
+    "emptyBody": "Prueba con otros filtros o restablece para ver todas las vacantes.",
+    "applyNow": "Aplicar Ahora"
+  },
+  "Contact": {
+    "heroTitle": "Póngase en Contacto",
+    "heroSubtitle": "¿Tiene preguntas o necesita ayuda? Estamos aquí para ayudarle con todas sus necesidades de electrónica y tecnología. Comuníquese con nosotros y comencemos una conversación.",
+    "eyebrow": "CONTÁCTENOS",
+    "formHeading": "Envíenos un Mensaje",
+    "nameLabel": "Su Nombre",
+    "emailLabel": "Su Correo Electrónico",
+    "phoneLabel": "Número de Teléfono",
+    "phonePlaceholder": "+91 1234567890",
+    "subjectLabel": "Asunto",
+    "messageLabel": "Mensaje",
+    "sendButton": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "mapTitle": "Mapa de ubicación de MsCorpres",
+    "info": [
+      { "title": "Teléfono", "description": "Llámenos en cualquier momento" },
+      { "title": "Correo Electrónico", "description": "Envíenos un correo electrónico" },
+      { "title": "Dirección", "description": "Noida, Uttar Pradesh - 201306" },
+      { "title": "Dirección (Móvil: +971 44218356)", "description": "Noida, Uttar Pradesh - 201305" },
+      { "title": "Horario de Trabajo", "description": "El sábado es día laborable" }
+    ]
+  },
+  "PrivacyPolicy": {
+    "heroSubtitle": "POLÍTICA DE PRIVACIDAD",
+    "heroTitle": "Política de Privacidad",
+    "intro": [
+      "La protección y la seguridad de su información personal se encuentran entre nuestras principales prioridades. Esta Política de Privacidad (“Política”) revela nuestras prácticas con respecto a la información recopilada de los usuarios de este Sitio Web y a la información personal que usted nos proporciona al visitar nuestro sitio web o al participar en nuestros eventos, campañas y encuestas.",
+      "Por la presente se le recomienda leer esta Política detenidamente y comprender plenamente la naturaleza y el propósito de la recopilación y/o recolección de información sensible, personal y de otro tipo, así como el uso, la divulgación y el intercambio de dicha información. Al visualizar o acceder al Sitio Web, o al solicitar cualquier servicio a través del Sitio Web, usted también otorga su consentimiento para que MsC comparta información con proveedores de servicios externos contratados por MsC en relación con sus operaciones, así como para la transferencia y/o el almacenamiento de información personal y datos a través de fronteras. Almacenamos su información de manera confiable y transferimos su información personal a terceros o proveedores de servicios para atender sus solicitudes o necesidades de actividad. Siempre adoptamos las disposiciones adecuadas para garantizar un procesamiento de datos correcto y seguro, en cumplimiento de la legislación aplicable en materia de protección de datos."
+    ],
+    "callout": "Esta Política de Privacidad abarca las siguientes áreas. Esta lista no es exhaustiva y está sujeta a futuras actualizaciones.",
+    "governingNotice": "Esta página está disponible en varios idiomas para su comodidad. En caso de cualquier discrepancia o inconsistencia entre las traducciones, prevalecerá y regirá la versión en inglés de esta Política de Privacidad.",
+    "contactHeading": "Contáctenos",
+    "contactText": "Para cualquier pregunta o inquietud relacionada con esta Política de Privacidad, por favor contáctenos en",
+    "table": {
+      "headers": ["Finalidad", "Datos (elementos clave)", "Base"],
+      "rows": [
+        ["Consultas sobre nuestra organización y su labor", "Nombre, correo electrónico, mensaje, número de teléfono", "Intereses legítimos: es necesario que leamos y almacenemos su mensaje para poder responder de la manera que usted esperaría"],
+        ["Suscripción a actualizaciones por correo electrónico sobre nuestra labor", "Nombre, correo electrónico, número de teléfono", "Consentimiento: usted ha otorgado su consentimiento activo."],
+        ["Solicitud de servicios", "Nombre, correo electrónico, mensaje, número de teléfono", "Para poder contactarlo posteriormente."],
+        ["Funcionalidad del sitio web", "Actividad en el sitio web recopilada mediante cookies", "Intereses legítimos: es necesario almacenar una pequeña cantidad de información, generalmente mediante cookies, para ofrecer la funcionalidad que usted esperaría, como recordar los contenidos que ha compartido anteriormente."],
+        ["Visitantes/usuarios", "Identidad, direcciones IP, tiempo de permanencia en el sitio web, navegador y dispositivo del usuario.", "Intereses legítimos: para brindar una mejor experiencia de usuario."]
+      ]
+    },
+    "sections": {
+      "collection": {
+        "title": "Recopilación de información de identificación personal",
+        "paragraphs": [
+          "Para los fines de esta Política, la 'Información Personal' es cualquier dato relacionado con una persona que pueda ser identificada a partir de dicho dato, o de una combinación de un conjunto de datos, junto con otra información en posesión de MsC. La siguiente tabla explica los tipos de datos que recopilamos y la base legal, conforme a la legislación vigente en materia de protección de datos, sobre la cual se procesan dichos datos."
+        ]
+      },
+      "usage": {
+        "title": "Cómo utilizamos sus datos",
+        "paragraphs": [
+          "Solo utilizaremos sus datos de una manera apropiada, considerando la base sobre la cual dichos datos fueron recopilados, según se establece en la tabla al inicio de esta política.",
+          "Por ejemplo, podemos utilizar su información personal para:"
+        ],
+        "listItems": [
+          "a). Responder a las consultas que usted nos envíe;",
+          "b). Cuando usted haya dado su consentimiento específico para ello, enviarle comunicaciones de marketing por correo electrónico relacionadas con nuestra labor, que consideremos puedan ser de su interés.",
+          "c). Brindar una mejor experiencia de usuario a los visitantes/usuarios."
+        ]
+      },
+      "sharing": {
+        "title": "Cuándo compartimos sus datos",
+        "paragraphs": [
+          "Solo compartiremos sus datos con terceros en las siguientes circunstancias:"
+        ],
+        "listItems": [
+          "a). Usted ha otorgado su consentimiento explícito para que compartamos sus datos con un tercero;",
+          "b). Estamos utilizando a un tercero únicamente con el fin de procesar datos en nuestro nombre, y contamos con un acuerdo de procesamiento de datos con dicho tercero que cumple con nuestras obligaciones legales en relación con el uso de procesadores de datos externos; o",
+          "c). Estamos obligados por ley a compartir sus datos."
+        ]
+      },
+      "retention": {
+        "title": "Durante cuánto tiempo conservamos sus datos",
+        "paragraphs": [
+          "Nos tomamos muy en serio los principios de minimización y eliminación de datos, y contamos con políticas internas para garantizar que únicamente solicitemos la cantidad mínima de datos necesaria para el propósito asociado, y que eliminemos dichos datos con prontitud una vez que ya no sean necesarios."
+        ]
+      },
+      "rights": {
+        "title": "Derechos que usted tiene sobre sus datos",
+        "paragraphs": [
+          "Usted cuenta con una serie de derechos sobre sus datos, entre los que se incluyen los siguientes:"
+        ],
+        "listItems": [
+          "a). Cuando el procesamiento de datos se base en el consentimiento, usted podrá revocar dicho consentimiento en cualquier momento, y haremos que hacerlo sea lo más sencillo posible (por ejemplo, incluyendo enlaces de 'cancelar suscripción' al final de todos nuestros correos de marketing).",
+          "b). Usted tiene derecho a solicitar la rectificación y/o eliminación de su información.",
+          "c). Usted tiene derecho de acceso a su información.",
+          "d). Estos derechos pueden estar limitados en algunas situaciones, por ejemplo, cuando podamos demostrar que tenemos un requisito legal para procesar su Información Personal.",
+          "e). Usted puede ejercer sus derechos en las secciones correspondientes donde se proporcionó dicha información, o poniéndose en contacto con nosotros en iot@mscorpres.in."
+        ]
+      },
+      "cookies": {
+        "title": "Uso de Cookies",
+        "paragraphs": [
+          "Una \"cookie\" es una pequeña pieza de información almacenada por un servidor web en un navegador web, para que pueda ser leída posteriormente por dicho navegador. Las cookies son útiles porque permiten que el navegador recuerde información específica de un usuario determinado. Esto se hace para reconocer su dispositivo durante sus futuras visitas a nuestro Sitio Web, principalmente con el fin de brindar una mejor experiencia de usuario."
+        ]
+      },
+      "consequences": {
+        "title": "Consecuencias de no proporcionar Información Personal",
+        "paragraphs": [
+          "Si usted decide no proporcionar la Información Personal que es obligatoria para procesar su solicitud, es posible que no podamos brindarle la experiencia correspondiente."
+        ]
+      },
+      "updates": {
+        "title": "Actualizaciones de esta declaración de privacidad",
+        "paragraphs": [
+          "MsC puede modificar sus prácticas de privacidad de datos y actualizar esta declaración de privacidad cuando sea necesario, y dicha actualización estará disponible en el sitio web. No obstante, nuestro compromiso de proteger la privacidad de los usuarios del sitio web se mantendrá inalterable."
+        ]
+      }
+    }
+  },
+  "Terms": {
+    "heroSubtitle": "TÉRMINOS DE USO",
+    "heroTitle": "Términos de Uso",
+    "intro": [
+      "Si usted no está de acuerdo con alguna parte de estos Términos, por favor deje de utilizar nuestro Sitio Web de inmediato. Nos reservamos el derecho de modificar, alterar o actualizar estos Términos en cualquier momento, y usted acepta quedar sujeto a dichas modificaciones, alteraciones y actualizaciones.",
+      "El término 'usted' se refiere al usuario o visitante de nuestro Sitio Web."
+    ],
+    "callout": "Por favor, lea detenidamente estos Términos de Uso antes de utilizar nuestro Sitio Web. Al acceder o utilizar este Sitio Web, usted acepta quedar sujeto a estos Términos de Uso.",
+    "governingNotice": "Esta página está disponible en varios idiomas para su comodidad. En caso de cualquier discrepancia o inconsistencia entre las traducciones, prevalecerá y regirá la versión en inglés de estos Términos de Uso.",
+    "sections": {
+      "content": {
+        "title": "Contenido del Sitio Web",
+        "paragraphs": [
+          "Todos los materiales, incluidos informes, boletines, fotografías, ilustraciones, imágenes, obras de arte, diseños, texto, gráficos, logotipos, iconos de botones, imágenes, clips de audio y video, blogs, etc. (denominados colectivamente, el \"Contenido\") que aparecen en este Sitio Web o son accesibles a través de él, son propiedad y están bajo el control de MsC y/o sus afiliadas, y están protegidos por las leyes de propiedad intelectual."
+        ]
+      },
+      "useOfContent": {
+        "title": "Uso del contenido",
+        "paragraphs": [
+          "Sujeto a los términos y condiciones establecidos en estos Términos y a cualquier otra política a la que aquí se haga referencia, se le ha otorgado un derecho limitado, no exclusivo e intransferible para acceder y utilizar este Sitio Web. Usted se compromete a no interrumpir ni intentar interrumpir el funcionamiento del Sitio Web de ninguna manera. Usted no deberá modificar, copiar, distribuir, transmitir, exhibir, ejecutar, reproducir, publicar, licenciar, crear obras derivadas, transferir ni vender ninguna información, software, producto o servicio obtenido de este Sitio Web."
+        ]
+      },
+      "accuracy": {
+        "title": "Precisión del contenido",
+        "paragraphs": [
+          "A pesar de nuestros mejores esfuerzos, este Sitio Web puede contener errores o equivocaciones tipográficas. MsC no realiza declaración alguna sobre la precisión, confiabilidad, integridad o actualidad del Sitio Web o del Contenido. La utilización del Sitio Web y del Contenido corre por cuenta y riesgo de usted. El Sitio Web se modifica periódicamente y dichos cambios pueden realizarse en cualquier momento. Si usted se basa en alguna declaración de información contenida en este Sitio Web, lo hace bajo su propio riesgo."
+        ]
+      },
+      "blogs": {
+        "title": "Blogs y otros canales de redes sociales",
+        "paragraphs": [
+          "Los empleados, voluntarios y asociados de MsC pueden contribuir con sus artículos y opiniones en forma de blog en este sitio web, exclusivamente a discreción de MsC. Por la presente, usted reconoce y acepta que estos blogs constituyen la opinión de las personas a título personal y que pueden no representar de ninguna manera la opinión oficial de MsC.",
+          "Es posible que se le permita publicar comentarios y opiniones en estos blogs. Al hacerlo, usted acepta y reconoce expresamente cumplir con lo siguiente, tanto respecto al blog como al Sitio Web:"
+        ],
+        "listItems": [
+          "a) Usted no deberá difamar, abusar, acosar, hostigar, amenazar o violar de cualquier otra manera los derechos legales de MsC o de cualquier tercero.",
+          "b) Usted no deberá contribuir con ningún contenido ni realizar ninguna acción que pueda afectar negativamente, de cualquier manera, la reputación de MsC, o que resulte de otro modo perjudicial para MsC. Usted no deberá cargar ni poner a disposición de otro modo archivos que contengan imágenes, fotografías, software u otro material protegido por las leyes de propiedad intelectual, incluyendo, a modo de ejemplo y no como limitación, las leyes de derechos de autor o de marcas registradas (o por derechos de privacidad o publicidad), a menos que usted sea titular o controle dichos derechos, o haya recibido todo el consentimiento necesario para ello.",
+          "c) Usted no deberá publicar de ninguna manera ningún tema, nombre, material o información inapropiado, difamatorio, infractor, obsceno, racista, terrorista, con sesgo político, indecente o ilícito. Usted no deberá utilizar lenguaje o abreviaturas objetables.",
+          "d) Usted no deberá revelar de ninguna manera información confidencial o de propiedad exclusiva de ningún tercero. En concreto, no deberá publicar ningún material sobre el cual no posea el o los derechos requeridos y aplicables conforme a la ley.",
+          "e) Usted no deberá cargar archivos que contengan virus, troyanos, gusanos, bombas de tiempo, cancelbots, archivos corruptos o cualquier otro software o programa similar que pueda dañar el funcionamiento del equipo o la propiedad de otra persona.",
+          "f) Usted no deberá anunciar ni ofrecer la venta o compra de bienes o servicios con fines comerciales.",
+          "g) Usted no deberá descargar ningún archivo publicado que sepa, o deba saber, que no puede ser legalmente reproducido, exhibido, ejecutado y/o distribuido de dicha manera.",
+          "h) Usted no deberá falsificar ni eliminar ninguna información de gestión de derechos de autor, tales como atribuciones de autoría, avisos legales u otros avisos correspondientes, o designaciones o etiquetas de propiedad exclusiva relativas al origen o fuente del software u otro material contenido en un archivo cargado.",
+          "i) Usted no deberá crear una identidad falsa con el propósito de engañar a otros.",
+          "j) Usted reconoce que MsC podrá, a su entera discreción, supervisar, eliminar o editar cualquier contenido que usted aporte. MsC también podrá recurrir a los remedios legales disponibles ante cualquier violación de estos términos y condiciones.",
+          "k) Usted deberá indemnizar y eximir de responsabilidad a MsC frente a cualquier reclamación y pérdida sufrida por MsC como resultado de su incumplimiento de estos Términos de Uso."
+        ]
+      },
+      "ownership": {
+        "title": "Titularidad de los Derechos de Propiedad Intelectual",
+        "paragraphs": [
+          "Todo el contenido, incluidas las marcas registradas, los derechos de autor, los nombres, etc., será propiedad exclusiva de MsC. No se permite ningún uso de estos, para ningún propósito, sin la autorización/consentimiento previo y por escrito de MsC."
+        ]
+      },
+      "warranties": {
+        "title": "Ausencia de garantías",
+        "paragraphs": [
+          "MsC ha recopilado todos los datos, contenidos e información publicados en este Sitio Web a través de diversas fuentes. No se realiza ninguna declaración ni se otorga ninguna garantía sobre la integridad o precisión de dicha información. No existe garantía expresa ni implícita respecto al contenido de terceros. A pesar de los mejores esfuerzos de MsC, no existe garantía de que este Sitio Web esté libre de virus informáticos."
+        ]
+      },
+      "liability": {
+        "title": "Limitación de responsabilidad",
+        "paragraphs": [
+          "MsC no será responsable de ningún daño directo, indirecto, especial, consecuente o de otro tipo (incluyendo, sin limitación, la pérdida de beneficios, la interrupción del negocio, la pérdida de información o programas, o de otros datos en su sistema de gestión de información) relacionado con el uso, o la imposibilidad de uso, del contenido, los materiales y las funciones de este Sitio Web o de cualquier sitio web vinculado, incluso si MsC ha advertido expresamente sobre la posibilidad de tales daños."
+        ]
+      },
+      "indemnification": {
+        "title": "Indemnización",
+        "paragraphs": [
+          "Usted será responsable de indemnizar, defender y mantener indemne a MsC y a sus fideicomisarios, empleados, asociados, afiliadas, etc. (las \"Partes Indemnizadas\") frente a toda responsabilidad y costos, incluidos, sin limitación, los honorarios razonables de abogados, en los que incurran las Partes Indemnizadas en relación con cualquier reclamación derivada de cualquier incumplimiento por su parte de estos Términos y de los derechos de propiedad intelectual."
+        ]
+      },
+      "modification": {
+        "title": "Modificación",
+        "paragraphs": [
+          "MsC se reserva el derecho, a su entera discreción, de cambiar, modificar, agregar, eliminar o imponer restricciones sobre las funciones o el servicio, o sobre cualquier parte de estos Términos de Uso, en su totalidad o en parte, en cualquier momento. Los cambios en estos Términos de Uso entrarán en vigor cuando se publique el aviso correspondiente. El uso continuado del Sitio Web por su parte, después de que se publiquen dichos cambios en estos Términos de Uso, se considerará como una aceptación de dichos cambios."
+        ]
+      },
+      "applicableLaws": {
+        "title": "Leyes Aplicables",
+        "paragraphs": [
+          "Este Sitio Web, incluidos el Contenido y la información aquí contenida, se regirá por las leyes de la República de la India, y los tribunales de Nueva Delhi, India, mantendrán jurisdicción exclusiva para conocer de cualquier procedimiento relacionado con cualquier controversia que surja del mismo."
+        ]
+      }
+    }
   }
 }

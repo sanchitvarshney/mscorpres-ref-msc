@@ -107,6 +107,7 @@ const Footer: React.FC = () => {
   const { ref, inView } = useInView<HTMLDivElement>();
   const currentYear = new Date().getFullYear();
   const t = useTranslations("Footer");
+  const tForms = useTranslations("Forms");
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -122,8 +123,7 @@ const Footer: React.FC = () => {
       if (response.data.success) {
         setSnackbar({
           open: true,
-          message:
-            response.data.message || "Your message has been sent successfully!",
+          message: response.data.message || tForms("sentSuccess"),
           severity: "success",
         });
         setEmail("");
@@ -131,8 +131,7 @@ const Footer: React.FC = () => {
       if (!response.data.success) {
         setSnackbar({
           open: true,
-          message:
-            response.data.message || "Something went wrong. Please try again.",
+          message: response.data.message || tForms("genericError"),
           severity: "error",
         });
       }
@@ -141,7 +140,7 @@ const Footer: React.FC = () => {
         open: true,
         message: error
           ? error?.response.data.message
-          : "Failed to send message. Please try again later.",
+          : tForms("sendFailed"),
         severity: "error",
       });
     } finally {

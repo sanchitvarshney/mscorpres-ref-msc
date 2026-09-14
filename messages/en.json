@@ -7,6 +7,9 @@
     "contact": "Contact Us"
   },
   "Header": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "siteMenu": "Site menu",
     "megaMenu": {
       "manufacturing": "Manufacturing & Refurbishment",
       "productEngineering": "Product Engineering",
@@ -41,6 +44,27 @@
     "description": "Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or the URL might be incorrect.",
     "goHome": "Go to Homepage",
     "goBack": "Go Back"
+  },
+  "Common": {
+    "onThisPage": "On this page",
+    "learnMore": "Learn More",
+    "goToSlide": "Go to slide {number}"
+  },
+  "Forms": {
+    "sentSuccess": "Your message has been sent successfully!",
+    "genericError": "Something went wrong. Please try again.",
+    "sendFailed": "Failed to send message. Please try again later."
+  },
+  "SuccessAlert": {
+    "title": "Success",
+    "ok": "Ok"
+  },
+  "CTABanner": {
+    "eyebrow": "Let's Work Together",
+    "title": "Ready to Transform Your Business?",
+    "description": "Let's discuss how we can help you with IoT manufacturing, refurbishment, or consultation services.",
+    "primaryButtonText": "Get Started Today",
+    "secondaryButtonText": "Call Us Now"
   },
   "Services": {
     "heroEyebrow": "OUR SERVICES",
@@ -443,6 +467,7 @@
     "messageLabel": "Message",
     "sendButton": "Send Message",
     "sending": "Sending...",
+    "mapTitle": "MsCorpres location map",
     "info": [
       { "title": "Phone", "description": "Call us anytime" },
       { "title": "Email", "description": "Send us an email" },
