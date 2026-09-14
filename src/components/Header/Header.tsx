@@ -53,6 +53,7 @@ const Header: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            position: "relative",
             gap: 2,
             px: { xs: 2, md: 3, lg: 4 },
             py: scrolled ? 0 : { xs: 0.15, md: 0.25 },
@@ -64,19 +65,23 @@ const Header: React.FC = () => {
             component={motion.div}
             animate={{ scale: shrink ? 0.98 : 1 }}
             transition={{ duration: 0.35, ease: easeSmooth }}
-            style={{ transformOrigin: "left center" }}
-            sx={{
+            style={{ transformOrigin: "left center " }}
+             sx={{
               display: "flex",
-              alignItems: "center",
-              flexShrink: 0,
+              alignSelf: "center",
+              position: "absolute",
+              top: { xs: 8, md: 10 },
+              left: { xs: 15, md: 30 },
               "& img": {
-                height: { xs: 36, md: 56 },
+                height: { xs: 40, md: 56 },
+                mt: 0,
                 width: "auto",
               },
             }}
           >
             <Logo />
           </Box>
+          <div />
 
           {/* Desktop: contact info + social + language */}
           <Box
